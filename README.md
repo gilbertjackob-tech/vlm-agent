@@ -24,6 +24,12 @@ Run a single task from the CLI:
 python .\run_task.py "Open explorer and parse screen"
 ```
 
+Run a task with the always-on-top Agent Live Feed bar:
+
+```powershell
+python .\run_task.py "Open explorer and parse screen" --taskbar
+```
+
 Compile and trace a task without taking desktop actions:
 
 ```powershell
@@ -64,6 +70,7 @@ Use `run_task.py` for direct development runs:
 python .\run_task.py "Open explorer and open downloads"
 python .\run_task.py "Open chrome and search for python documentation" --trust-mode plan_and_risk_gates
 python .\run_task.py "Open explorer and parse screen" --dry-run
+python .\run_task.py "Open chrome and search for OpenAI docs" --taskbar
 ```
 
 Useful flags:
@@ -71,6 +78,47 @@ Useful flags:
 - `--dry-run`: compile and trace the plan without executing desktop actions.
 - `--trust-mode`: choose one of the runtime trust modes from `copilot.schemas.TrustMode`.
 - `--save-skill`: save the compiled plan as a reusable workflow after the run.
+- `--taskbar`: show the always-on-top Agent Live Feed bar while the run emits live status events.
+
+### Agent Live Feed Bar
+
+Use the taskbar feed when you want a small always-on-top mission-control view of runtime events:
+
+```powershell
+python .\run_task.py "Open explorer and parse screen" --taskbar
+```
+
+The feed is implemented in `copilot/ui/taskbar_bar.py`, uses PySide6, and subscribes to the process-local event bus in `copilot/core/event_bus.py`. It is an always-on-top, frameless, taskbar-like control surface for live autonomous execution.
+
+Structured feed events use this shape:
+
+```python
+event_bus.emit({
+    "type": "action",          # thinking | seeing | action | verify | error | status
+    "msg": "Typing query...",
+    "confidence": 0.91,
+    "step": 3,
+    "step_total": 7,
+    "metadata": {"app_id": "chrome", "risk_level": "low"},
+})
+```
+
+The bar renders:
+
+```text
+Chrome | Step 3/7 | Confidence 91% | SAFE
+Thinking: Found search box
+Action: Typing query...
+Verify: focus confirmed
+```
+
+Operational behavior:
+
+- Colored event types: action/cyan, verify/green, error/red, thinking/yellow, seeing/purple.
+- 150 ms UI debounce keeps high-frequency runtime events readable.
+- `STOP` requests cancellation through the global event bus flag; the runtime checks it in the normal cancellation path.
+- The agent runs in a worker thread when `--taskbar` is used, so the PySide UI remains responsive.
+- The last 200 feed events are persisted to `logs/live_feed.log` for debugging and replay analysis.
 
 ### GUI Panel
 
@@ -300,13 +348,14 @@ User Goal
 Primary modules:
 
 - `copilot/planner/`: compiles user prompts into structured steps.
+- `copilot/core/`: process-local runtime utilities, including the structured live event bus.
 - `copilot/perception/`: builds observations from DOM, UIA, OCR, and legacy vision.
 - `copilot/adapters/`: browser and Windows integration boundaries.
 - `copilot/state/`: persistent desktop and DOM identity state.
 - `copilot/runtime/`: contracts, execution, verification, recovery, task state, daemon.
 - `copilot/memory/`: semantic memory, episodic traces, workflows, policies.
 - `copilot/benchmark/`: mission catalog, benchmark runner, report metrics.
-- `copilot/ui/`: local panel and overlay.
+- `copilot/ui/`: local panel, overlay, and Agent Live Feed taskbar bar.
 
 Root-level legacy files are isolated behind compatibility factories:
 
@@ -459,6 +508,7 @@ memory/desktop_state.json
 Debug and trace artifacts:
 
 ```text
+logs/live_feed.log
 debug_steps/traces/*.json
 debug_steps/learning_sessions/*.json
 benchmark_runs/.../benchmark_report.json
@@ -501,6 +551,12 @@ Windows safety:
 - UIA is preferred for native app interaction.
 - Raw coordinate clicks require strong evidence and are not blindly retried.
 - UIA collection is scoped to the active window handle when possible for speed.
+
+Live feed safety:
+
+- The taskbar `STOP` button requests runtime cancellation and is checked by the execution loop.
+- The feed is non-blocking when launched through `run_task.py --taskbar`; the agent runs in a worker thread and the UI stays in the Qt event loop.
+- `logs/live_feed.log` is a local debug artifact and is ignored by Git.
 
 Live benchmark safety:
 

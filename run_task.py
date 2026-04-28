@@ -1,5 +1,6 @@
 import argparse
 import os
+import threading
 
 # Force stable Paddle engine on Windows
 os.environ["FLAGS_enable_pir_api"] = "0"
@@ -33,11 +34,20 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Save the compiled plan as a reusable workflow after the run.",
     )
+    parser.add_argument(
+        "--taskbar",
+        action="store_true",
+        help="Show the always-on-top Agent Live Feed bar while the task runs.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+
+    if args.taskbar:
+        return run_with_taskbar(args)
+
     engine = CopilotEngine()
     trust_mode = TrustMode(args.trust_mode)
 
@@ -87,6 +97,69 @@ def main() -> None:
         workflow = engine.save_current_plan_as_skill(args.prompt)
         if workflow:
             print(f"Saved workflow: {workflow.get('workflow_id', '')} ({workflow.get('name', '')})")
+
+
+def run_with_taskbar(args: argparse.Namespace) -> None:
+    from PySide6.QtCore import QObject, QTimer, Signal
+    from PySide6.QtWidgets import QApplication
+
+    from copilot.core import event_bus
+    from copilot.ui.taskbar_bar import TaskbarBar, attach_event_bus
+
+    class CompletionSignal(QObject):
+        finished = Signal()
+
+    app = QApplication.instance() or QApplication([])
+    bar = TaskbarBar()
+    attach_event_bus(bar)
+    bar.push("Agent live feed ready.")
+    bar.show()
+    completion = CompletionSignal()
+    completion.finished.connect(lambda: QTimer.singleShot(4000, app.quit))
+
+    def worker() -> None:
+        try:
+            engine = CopilotEngine()
+            trust_mode = TrustMode(args.trust_mode)
+            event_bus.emit(
+                {
+                    "type": "status",
+                    "msg": f"Starting task: {args.prompt}",
+                    "phase": "status",
+                    "message": f"Starting task: {args.prompt}",
+                    "metadata": {},
+                }
+            )
+            trace = engine.execute_prompt(
+                args.prompt,
+                trust_mode=trust_mode,
+                trace_callback=None,
+                dry_run=args.dry_run,
+            )
+            event_bus.emit(
+                {
+                    "type": "status",
+                    "msg": f"Run completed with status: {trace.status.value}",
+                    "phase": "done",
+                    "message": f"Run completed with status: {trace.status.value}",
+                    "metadata": {"status": trace.status.value, "trace_path": trace.outputs.get("trace_path", "")},
+                }
+            )
+        except Exception as exc:
+            event_bus.emit(
+                {
+                    "type": "status",
+                    "msg": f"Run failed: {exc}",
+                    "phase": "error",
+                    "message": f"Run failed: {exc}",
+                    "metadata": {"status": "failed"},
+                }
+            )
+        finally:
+            completion.finished.emit()
+
+    threading.Thread(target=worker, name="copilot-taskbar-run", daemon=True).start()
+    app.exec()
 
 
 if __name__ == "__main__":

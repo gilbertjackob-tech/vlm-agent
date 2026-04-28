@@ -9,5 +9,8 @@ __pycache__/
 __legacy_versions__/
 *.zip
 
+# Runtime logs
+logs/*.log
+
 # Local heavyweight model artifact; GitHub rejects files over 100 MB.
 clip-local/model.safetensors

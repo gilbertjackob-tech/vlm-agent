@@ -7,6 +7,7 @@ import os
 import time
 
 from copilot.memory.store import MemoryStore
+from copilot.core import event_bus
 from copilot.perception.bridge import VisionRuntimeBridge
 from copilot.perception.target_ranking import result_to_contract_metrics
 from copilot.planner.compiler import PromptCompiler
@@ -143,12 +144,13 @@ class CopilotEngine:
     def reset_stop(self) -> None:
         self.stop_requested = False
         self.cancel_state = CancelState()
+        event_bus.clear_stop()
 
     def _cancel_requested(self) -> bool:
         stop_requested = bool(getattr(self, "stop_requested", False))
         cancel_state = getattr(self, "cancel_state", None)
         cancel_requested = bool(cancel_state.requested()) if cancel_state is not None else False
-        return bool(stop_requested or cancel_requested)
+        return bool(stop_requested or cancel_requested or event_bus.stop_requested())
 
     def _record_cancel_effective(self, trace: RunTrace, step_id: str, *, forced: bool = False) -> None:
         if not self.cancel_state.requested():
@@ -174,8 +176,49 @@ class CopilotEngine:
         return TaskSpec(prompt=prompt, goal=goal, trust_mode=trust_mode)
 
     def _emit(self, callback: TraceCallback | None, phase: str, message: str, **metadata: Any) -> None:
+        event = {"phase": phase, "message": message, "metadata": metadata, "timestamp": time.time()}
+        feed_event = {
+            "type": self._feed_event_type(phase, metadata),
+            "msg": message,
+            "confidence": self._feed_confidence(metadata),
+            "step": metadata.get("step_index"),
+            "step_total": metadata.get("step_total") or metadata.get("step_count"),
+            **event,
+        }
+        event_bus.emit(feed_event)
         if callback:
-            callback({"phase": phase, "message": message, "metadata": metadata, "timestamp": time.time()})
+            callback(event)
+
+    def _feed_event_type(self, phase: str, metadata: dict[str, Any]) -> str:
+        normalized = str(phase or "").lower()
+        action_type = str(metadata.get("action_type") or "").lower()
+        if normalized in {"failure", "blocked", "error"}:
+            return "error"
+        if normalized in {"contract", "step_result", "done"} or normalized.startswith("verify"):
+            return "verify"
+        if normalized in {"observation", "observe"} or action_type in {"parse_ui", "read_screen"}:
+            return "seeing"
+        if normalized in {"step"} or action_type in {"click_node", "click_point", "type_text", "press_key", "route_window", "wait_for"}:
+            return "action"
+        if normalized in {"plan", "policy", "task_state", "recover"}:
+            return "thinking"
+        return "status"
+
+    def _feed_confidence(self, metadata: dict[str, Any]) -> float:
+        for key in ("confidence", "evidence_score", "score"):
+            if metadata.get(key) is not None:
+                try:
+                    return float(metadata.get(key) or 0.0)
+                except (TypeError, ValueError):
+                    return 0.0
+        risk = str(metadata.get("risk_level") or "").lower()
+        if risk == "low":
+            return 0.91
+        if risk == "medium":
+            return 0.72
+        if risk == "high":
+            return 0.45
+        return 0.0
 
     def _voice_for_run(self, mode_override: str | None = None) -> VoiceNarrator:
         if mode_override is not None:
@@ -1588,6 +1631,7 @@ class CopilotEngine:
             self.current_voice_narrator.flush(timeout_seconds=max(2.0, self.current_voice_narrator.config.timeout))
             trace_path = self.memory.record_trace(trace)
             trace.outputs["trace_path"] = trace_path
+            self._emit(trace_callback, "done", f"Run completed with status: {trace.status.value}", trace_path=trace_path, status=trace.status.value)
             self.current_trace = None
             self.current_voice_narrator = None
             return trace
@@ -1628,6 +1672,7 @@ class CopilotEngine:
                     }
                 )
                 trace.add_event("failure", "Mission runtime budget exceeded.", step_id=step.step_id)
+                self._emit(trace_callback, "failure", "Mission runtime budget exceeded.", step_id=step.step_id, status=RunStatus.FAILED.value)
                 break
             if self._cancel_requested():
                 self._narrate(trace, "Execution was stopped by the operator.", event_type="failure")
@@ -1635,6 +1680,7 @@ class CopilotEngine:
                 mission.status = MissionStatus.FAILED
                 self._record_cancel_effective(trace, step.step_id)
                 trace.add_event("runtime", "Execution stopped by operator.", step_id=step.step_id)
+                self._emit(trace_callback, "failure", "Execution stopped by operator.", step_id=step.step_id, status=RunStatus.CANCELLED.value)
                 break
 
             if self.current_task_state and self._task_state_manager().prevent_repeating_completed_step(self.current_task_state, step.step_id):
@@ -1652,6 +1698,7 @@ class CopilotEngine:
                 trace.status = RunStatus.BLOCKED
                 mission.status = MissionStatus.BLOCKED
                 trace.add_event("blocked", "Policy blocked execution.", step_id=step.step_id)
+                self._emit(trace_callback, "blocked", "Policy blocked execution.", step_id=step.step_id, status=RunStatus.BLOCKED.value, risk_level=decision.risk_level.value)
                 self._record_failure_recovery(trace, step, "POLICY_BLOCKED", None)
                 self._set_checkpoint_status(mission, step.step_id, "blocked", decision.reason)
                 break
@@ -1678,9 +1725,16 @@ class CopilotEngine:
                     trace.status = RunStatus.CANCELLED
                     mission.status = MissionStatus.FAILED
                     trace.add_event("approval", "Operator rejected the step.", step_id=step.step_id)
+                    self._emit(trace_callback, "failure", "Operator rejected the step.", step_id=step.step_id, status=RunStatus.CANCELLED.value)
                     self._set_checkpoint_status(mission, step.step_id, "rejected", "Operator rejected the step.")
                     break
 
+            step_app_id = str(
+                step.parameters.get("app_id")
+                or step.parameters.get("expected_app")
+                or (step.target.value if step.target and step.target.kind == "application" else "")
+                or ""
+            )
             step_meta = {
                 "step_id": step.step_id,
                 "action_type": step.action_type,
@@ -1688,6 +1742,7 @@ class CopilotEngine:
                 "step_total": len(working_plan.steps),
                 "goal": plan.task.goal,
                 "target": step.target.value if step.target else "",
+                "app_id": step_app_id,
                 "risk_level": step.risk_level.value,
                 "requires_approval": bool(step.requires_approval),
             }
@@ -1805,6 +1860,7 @@ class CopilotEngine:
                 mission.status = MissionStatus.FAILED
                 self._record_cancel_effective(trace, step.step_id)
                 trace.add_event("runtime", "Execution cancelled after current OS action.", step_id=step.step_id)
+                self._emit(trace_callback, "failure", "Execution cancelled after current OS action.", step_id=step.step_id, status=RunStatus.CANCELLED.value)
                 break
 
             failed_contract = self._last_contract_for_step(trace, step.step_id)
@@ -1873,6 +1929,7 @@ class CopilotEngine:
             trace.status = RunStatus.FAILED
             mission.status = MissionStatus.FAILED
             trace.add_event("failure", f"Step failed: {step.title}", step_id=step.step_id, reason=recovery_note)
+            self._emit(trace_callback, "failure", f"Step failed: {step.title}", step_id=step.step_id, status=RunStatus.FAILED.value, reason=recovery_note)
             self._set_checkpoint_status(mission, step.step_id, "failed", recovery_note)
             break
         else:
@@ -1894,7 +1951,7 @@ class CopilotEngine:
         self.memory.record_workflow_trace(plan.task, plan, trace)
         trace_path = self.memory.record_trace(trace)
         trace.outputs["trace_path"] = trace_path
-        self._emit(trace_callback, "done", f"Run completed with status: {trace.status.value}", trace_path=trace_path)
+        self._emit(trace_callback, "done", f"Run completed with status: {trace.status.value}", trace_path=trace_path, status=trace.status.value)
         self.current_trace = None
         self.current_voice_narrator = None
         return trace
