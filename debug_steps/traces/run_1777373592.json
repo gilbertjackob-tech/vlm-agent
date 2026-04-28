@@ -1,0 +1,1309 @@
+{
+  "run_id": "run_1777373592",
+  "task": {
+    "prompt": "open downloads",
+    "goal": "open downloads",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_5012a4c64f",
+    "created_at": 1777373592.7095807
+  },
+  "plan": {
+    "task": {
+      "prompt": "open downloads",
+      "goal": "open downloads",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_5012a4c64f",
+      "created_at": 1777373592.7095807
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Replay learned action for Downloads",
+        "action_type": "replay_interaction",
+        "target": {
+          "kind": "learned_control",
+          "value": "Downloads",
+          "filters": {
+            "label_contains": "Downloads",
+            "app_id": "explorer",
+            "min_score": 0.5,
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads",
+              "Downloads folder contents"
+            ],
+            "entity_type": "navigation_item",
+            "semantic_role": "menu_item",
+            "region": "left_menu"
+          }
+        },
+        "intent": {
+          "verb": "replay_interaction",
+          "semantic_target": "Downloads",
+          "description": "Replay learned action for Downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "filters": {
+            "label_contains": "Downloads",
+            "app_id": "explorer",
+            "min_score": 0.5,
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads",
+              "Downloads folder contents"
+            ],
+            "entity_type": "navigation_item",
+            "semantic_role": "menu_item",
+            "region": "left_menu"
+          },
+          "control_signature": "explorer|menu_item|navigation_item|left_menu|downloads|",
+          "settle_wait": 0.8,
+          "expected_reward": 1.05
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "fallback_hint": "If the learned target is missing, re-map the current UI and run interaction learning again.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Wait after replaying Downloads",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "time",
+          "value": "0.8",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "0.8",
+          "description": "Wait after replaying Downloads",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.8,
+          "expected_focus": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The UI should settle after replay.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Summarize replay result for Downloads",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "explorer",
+          "description": "Summarize replay result for Downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+          "recovery_hint": "Run interaction learning again if the scene no longer matches learned memory."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Replay scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "interaction_graph_replay",
+    "summary": "Replayed learned interaction for Downloads.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "Learned interaction for Downloads should reproduce its rewarded outcome.",
+      "The UI should settle after replay.",
+      "Replay scene delta should be recorded."
+    ],
+    "generated_at": 1777373592.7125802
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777373592.7125802,
+      "metadata": {
+        "source": "interaction_graph_replay",
+        "step_count": 3
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777373592.7125802,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Replay learned action for Downloads",
+      "timestamp": 1777373592.7125802,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "replay_interaction",
+        "step_index": 1,
+        "step_total": 3,
+        "goal": "open downloads",
+        "target": "Downloads",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777373592.7435007,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "replay_interaction",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Replayed learned interaction 'Downloads' with reward 1.05."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777373592.7435007,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait after replaying Downloads",
+      "timestamp": 1777373592.7435007,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "wait_for",
+        "step_index": 2,
+        "step_total": 3,
+        "goal": "open downloads",
+        "target": "0.8",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373592.7571747,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777373592.7577834,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize replay result for Downloads",
+      "timestamp": 1777373592.7577834,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "scene_diff",
+        "step_index": 3,
+        "step_total": 3,
+        "goal": "open downloads",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777373592.7767992,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "No obvious scene change."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777373592.7125802
+    },
+    {
+      "step_id": "step_2",
+      "approved": true,
+      "timestamp": 1777373592.7435007
+    },
+    {
+      "step_id": "step_3",
+      "approved": true,
+      "timestamp": 1777373592.7577834
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 9,
+      "known_visuals": 0,
+      "known_concepts": 5,
+      "known_controls": 9,
+      "known_entities": 1,
+      "transition_count": 2,
+      "negative_examples": 0,
+      "review_queue": 0,
+      "learning_sessions": 1,
+      "interaction_edges": 2,
+      "action_values": 2,
+      "workflow_count": 5,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 1,
+      "scene_deltas": 4,
+      "action_outcomes": 4
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777373592.7125802,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "runtime",
+        "line": "I am starting the task.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777373592.7125802,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replay_interaction",
+        "line": "",
+        "status": "disabled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "replay_interaction",
+          "app_id": "explorer",
+          "target": "Downloads"
+        }
+      },
+      {
+        "timestamp": 1777373592.7435007,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "replay_interaction"
+        }
+      },
+      {
+        "timestamp": 1777373592.7435007,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for",
+          "app_id": "",
+          "target": "0.8"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373592.7483342,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777373592.7571747,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777373592.7577834,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff",
+          "app_id": "",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373592.762208,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777373592.7767992,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777373592.7767992,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Task completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "active_app_guess": "explorer",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "open downloads",
+        "current_subgoal": "Replayed learned interaction for Downloads.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "timeline_entry_at": 1777373592.7125802
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "open downloads",
+        "current_subgoal": "Replayed learned interaction 'Downloads' with reward 1.05.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The UI should settle after replay.",
+        "timeline_entry_at": 1777373592.7435007
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "open downloads",
+        "current_subgoal": "Wait condition satisfied.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Replay scene delta should be recorded.",
+        "timeline_entry_at": 1777373592.7571747
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "open downloads",
+        "current_subgoal": "No obvious scene change.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777373592.7767992
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:replay_interaction",
+        "last_verified_change": "",
+        "state_hash": "846dbd697599b533",
+        "state_id": "704596f38deef0e6",
+        "timestamp": 1777373592.7125802,
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.45
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:replay_interaction",
+        "last_verified_change": "Replayed learned interaction 'Downloads' with reward 1.05.",
+        "state_hash": "17bc064607a6f18e",
+        "state_id": "6a2e1cfe55833c70",
+        "timestamp": 1777373592.737607,
+        "focused_element": "",
+        "screen_hash": "2e8cd66d4b071b62",
+        "ui_tree_hash": "8cee66ab45670cd1",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|downloads|",
+        "state_signature": "17bc064607a6f18e",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:wait_for",
+        "last_verified_change": "",
+        "state_hash": "17bc064607a6f18e",
+        "state_id": "f848bf7fb4b3d7f0",
+        "timestamp": 1777373592.746522,
+        "focused_element": "",
+        "screen_hash": "2e8cd66d4b071b62",
+        "ui_tree_hash": "8cee66ab45670cd1",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|downloads|",
+        "state_signature": "17bc064607a6f18e",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:wait_for",
+        "last_verified_change": "Wait condition satisfied.",
+        "state_hash": "17bc064607a6f18e",
+        "state_id": "3e30a8126e0e57b8",
+        "timestamp": 1777373592.751255,
+        "focused_element": "",
+        "screen_hash": "2e8cd66d4b071b62",
+        "ui_tree_hash": "8cee66ab45670cd1",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|downloads|",
+        "state_signature": "17bc064607a6f18e",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:scene_diff",
+        "last_verified_change": "",
+        "state_hash": "17bc064607a6f18e",
+        "state_id": "02ee74167eb5d4e5",
+        "timestamp": 1777373592.7600012,
+        "focused_element": "",
+        "screen_hash": "2e8cd66d4b071b62",
+        "ui_tree_hash": "8cee66ab45670cd1",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|downloads|",
+        "state_signature": "17bc064607a6f18e",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:scene_diff",
+        "last_verified_change": "No obvious scene change.",
+        "state_hash": "17bc064607a6f18e",
+        "state_id": "fb113222a9add01f",
+        "timestamp": 1777373592.7705293,
+        "focused_element": "",
+        "screen_hash": "a30726b60c18da71",
+        "ui_tree_hash": "68cb82f108778873",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|downloads|",
+        "state_signature": "17bc064607a6f18e",
+        "confidence": 0.65
+      }
+    ],
+    "parse_health": [
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": false,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.01,
+        "state_cache_hit": false,
+        "state_cache_miss": true,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.001734,
+        "state_hash": "5f8f6b7b6a23df93",
+        "state_signature": "5f8f6b7b6a23df93"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": false,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.01,
+        "state_cache_hit": false,
+        "state_cache_miss": true,
+        "state_cache_reason": "signature_changed",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_hash": "dd241c70310b6b7c",
+        "state_signature": "dd241c70310b6b7c"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": true,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.0,
+        "state_cache_hit": true,
+        "state_cache_miss": false,
+        "state_cache_reason": "signature_changed",
+        "state_probe_elapsed_seconds": 0.001214,
+        "state_hash": "dd241c70310b6b7c",
+        "state_signature": "dd241c70310b6b7c",
+        "state_cache_age_seconds": 0.038849,
+        "state_cache_parse_mode": "windows_uia"
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": true,
+        "state_signature_changed": true,
+        "state_hash_changed": true,
+        "changed": true,
+        "before_state_id": "704596f38deef0e6",
+        "after_state_id": "6a2e1cfe55833c70",
+        "before_state_hash": "846dbd697599b533",
+        "after_state_hash": "17bc064607a6f18e",
+        "confidence_delta": 0.2
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "state_hash_changed": false,
+        "changed": false,
+        "before_state_id": "f848bf7fb4b3d7f0",
+        "after_state_id": "3e30a8126e0e57b8",
+        "before_state_hash": "17bc064607a6f18e",
+        "after_state_hash": "17bc064607a6f18e",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "state_hash_changed": false,
+        "changed": true,
+        "before_state_id": "02ee74167eb5d4e5",
+        "after_state_id": "fb113222a9add01f",
+        "before_state_hash": "17bc064607a6f18e",
+        "after_state_hash": "17bc064607a6f18e",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, downloads folder contents",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "downloads folder contents",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373592.737607
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "The UI should settle after replay.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373592.7530153
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Replay scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373592.7722573
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "replay_interaction",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.65,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "wait_for",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.65,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "scene_diff",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.65,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_2",
+        "action_type": "wait_for",
+        "intent": "Wait after replaying Downloads",
+        "target": "explorer",
+        "evidence": [
+          "timeout:0.00"
+        ],
+        "before_checks": {
+          "bounded_wait": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "traceable_wait": true
+        },
+        "evidence_score": 0.25,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_3",
+        "expected_change": "Replay scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373592.7681262
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_5012a4c64f",
+    "goal": "open downloads",
+    "subgoal": "Replayed learned interaction for Downloads.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_3",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Replay learned action for Downloads",
+        "expected_scene": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "completion_rule": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "recovery_rule": "If the learned target is missing, re-map the current UI and run interaction learning again.",
+        "status": "completed",
+        "notes": [
+          "Replayed learned interaction 'Downloads' with reward 1.05."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Wait after replaying Downloads",
+        "expected_scene": "The UI should settle after replay.",
+        "completion_rule": "The UI should settle after replay.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Summarize replay result for Downloads",
+        "expected_scene": "Replay scene delta should be recorded.",
+        "completion_rule": "Replay scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "No obvious scene change."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777373592.7125802
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, downloads folder contents",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "downloads folder contents",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373592.737607
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "The UI should settle after replay.",
+      "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777373592.7530153
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Replay scene delta should be recorded.",
+      "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777373592.7722573
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "replay_interaction",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "Downloads",
+      "target_node_id": "nav_downloads",
+      "focus_confirmed": true,
+      "notes": "Replayed learned interaction 'Downloads' with reward 1.05.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, downloads folder contents",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "downloads folder contents",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373592.737607
+      },
+      "timestamp": 1777373592.7414904
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "The UI should settle after replay.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373592.7530153
+      },
+      "timestamp": 1777373592.7553
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No obvious scene change.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Replay scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373592.7722573
+      },
+      "timestamp": 1777373592.7745318
+    }
+  ],
+  "started_at": 1777373592.7125802,
+  "finished_at": 1777373592.7767992
+}

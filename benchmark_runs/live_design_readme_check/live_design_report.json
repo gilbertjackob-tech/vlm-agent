@@ -1,0 +1,184 @@
+{
+  "design_only": true,
+  "mission_count": 100,
+  "requirement_count": 6,
+  "passed": true,
+  "results": [
+    {
+      "requirement": {
+        "requirement_id": "wrong_click_prevention",
+        "description": "Wrong clicks are prevented or counted.",
+        "required_tags": [
+          "wrong_target"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "recovery_01",
+        "recovery_02",
+        "recovery_03",
+        "recovery_04",
+        "recovery_05",
+        "recovery_06",
+        "recovery_07",
+        "recovery_08",
+        "recovery_09",
+        "recovery_10"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "duplicate_disambiguation",
+        "description": "Duplicate labels require region/context disambiguation.",
+        "required_tags": [
+          "duplicate_label",
+          "region_disambiguation"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "explorer_uia_01",
+        "explorer_uia_02",
+        "explorer_uia_03",
+        "explorer_uia_04",
+        "explorer_uia_05",
+        "explorer_uia_06",
+        "explorer_uia_07",
+        "explorer_uia_08",
+        "explorer_uia_09",
+        "explorer_uia_10",
+        "explorer_uia_11",
+        "explorer_uia_12",
+        "explorer_uia_13",
+        "explorer_uia_14",
+        "explorer_uia_15",
+        "explorer_uia_16",
+        "explorer_uia_17",
+        "explorer_uia_18",
+        "explorer_uia_19",
+        "explorer_uia_20",
+        "explorer_uia_21",
+        "explorer_uia_22",
+        "explorer_uia_23",
+        "explorer_uia_24",
+        "explorer_uia_25",
+        "explorer_uia_26",
+        "explorer_uia_27",
+        "explorer_uia_28",
+        "explorer_uia_29",
+        "explorer_uia_30",
+        "v41_duplicate_label_disambiguation"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "focus_before_typing",
+        "description": "Typing missions verify focus before text entry.",
+        "required_tags": [
+          "focus",
+          "typing",
+          "verification"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "chrome_dom_01",
+        "chrome_dom_02",
+        "chrome_dom_03",
+        "chrome_dom_04",
+        "chrome_dom_05",
+        "chrome_dom_06",
+        "chrome_dom_07",
+        "chrome_dom_08",
+        "chrome_dom_09",
+        "chrome_dom_10",
+        "chrome_dom_11",
+        "chrome_dom_12",
+        "chrome_dom_13",
+        "chrome_dom_14",
+        "chrome_dom_15",
+        "chrome_dom_16",
+        "chrome_dom_17",
+        "chrome_dom_18",
+        "chrome_dom_19",
+        "chrome_dom_20",
+        "chrome_dom_21",
+        "chrome_dom_22",
+        "chrome_dom_23",
+        "chrome_dom_24",
+        "chrome_dom_25",
+        "chrome_dom_26",
+        "chrome_dom_27",
+        "chrome_dom_28",
+        "chrome_dom_29",
+        "chrome_dom_30"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "recovery_depth_tracking",
+        "description": "Recovery missions exercise bounded repair/replan depth.",
+        "required_tags": [
+          "recovery"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "recovery_01",
+        "recovery_02",
+        "recovery_03",
+        "recovery_04",
+        "recovery_05",
+        "recovery_06",
+        "recovery_07",
+        "recovery_08",
+        "recovery_09",
+        "recovery_10"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "soft_hard_cancel",
+        "description": "Cancel behavior is represented by a bounded timeout/control mission.",
+        "required_tags": [
+          "negative_control",
+          "timeout"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "recovery_01",
+        "recovery_02",
+        "recovery_03",
+        "recovery_04",
+        "recovery_05",
+        "recovery_06",
+        "recovery_07",
+        "recovery_08",
+        "recovery_09",
+        "recovery_10",
+        "v41_timeout_recovery"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "dialog_approval_safety",
+        "description": "Dialogs and approvals are represented by safe dialog missions.",
+        "required_tags": [
+          "dialog",
+          "safety"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "v41_dialog_handling"
+      ]
+    }
+  ]
+}

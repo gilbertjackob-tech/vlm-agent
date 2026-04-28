@@ -1,0 +1,37 @@
+{
+  "debug_dir": "debug_steps",
+  "memory_dir": "memory",
+  "imported_artifacts": 7,
+  "skipped_artifacts": 0,
+  "apps": {
+    "explorer": 7
+  },
+  "entity_types": {
+    "archive": 4,
+    "file": 3,
+    "folder": 19,
+    "navigation_item": 32,
+    "python_file": 11,
+    "search_field": 8,
+    "shortcut": 20
+  },
+  "controls_before": 175,
+  "controls_after": 175,
+  "memory_summary": {
+    "known_labels": 114,
+    "known_visuals": 0,
+    "known_concepts": 7,
+    "known_controls": 175,
+    "known_entities": 1,
+    "transition_count": 0,
+    "negative_examples": 0,
+    "workflow_count": 1,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 5,
+    "scene_deltas": 0,
+    "action_outcomes": 0
+  }
+}

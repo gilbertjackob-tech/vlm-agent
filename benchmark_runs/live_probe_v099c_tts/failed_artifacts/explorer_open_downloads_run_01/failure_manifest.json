@@ -1,0 +1,106 @@
+{
+  "mission": {
+    "mission_id": "explorer_open_downloads",
+    "category": "file_explorer",
+    "prompt": "Open explorer and open downloads",
+    "expected_apps": [
+      "explorer"
+    ],
+    "setup": "",
+    "success_signal": "Downloads is selected or shown in Explorer.",
+    "tags": [
+      "navigation",
+      "target_resolution"
+    ]
+  },
+  "iteration": 1,
+  "error": "KeyboardInterrupt",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 6
+      },
+      "timestamp": 1777184949.1188235
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      },
+      "timestamp": 1777184949.1188235
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777184949.1188235
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      },
+      "timestamp": 1777184961.8980017
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      },
+      "timestamp": 1777184962.4250083
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      },
+      "timestamp": 1777184962.4250083
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Focus mismatch for explorer."
+      },
+      "timestamp": 1777184964.637404
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: refocus_window, retry_with_uia, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_2",
+        "failure_reason": "FOCUS_NOT_CONFIRMED"
+      },
+      "timestamp": 1777184969.6995037
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_2"
+      },
+      "timestamp": 1777184969.6995037
+    }
+  ]
+}

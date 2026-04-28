@@ -1,0 +1,103 @@
+{
+  "design_only": true,
+  "mission_count": 28,
+  "requirement_count": 6,
+  "passed": true,
+  "results": [
+    {
+      "requirement": {
+        "requirement_id": "wrong_click_prevention",
+        "description": "Wrong clicks are prevented or counted.",
+        "required_tags": [
+          "wrong_target"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "wrong_target_recovery_downloads",
+        "wrong_target_recovery_chrome_result"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "duplicate_disambiguation",
+        "description": "Duplicate labels require region/context disambiguation.",
+        "required_tags": [
+          "duplicate_label",
+          "region_disambiguation"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "explorer_duplicate_downloads",
+        "chrome_duplicate_search_field"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "focus_before_typing",
+        "description": "Typing missions verify focus before text entry.",
+        "required_tags": [
+          "focus",
+          "typing",
+          "verification"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "focus_shift_typing_case"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "recovery_depth_tracking",
+        "description": "Recovery missions exercise bounded repair/replan depth.",
+        "required_tags": [
+          "recovery"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "wrong_target_recovery_downloads",
+        "wrong_target_recovery_chrome_result",
+        "timeout_recovery_focus_missing",
+        "timeout_recovery_slow_page"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "soft_hard_cancel",
+        "description": "Cancel behavior is represented by a bounded timeout/control mission.",
+        "required_tags": [
+          "negative_control",
+          "timeout"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "timeout_recovery_focus_missing"
+      ]
+    },
+    {
+      "requirement": {
+        "requirement_id": "dialog_approval_safety",
+        "description": "Dialogs and approvals are represented by safe dialog missions.",
+        "required_tags": [
+          "dialog",
+          "safety"
+        ],
+        "required_categories": []
+      },
+      "passed": true,
+      "missions": [
+        "notepad_save_dialog_cancel",
+        "chrome_dismiss_modal"
+      ]
+    }
+  ]
+}

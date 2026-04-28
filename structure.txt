@@ -1,0 +1,12 @@
+vlm_agent/
+│
+├── agent.py                 # The Eyes & Hands: Core Visual Engine (PaddleOCR, UI Hierarchy Builder, PyAutoGUI execution).
+├── planner.py               # The Translator: Maps natural language to execution tuples using the JSON knowledge base.
+├── run_task.py              # The Entry Point: Boots the agent with the necessary C++ engine bypass flags.
+│
+├── knowledge_base.json      # The Symbolic Memory: Your defined skills and structural logic for known apps.
+├── req.txt                  # The Environment: Bulletproof dependency lock (Paddle 2.6.2, PaddleOCR 2.8.1).
+│
+└── debug_steps/             # The Working Memory: Where the agent dumps its real-time state.
+    ├── ui_parsed_map.jpg    # The visual snapshot with drawn bounding boxes and labels.
+    └── ui_parsed_map.json   # The Spatial DOM: The futuristic, nested graph of the UI elements.

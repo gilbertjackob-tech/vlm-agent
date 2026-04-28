@@ -1,0 +1,120 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777187490.710771,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": true,
+  "repeat_count": 1,
+  "mission_count": 1,
+  "attempt_count": 1,
+  "expected_attempt_count": 1,
+  "complete": true,
+  "interrupted": false,
+  "output_dir": "benchmark_runs\\20260426_131030",
+  "metrics": {
+    "success_rate": 1.0,
+    "stable_success_rate": 0.0,
+    "unstable_success_count": 1,
+    "wrong_click_count": 0,
+    "recovery_count": 0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {
+      "replan": 3
+    },
+    "avg_steps_per_task": 4.0,
+    "avg_latency_per_step": 14.564516,
+    "avg_ocr_time_per_task": 2.007205,
+    "avg_parse_time_per_task": 3.615368,
+    "avg_parse_time_per_parse": 1.205123,
+    "ocr_timeout_count": 1,
+    "ocr_call_count": 0,
+    "ocr_cache_hit_count": 0,
+    "parse_cache_hit_count": 0,
+    "dom_parse_count": 0,
+    "failure_reason_distribution": {}
+  },
+  "category_metrics": {
+    "file_explorer": {
+      "success_rate": 1.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 1,
+      "wrong_click_count": 0,
+      "recovery_count": 0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "replan": 3
+      },
+      "avg_steps_per_task": 4.0,
+      "avg_latency_per_step": 14.564516,
+      "avg_ocr_time_per_task": 2.007205,
+      "avg_parse_time_per_task": 3.615368,
+      "avg_parse_time_per_parse": 1.205123,
+      "ocr_timeout_count": 1,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 0,
+      "dom_parse_count": 0,
+      "failure_reason_distribution": {}
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ],
+      "events": 15,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "stable_success": false,
+      "step_count": 4,
+      "latency_seconds": 58.258066,
+      "latency_per_step": 14.564517,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 3
+      },
+      "failure_reason_distribution": {},
+      "trace_path": "debug_steps\\traces\\run_1777187432.json",
+      "contract_count": 0,
+      "state_snapshot_count": 8,
+      "state_diff_count": 4,
+      "parse_count": 3,
+      "ocr_elapsed_seconds": 2.007205,
+      "parse_elapsed_seconds": 3.615368,
+      "ocr_timeout_count": 1,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 0,
+      "dom_parse_count": 0
+    }
+  ],
+  "failed_artifacts": []
+}

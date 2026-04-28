@@ -1,0 +1,2413 @@
+{
+  "run_id": "run_1777373380",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_574968042c",
+    "created_at": 1777373380.9100537
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_574968042c",
+      "created_at": 1777373380.9100537
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Set Explorer stable details view",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "ctrl+shift+6",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "ctrl+shift+6",
+          "description": "Set Explorer stable details view",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": [
+            "shortcut",
+            "view_normalization"
+          ]
+        },
+        "parameters": {
+          "keys": [
+            "ctrl",
+            "shift",
+            "6"
+          ],
+          "hotkey": true,
+          "expected_app": "explorer",
+          "shortcut_id": "explorer_stable_view",
+          "expected_change": "Explorer should use the stable details view.",
+          "settle_wait": 0.2
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer should use the stable details view.",
+        "fallback_hint": "Refocus Explorer and retry Ctrl+Shift+6.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Parse Explorer for folder summary",
+        "action_type": "parse_ui",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "parse_ui",
+          "semantic_target": "explorer",
+          "description": "Parse Explorer for folder summary",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "output_filename": "explorer_summary.png"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer UI should be parsed for summarization.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Summarize current Explorer folder",
+        "action_type": "checkpoint",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          }
+        },
+        "intent": {
+          "verb": "checkpoint",
+          "semantic_target": "explorer",
+          "description": "Summarize current Explorer folder",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "The current Explorer folder contents should be summarized.",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          },
+          "recovery_hint": "Reparse Explorer and retry summarization."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The current Explorer folder contents should be summarized.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer should use the stable details view.",
+      "Explorer UI should be parsed for summarization.",
+      "The current Explorer folder contents should be summarized."
+    ],
+    "generated_at": 1777373380.9133108
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777373380.9133108,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 5
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777373380.9133108,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777373380.9133108,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "step_index": 1,
+        "step_total": 5,
+        "goal": "Open explorer and parse screen",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373380.9165049,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "High-risk action requires approval.",
+      "timestamp": 1777373380.9187121,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "high"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777373380.9187121,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "step_index": 2,
+        "step_total": 5,
+        "goal": "Open explorer and parse screen",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373380.9187121,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777373380.9187121,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Set Explorer stable details view",
+      "timestamp": 1777373380.9187121,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "step_index": 3,
+        "step_total": 5,
+        "goal": "Open explorer and parse screen",
+        "target": "ctrl+shift+6",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373380.933805,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['ctrl', 'shift', '6']"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777373380.933805,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse Explorer for folder summary",
+      "timestamp": 1777373380.933805,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "parse_ui",
+        "step_index": 4,
+        "step_total": 5,
+        "goal": "Open explorer and parse screen",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777373380.950994,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "parse_ui",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777373380.952207,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize current Explorer folder",
+      "timestamp": 1777373380.952207,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "checkpoint",
+        "step_index": 5,
+        "step_total": 5,
+        "goal": "Open explorer and parse screen",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777373380.9660258,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "checkpoint",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777373380.9133108
+    },
+    {
+      "step_id": "step_2",
+      "approved": true,
+      "timestamp": 1777373380.9187121
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 8,
+      "known_visuals": 0,
+      "known_concepts": 4,
+      "known_controls": 8,
+      "known_entities": 1,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 0,
+      "learning_sessions": 0,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 3,
+      "action_outcomes": 3
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777373380.9133108,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "runtime",
+        "line": "I am starting the task.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777373380.9133108,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.9133108,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.9165049,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777373380.9187121,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "explorer",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.9187121,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777373380.9187121,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777373380.9187121,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key",
+          "app_id": "",
+          "target": "ctrl+shift+6"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.925074,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777373380.933805,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777373380.933805,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "parse_ui",
+        "line": "I am reading the current screen.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "parse_ui",
+          "app_id": "",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.940675,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "observe",
+        "line": "I am reading the current screen.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.950994,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "parse_ui"
+        }
+      },
+      {
+        "timestamp": 1777373380.952207,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "checkpoint",
+        "line": "I am checking whether the screen changed.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "checkpoint",
+          "app_id": "",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.9554732,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "checkpoint",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "checkpoint"
+        }
+      },
+      {
+        "timestamp": 1777373380.9660258,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "checkpoint"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373380.9660258,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Task completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777373380.9133108
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777373380.9165049
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer should use the stable details view.",
+        "timeline_entry_at": 1777373380.9187121
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Verified keys: ['ctrl', 'shift', '6']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4",
+          "step_5"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer UI should be parsed for summarization.",
+        "timeline_entry_at": 1777373380.933805
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The current Explorer folder contents should be summarized.",
+        "timeline_entry_at": 1777373380.950994
+      },
+      {
+        "phase": "after_step_5",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777373380.9660258
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "active_app": "",
+        "active_window": {
+          "title": ""
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "state_hash": "a63aeec92b5151b4",
+        "state_id": "66c6c8ce2b7503c5",
+        "timestamp": 1777373380.9133108,
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "|desktop|",
+        "state_signature": "a63aeec92b5151b4",
+        "confidence": 0.2
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "state_hash": "846dbd697599b533",
+        "state_id": "c91f4949c42e224e",
+        "timestamp": 1777373380.9133108,
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.45
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "state_hash": "846dbd697599b533",
+        "state_id": "c99e8dab975aeb04",
+        "timestamp": 1777373380.9187121,
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.45
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "state_hash": "846dbd697599b533",
+        "state_id": "2d58c76df2cf54a4",
+        "timestamp": 1777373380.9187121,
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.45
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:press_key",
+        "last_verified_change": "",
+        "state_hash": "846dbd697599b533",
+        "state_id": "425c11cbf8848afd",
+        "timestamp": 1777373380.9187121,
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.45
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:press_key",
+        "last_verified_change": "Verified keys: ['ctrl', 'shift', '6']",
+        "state_hash": "846dbd697599b533",
+        "state_id": "ecf9471c87e58556",
+        "timestamp": 1777373380.933805,
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "045f6f771f8e4c25",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:parse_ui",
+        "last_verified_change": "",
+        "state_hash": "846dbd697599b533",
+        "state_id": "f1f0d1c42a66e733",
+        "timestamp": 1777373380.933805,
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "045f6f771f8e4c25",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:parse_ui",
+        "last_verified_change": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "state_hash": "846dbd697599b533",
+        "state_id": "df42bb8ff0d26a5d",
+        "timestamp": 1777373380.9479694,
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "a544fffa54c3eecc",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_5",
+        "phase": "before",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "before:checkpoint",
+        "last_verified_change": "",
+        "state_hash": "846dbd697599b533",
+        "state_id": "a8a861cec8d521a8",
+        "timestamp": 1777373380.9532008,
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "a544fffa54c3eecc",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.65
+      },
+      {
+        "step_id": "step_5",
+        "phase": "after",
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "dom_snapshot": {
+          "title": "Google",
+          "url": "https://www.google.com/",
+          "items": [
+            {
+              "tag": "textarea",
+              "id": "omnibox",
+              "role": "combobox",
+              "aria_label": "Search",
+              "placeholder": "Search Google or type a URL",
+              "text": "",
+              "selectors": [
+                "#omnibox",
+                "textarea[name='q']",
+                "textarea[aria-label='Search']"
+              ]
+            },
+            {
+              "tag": "button",
+              "aria_label": "Google Search",
+              "text": "Google Search",
+              "selectors": [
+                "button[aria-label='Google Search']"
+              ]
+            },
+            {
+              "tag": "a",
+              "text": "",
+              "href": "",
+              "selectors": [
+                "a[href='https://www.youtube.com/watch?v=abc']"
+              ]
+            }
+          ]
+        },
+        "uia_snapshot": {
+          "elements": []
+        },
+        "last_action": "after:checkpoint",
+        "last_verified_change": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "state_hash": "846dbd697599b533",
+        "state_id": "aa1dde48fcd35422",
+        "timestamp": 1777373380.9618003,
+        "focused_element": "",
+        "screen_hash": "6ca6ce4a3d8173b4",
+        "ui_tree_hash": "5eec19b65cdeb5e2",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "confidence": 0.65
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "active_app_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "uia_changed": true,
+        "state_signature_changed": true,
+        "state_hash_changed": true,
+        "changed": true,
+        "before_state_id": "66c6c8ce2b7503c5",
+        "after_state_id": "c91f4949c42e224e",
+        "before_state_hash": "a63aeec92b5151b4",
+        "after_state_hash": "846dbd697599b533",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "state_hash_changed": false,
+        "changed": false,
+        "before_state_id": "c99e8dab975aeb04",
+        "after_state_id": "2d58c76df2cf54a4",
+        "before_state_hash": "846dbd697599b533",
+        "after_state_hash": "846dbd697599b533",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "state_hash_changed": false,
+        "changed": true,
+        "before_state_id": "425c11cbf8848afd",
+        "after_state_id": "ecf9471c87e58556",
+        "before_state_hash": "846dbd697599b533",
+        "after_state_hash": "846dbd697599b533",
+        "confidence_delta": 0.2
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "state_hash_changed": false,
+        "changed": true,
+        "before_state_id": "f1f0d1c42a66e733",
+        "after_state_id": "df42bb8ff0d26a5d",
+        "before_state_hash": "846dbd697599b533",
+        "after_state_hash": "846dbd697599b533",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_5",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "state_hash_changed": false,
+        "changed": true,
+        "before_state_id": "a8a861cec8d521a8",
+        "after_state_id": "aa1dde48fcd35422",
+        "before_state_hash": "846dbd697599b533",
+        "after_state_hash": "846dbd697599b533",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373380.9165049
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373380.9187121
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer should use the stable details view.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373380.933805
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373380.949993
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373380.9639995
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.45,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.45,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.65,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "parse_ui",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.65,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "checkpoint",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.65,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "parse_health": [
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": false,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.01,
+        "state_cache_hit": false,
+        "state_cache_miss": true,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_hash": "5f8f6b7b6a23df93",
+        "state_signature": "5f8f6b7b6a23df93"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": true,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.0,
+        "state_cache_hit": true,
+        "state_cache_miss": false,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.002091,
+        "state_hash": "5f8f6b7b6a23df93",
+        "state_signature": "5f8f6b7b6a23df93",
+        "state_cache_age_seconds": 0.013855,
+        "state_cache_parse_mode": "windows_uia"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": true,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.0,
+        "state_cache_hit": true,
+        "state_cache_miss": false,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_hash": "5f8f6b7b6a23df93",
+        "state_signature": "5f8f6b7b6a23df93",
+        "state_cache_age_seconds": 0.026562,
+        "state_cache_parse_mode": "windows_uia"
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_3",
+        "action_type": "hotkey",
+        "intent": "Set Explorer stable details view",
+        "target": "ctrl+shift+6",
+        "evidence": [
+          "active_window:File Explorer",
+          "expected_change:Explorer should use the stable details view."
+        ],
+        "before_checks": {
+          "keys_present": true,
+          "active_window_known": true,
+          "no_destructive_ambiguity": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "dom_changed": false,
+          "scene_changed": true,
+          "no_destructive_ambiguity": true,
+          "screenshot_before": "",
+          "screenshot_after": "step_3_after.png"
+        },
+        "evidence_score": 0.5,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      }
+    ],
+    "last_observation": {
+      "nodes": [
+        {
+          "node_id": "main_page",
+          "label": "Main Page",
+          "learned_label": "",
+          "learned_concepts": [],
+          "node_type": "container",
+          "semantic_role": "main_page",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "main_page",
+          "state_tags": [
+            "main_page"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 1200,
+            "height": 800
+          },
+          "center": {
+            "x": 600,
+            "y": 400
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "tag": "",
+          "role": "",
+          "text": "",
+          "aria_label": "",
+          "placeholder": "",
+          "selector": "",
+          "rect": {},
+          "visible": true,
+          "enabled": true,
+          "stable_hash": "",
+          "children": [
+            {
+              "node_id": "row_awake",
+              "label": "Row: awake.py",
+              "learned_label": "",
+              "learned_concepts": [],
+              "node_type": "container",
+              "semantic_role": "list_row",
+              "entity_type": "python_file",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "content_item",
+                "list_row",
+                "main_page",
+                "table_surface"
+              ],
+              "affordances": [
+                "click",
+                "inspect",
+                "open",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 260,
+                "y": 120,
+                "width": 720,
+                "height": 52
+              },
+              "center": {
+                "x": 620,
+                "y": 146
+              },
+              "visual_id": "",
+              "visual_ids": [],
+              "tag": "",
+              "role": "",
+              "text": "",
+              "aria_label": "",
+              "placeholder": "",
+              "selector": "",
+              "rect": {},
+              "visible": true,
+              "enabled": true,
+              "stable_hash": "",
+              "children": [
+                {
+                  "node_id": "awake_label",
+                  "label": "awake.py",
+                  "learned_label": "",
+                  "learned_concepts": [],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.4,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 300,
+                    "y": 126,
+                    "width": 160,
+                    "height": 28
+                  },
+                  "center": {
+                    "x": 380,
+                    "y": 140
+                  },
+                  "visual_id": "",
+                  "visual_ids": [],
+                  "tag": "",
+                  "role": "",
+                  "text": "",
+                  "aria_label": "",
+                  "placeholder": "",
+                  "selector": "",
+                  "rect": {},
+                  "visible": true,
+                  "enabled": true,
+                  "stable_hash": "",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "row_video",
+              "label": "Row: demo.mp4",
+              "learned_label": "",
+              "learned_concepts": [],
+              "node_type": "container",
+              "semantic_role": "list_row",
+              "entity_type": "video",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "content_item",
+                "list_row",
+                "main_page",
+                "table_surface"
+              ],
+              "affordances": [
+                "click",
+                "inspect",
+                "open",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 260,
+                "y": 200,
+                "width": 720,
+                "height": 52
+              },
+              "center": {
+                "x": 620,
+                "y": 226
+              },
+              "visual_id": "",
+              "visual_ids": [],
+              "tag": "",
+              "role": "",
+              "text": "",
+              "aria_label": "",
+              "placeholder": "",
+              "selector": "",
+              "rect": {},
+              "visible": true,
+              "enabled": true,
+              "stable_hash": "",
+              "children": [
+                {
+                  "node_id": "video_label",
+                  "label": "demo.mp4",
+                  "learned_label": "",
+                  "learned_concepts": [],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.4,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 300,
+                    "y": 206,
+                    "width": 160,
+                    "height": 28
+                  },
+                  "center": {
+                    "x": 380,
+                    "y": 220
+                  },
+                  "visual_id": "",
+                  "visual_ids": [],
+                  "tag": "",
+                  "role": "",
+                  "text": "",
+                  "aria_label": "",
+                  "placeholder": "",
+                  "selector": "",
+                  "rect": {},
+                  "visible": true,
+                  "enabled": true,
+                  "stable_hash": "",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "node_id": "nav_desktop",
+          "label": "Desktop",
+          "learned_label": "",
+          "learned_concepts": [],
+          "node_type": "button",
+          "semantic_role": "menu_item",
+          "entity_type": "navigation_item",
+          "app_id": "explorer",
+          "region": "left_menu",
+          "state_tags": [
+            "left_menu",
+            "menu_item"
+          ],
+          "affordances": [
+            "click",
+            "navigate",
+            "select"
+          ],
+          "stability": 0.8,
+          "source_frame_id": "",
+          "box": {
+            "x": 20,
+            "y": 160,
+            "width": 160,
+            "height": 36
+          },
+          "center": {
+            "x": 100,
+            "y": 178
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "tag": "",
+          "role": "",
+          "text": "",
+          "aria_label": "",
+          "placeholder": "",
+          "selector": "",
+          "rect": {},
+          "visible": true,
+          "enabled": true,
+          "stable_hash": "",
+          "children": []
+        },
+        {
+          "node_id": "nav_downloads",
+          "label": "Downloads",
+          "learned_label": "",
+          "learned_concepts": [],
+          "node_type": "button",
+          "semantic_role": "menu_item",
+          "entity_type": "navigation_item",
+          "app_id": "explorer",
+          "region": "left_menu",
+          "state_tags": [
+            "left_menu",
+            "menu_item"
+          ],
+          "affordances": [
+            "click",
+            "navigate",
+            "select"
+          ],
+          "stability": 0.8,
+          "source_frame_id": "",
+          "box": {
+            "x": 20,
+            "y": 220,
+            "width": 160,
+            "height": 36
+          },
+          "center": {
+            "x": 100,
+            "y": 238
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "tag": "",
+          "role": "",
+          "text": "",
+          "aria_label": "",
+          "placeholder": "",
+          "selector": "",
+          "rect": {},
+          "visible": true,
+          "enabled": true,
+          "stable_hash": "",
+          "children": []
+        },
+        {
+          "node_id": "search_explorer",
+          "label": "Search",
+          "learned_label": "",
+          "learned_concepts": [],
+          "node_type": "text_field",
+          "semantic_role": "text_field",
+          "entity_type": "search_field",
+          "app_id": "explorer",
+          "region": "top_menu",
+          "state_tags": [
+            "text_field",
+            "top_menu"
+          ],
+          "affordances": [
+            "focus",
+            "search",
+            "type"
+          ],
+          "stability": 0.8,
+          "source_frame_id": "",
+          "box": {
+            "x": 960,
+            "y": 60,
+            "width": 180,
+            "height": 30
+          },
+          "center": {
+            "x": 1050,
+            "y": 75
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "tag": "",
+          "role": "",
+          "text": "",
+          "aria_label": "",
+          "placeholder": "",
+          "selector": "",
+          "rect": {},
+          "visible": true,
+          "enabled": true,
+          "stable_hash": "",
+          "children": []
+        }
+      ],
+      "source": "vision",
+      "metadata": {
+        "output_filename": "explorer_summary.png",
+        "environment": {
+          "windows": {
+            "active_window": {
+              "title": "File Explorer"
+            },
+            "active_app_guess": "explorer",
+            "open_windows": [],
+            "adapter_mode": "native_window_metadata"
+          },
+          "browser": {
+            "available": true,
+            "cdp_available": true,
+            "tab_count": 1,
+            "tab_titles": [
+              "Google"
+            ],
+            "adapter_mode": "browser_dom_metadata"
+          }
+        },
+        "parse_health": {
+          "parse_mode": "windows_uia",
+          "cache_hit": true,
+          "worker_used": false,
+          "parse_elapsed_seconds": 0.0,
+          "state_cache_hit": true,
+          "state_cache_miss": false,
+          "state_cache_reason": "empty",
+          "state_probe_elapsed_seconds": 0.002091,
+          "state_hash": "5f8f6b7b6a23df93",
+          "state_signature": "5f8f6b7b6a23df93",
+          "state_cache_age_seconds": 0.013855,
+          "state_cache_parse_mode": "windows_uia"
+        },
+        "app_id": "explorer",
+        "app_name": "File Explorer",
+        "scene": {
+          "app_id": "explorer",
+          "app_name": "File Explorer",
+          "active_window_title": "File Explorer",
+          "node_count": 8,
+          "salient_labels": [
+            "Main Page",
+            "Row: awake.py",
+            "awake.py",
+            "Row: demo.mp4",
+            "demo.mp4",
+            "Desktop",
+            "Downloads",
+            "Search"
+          ],
+          "ambiguous": false,
+          "summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop"
+        },
+        "scene_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop"
+      }
+    }
+  },
+  "mission": {
+    "mission_id": "mission_task_574968042c",
+    "goal": "Open explorer and parse screen",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_5",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Set Explorer stable details view",
+        "expected_scene": "Explorer should use the stable details view.",
+        "completion_rule": "Explorer should use the stable details view.",
+        "recovery_rule": "Refocus Explorer and retry Ctrl+Shift+6.",
+        "status": "completed",
+        "notes": [
+          "Verified keys: ['ctrl', 'shift', '6']"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Parse Explorer for folder summary",
+        "expected_scene": "Explorer UI should be parsed for summarization.",
+        "completion_rule": "Explorer UI should be parsed for summarization.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop"
+        ]
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Summarize current Explorer folder",
+        "expected_scene": "The current Explorer folder contents should be summarized.",
+        "completion_rule": "The current Explorer folder contents should be summarized.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop"
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777373380.9133108
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373380.9165049
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373380.9187121
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer should use the stable details view.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373380.933805
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "Explorer UI should be parsed for summarization.",
+      "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777373380.949993
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "The current Explorer folder contents should be summarized.",
+      "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777373380.9639995
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373380.9165049
+      },
+      "timestamp": 1777373380.9165049
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373380.9187121
+      },
+      "timestamp": 1777373380.9187121
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "press_key",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified keys: ['ctrl', 'shift', '6']",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer should use the stable details view.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373380.933805
+      },
+      "timestamp": 1777373380.933805
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "parse_ui",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373380.949993
+      },
+      "timestamp": 1777373380.950994
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "checkpoint",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373380.9639995
+      },
+      "timestamp": 1777373380.9649973
+    }
+  ],
+  "started_at": 1777373380.9133108,
+  "finished_at": 1777373380.9660258
+}

@@ -1,0 +1,390 @@
+{
+  "mission": {
+    "mission_id": "chrome_duplicate_search_field",
+    "category": "duplicate_label_disambiguation",
+    "prompt": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+    "expected_apps": [
+      "chrome"
+    ],
+    "setup": "Start Chrome with remote debugging on port 9222; page may contain another search field.",
+    "success_signal": "The omnibox receives the query.",
+    "tags": [
+      "duplicate_label",
+      "dom",
+      "region_disambiguation"
+    ]
+  },
+  "iteration": 1,
+  "error": "KeyboardInterrupt",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 10
+      },
+      "timestamp": 1777208842.334626
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208842.3352847
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777208842.3352847
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      },
+      "timestamp": 1777208845.326617
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208845.326617
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      },
+      "timestamp": 1777208845.326617
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      },
+      "timestamp": 1777208847.5940382
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208847.5947423
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome address bar",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key"
+      },
+      "timestamp": 1777208847.5947423
+    },
+    {
+      "phase": "contract",
+      "message": "hotkey contract verified.",
+      "metadata": {
+        "step_id": "step_3",
+        "target": "ctrl+l"
+      },
+      "timestamp": 1777208853.8568933
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['ctrl', 'l']"
+      },
+      "timestamp": 1777208855.133951
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208855.133951
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Type Chrome query: benchmark query",
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "type_text"
+      },
+      "timestamp": 1777208855.133951
+    },
+    {
+      "phase": "contract",
+      "message": "type_text contract verified.",
+      "metadata": {
+        "step_id": "step_4",
+        "target": "Chrome address bar"
+      },
+      "timestamp": 1777208873.036272
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified typed 15 characters."
+      },
+      "timestamp": 1777208874.310954
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208874.310954
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome query text for benchmark query",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      },
+      "timestamp": 1777208874.310954
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected app 'chrome' but saw 'explorer'."
+      },
+      "timestamp": 1777208880.2149987
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_5",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777208884.431462
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208887.9646082
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Submit Chrome query",
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "press_key"
+      },
+      "timestamp": 1777208887.9646082
+    },
+    {
+      "phase": "contract",
+      "message": "press_key contract verified.",
+      "metadata": {
+        "step_id": "step_6",
+        "target": "enter"
+      },
+      "timestamp": 1777208895.013018
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['enter']"
+      },
+      "timestamp": 1777208896.223232
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208896.7425804
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome query text for benchmark query",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      },
+      "timestamp": 1777208896.7425804
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected app 'chrome' but saw 'explorer'."
+      },
+      "timestamp": 1777208902.2533574
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_5",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777208906.4859235
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_7",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208909.9512873
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for Chrome results page",
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "wait_for"
+      },
+      "timestamp": 1777208909.9512873
+    },
+    {
+      "phase": "contract",
+      "message": "wait_for contract failed.",
+      "metadata": {
+        "step_id": "step_7",
+        "target": "chrome"
+      },
+      "timestamp": 1777208912.6121686
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Wait condition timed out."
+      },
+      "timestamp": 1777208913.9260497
+    },
+    {
+      "phase": "contract",
+      "message": "wait_for contract failed.",
+      "metadata": {
+        "step_id": "step_7_retry_1",
+        "target": "chrome"
+      },
+      "timestamp": 1777208919.740837
+    },
+    {
+      "phase": "recover",
+      "message": "Executable recovery retry completed.",
+      "metadata": {
+        "step_id": "step_7",
+        "resolver_used": "bounded_wait_retry",
+        "retry_success": false
+      },
+      "timestamp": 1777208920.7660131
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: wait_and_reparse, refocus_window, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_7",
+        "failure_reason": "TIMEOUT"
+      },
+      "timestamp": 1777208920.7660131
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus chrome.",
+      "metadata": {
+        "step_id": "step_7"
+      },
+      "timestamp": 1777208920.7660131
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_8",
+        "risk_level": "low"
+      },
+      "timestamp": 1777208925.5812
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome results page",
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene"
+      },
+      "timestamp": 1777208925.5812
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected app 'chrome' but saw 'explorer'."
+      },
+      "timestamp": 1777208941.7179997
+    }
+  ]
+}

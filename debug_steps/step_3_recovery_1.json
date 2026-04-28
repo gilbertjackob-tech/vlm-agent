@@ -1,0 +1,58 @@
+{
+    "timestamp": 1777204536.404048,
+    "context_window": [
+        0,
+        0,
+        1919,
+        895
+    ],
+    "element_count": 1,
+    "parse_health": {
+        "screen_hash": "fb5626d1577874902f8e4e884e7d0890",
+        "candidate_count": 1,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 0,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.232371,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 3.231114
+    },
+    "memory_summary": {
+        "known_labels": 512,
+        "known_visuals": 1493,
+        "known_concepts": 26,
+        "transition_count": 0
+    },
+    "ui_graph": [
+        {
+            "id": "main_page",
+            "label": "Main Page",
+            "box": {
+                "x": 307,
+                "y": 161,
+                "width": 1613,
+                "height": 735
+            },
+            "type": "container",
+            "center": {
+                "x": 1113,
+                "y": 528
+            },
+            "semantic_role": "main_page",
+            "region": "main_page",
+            "children": [],
+            "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "container",
+                "folder"
+            ],
+            "memory_votes": 4886
+        }
+    ]
+}

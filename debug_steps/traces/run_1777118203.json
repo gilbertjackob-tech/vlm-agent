@@ -1,0 +1,510 @@
+{
+  "run_id": "run_1777118203",
+  "task": {
+    "prompt": "Learn what clicking safe controls opens in the current app",
+    "goal": "Learn what clicking safe controls opens in the current app",
+    "constraints": [],
+    "trust_mode": "mostly_autonomous",
+    "task_id": "task_54b8e2b2a0",
+    "created_at": 1777118203.0057275
+  },
+  "plan": {
+    "task": {
+      "prompt": "Learn what clicking safe controls opens in the current app",
+      "goal": "Learn what clicking safe controls opens in the current app",
+      "constraints": [],
+      "trust_mode": "mostly_autonomous",
+      "task_id": "task_54b8e2b2a0",
+      "created_at": 1777118203.0057275
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Learn safe click outcomes",
+        "action_type": "interaction_learning",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "explorer"
+          }
+        },
+        "intent": {
+          "verb": "interaction_learning",
+          "semantic_target": "explorer",
+          "description": "Learn safe click outcomes",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "max_actions": 5,
+          "settle_wait": 0.8,
+          "recover_after_each": true,
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "explorer"
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "medium",
+        "requires_approval": false,
+        "success_criteria": "Safe clicks should produce rewarded or punished interaction edges.",
+        "fallback_hint": "Reduce action count and retry if scene changes are unstable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "File Explorer scene with 280 nodes; highlights: Top Menu, Downloads, Downloads, Downloads, Downloads, Maruf Sir",
+    "required_apps": [],
+    "success_conditions": [
+      "Safe clicks should produce rewarded or punished interaction edges."
+    ],
+    "generated_at": 1777118203.5323493
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777118204.0510786,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 1
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777118204.0522704,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "medium"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Learn safe click outcomes",
+      "timestamp": 1777118204.0670354,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "interaction_learning"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777118223.1382356,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "interaction_learning",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Interaction learning ran 0 trials; rewards +0/-0."
+      }
+    }
+  ],
+  "approvals": [],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 261,
+      "known_visuals": 378,
+      "known_concepts": 19,
+      "known_controls": 702,
+      "known_entities": 1,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 0,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 2,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 13,
+      "scene_deltas": 2,
+      "action_outcomes": 2
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "VLM Autopilot Command Center",
+          "left": -32000,
+          "top": -32000,
+          "width": 237,
+          "height": 39
+        },
+        "open_windows": [
+          {
+            "title": "VLM Autopilot Command Center",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Downloads and 1 more tab - File Explorer",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "PDF Pro Tools - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Gigs - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "run_task.py - vlm_agent - Visual Studio Code",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Machine Learning Exam Scenarios",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "*new 11 - Notepad++",
+            "left": 951,
+            "top": 0,
+            "width": 978,
+            "height": 1017
+          },
+          {
+            "title": "WhatsApp",
+            "left": 729,
+            "top": 0,
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "(38) WhatsApp",
+            "left": 740,
+            "top": 1,
+            "width": 1178,
+            "height": 888
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    },
+    "interaction_learning": [
+      {
+        "session_id": "interact_1777118204",
+        "timestamp": 1777118222.8824818,
+        "app_id": "explorer",
+        "status": "completed",
+        "candidate_count": 15,
+        "trial_count": 0,
+        "positive_rewards": 0,
+        "negative_rewards": 0,
+        "skipped_count": 15,
+        "skipped": [
+          {
+            "label": "Main Page",
+            "node_id": "main_page",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "List: VLM",
+            "node_id": "main_list",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Row: VLM",
+            "node_id": "row_1",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "AUTOPILOT",
+            "node_id": "8",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "ONLINE",
+            "node_id": "26",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Row: hybrid vision",
+            "node_id": "row_2",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "deterministic control",
+            "node_id": "10",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "reward graph",
+            "node_id": "14",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Row: Learn",
+            "node_id": "row_4",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "what",
+            "node_id": "38",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "clicking",
+            "node_id": "15",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "opens",
+            "node_id": "35",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "current",
+            "node_id": "30",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Row: Thinking",
+            "node_id": "row_6",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Doing: Executing: Learn safe click outcomes",
+            "node_id": "5",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          }
+        ],
+        "trials": [],
+        "memory_before": {
+          "known_labels": 226,
+          "known_visuals": 338,
+          "known_concepts": 18,
+          "known_controls": 632,
+          "known_entities": 1,
+          "transition_count": 0,
+          "negative_examples": 0,
+          "review_queue": 4,
+          "learning_sessions": 0,
+          "interaction_edges": 0,
+          "action_values": 0,
+          "workflow_count": 2,
+          "trusted_workflows": 0,
+          "trusted_apps": 2,
+          "blocked_apps": 0,
+          "blocked_concepts": 0,
+          "recent_runs": 13,
+          "scene_deltas": 2,
+          "action_outcomes": 2
+        },
+        "memory_after": {
+          "known_labels": 261,
+          "known_visuals": 378,
+          "known_concepts": 19,
+          "known_controls": 702,
+          "known_entities": 1,
+          "transition_count": 0,
+          "negative_examples": 0,
+          "review_queue": 4,
+          "learning_sessions": 0,
+          "interaction_edges": 0,
+          "action_values": 0,
+          "workflow_count": 2,
+          "trusted_workflows": 0,
+          "trusted_apps": 2,
+          "blocked_apps": 0,
+          "blocked_concepts": 0,
+          "recent_runs": 13,
+          "scene_deltas": 2,
+          "action_outcomes": 2
+        },
+        "report_path": "debug_steps\\learning_sessions\\interact_1777118204.json"
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "Safe clicks should produce rewarded or punished interaction edges.",
+        "before_summary": "File Explorer scene with 280 nodes; highlights: Top Menu, Downloads, Downloads, Downloads, Downloads, Maruf Sir",
+        "after_summary": "File Explorer scene with 80 nodes; highlights: Main Page, List: VLM, Row: VLM, VLM, AUTOPILOT, ONLINE",
+        "actual_change": "added: 17:56, 17:56 340 q search - 2 4 59% 25/04/2026, 5 steps, 59%, app; removed: - x, -001.zip, 0416(1), 100 (1).png, 100.png",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "17:56",
+          "17:56 340 q search - 2 4 59% 25/04/2026",
+          "5 steps",
+          "59%",
+          "app",
+          "autopilot",
+          "clicking",
+          "controls"
+        ],
+        "removed_labels": [
+          "- x",
+          "-001.zip",
+          "0416(1)",
+          "100 (1).png",
+          "100.png",
+          "100.zip",
+          "163 items",
+          "17:54"
+        ],
+        "recovery_hint": "",
+        "timestamp": 1777118223.114135
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_54b8e2b2a0",
+    "goal": "Learn what clicking safe controls opens in the current app",
+    "subgoal": "File Explorer scene with 280 nodes; highlights: Top Menu, Downloads, Downloads, Downloads, Downloads, Maruf Sir",
+    "app_id": "",
+    "status": "success",
+    "current_checkpoint_id": "step_1",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Learn safe click outcomes",
+        "expected_scene": "Safe clicks should produce rewarded or punished interaction edges.",
+        "completion_rule": "Safe clicks should produce rewarded or punished interaction edges.",
+        "recovery_rule": "Reduce action count and retry if scene changes are unstable.",
+        "status": "completed",
+        "notes": [
+          "Interaction learning ran 0 trials; rewards +0/-0."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777118203.5323493
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "Safe clicks should produce rewarded or punished interaction edges.",
+      "before_summary": "File Explorer scene with 280 nodes; highlights: Top Menu, Downloads, Downloads, Downloads, Downloads, Maruf Sir",
+      "after_summary": "File Explorer scene with 80 nodes; highlights: Main Page, List: VLM, Row: VLM, VLM, AUTOPILOT, ONLINE",
+      "actual_change": "added: 17:56, 17:56 340 q search - 2 4 59% 25/04/2026, 5 steps, 59%, app; removed: - x, -001.zip, 0416(1), 100 (1).png, 100.png",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "17:56",
+        "17:56 340 q search - 2 4 59% 25/04/2026",
+        "5 steps",
+        "59%",
+        "app",
+        "autopilot",
+        "clicking",
+        "controls"
+      ],
+      "removed_labels": [
+        "- x",
+        "-001.zip",
+        "0416(1)",
+        "100 (1).png",
+        "100.png",
+        "100.zip",
+        "163 items",
+        "17:54"
+      ],
+      "recovery_hint": "",
+      "timestamp": 1777118223.114135
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "interaction_learning",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": false,
+      "notes": "Interaction learning ran 0 trials; rewards +0/-0.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "Safe clicks should produce rewarded or punished interaction edges.",
+        "before_summary": "File Explorer scene with 280 nodes; highlights: Top Menu, Downloads, Downloads, Downloads, Downloads, Maruf Sir",
+        "after_summary": "File Explorer scene with 80 nodes; highlights: Main Page, List: VLM, Row: VLM, VLM, AUTOPILOT, ONLINE",
+        "actual_change": "added: 17:56, 17:56 340 q search - 2 4 59% 25/04/2026, 5 steps, 59%, app; removed: - x, -001.zip, 0416(1), 100 (1).png, 100.png",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "17:56",
+          "17:56 340 q search - 2 4 59% 25/04/2026",
+          "5 steps",
+          "59%",
+          "app",
+          "autopilot",
+          "clicking",
+          "controls"
+        ],
+        "removed_labels": [
+          "- x",
+          "-001.zip",
+          "0416(1)",
+          "100 (1).png",
+          "100.png",
+          "100.zip",
+          "163 items",
+          "17:54"
+        ],
+        "recovery_hint": "",
+        "timestamp": 1777118223.114135
+      },
+      "timestamp": 1777118223.136172
+    }
+  ],
+  "started_at": 1777118203.5323493,
+  "finished_at": 1777118223.141755
+}

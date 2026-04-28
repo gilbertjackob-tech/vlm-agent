@@ -1,0 +1,1357 @@
+{
+  "run_id": "run_1776980197",
+  "task": {
+    "prompt": "Open chrome and search youtube for lo-fi coding mix",
+    "goal": "Open chrome and search youtube for lo-fi coding mix",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_ae18e00939",
+    "created_at": 1776980197.8766153
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open chrome and search youtube for lo-fi coding mix",
+      "goal": "Open chrome and search youtube for lo-fi coding mix",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_ae18e00939",
+      "created_at": 1776980197.8766153
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to chrome",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "chrome",
+          "description": "Route to chrome",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "chrome",
+          "window_title": "Google Chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm chrome focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "chrome",
+          "description": "Confirm chrome focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Focus Chrome omnibox",
+        "action_type": "click_node",
+        "target": {
+          "kind": "search_field",
+          "value": "Chrome omnibox",
+          "filters": {
+            "app_id": "chrome",
+            "region": "top_menu",
+            "entity_type": "omnibox",
+            "affordance": "focus",
+            "min_score": 0.5,
+            "exclude_destructive": true
+          }
+        },
+        "intent": {
+          "verb": "click_node",
+          "semantic_target": "Chrome omnibox",
+          "description": "Focus Chrome omnibox",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "hybrid",
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "filters": {
+            "app_id": "chrome",
+            "region": "top_menu",
+            "entity_type": "omnibox",
+            "affordance": "focus",
+            "min_score": 0.5,
+            "exclude_destructive": true
+          },
+          "selector_candidates": [],
+          "expected_change": "Chrome omnibox should be focused.",
+          "expected_app": "chrome",
+          "settle_wait": 0.7,
+          "click_count": 1
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome omnibox should be focused.",
+        "fallback_hint": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "control_modes": [
+          "browser_dom",
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Wait for chrome to settle",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "chrome",
+          "description": "Wait for chrome to settle",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.2,
+          "expected_focus": "chrome",
+          "timeout": 1.0
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Verify scene after focus chrome omnibox",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify scene after focus chrome omnibox",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "filters": {},
+          "expected_labels": [
+            "search",
+            "address"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome omnibox should be focused.",
+        "fallback_hint": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "title": "Summarize scene change after focus chrome omnibox",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "chrome",
+          "description": "Summarize scene change after focus chrome omnibox",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Chrome omnibox should be focused.",
+          "recovery_hint": "Retry Chrome omnibox focus using DOM or vision fallback."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "title": "Type Chrome query: youtube lo-fi coding mix",
+        "action_type": "type_text",
+        "target": {
+          "kind": "text",
+          "value": "youtube lo-fi coding mix",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "type_text",
+          "semantic_target": "youtube lo-fi coding mix",
+          "description": "Type Chrome query: youtube lo-fi coding mix",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "text": "youtube lo-fi coding mix",
+          "selector": "",
+          "clear_first": true
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "title": "Verify Chrome query text for youtube lo-fi coding mix",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome query text for youtube lo-fi coding mix",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "youtube lo-fi coding mix",
+            "youtube",
+            "lo-fi",
+            "coding",
+            "mix"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "title": "Submit Chrome query",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "enter",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "enter",
+          "description": "Submit Chrome query",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "keys": [
+            "enter"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should submit the typed query.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_10",
+        "title": "Wait for Chrome results page",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "chrome",
+          "description": "Wait for Chrome results page",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.4,
+          "expected_focus": "chrome",
+          "timeout": 1.2
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should remain focused while results load.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_11",
+        "title": "Verify Chrome results page",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome results page",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "lo-fi coding mix",
+            "lo-fi",
+            "coding",
+            "mix",
+            "youtube"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should run the requested search and show a results page.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_12",
+        "title": "Summarize Chrome results page change",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "chrome",
+          "description": "Summarize Chrome results page change",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Chrome should run the requested search and show a results page.",
+          "recovery_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome search scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "chrome"
+    ],
+    "success_conditions": [
+      "chrome should be visible and focused.",
+      "chrome should remain focused.",
+      "Chrome omnibox should be focused.",
+      "chrome should remain focused.",
+      "Chrome omnibox should be focused.",
+      "Scene delta should be recorded.",
+      "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+      "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+      "Chrome should submit the typed query.",
+      "Chrome should remain focused while results load.",
+      "Chrome should run the requested search and show a results page.",
+      "The Chrome search scene delta should be recorded."
+    ],
+    "generated_at": 1776980197.8869133
+  },
+  "status": "blocked",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1776980197.8869133,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 12
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1776980197.8879075,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "timestamp": 1776980197.8879075,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776980197.8951433,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.8951433,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "timestamp": 1776980197.8951433,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776980197.9002728,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.9002728,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "timestamp": 1776980197.9002728,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1776980197.9099073,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Clicked 'Search or type web address'."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.911214,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for chrome to settle",
+      "timestamp": 1776980197.911214,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776980197.9159644,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.9159644,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify scene after focus chrome omnibox",
+      "timestamp": 1776980197.9159644,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1776980197.926978,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.926978,
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize scene change after focus chrome omnibox",
+      "timestamp": 1776980197.926978,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1776980197.937222,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "No obvious scene change."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.937222,
+      "metadata": {
+        "step_id": "step_7",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Type Chrome query: youtube lo-fi coding mix",
+      "timestamp": 1776980197.937222,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "type_text"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776980197.9445422,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "type_text",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Typed 24 characters."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980197.9445422,
+      "metadata": {
+        "step_id": "step_8",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome query text for youtube lo-fi coding mix",
+      "timestamp": 1776980197.9445422,
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1776980197.9566362,
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step appears to trigger a dangerous typed or keyboard action.",
+      "timestamp": 1776980197.9566362,
+      "metadata": {
+        "step_id": "step_9",
+        "risk_level": "critical"
+      }
+    },
+    {
+      "phase": "blocked",
+      "message": "Policy blocked execution.",
+      "timestamp": 1776980197.9566362,
+      "metadata": {
+        "step_id": "step_9"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1776980197.8879075
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 0,
+      "known_visuals": 0,
+      "known_concepts": 0,
+      "known_controls": 0,
+      "known_entities": 0,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 0,
+      "action_outcomes": 0
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "added: chrome top bar, lo-fi coding mix - youtube, search or type web address, search results",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "chrome top bar",
+          "lo-fi coding mix - youtube",
+          "search or type web address",
+          "search results"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1776980197.8905523
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.8951433
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9056437
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.911214
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9195912
+      },
+      {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9309752
+      },
+      {
+        "step_id": "step_7",
+        "expected_change": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.937222
+      },
+      {
+        "step_id": "step_8",
+        "expected_change": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9490097
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.929976
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_ae18e00939",
+    "goal": "Open chrome and search youtube for lo-fi coding mix",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "chrome",
+    "status": "blocked",
+    "current_checkpoint_id": "step_9",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to chrome",
+        "expected_scene": "chrome should be visible and focused.",
+        "completion_rule": "chrome should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm chrome focus",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for chrome."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Focus Chrome omnibox",
+        "expected_scene": "Chrome omnibox should be focused.",
+        "completion_rule": "Chrome omnibox should be focused.",
+        "recovery_rule": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "status": "completed",
+        "notes": [
+          "Clicked 'Search or type web address'."
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Wait for chrome to settle",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Verify scene after focus chrome omnibox",
+        "expected_scene": "Chrome omnibox should be focused.",
+        "completion_rule": "Chrome omnibox should be focused.",
+        "recovery_rule": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "status": "completed",
+        "notes": [
+          "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+        ]
+      },
+      {
+        "checkpoint_id": "step_6",
+        "title": "Summarize scene change after focus chrome omnibox",
+        "expected_scene": "Scene delta should be recorded.",
+        "completion_rule": "Scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "No obvious scene change."
+        ]
+      },
+      {
+        "checkpoint_id": "step_7",
+        "title": "Type Chrome query: youtube lo-fi coding mix",
+        "expected_scene": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "completion_rule": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Typed 24 characters."
+        ]
+      },
+      {
+        "checkpoint_id": "step_8",
+        "title": "Verify Chrome query text for youtube lo-fi coding mix",
+        "expected_scene": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "completion_rule": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+        ]
+      },
+      {
+        "checkpoint_id": "step_9",
+        "title": "Submit Chrome query",
+        "expected_scene": "Chrome should submit the typed query.",
+        "completion_rule": "Chrome should submit the typed query.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "blocked",
+        "notes": [
+          "Step appears to trigger a dangerous typed or keyboard action."
+        ]
+      },
+      {
+        "checkpoint_id": "step_10",
+        "title": "Wait for Chrome results page",
+        "expected_scene": "Chrome should remain focused while results load.",
+        "completion_rule": "Chrome should remain focused while results load.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_11",
+        "title": "Verify Chrome results page",
+        "expected_scene": "Chrome should run the requested search and show a results page.",
+        "completion_rule": "Chrome should run the requested search and show a results page.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_12",
+        "title": "Summarize Chrome results page change",
+        "expected_scene": "The Chrome search scene delta should be recorded.",
+        "completion_rule": "The Chrome search scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      }
+    ],
+    "notes": [],
+    "created_at": 1776980197.8869133
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "chrome should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "added: chrome top bar, lo-fi coding mix - youtube, search or type web address, search results",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "chrome top bar",
+        "lo-fi coding mix - youtube",
+        "search or type web address",
+        "search results"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1776980197.8905523
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.8951433
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.9056437
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.911214
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.9195912
+    },
+    {
+      "step_id": "step_6",
+      "expected_change": "Scene delta should be recorded.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.9309752
+    },
+    {
+      "step_id": "step_7",
+      "expected_change": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.937222
+    },
+    {
+      "step_id": "step_8",
+      "expected_change": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980197.9490097
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "added: chrome top bar, lo-fi coding mix - youtube, search or type web address, search results",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "chrome top bar",
+          "lo-fi coding mix - youtube",
+          "search or type web address",
+          "search results"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1776980197.8905523
+      },
+      "timestamp": 1776980197.8928943
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for chrome.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.8951433
+      },
+      "timestamp": 1776980197.8981414
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "click_node",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "Search or type web address",
+      "target_node_id": "omnibox_node",
+      "focus_confirmed": true,
+      "notes": "Clicked 'Search or type web address'.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9056437
+      },
+      "timestamp": 1776980197.9076452
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.911214
+      },
+      "timestamp": 1776980197.9132137
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "verify_scene",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9195912
+      },
+      "timestamp": 1776980197.923737
+    },
+    {
+      "step_id": "step_6",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No obvious scene change.",
+      "scene_delta": {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9309752
+      },
+      "timestamp": 1776980197.9339428
+    },
+    {
+      "step_id": "step_7",
+      "action_type": "type_text",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Typed 24 characters.",
+      "scene_delta": {
+        "step_id": "step_7",
+        "expected_change": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.937222
+      },
+      "timestamp": 1776980197.94154
+    },
+    {
+      "step_id": "step_8",
+      "action_type": "verify_scene",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "scene_delta": {
+        "step_id": "step_8",
+        "expected_change": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980197.9490097
+      },
+      "timestamp": 1776980197.9526157
+    }
+  ],
+  "started_at": 1776980197.8869133,
+  "finished_at": 1776980197.9566362
+}

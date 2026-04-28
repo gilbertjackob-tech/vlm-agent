@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "trusted_apps": [
+    "explorer",
+    "chrome"
+  ],
+  "blocked_apps": [],
+  "blocked_concepts": [],
+  "allowlisted_paths": [],
+  "blocked_paths": []
+}

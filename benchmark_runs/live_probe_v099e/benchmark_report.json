@@ -1,0 +1,521 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777197269.8414896,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": true,
+  "repeat_count": 1,
+  "mission_count": 6,
+  "attempt_count": 4,
+  "expected_attempt_count": 6,
+  "complete": false,
+  "interrupted": false,
+  "output_dir": "benchmark_runs\\live_probe_v099e",
+  "metrics": {
+    "success_rate": 0.0,
+    "stable_success_rate": 0.0,
+    "unstable_success_count": 0,
+    "wrong_click_count": 0,
+    "recovery_count": 0,
+    "recovery_rate_per_successful_task": 0.0,
+    "recovery_depth_per_step": 0.0,
+    "focus_failure_count": 19,
+    "target_ambiguity_count": 0,
+    "target_switch_after_recovery_count": 0,
+    "duplicate_disambiguation_count": 0,
+    "avg_score_gap": 0.0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {
+      "repair": 19
+    },
+    "avg_steps_per_task": 4.75,
+    "avg_latency_per_step": 42.926732,
+    "avg_ocr_time_per_task": 0.0,
+    "avg_parse_time_per_task": 2.515038,
+    "avg_parse_time_per_parse": 0.529482,
+    "ocr_timeout_count": 0,
+    "ocr_call_count": 0,
+    "ocr_cache_hit_count": 0,
+    "parse_cache_hit_count": 18,
+    "dom_parse_count": 0,
+    "parse_worker_count": 1,
+    "parse_worker_elapsed_seconds": 0.039138,
+    "parse_worker_queue_wait_seconds": 0.0,
+    "structured_skip_count": 0,
+    "screen_hash_elapsed_seconds": 0.349442,
+    "failure_reason_distribution": {
+      "NO_STATE_CHANGE": 4,
+      "MISSION_TIMEOUT": 4
+    }
+  },
+  "category_metrics": {
+    "duplicate_label_disambiguation": {
+      "success_rate": 0.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 0,
+      "wrong_click_count": 0,
+      "recovery_count": 0,
+      "recovery_rate_per_successful_task": 0.0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 5,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 5
+      },
+      "avg_steps_per_task": 5.0,
+      "avg_latency_per_step": 41.38792,
+      "avg_ocr_time_per_task": 0.0,
+      "avg_parse_time_per_task": 2.608915,
+      "avg_parse_time_per_parse": 0.521783,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 5,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.078271,
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1,
+        "MISSION_TIMEOUT": 1
+      }
+    },
+    "file_explorer": {
+      "success_rate": 0.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 0,
+      "wrong_click_count": 0,
+      "recovery_count": 0,
+      "recovery_rate_per_successful_task": 0.0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 9,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 9
+      },
+      "avg_steps_per_task": 4.5,
+      "avg_latency_per_step": 44.461014,
+      "avg_ocr_time_per_task": 0.0,
+      "avg_parse_time_per_task": 2.396845,
+      "avg_parse_time_per_parse": 0.532632,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 8,
+      "dom_parse_count": 0,
+      "parse_worker_count": 1,
+      "parse_worker_elapsed_seconds": 0.039138,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.16809,
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 2,
+        "MISSION_TIMEOUT": 2
+      }
+    },
+    "window_switching": {
+      "success_rate": 0.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 0,
+      "wrong_click_count": 0,
+      "recovery_count": 0,
+      "recovery_rate_per_successful_task": 0.0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 5,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 5
+      },
+      "avg_steps_per_task": 5.0,
+      "avg_latency_per_step": 41.703835,
+      "avg_ocr_time_per_task": 0.0,
+      "avg_parse_time_per_task": 2.657546,
+      "avg_parse_time_per_parse": 0.531509,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 5,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.103081,
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1,
+        "MISSION_TIMEOUT": 1
+      }
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ]
+    },
+    {
+      "mission_id": "explorer_open_downloads",
+      "category": "file_explorer",
+      "prompt": "Open explorer and open downloads",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Downloads is selected or shown in Explorer.",
+      "tags": [
+        "navigation",
+        "target_resolution"
+      ]
+    },
+    {
+      "mission_id": "switch_explorer_to_chrome",
+      "category": "window_switching",
+      "prompt": "Switch from explorer to chrome and verify chrome is focused",
+      "expected_apps": [
+        "explorer",
+        "chrome"
+      ],
+      "setup": "Explorer and Chrome should both be open.",
+      "success_signal": "Chrome is the active window.",
+      "tags": [
+        "focus",
+        "routing"
+      ]
+    },
+    {
+      "mission_id": "explorer_duplicate_downloads",
+      "category": "duplicate_label_disambiguation",
+      "prompt": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "The sidebar Downloads target is used and Explorer navigates correctly.",
+      "tags": [
+        "duplicate_label",
+        "region_disambiguation"
+      ]
+    },
+    {
+      "mission_id": "chrome_duplicate_search_field",
+      "category": "duplicate_label_disambiguation",
+      "prompt": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Start Chrome with remote debugging on port 9222; page may contain another search field.",
+      "success_signal": "The omnibox receives the query.",
+      "tags": [
+        "duplicate_label",
+        "dom",
+        "region_disambiguation"
+      ]
+    },
+    {
+      "mission_id": "focus_shift_typing_case",
+      "category": "focus_verification",
+      "prompt": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Chrome should be available; page may contain another text field.",
+      "success_signal": "Typed text is verified in the focused Chrome address/search field.",
+      "tags": [
+        "focus",
+        "typing",
+        "verification"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ],
+      "events": 22,
+      "error": "",
+      "status": "failed",
+      "success": false,
+      "stable_success": false,
+      "step_count": 4,
+      "latency_seconds": 192.35649,
+      "latency_per_step": 48.089122,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 4,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 4
+      },
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1,
+        "MISSION_TIMEOUT": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777196449.json",
+      "contract_count": 0,
+      "state_snapshot_count": 12,
+      "state_diff_count": 4,
+      "parse_count": 4,
+      "ocr_elapsed_seconds": 0.0,
+      "parse_elapsed_seconds": 2.172498,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 3,
+      "dom_parse_count": 0,
+      "parse_worker_count": 1,
+      "parse_worker_elapsed_seconds": 0.039138,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.084711,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_parse_current_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_parse_current_run_01\\run_1777196449.json",
+      "screenshot_copies": []
+    },
+    {
+      "mission_id": "explorer_open_downloads",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and open downloads",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Downloads is selected or shown in Explorer.",
+      "tags": [
+        "navigation",
+        "target_resolution"
+      ],
+      "events": 27,
+      "error": "",
+      "status": "failed",
+      "success": false,
+      "stable_success": false,
+      "step_count": 5,
+      "latency_seconds": 207.792636,
+      "latency_per_step": 41.558527,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 5,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 5
+      },
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1,
+        "MISSION_TIMEOUT": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777196643.json",
+      "contract_count": 0,
+      "state_snapshot_count": 15,
+      "state_diff_count": 5,
+      "parse_count": 5,
+      "ocr_elapsed_seconds": 0.0,
+      "parse_elapsed_seconds": 2.621192,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 5,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.083379,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_open_downloads_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_open_downloads_run_01\\run_1777196643.json",
+      "screenshot_copies": []
+    },
+    {
+      "mission_id": "switch_explorer_to_chrome",
+      "category": "window_switching",
+      "iteration": 1,
+      "prompt": "Switch from explorer to chrome and verify chrome is focused",
+      "expected_apps": [
+        "explorer",
+        "chrome"
+      ],
+      "setup": "Explorer and Chrome should both be open.",
+      "success_signal": "Chrome is the active window.",
+      "tags": [
+        "focus",
+        "routing"
+      ],
+      "events": 27,
+      "error": "",
+      "status": "failed",
+      "success": false,
+      "stable_success": false,
+      "step_count": 5,
+      "latency_seconds": 208.519177,
+      "latency_per_step": 41.703835,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 5,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 5
+      },
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1,
+        "MISSION_TIMEOUT": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777196852.json",
+      "contract_count": 0,
+      "state_snapshot_count": 15,
+      "state_diff_count": 5,
+      "parse_count": 5,
+      "ocr_elapsed_seconds": 0.0,
+      "parse_elapsed_seconds": 2.657546,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 5,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.103081,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\switch_explorer_to_chrome_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\switch_explorer_to_chrome_run_01\\run_1777196852.json",
+      "screenshot_copies": []
+    },
+    {
+      "mission_id": "explorer_duplicate_downloads",
+      "category": "duplicate_label_disambiguation",
+      "iteration": 1,
+      "prompt": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "The sidebar Downloads target is used and Explorer navigates correctly.",
+      "tags": [
+        "duplicate_label",
+        "region_disambiguation"
+      ],
+      "events": 27,
+      "error": "",
+      "status": "failed",
+      "success": false,
+      "stable_success": false,
+      "step_count": 5,
+      "latency_seconds": 206.939599,
+      "latency_per_step": 41.38792,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 5,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {
+        "repair": 5
+      },
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1,
+        "MISSION_TIMEOUT": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777197062.json",
+      "contract_count": 0,
+      "state_snapshot_count": 15,
+      "state_diff_count": 5,
+      "parse_count": 5,
+      "ocr_elapsed_seconds": 0.0,
+      "parse_elapsed_seconds": 2.608915,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 5,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.078271,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_duplicate_downloads_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_duplicate_downloads_run_01\\run_1777197062.json",
+      "screenshot_copies": []
+    }
+  ],
+  "failed_artifacts": [
+    {
+      "mission_id": "explorer_parse_current",
+      "iteration": 1,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_parse_current_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_parse_current_run_01\\run_1777196449.json",
+      "screenshots": []
+    },
+    {
+      "mission_id": "explorer_open_downloads",
+      "iteration": 1,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_open_downloads_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_open_downloads_run_01\\run_1777196643.json",
+      "screenshots": []
+    },
+    {
+      "mission_id": "switch_explorer_to_chrome",
+      "iteration": 1,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\switch_explorer_to_chrome_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\switch_explorer_to_chrome_run_01\\run_1777196852.json",
+      "screenshots": []
+    },
+    {
+      "mission_id": "explorer_duplicate_downloads",
+      "iteration": 1,
+      "artifact_dir": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_duplicate_downloads_run_01",
+      "trace_copy": "benchmark_runs\\live_probe_v099e\\failed_artifacts\\explorer_duplicate_downloads_run_01\\run_1777197062.json",
+      "screenshots": []
+    }
+  ]
+}

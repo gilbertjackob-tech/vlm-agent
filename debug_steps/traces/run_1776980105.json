@@ -1,0 +1,381 @@
+{
+  "run_id": "run_1776980105",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_2f2c40ff82",
+    "created_at": 1776980105.465923
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_2f2c40ff82",
+      "created_at": 1776980105.465923
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused."
+    ],
+    "generated_at": 1776980105.4669242
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1776980105.4669242,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 2
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1776980105.4669242,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1776980105.4669242,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776980105.4731414,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776980105.4731414,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1776980105.4731414,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776980105.4761338,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1776980105.4669242
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 0,
+      "known_visuals": 0,
+      "known_concepts": 0,
+      "known_controls": 0,
+      "known_entities": 0,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 0,
+      "action_outcomes": 0
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1776980105.4689217
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980105.4731414
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_2f2c40ff82",
+    "goal": "Open explorer and parse screen",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_2",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1776980105.4669242
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1776980105.4689217
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776980105.4731414
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1776980105.4689217
+      },
+      "timestamp": 1776980105.4710615
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776980105.4731414
+      },
+      "timestamp": 1776980105.4751341
+    }
+  ],
+  "started_at": 1776980105.4669242,
+  "finished_at": 1776980105.4761338
+}

@@ -1,0 +1,3233 @@
+{
+  "run_id": "run_1777138707",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_8f972c0343",
+    "created_at": 1777138707.3887193
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_8f972c0343",
+      "created_at": 1777138707.3887193
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Parse Explorer for folder summary",
+        "action_type": "parse_ui",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "parse_ui",
+          "semantic_target": "explorer",
+          "description": "Parse Explorer for folder summary",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "output_filename": "explorer_summary.png"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer UI should be parsed for summarization.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Summarize current Explorer folder",
+        "action_type": "checkpoint",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          }
+        },
+        "intent": {
+          "verb": "checkpoint",
+          "semantic_target": "explorer",
+          "description": "Summarize current Explorer folder",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "The current Explorer folder contents should be summarized.",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          },
+          "recovery_hint": "Reparse Explorer and retry summarization."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The current Explorer folder contents should be summarized.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer UI should be parsed for summarization.",
+      "The current Explorer folder contents should be summarized."
+    ],
+    "generated_at": 1777138707.4302943
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777138707.4438224,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777138707.4438224,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777138707.4438224,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777138737.3751993,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777138737.4226644,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777138737.4226644,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777138737.5326927,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777138737.5642545,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse Explorer for folder summary",
+      "timestamp": 1777138737.5642545,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777138748.5060225,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777138748.5646648,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize current Explorer folder",
+      "timestamp": 1777138748.5646648,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "checkpoint"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777138758.2809033,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "checkpoint",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777138707.4438224
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 379,
+      "known_visuals": 779,
+      "known_concepts": 26,
+      "known_controls": 1529,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 9,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 26,
+      "scene_deltas": 150,
+      "action_outcomes": 150
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "README.md - vlm_agent - Visual Studio Code",
+          "left": -11,
+          "top": -11,
+          "width": 1942,
+          "height": 1030
+        },
+        "open_windows": [
+          {
+            "title": "README.md - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "ISDD FINAL.pdf - Google Chrome",
+            "left": -9,
+            "top": 0,
+            "width": 1115,
+            "height": 1017
+          },
+          {
+            "title": "Desktop - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 1008
+          },
+          {
+            "title": "YouTube",
+            "left": 75,
+            "top": 0,
+            "width": 1725,
+            "height": 978
+          },
+          {
+            "title": "WhatsApp",
+            "left": 729,
+            "top": 0,
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "title": "vlm_agent and 1 more tab - File Explorer",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "ChatGPT - AK",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "Downloads - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 1008
+          },
+          {
+            "title": "Google - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "classes.txt - Notepad",
+            "left": 41,
+            "top": 473,
+            "width": 1151,
+            "height": 545
+          },
+          {
+            "title": "Fiverr / Inbox - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "(37) WhatsApp",
+            "left": 740,
+            "top": 1,
+            "width": 1178,
+            "height": 888
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 3,
+        "tab_titles": [
+          "Google",
+          "youtube - Google Search",
+          "Google"
+        ],
+        "active_title": "Google",
+        "active_url": "https://www.google.com/"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777138707.4438224
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777138737.3751993
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer UI should be parsed for summarization.",
+        "timeline_entry_at": 1777138737.5326927
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The current Explorer folder contents should be summarized.",
+        "timeline_entry_at": 1777138748.5060225
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777138758.2809033
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "baf9f0f651ee39c1",
+        "timestamp": 1777138707.4800413,
+        "active_window": {
+          "title": "README.md - vlm_agent - Visual Studio Code",
+          "left": -11,
+          "top": -11,
+          "width": 1942,
+          "height": 1030
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "fc5189d0ccfb23bb",
+        "timestamp": 1777138737.3370514,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "5f6391c2bbeba9dd",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "7445684a1a327d7e",
+        "timestamp": 1777138737.44155,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "5f6391c2bbeba9dd",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "24fc3b12754f4d7f",
+        "timestamp": 1777138737.4876244,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "5f6391c2bbeba9dd",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "b8b93f93f200b976",
+        "timestamp": 1777138737.5995424,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "5f6391c2bbeba9dd",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:parse_ui",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "627c40b29baa52f3",
+        "timestamp": 1777138748.457376,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "6b24039d83b719a6",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:parse_ui",
+        "last_verified_change": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "6643c3e5e5ece67d",
+        "timestamp": 1777138748.5967278,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "6b24039d83b719a6",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:checkpoint",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "64c69904587d9449",
+        "timestamp": 1777138758.250189,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "ea543900039c722f",
+        "ui_tree_hash": "cddf3149ed613c27",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:checkpoint",
+        "last_verified_change": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30",
+        "confidence": 0.5
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "baf9f0f651ee39c1",
+        "after_state_id": "fc5189d0ccfb23bb",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "7445684a1a327d7e",
+        "after_state_id": "24fc3b12754f4d7f",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "b8b93f93f200b976",
+        "after_state_id": "627c40b29baa52f3",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "6643c3e5e5ece67d",
+        "after_state_id": "64c69904587d9449",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "actual_change": "added: 100%, 23:38, 25/04/2026, 30, bottom menu",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "100%",
+          "23:38",
+          "25/04/2026",
+          "30",
+          "bottom menu",
+          "main page",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777138737.3370514
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138737.4876244
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138748.457376
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30",
+        "actual_change": "added: 23:39; removed: 23:38",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "23:39"
+        ],
+        "removed_labels": [
+          "23:38"
+        ],
+        "recovery_hint": "",
+        "timestamp": 1777138758.252198
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": true,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "baf9f0f651ee39c1",
+          "after_state_id": "fc5189d0ccfb23bb",
+          "confidence_delta": 0.25
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": false,
+          "ui_tree_changed": false,
+          "dom_changed": false,
+          "changed": false,
+          "before_state_id": "7445684a1a327d7e",
+          "after_state_id": "24fc3b12754f4d7f",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_3",
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_3",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "b8b93f93f200b976",
+          "after_state_id": "627c40b29baa52f3",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "failed_step_ids": []
+      }
+    ],
+    "plan_replacements": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_3",
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_3",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      }
+    ],
+    "last_observation": {
+      "nodes": [
+        {
+          "node_id": "main_page",
+          "label": "Main Page",
+          "learned_label": "",
+          "learned_concepts": [
+            "content",
+            "tile",
+            "file",
+            "code",
+            "container",
+            "folder"
+          ],
+          "node_type": "container",
+          "semantic_role": "main_page",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "main_page",
+          "state_tags": [
+            "main_page"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 307,
+            "y": 194,
+            "width": 1613,
+            "height": 827
+          },
+          "center": {
+            "x": 1113,
+            "y": 607
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": []
+        },
+        {
+          "node_id": "bottom_menu",
+          "label": "Bottom Menu",
+          "learned_label": "",
+          "learned_concepts": [
+            "control",
+            "search_field",
+            "content",
+            "file",
+            "list_item",
+            "code"
+          ],
+          "node_type": "container",
+          "semantic_role": "bottom_menu",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "bottom_menu",
+          "state_tags": [
+            "bottom_menu"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 0,
+            "y": 1021,
+            "width": 1920,
+            "height": 57
+          },
+          "center": {
+            "x": 960,
+            "y": 1049
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": [
+            {
+              "node_id": "bottom_menu_item_0",
+              "label": "23:38",
+              "learned_label": "",
+              "learned_concepts": [
+                "control"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1836,
+                "y": 1021,
+                "width": 68,
+                "height": 29
+              },
+              "center": {
+                "x": 1870,
+                "y": 1031
+              },
+              "visual_id": "28dc4b56734c5f92128be6a9fa0e1ce3",
+              "visual_ids": [
+                "28dc4b56734c5f92128be6a9fa0e1ce3"
+              ],
+              "children": [
+                {
+                  "node_id": "15",
+                  "label": "23:38",
+                  "learned_label": "",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1846,
+                    "y": 1020,
+                    "width": 48,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1870,
+                    "y": 1031
+                  },
+                  "visual_id": "28dc4b56734c5f92128be6a9fa0e1ce3",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_4",
+              "label": "30",
+              "learned_label": "",
+              "learned_concepts": [
+                "control"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 18,
+                "y": 1021,
+                "width": 66,
+                "height": 49
+              },
+              "center": {
+                "x": 51,
+                "y": 1041
+              },
+              "visual_id": "675059da760b33af794c51573aed0081",
+              "visual_ids": [
+                "675059da760b33af794c51573aed0081"
+              ],
+              "children": [
+                {
+                  "node_id": "8",
+                  "label": "30",
+                  "learned_label": "",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 28,
+                    "y": 1020,
+                    "width": 46,
+                    "height": 42
+                  },
+                  "center": {
+                    "x": 51,
+                    "y": 1041
+                  },
+                  "visual_id": "675059da760b33af794c51573aed0081",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_5",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1608,
+                "y": 1022,
+                "width": 50,
+                "height": 40
+              },
+              "center": {
+                "x": 1633,
+                "y": 1042
+              },
+              "visual_id": "218852c710ad7daa3a7b0113cdea34f3",
+              "visual_ids": [
+                "218852c710ad7daa3a7b0113cdea34f3"
+              ],
+              "children": [
+                {
+                  "node_id": "20",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1618,
+                    "y": 1030,
+                    "width": 30,
+                    "height": 24
+                  },
+                  "center": {
+                    "x": 1633,
+                    "y": 1042
+                  },
+                  "visual_id": "218852c710ad7daa3a7b0113cdea34f3",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_6",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 654,
+                "y": 1021,
+                "width": 62,
+                "height": 49
+              },
+              "center": {
+                "x": 685,
+                "y": 1043
+              },
+              "visual_id": "7987635670965d25b4e13f578bcf49d9",
+              "visual_ids": [
+                "7987635670965d25b4e13f578bcf49d9"
+              ],
+              "children": [
+                {
+                  "node_id": "12",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 664,
+                    "y": 1024,
+                    "width": 42,
+                    "height": 38
+                  },
+                  "center": {
+                    "x": 685,
+                    "y": 1043
+                  },
+                  "visual_id": "7987635670965d25b4e13f578bcf49d9",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_7",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1468,
+                "y": 1024,
+                "width": 90,
+                "height": 38
+              },
+              "center": {
+                "x": 1512,
+                "y": 1043
+              },
+              "visual_id": "72ff3e94710838608c1f937ea9c077b9",
+              "visual_ids": [
+                "72ff3e94710838608c1f937ea9c077b9",
+                "05408ae271d7d7753ca3ba23dc80013a"
+              ],
+              "children": [
+                {
+                  "node_id": "21",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1522,
+                    "y": 1032,
+                    "width": 26,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1535,
+                    "y": 1043
+                  },
+                  "visual_id": "72ff3e94710838608c1f937ea9c077b9",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "22",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1478,
+                    "y": 1036,
+                    "width": 22,
+                    "height": 16
+                  },
+                  "center": {
+                    "x": 1489,
+                    "y": 1044
+                  },
+                  "visual_id": "05408ae271d7d7753ca3ba23dc80013a",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_8",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1678,
+                "y": 1022,
+                "width": 58,
+                "height": 42
+              },
+              "center": {
+                "x": 1707,
+                "y": 1043
+              },
+              "visual_id": "df1b3a9fb25874c4d5d6bc73846948a2",
+              "visual_ids": [
+                "df1b3a9fb25874c4d5d6bc73846948a2"
+              ],
+              "children": [
+                {
+                  "node_id": "16",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1688,
+                    "y": 1030,
+                    "width": 38,
+                    "height": 26
+                  },
+                  "center": {
+                    "x": 1707,
+                    "y": 1043
+                  },
+                  "visual_id": "df1b3a9fb25874c4d5d6bc73846948a2",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_9",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 252,
+                "y": 1021,
+                "width": 60,
+                "height": 51
+              },
+              "center": {
+                "x": 282,
+                "y": 1044
+              },
+              "visual_id": "de1d2ee12b9d94bd98ef767b41a34f1a",
+              "visual_ids": [
+                "de1d2ee12b9d94bd98ef767b41a34f1a"
+              ],
+              "children": [
+                {
+                  "node_id": "11",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 262,
+                    "y": 1024,
+                    "width": 40,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 282,
+                    "y": 1044
+                  },
+                  "visual_id": "de1d2ee12b9d94bd98ef767b41a34f1a",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_10",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 306,
+                "y": 1021,
+                "width": 356,
+                "height": 57
+              },
+              "center": {
+                "x": 484,
+                "y": 1044
+              },
+              "visual_id": "42d11cc84ac06ec0c0e49a29c744bc1d",
+              "visual_ids": [
+                "42d11cc84ac06ec0c0e49a29c744bc1d"
+              ],
+              "children": [
+                {
+                  "node_id": "1",
+                  "label": "Search",
+                  "learned_label": "",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "text_field",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [
+                    "focus",
+                    "type"
+                  ],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 316,
+                    "y": 1016,
+                    "width": 336,
+                    "height": 56
+                  },
+                  "center": {
+                    "x": 484,
+                    "y": 1044
+                  },
+                  "visual_id": "42d11cc84ac06ec0c0e49a29c744bc1d",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_11",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 788,
+                "y": 1021,
+                "width": 58,
+                "height": 49
+              },
+              "center": {
+                "x": 817,
+                "y": 1044
+              },
+              "visual_id": "d01c7c30e5e68527b22a20cebbd178dc",
+              "visual_ids": [
+                "d01c7c30e5e68527b22a20cebbd178dc"
+              ],
+              "children": [
+                {
+                  "node_id": "13",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 798,
+                    "y": 1026,
+                    "width": 38,
+                    "height": 36
+                  },
+                  "center": {
+                    "x": 817,
+                    "y": 1044
+                  },
+                  "visual_id": "d01c7c30e5e68527b22a20cebbd178dc",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_14",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1642,
+                "y": 1022,
+                "width": 54,
+                "height": 44
+              },
+              "center": {
+                "x": 1669,
+                "y": 1044
+              },
+              "visual_id": "fe3a2d20c64613bdb31273a6770eb2ac",
+              "visual_ids": [
+                "fe3a2d20c64613bdb31273a6770eb2ac"
+              ],
+              "children": [
+                {
+                  "node_id": "18",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1652,
+                    "y": 1030,
+                    "width": 34,
+                    "height": 28
+                  },
+                  "center": {
+                    "x": 1669,
+                    "y": 1044
+                  },
+                  "visual_id": "fe3a2d20c64613bdb31273a6770eb2ac",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_15",
+              "label": "100%",
+              "learned_label": "",
+              "learned_concepts": [
+                "control"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1718,
+                "y": 1026,
+                "width": 68,
+                "height": 36
+              },
+              "center": {
+                "x": 1752,
+                "y": 1044
+              },
+              "visual_id": "cab36d093bfc30747b790dc3ac392c09",
+              "visual_ids": [
+                "cab36d093bfc30747b790dc3ac392c09"
+              ],
+              "children": [
+                {
+                  "node_id": "17",
+                  "label": "100%",
+                  "learned_label": "",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1728,
+                    "y": 1034,
+                    "width": 48,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1752,
+                    "y": 1044
+                  },
+                  "visual_id": "cab36d093bfc30747b790dc3ac392c09",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_17",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1560,
+                "y": 1024,
+                "width": 48,
+                "height": 42
+              },
+              "center": {
+                "x": 1584,
+                "y": 1045
+              },
+              "visual_id": "945300bb046147b18078193d70df2c8e",
+              "visual_ids": [
+                "945300bb046147b18078193d70df2c8e"
+              ],
+              "children": [
+                {
+                  "node_id": "19",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1570,
+                    "y": 1032,
+                    "width": 28,
+                    "height": 26
+                  },
+                  "center": {
+                    "x": 1584,
+                    "y": 1045
+                  },
+                  "visual_id": "945300bb046147b18078193d70df2c8e",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_18",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 852,
+                "y": 1021,
+                "width": 72,
+                "height": 57
+              },
+              "center": {
+                "x": 888,
+                "y": 1046
+              },
+              "visual_id": "8eaaa84725c905a8fc6b5f72c2a7dec6",
+              "visual_ids": [
+                "8eaaa84725c905a8fc6b5f72c2a7dec6"
+              ],
+              "children": [
+                {
+                  "node_id": "2",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 862,
+                    "y": 1016,
+                    "width": 52,
+                    "height": 60
+                  },
+                  "center": {
+                    "x": 888,
+                    "y": 1046
+                  },
+                  "visual_id": "8eaaa84725c905a8fc6b5f72c2a7dec6",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_19",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1050,
+                "y": 1021,
+                "width": 62,
+                "height": 57
+              },
+              "center": {
+                "x": 1081,
+                "y": 1049
+              },
+              "visual_id": "bbd1c944d1fea806c04d310f6e197b19",
+              "visual_ids": [
+                "bbd1c944d1fea806c04d310f6e197b19"
+              ],
+              "children": [
+                {
+                  "node_id": "5",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1060,
+                    "y": 1022,
+                    "width": 42,
+                    "height": 54
+                  },
+                  "center": {
+                    "x": 1081,
+                    "y": 1049
+                  },
+                  "visual_id": "bbd1c944d1fea806c04d310f6e197b19",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_2",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 918,
+                "y": 1021,
+                "width": 70,
+                "height": 57
+              },
+              "center": {
+                "x": 951,
+                "y": 1055
+              },
+              "visual_id": "7a4696e547f720ad26ed0975aef59f13",
+              "visual_ids": [
+                "7a4696e547f720ad26ed0975aef59f13",
+                "51927a3de7ab4dea7e97a771d68e5ba7"
+              ],
+              "children": [
+                {
+                  "node_id": "4",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 928,
+                    "y": 1016,
+                    "width": 50,
+                    "height": 48
+                  },
+                  "center": {
+                    "x": 953,
+                    "y": 1040
+                  },
+                  "visual_id": "7a4696e547f720ad26ed0975aef59f13",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "28",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 942,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 949,
+                    "y": 1071
+                  },
+                  "visual_id": "51927a3de7ab4dea7e97a771d68e5ba7",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_3",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1116,
+                "y": 1021,
+                "width": 70,
+                "height": 57
+              },
+              "center": {
+                "x": 1149,
+                "y": 1055
+              },
+              "visual_id": "6ee0df81bd87d355429227a4d4326eaf",
+              "visual_ids": [
+                "6ee0df81bd87d355429227a4d4326eaf",
+                "bff40af9047e744285045904bc00cec1"
+              ],
+              "children": [
+                {
+                  "node_id": "3",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1126,
+                    "y": 1016,
+                    "width": 50,
+                    "height": 48
+                  },
+                  "center": {
+                    "x": 1151,
+                    "y": 1040
+                  },
+                  "visual_id": "6ee0df81bd87d355429227a4d4326eaf",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "26",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1140,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1147,
+                    "y": 1071
+                  },
+                  "visual_id": "bff40af9047e744285045904bc00cec1",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_1",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1314,
+                "y": 1021,
+                "width": 70,
+                "height": 57
+              },
+              "center": {
+                "x": 1347,
+                "y": 1055
+              },
+              "visual_id": "e7bcc9043627dfb1381eef3c68d74c38",
+              "visual_ids": [
+                "e7bcc9043627dfb1381eef3c68d74c38",
+                "691373fc32e621f2fafc27bad7ced00e"
+              ],
+              "children": [
+                {
+                  "node_id": "7",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1324,
+                    "y": 1018,
+                    "width": 50,
+                    "height": 42
+                  },
+                  "center": {
+                    "x": 1349,
+                    "y": 1039
+                  },
+                  "visual_id": "e7bcc9043627dfb1381eef3c68d74c38",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "23",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1338,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1345,
+                    "y": 1071
+                  },
+                  "visual_id": "691373fc32e621f2fafc27bad7ced00e",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_20",
+              "label": "25/04/2026",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "file",
+                "code",
+                "container",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1786,
+                "y": 1036,
+                "width": 118,
+                "height": 38
+              },
+              "center": {
+                "x": 1845,
+                "y": 1055
+              },
+              "visual_id": "9ab7ea2992d9198d528d1ad6a7977a9c",
+              "visual_ids": [
+                "9ab7ea2992d9198d528d1ad6a7977a9c"
+              ],
+              "children": [
+                {
+                  "node_id": "6",
+                  "label": "25/04/2026",
+                  "learned_label": "",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "code",
+                    "container",
+                    "list_item"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1796,
+                    "y": 1044,
+                    "width": 98,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1845,
+                    "y": 1055
+                  },
+                  "visual_id": "9ab7ea2992d9198d528d1ad6a7977a9c",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_12",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 986,
+                "y": 1021,
+                "width": 60,
+                "height": 57
+              },
+              "center": {
+                "x": 1015,
+                "y": 1057
+              },
+              "visual_id": "10efbec6f4375f19ef08b0990264a2d9",
+              "visual_ids": [
+                "10efbec6f4375f19ef08b0990264a2d9",
+                "480416159f97bd5f404c18dea98faacc"
+              ],
+              "children": [
+                {
+                  "node_id": "10",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 996,
+                    "y": 1024,
+                    "width": 40,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 1016,
+                    "y": 1044
+                  },
+                  "visual_id": "10efbec6f4375f19ef08b0990264a2d9",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "27",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1008,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1015,
+                    "y": 1071
+                  },
+                  "visual_id": "480416159f97bd5f404c18dea98faacc",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_13",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1182,
+                "y": 1021,
+                "width": 62,
+                "height": 57
+              },
+              "center": {
+                "x": 1213,
+                "y": 1057
+              },
+              "visual_id": "17dd021f04143c99289da18097e1af85",
+              "visual_ids": [
+                "17dd021f04143c99289da18097e1af85",
+                "e881bfcb56206b071e1851a4649593ed"
+              ],
+              "children": [
+                {
+                  "node_id": "9",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1192,
+                    "y": 1024,
+                    "width": 42,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 1213,
+                    "y": 1044
+                  },
+                  "visual_id": "17dd021f04143c99289da18097e1af85",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "25",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1206,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1213,
+                    "y": 1071
+                  },
+                  "visual_id": "e881bfcb56206b071e1851a4649593ed",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_16",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1252,
+                "y": 1021,
+                "width": 54,
+                "height": 57
+              },
+              "center": {
+                "x": 1279,
+                "y": 1058
+              },
+              "visual_id": "f48f4c59c742577c6c063c0d634fd9d0",
+              "visual_ids": [
+                "f48f4c59c742577c6c063c0d634fd9d0",
+                "8f2897a1b5fe1bf71d40bfa3f6b5b025"
+              ],
+              "children": [
+                {
+                  "node_id": "14",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1262,
+                    "y": 1026,
+                    "width": 34,
+                    "height": 38
+                  },
+                  "center": {
+                    "x": 1279,
+                    "y": 1045
+                  },
+                  "visual_id": "f48f4c59c742577c6c063c0d634fd9d0",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "24",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1272,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1279,
+                    "y": 1071
+                  },
+                  "visual_id": "8f2897a1b5fe1bf71d40bfa3f6b5b025",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source": "vision",
+      "metadata": {
+        "output_filename": "explorer_summary.png",
+        "environment": {
+          "windows": {
+            "active_window": {
+              "title": "Desktop - File Explorer",
+              "left": 0,
+              "top": 0,
+              "width": 1919,
+              "height": 1008
+            },
+            "open_windows": [
+              {
+                "title": "Desktop - File Explorer",
+                "left": 0,
+                "top": 0,
+                "width": 1919,
+                "height": 1008
+              },
+              {
+                "title": "README.md - vlm_agent - Visual Studio Code",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "ISDD FINAL.pdf - Google Chrome",
+                "left": -9,
+                "top": 0,
+                "width": 1115,
+                "height": 1017
+              },
+              {
+                "title": "YouTube",
+                "left": 75,
+                "top": 0,
+                "width": 1725,
+                "height": 978
+              },
+              {
+                "title": "WhatsApp",
+                "left": 729,
+                "top": 0,
+                "width": 1200,
+                "height": 900
+              },
+              {
+                "title": "vlm_agent and 1 more tab - File Explorer",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "ChatGPT - AK",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "Downloads - File Explorer",
+                "left": 0,
+                "top": 0,
+                "width": 1919,
+                "height": 1008
+              },
+              {
+                "title": "Google - Google Chrome",
+                "left": -32000,
+                "top": -32000,
+                "width": 237,
+                "height": 39
+              },
+              {
+                "title": "classes.txt - Notepad",
+                "left": 41,
+                "top": 473,
+                "width": 1151,
+                "height": 545
+              },
+              {
+                "title": "Fiverr / Inbox - Google Chrome",
+                "left": -32000,
+                "top": -32000,
+                "width": 237,
+                "height": 39
+              },
+              {
+                "title": "Windows Input Experience",
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 1080
+              },
+              {
+                "title": "(37) WhatsApp",
+                "left": 740,
+                "top": 1,
+                "width": 1178,
+                "height": 888
+              },
+              {
+                "title": "Program Manager",
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 1080
+              }
+            ],
+            "active_app_guess": "explorer",
+            "adapter_mode": "native_window_metadata"
+          },
+          "browser": {
+            "adapter_mode": "browser_dom_metadata",
+            "available": true,
+            "cdp_available": true,
+            "tab_count": 3,
+            "tab_titles": [
+              "Google",
+              "youtube - Google Search",
+              "Google"
+            ],
+            "active_title": "Google",
+            "active_url": "https://www.google.com/"
+          }
+        },
+        "app_id": "explorer",
+        "app_name": "File Explorer",
+        "scene": {
+          "app_id": "explorer",
+          "app_name": "File Explorer",
+          "active_window_title": "Desktop - File Explorer",
+          "node_count": 51,
+          "salient_labels": [
+            "Main Page",
+            "Bottom Menu",
+            "23:38",
+            "23:38",
+            "30",
+            "30",
+            "Search",
+            "Search",
+            "Search",
+            "Search"
+          ],
+          "ambiguous": false,
+          "summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30"
+        },
+        "scene_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30"
+      }
+    }
+  },
+  "mission": {
+    "mission_id": "mission_task_8f972c0343",
+    "goal": "Open explorer and parse screen",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_4",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Parse Explorer for folder summary",
+        "expected_scene": "Explorer UI should be parsed for summarization.",
+        "completion_rule": "Explorer UI should be parsed for summarization.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Summarize current Explorer folder",
+        "expected_scene": "The current Explorer folder contents should be summarized.",
+        "completion_rule": "The current Explorer folder contents should be summarized.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30"
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777138707.4302943
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "actual_change": "added: 100%, 23:38, 25/04/2026, 30, bottom menu",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "100%",
+        "23:38",
+        "25/04/2026",
+        "30",
+        "bottom menu",
+        "main page",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777138737.3370514
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777138737.4876244
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer UI should be parsed for summarization.",
+      "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777138748.457376
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "The current Explorer folder contents should be summarized.",
+      "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30",
+      "actual_change": "added: 23:39; removed: 23:38",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "23:39"
+      ],
+      "removed_labels": [
+        "23:38"
+      ],
+      "recovery_hint": "",
+      "timestamp": 1777138758.252198
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "actual_change": "added: 100%, 23:38, 25/04/2026, 30, bottom menu",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "100%",
+          "23:38",
+          "25/04/2026",
+          "30",
+          "bottom menu",
+          "main page",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777138737.3370514
+      },
+      "timestamp": 1777138737.3578997
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138737.4876244
+      },
+      "timestamp": 1777138737.5183253
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "parse_ui",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138748.457376
+      },
+      "timestamp": 1777138748.471397
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "checkpoint",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:38, 23:38, 30, 30",
+        "after_summary": "File Explorer scene with 51 nodes; highlights: Main Page, Bottom Menu, 23:39, 23:39, 30, 30",
+        "actual_change": "added: 23:39; removed: 23:38",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "23:39"
+        ],
+        "removed_labels": [
+          "23:38"
+        ],
+        "recovery_hint": "",
+        "timestamp": 1777138758.252198
+      },
+      "timestamp": 1777138758.2682679
+    }
+  ],
+  "started_at": 1777138707.4302943,
+  "finished_at": 1777138758.2809033
+}

@@ -1,0 +1,2082 @@
+{
+    "timestamp": 1774939904.8747408,
+    "context_window": [
+        -11,
+        -11,
+        1942,
+        1030
+    ],
+    "element_count": 138,
+    "elements": [
+        {
+            "id": 0,
+            "label": "JHOL MAANU ANNURAL KHALID I-Mix",
+            "box": {
+                "x": 1360,
+                "y": 570,
+                "width": 512,
+                "height": 300
+            },
+            "type": "container",
+            "center": {
+                "x": 1616,
+                "y": 720
+            }
+        },
+        {
+            "id": 1,
+            "label": "NO KINGS KECAM PAX JUDAICA EXPLAINED The Fall ofPax Americana a Pax Judaica Era Now? 43:04",
+            "box": {
+                "x": 314,
+                "y": 578,
+                "width": 510,
+                "height": 292
+            },
+            "type": "container",
+            "center": {
+                "x": 569,
+                "y": 724
+            }
+        },
+        {
+            "id": 2,
+            "label": "M RAHMATUN LIL'ALAMEEN MAHER ZAI4:21",
+            "box": {
+                "x": 836,
+                "y": 580,
+                "width": 512,
+                "height": 290
+            },
+            "type": "container",
+            "center": {
+                "x": 1092,
+                "y": 725
+            }
+        },
+        {
+            "id": 3,
+            "label": "o Sign in Ustad Live Dawah Religious recitation Histo ICBM  a C Ad? 2:41 TECnO POVA 300OmAh",
+            "box": {
+                "x": 1360,
+                "y": 186,
+                "width": 558,
+                "height": 242
+            },
+            "type": "container",
+            "center": {
+                "x": 1639,
+                "y": 307
+            }
+        },
+        {
+            "id": 4,
+            "label": "Google Gemini x 5 Agent.py Overview X  YouTube x S Illumination   x 1 + x",
+            "box": {
+                "x": 0,
+                "y": 6,
+                "width": 1920,
+                "height": 68
+            },
+            "type": "text_field",
+            "center": {
+                "x": 960,
+                "y": 40
+            }
+        },
+        {
+            "id": 5,
+            "label": "youtube.com  Q #",
+            "box": {
+                "x": 184,
+                "y": 66,
+                "width": 1286,
+                "height": 56
+            },
+            "type": "text_field",
+            "center": {
+                "x": 827,
+                "y": 94
+            }
+        },
+        {
+            "id": 6,
+            "label": "YouTube Music",
+            "box": {
+                "x": 0,
+                "y": 984,
+                "width": 1920,
+                "height": 36
+            },
+            "type": "text_field",
+            "center": {
+                "x": 960,
+                "y": 1002
+            }
+        },
+        {
+            "id": 7,
+            "label": "37:30",
+            "box": {
+                "x": 314,
+                "y": 312,
+                "width": 510,
+                "height": 116
+            },
+            "type": "text_field",
+            "center": {
+                "x": 569,
+                "y": 370
+            }
+        },
+        {
+            "id": 8,
+            "label": "SAHIBA x Samjho Na II-Mix",
+            "box": {
+                "x": 836,
+                "y": 312,
+                "width": 512,
+                "height": 112
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1092,
+                "y": 368
+            }
+        },
+        {
+            "id": 9,
+            "label": "Search",
+            "box": {
+                "x": 566,
+                "y": 188,
+                "width": 724,
+                "height": 54
+            },
+            "type": "text_field",
+            "center": {
+                "x": 928,
+                "y": 215
+            }
+        },
+        {
+            "id": 10,
+            "label": "Maher Zain -Rahmatun Lil'Alameen (Official Music Video) calLll L>y - j JL",
+            "box": {
+                "x": 896,
+                "y": 882,
+                "width": 382,
+                "height": 52
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1087,
+                "y": 908
+            }
+        },
+        {
+            "id": 11,
+            "label": "IranICBMUSAJamuna",
+            "box": {
+                "x": 1418,
+                "y": 440,
+                "width": 388,
+                "height": 50
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1612,
+                "y": 465
+            }
+        },
+        {
+            "id": 12,
+            "label": "Home",
+            "box": {
+                "x": 10,
+                "y": 260,
+                "width": 252,
+                "height": 54
+            },
+            "type": "text_field",
+            "center": {
+                "x": 136,
+                "y": 287
+            }
+        },
+        {
+            "id": 13,
+            "label": "9: Segrch o sign",
+            "box": {
+                "x": 0,
+                "y": 178,
+                "width": 1920,
+                "height": 6
+            },
+            "type": "text_field",
+            "center": {
+                "x": 960,
+                "y": 181
+            }
+        },
+        {
+            "id": 14,
+            "label": "The End Times Signs | Mahdi's Rise & The fate",
+            "box": {
+                "x": 372,
+                "y": 440,
+                "width": 400,
+                "height": 26
+            },
+            "type": "text_field",
+            "center": {
+                "x": 572,
+                "y": 453
+            }
+        },
+        {
+            "id": 15,
+            "label": "Hidden Pax Judaica Era? Sheikh Imran Hosein",
+            "box": {
+                "x": 372,
+                "y": 908,
+                "width": 400,
+                "height": 24
+            },
+            "type": "text_field",
+            "center": {
+                "x": 572,
+                "y": 920
+            }
+        },
+        {
+            "id": 16,
+            "label": "x Samjho Na - Mashup | Aditya Rikhari |",
+            "box": {
+                "x": 950,
+                "y": 440,
+                "width": 340,
+                "height": 26
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1120,
+                "y": 453
+            }
+        },
+        {
+            "id": 17,
+            "label": "Mix - Jhol | Coke Studio Pakistan | Season",
+            "box": {
+                "x": 1362,
+                "y": 882,
+                "width": 364,
+                "height": 24
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1544,
+                "y": 894
+            }
+        },
+        {
+            "id": 18,
+            "label": "Religious recitation",
+            "box": {
+                "x": 1600,
+                "y": 260,
+                "width": 180,
+                "height": 46
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1690,
+                "y": 283
+            }
+        },
+        {
+            "id": 19,
+            "label": "Maanu, Aditya Rikhari, AliSoomroMusic, and more",
+            "box": {
+                "x": 1362,
+                "y": 938,
+                "width": 376,
+                "height": 22
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1550,
+                "y": 949
+            }
+        },
+        {
+            "id": 20,
+            "label": "Aditya Rikhari,VishalMishra,Talwiinder, and more",
+            "box": {
+                "x": 838,
+                "y": 496,
+                "width": 376,
+                "height": 22
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1026,
+                "y": 507
+            }
+        },
+        {
+            "id": 21,
+            "label": "Pax. Americana: The Beginning of a",
+            "box": {
+                "x": 468,
+                "y": 882,
+                "width": 304,
+                "height": 26
+            },
+            "type": "text_field",
+            "center": {
+                "x": 620,
+                "y": 895
+            }
+        },
+        {
+            "id": 22,
+            "label": "Ninja Hattori-kun",
+            "box": {
+                "x": 964,
+                "y": 260,
+                "width": 164,
+                "height": 46
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1046,
+                "y": 283
+            }
+        },
+        {
+            "id": 23,
+            "label": "Imran N. Hosein",
+            "box": {
+                "x": 598,
+                "y": 260,
+                "width": 156,
+                "height": 46
+            },
+            "type": "text_field",
+            "center": {
+                "x": 676,
+                "y": 283
+            }
+        },
+        {
+            "id": 24,
+            "label": "Sign in",
+            "box": {
+                "x": 34,
+                "y": 596,
+                "width": 126,
+                "height": 52
+            },
+            "type": "button",
+            "center": {
+                "x": 97,
+                "y": 622
+            }
+        },
+        {
+            "id": 25,
+            "label": "Best of Soulful Mashup 2025",
+            "box": {
+                "x": 916,
+                "y": 466,
+                "width": 252,
+                "height": 24
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1042,
+                "y": 478
+            }
+        },
+        {
+            "id": 26,
+            "label": "Nobita Nobi",
+            "box": {
+                "x": 466,
+                "y": 260,
+                "width": 124,
+                "height": 46
+            },
+            "type": "button",
+            "center": {
+                "x": 528,
+                "y": 283
+            }
+        },
+        {
+            "id": 27,
+            "label": "[TEXT_FIELD]",
+            "box": {
+                "x": 1618,
+                "y": 436,
+                "width": 202,
+                "height": 28
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1719,
+                "y": 450
+            }
+        },
+        {
+            "id": 28,
+            "label": "YouTube",
+            "box": {
+                "x": 82,
+                "y": 194,
+                "width": 140,
+                "height": 36
+            },
+            "type": "button",
+            "center": {
+                "x": 152,
+                "y": 212
+            }
+        },
+        {
+            "id": 29,
+            "label": "Podcasts SAHIBA3",
+            "box": {
+                "x": 850,
+                "y": 260,
+                "width": 106,
+                "height": 46
+            },
+            "type": "button",
+            "center": {
+                "x": 903,
+                "y": 283
+            }
+        },
+        {
+            "id": 30,
+            "label": "Blenders",
+            "box": {
+                "x": 1236,
+                "y": 260,
+                "width": 102,
+                "height": 46
+            },
+            "type": "button",
+            "center": {
+                "x": 1287,
+                "y": 283
+            }
+        },
+        {
+            "id": 31,
+            "label": "Hista",
+            "box": {
+                "x": 1788,
+                "y": 260,
+                "width": 98,
+                "height": 46
+            },
+            "type": "button",
+            "center": {
+                "x": 1837,
+                "y": 283
+            }
+        },
+        {
+            "id": 32,
+            "label": "2.3M views 8 days ago",
+            "box": {
+                "x": 1418,
+                "y": 522,
+                "width": 186,
+                "height": 24
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1511,
+                "y": 534
+            }
+        },
+        {
+            "id": 33,
+            "label": "Gaming",
+            "box": {
+                "x": 1134,
+                "y": 260,
+                "width": 94,
+                "height": 46
+            },
+            "type": "button",
+            "center": {
+                "x": 1181,
+                "y": 283
+            }
+        },
+        {
+            "id": 34,
+            "label": "20K views7 days ago",
+            "box": {
+                "x": 372,
+                "y": 522,
+                "width": 176,
+                "height": 24
+            },
+            "type": "text_field",
+            "center": {
+                "x": 460,
+                "y": 534
+            }
+        },
+        {
+            "id": 35,
+            "label": "Agent.py Overview",
+            "box": {
+                "x": 462,
+                "y": 20,
+                "width": 156,
+                "height": 26
+            },
+            "type": "text_field",
+            "center": {
+                "x": 540,
+                "y": 33
+            }
+        },
+        {
+            "id": 36,
+            "label": "92 views4 days ago",
+            "box": {
+                "x": 894,
+                "y": 964,
+                "width": 168,
+                "height": 24
+            },
+            "type": "text_field",
+            "center": {
+                "x": 978,
+                "y": 976
+            }
+        },
+        {
+            "id": 37,
+            "label": "Dawah",
+            "box": {
+                "x": 1506,
+                "y": 260,
+                "width": 86,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 1549,
+                "y": 283
+            }
+        },
+        {
+            "id": 38,
+            "label": "Iclam The Hlltimate Peace",
+            "box": {
+                "x": 372,
+                "y": 496,
+                "width": 196,
+                "height": 20
+            },
+            "type": "text_field",
+            "center": {
+                "x": 470,
+                "y": 506
+            }
+        },
+        {
+            "id": 39,
+            "label": "Illumination 4 AT",
+            "box": {
+                "x": 1176,
+                "y": 20,
+                "width": 178,
+                "height": 22
+            },
+            "type": "text_field",
+            "center": {
+                "x": 1265,
+                "y": 31
+            }
+        },
+        {
+            "id": 40,
+            "label": "comment, and subscribe",
+            "box": {
+                "x": 36,
+                "y": 564,
+                "width": 194,
+                "height": 20
+            },
+            "type": "text_field",
+            "center": {
+                "x": 133,
+                "y": 574
+            }
+        },
+        {
+            "id": 41,
+            "label": "Mixes R",
+            "box": {
+                "x": 762,
+                "y": 260,
+                "width": 80,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 802,
+                "y": 283
+            }
+        },
+        {
+            "id": 42,
+            "label": "Music",
+            "box": {
+                "x": 376,
+                "y": 260,
+                "width": 80,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 416,
+                "y": 283
+            }
+        },
+        {
+            "id": 43,
+            "label": "LIVE",
+            "box": {
+                "x": 1356,
+                "y": 430,
+                "width": 60,
+                "height": 60
+            },
+            "type": "icon",
+            "center": {
+                "x": 1386,
+                "y": 460
+            }
+        },
+        {
+            "id": 44,
+            "label": "Ustad",
+            "box": {
+                "x": 1346,
+                "y": 260,
+                "width": 78,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 1385,
+                "y": 283
+            }
+        },
+        {
+            "id": 45,
+            "label": "More from YouTube",
+            "box": {
+                "x": 26,
+                "y": 900,
+                "width": 176,
+                "height": 20
+            },
+            "type": "text_field",
+            "center": {
+                "x": 114,
+                "y": 910
+            }
+        },
+        {
+            "id": 46,
+            "label": "40: comment, and su.",
+            "box": {
+                "x": 36,
+                "y": 540,
+                "width": 160,
+                "height": 22
+            },
+            "type": "text_field",
+            "center": {
+                "x": 116,
+                "y": 551
+            }
+        },
+        {
+            "id": 47,
+            "label": "Cozy Pomodoro",
+            "box": {
+                "x": 158,
+                "y": 138,
+                "width": 134,
+                "height": 26
+            },
+            "type": "unknown",
+            "center": {
+                "x": 225,
+                "y": 151
+            }
+        },
+        {
+            "id": 48,
+            "label": "Google Gemini",
+            "box": {
+                "x": 104,
+                "y": 20,
+                "width": 126,
+                "height": 26
+            },
+            "type": "unknown",
+            "center": {
+                "x": 167,
+                "y": 33
+            }
+        },
+        {
+            "id": 49,
+            "label": "Saudi Kingdom",
+            "box": {
+                "x": 398,
+                "y": 468,
+                "width": 134,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 465,
+                "y": 480
+            }
+        },
+        {
+            "id": 50,
+            "label": "9   Sign in",
+            "box": {
+                "x": 1770,
+                "y": 198,
+                "width": 92,
+                "height": 34
+            },
+            "type": "button",
+            "center": {
+                "x": 1816,
+                "y": 215
+            }
+        },
+        {
+            "id": 51,
+            "label": "Live",
+            "box": {
+                "x": 1432,
+                "y": 260,
+                "width": 66,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 1465,
+                "y": 283
+            }
+        },
+        {
+            "id": 52,
+            "label": "[ICON]",
+            "box": {
+                "x": 1796,
+                "y": 596,
+                "width": 54,
+                "height": 56
+            },
+            "type": "icon",
+            "center": {
+                "x": 1823,
+                "y": 624
+            }
+        },
+        {
+            "id": 53,
+            "label": "Annural Khalid",
+            "box": {
+                "x": 1362,
+                "y": 908,
+                "width": 130,
+                "height": 22
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1427,
+                "y": 919
+            }
+        },
+        {
+            "id": 54,
+            "label": "YouTube Premium",
+            "box": {
+                "x": 84,
+                "y": 942,
+                "width": 142,
+                "height": 20
+            },
+            "type": "unknown",
+            "center": {
+                "x": 155,
+                "y": 952
+            }
+        },
+        {
+            "id": 55,
+            "label": "[ICON]",
+            "box": {
+                "x": 1304,
+                "y": 188,
+                "width": 52,
+                "height": 54
+            },
+            "type": "icon",
+            "center": {
+                "x": 1330,
+                "y": 215
+            }
+        },
+        {
+            "id": 56,
+            "label": "[TEXT_FIELD]",
+            "box": {
+                "x": 0,
+                "y": 870,
+                "width": 276,
+                "height": 10
+            },
+            "type": "text_field",
+            "center": {
+                "x": 138,
+                "y": 875
+            }
+        },
+        {
+            "id": 57,
+            "label": "[TEXT_FIELD]",
+            "box": {
+                "x": 0,
+                "y": 658,
+                "width": 276,
+                "height": 10
+            },
+            "type": "text_field",
+            "center": {
+                "x": 138,
+                "y": 663
+            }
+        },
+        {
+            "id": 58,
+            "label": "[TEXT_FIELD]",
+            "box": {
+                "x": 0,
+                "y": 514,
+                "width": 276,
+                "height": 10
+            },
+            "type": "text_field",
+            "center": {
+                "x": 138,
+                "y": 519
+            }
+        },
+        {
+            "id": 59,
+            "label": "The Rlecced Tuine",
+            "box": {
+                "x": 896,
+                "y": 938,
+                "width": 136,
+                "height": 20
+            },
+            "type": "unknown",
+            "center": {
+                "x": 964,
+                "y": 948
+            }
+        },
+        {
+            "id": 60,
+            "label": "15 | Maanu x",
+            "box": {
+                "x": 1728,
+                "y": 882,
+                "width": 112,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1784,
+                "y": 894
+            }
+        },
+        {
+            "id": 61,
+            "label": "TESNE HE BLESSE",
+            "box": {
+                "x": 836,
+                "y": 878,
+                "width": 52,
+                "height": 48
+            },
+            "type": "icon",
+            "center": {
+                "x": 862,
+                "y": 902
+            }
+        },
+        {
+            "id": 62,
+            "label": "All :37:30",
+            "box": {
+                "x": 314,
+                "y": 260,
+                "width": 54,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 341,
+                "y": 283
+            }
+        },
+        {
+            "id": 63,
+            "label": "lamuna TV",
+            "box": {
+                "x": 1418,
+                "y": 496,
+                "width": 112,
+                "height": 22
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1474,
+                "y": 507
+            }
+        },
+        {
+            "id": 64,
+            "label": "nm",
+            "box": {
+                "x": 314,
+                "y": 436,
+                "width": 48,
+                "height": 50
+            },
+            "type": "icon",
+            "center": {
+                "x": 338,
+                "y": 461
+            }
+        },
+        {
+            "id": 65,
+            "label": "Subscriptions",
+            "box": {
+                "x": 84,
+                "y": 374,
+                "width": 108,
+                "height": 22
+            },
+            "type": "unknown",
+            "center": {
+                "x": 138,
+                "y": 385
+            }
+        },
+        {
+            "id": 66,
+            "label": "[ICON]",
+            "box": {
+                "x": 314,
+                "y": 878,
+                "width": 48,
+                "height": 48
+            },
+            "type": "icon",
+            "center": {
+                "x": 338,
+                "y": 902
+            }
+        },
+        {
+            "id": 67,
+            "label": "[ICON]",
+            "box": {
+                "x": 6,
+                "y": 6,
+                "width": 48,
+                "height": 48
+            },
+            "type": "icon",
+            "center": {
+                "x": 30,
+                "y": 30
+            }
+        },
+        {
+            "id": 68,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1898,
+                "y": 520,
+                "width": 20,
+                "height": 114
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1908,
+                "y": 577
+            }
+        },
+        {
+            "id": 69,
+            "label": "6.1K views",
+            "box": {
+                "x": 372,
+                "y": 964,
+                "width": 94,
+                "height": 22
+            },
+            "type": "unknown",
+            "center": {
+                "x": 419,
+                "y": 975
+            }
+        },
+        {
+            "id": 70,
+            "label": "Tho Fall of",
+            "box": {
+                "x": 372,
+                "y": 882,
+                "width": 94,
+                "height": 22
+            },
+            "type": "unknown",
+            "center": {
+                "x": 419,
+                "y": 893
+            }
+        },
+        {
+            "id": 71,
+            "label": "[ICON]",
+            "box": {
+                "x": 902,
+                "y": 336,
+                "width": 38,
+                "height": 50
+            },
+            "type": "icon",
+            "center": {
+                "x": 921,
+                "y": 361
+            }
+        },
+        {
+            "id": 72,
+            "label": "Wishes",
+            "box": {
+                "x": 838,
+                "y": 466,
+                "width": 76,
+                "height": 24
+            },
+            "type": "button",
+            "center": {
+                "x": 876,
+                "y": 478
+            }
+        },
+        {
+            "id": 73,
+            "label": "HOSFIN TV",
+            "box": {
+                "x": 372,
+                "y": 938,
+                "width": 90,
+                "height": 20
+            },
+            "type": "unknown",
+            "center": {
+                "x": 417,
+                "y": 948
+            }
+        },
+        {
+            "id": 74,
+            "label": "Explore",
+            "box": {
+                "x": 26,
+                "y": 688,
+                "width": 70,
+                "height": 24
+            },
+            "type": "button",
+            "center": {
+                "x": 61,
+                "y": 700
+            }
+        },
+        {
+            "id": 75,
+            "label": "1 day ago",
+            "box": {
+                "x": 468,
+                "y": 966,
+                "width": 76,
+                "height": 22
+            },
+            "type": "button",
+            "center": {
+                "x": 506,
+                "y": 977
+            }
+        },
+        {
+            "id": 76,
+            "label": "YouTube",
+            "box": {
+                "x": 818,
+                "y": 20,
+                "width": 76,
+                "height": 22
+            },
+            "type": "button",
+            "center": {
+                "x": 856,
+                "y": 31
+            }
+        },
+        {
+            "id": 77,
+            "label": "Gaming",
+            "box": {
+                "x": 84,
+                "y": 778,
+                "width": 64,
+                "height": 24
+            },
+            "type": "button",
+            "center": {
+                "x": 116,
+                "y": 790
+            }
+        },
+        {
+            "id": 78,
+            "label": "[BUTTON]",
+            "box": {
+                "x": 886,
+                "y": 440,
+                "width": 62,
+                "height": 22
+            },
+            "type": "button",
+            "center": {
+                "x": 917,
+                "y": 451
+            }
+        },
+        {
+            "id": 79,
+            "label": "[ICON]",
+            "box": {
+                "x": 6,
+                "y": 132,
+                "width": 36,
+                "height": 36
+            },
+            "type": "icon",
+            "center": {
+                "x": 24,
+                "y": 150
+            }
+        },
+        {
+            "id": 80,
+            "label": "[ICON]",
+            "box": {
+                "x": 1844,
+                "y": 744,
+                "width": 28,
+                "height": 46
+            },
+            "type": "icon",
+            "center": {
+                "x": 1858,
+                "y": 767
+            }
+        },
+        {
+            "id": 81,
+            "label": "History",
+            "box": {
+                "x": 84,
+                "y": 470,
+                "width": 58,
+                "height": 22
+            },
+            "type": "button",
+            "center": {
+                "x": 113,
+                "y": 481
+            }
+        },
+        {
+            "id": 82,
+            "label": "Maher",
+            "box": {
+                "x": 896,
+                "y": 884,
+                "width": 58,
+                "height": 20
+            },
+            "type": "button",
+            "center": {
+                "x": 925,
+                "y": 894
+            }
+        },
+        {
+            "id": 83,
+            "label": "[ICON]",
+            "box": {
+                "x": 26,
+                "y": 820,
+                "width": 34,
+                "height": 34
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 837
+            }
+        },
+        {
+            "id": 84,
+            "label": "[ICON]",
+            "box": {
+                "x": 26,
+                "y": 462,
+                "width": 34,
+                "height": 34
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 479
+            }
+        },
+        {
+            "id": 85,
+            "label": "[ICON]",
+            "box": {
+                "x": 26,
+                "y": 414,
+                "width": 34,
+                "height": 34
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 431
+            }
+        },
+        {
+            "id": 86,
+            "label": "[ICON]",
+            "box": {
+                "x": 26,
+                "y": 366,
+                "width": 34,
+                "height": 34
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 383
+            }
+        },
+        {
+            "id": 87,
+            "label": "[ICON]",
+            "box": {
+                "x": 1816,
+                "y": 78,
+                "width": 34,
+                "height": 34
+            },
+            "type": "icon",
+            "center": {
+                "x": 1833,
+                "y": 95
+            }
+        },
+        {
+            "id": 88,
+            "label": "Sports",
+            "box": {
+                "x": 84,
+                "y": 828,
+                "width": 54,
+                "height": 20
+            },
+            "type": "button",
+            "center": {
+                "x": 111,
+                "y": 838
+            }
+        },
+        {
+            "id": 89,
+            "label": "[ICON]",
+            "box": {
+                "x": 26,
+                "y": 774,
+                "width": 36,
+                "height": 30
+            },
+            "type": "icon",
+            "center": {
+                "x": 44,
+                "y": 789
+            }
+        },
+        {
+            "id": 90,
+            "label": "Shorts",
+            "box": {
+                "x": 84,
+                "y": 326,
+                "width": 54,
+                "height": 20
+            },
+            "type": "button",
+            "center": {
+                "x": 111,
+                "y": 336
+            }
+        },
+        {
+            "id": 91,
+            "label": "[ICON]",
+            "box": {
+                "x": 1600,
+                "y": 78,
+                "width": 32,
+                "height": 32
+            },
+            "type": "icon",
+            "center": {
+                "x": 1616,
+                "y": 94
+            }
+        },
+        {
+            "id": 92,
+            "label": "Miy",
+            "box": {
+                "x": 838,
+                "y": 440,
+                "width": 46,
+                "height": 22
+            },
+            "type": "button",
+            "center": {
+                "x": 861,
+                "y": 451
+            }
+        },
+        {
+            "id": 93,
+            "label": "[ICON]",
+            "box": {
+                "x": 1678,
+                "y": 80,
+                "width": 36,
+                "height": 28
+            },
+            "type": "icon",
+            "center": {
+                "x": 1696,
+                "y": 94
+            }
+        },
+        {
+            "id": 94,
+            "label": "Music",
+            "box": {
+                "x": 84,
+                "y": 730,
+                "width": 50,
+                "height": 20
+            },
+            "type": "button",
+            "center": {
+                "x": 109,
+                "y": 740
+            }
+        },
+        {
+            "id": 95,
+            "label": "[ICON]",
+            "box": {
+                "x": 1140,
+                "y": 14,
+                "width": 30,
+                "height": 32
+            },
+            "type": "icon",
+            "center": {
+                "x": 1155,
+                "y": 30
+            }
+        },
+        {
+            "id": 96,
+            "label": "[ICON]",
+            "box": {
+                "x": 426,
+                "y": 14,
+                "width": 30,
+                "height": 32
+            },
+            "type": "icon",
+            "center": {
+                "x": 441,
+                "y": 30
+            }
+        },
+        {
+            "id": 97,
+            "label": "[ICON]",
+            "box": {
+                "x": 30,
+                "y": 318,
+                "width": 28,
+                "height": 34
+            },
+            "type": "icon",
+            "center": {
+                "x": 44,
+                "y": 335
+            }
+        },
+        {
+            "id": 98,
+            "label": "[ICON]",
+            "box": {
+                "x": 1762,
+                "y": 80,
+                "width": 30,
+                "height": 30
+            },
+            "type": "icon",
+            "center": {
+                "x": 1777,
+                "y": 95
+            }
+        },
+        {
+            "id": 99,
+            "label": "[ICON]",
+            "box": {
+                "x": 1546,
+                "y": 80,
+                "width": 30,
+                "height": 30
+            },
+            "type": "icon",
+            "center": {
+                "x": 1561,
+                "y": 95
+            }
+        },
+        {
+            "id": 100,
+            "label": "[ICON]",
+            "box": {
+                "x": 1492,
+                "y": 78,
+                "width": 28,
+                "height": 32
+            },
+            "type": "icon",
+            "center": {
+                "x": 1506,
+                "y": 94
+            }
+        },
+        {
+            "id": 101,
+            "label": "88",
+            "box": {
+                "x": 58,
+                "y": 136,
+                "width": 28,
+                "height": 28
+            },
+            "type": "icon",
+            "center": {
+                "x": 72,
+                "y": 150
+            }
+        },
+        {
+            "id": 102,
+            "label": "[ICON]",
+            "box": {
+                "x": 30,
+                "y": 726,
+                "width": 26,
+                "height": 30
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 741
+            }
+        },
+        {
+            "id": 103,
+            "label": "[ICON]",
+            "box": {
+                "x": 126,
+                "y": 136,
+                "width": 30,
+                "height": 26
+            },
+            "type": "icon",
+            "center": {
+                "x": 141,
+                "y": 149
+            }
+        },
+        {
+            "id": 104,
+            "label": "[ICON]",
+            "box": {
+                "x": 28,
+                "y": 940,
+                "width": 30,
+                "height": 24
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 952
+            }
+        },
+        {
+            "id": 105,
+            "label": "You",
+            "box": {
+                "x": 84,
+                "y": 422,
+                "width": 34,
+                "height": 20
+            },
+            "type": "icon",
+            "center": {
+                "x": 101,
+                "y": 432
+            }
+        },
+        {
+            "id": 106,
+            "label": "[ICON]",
+            "box": {
+                "x": 134,
+                "y": 82,
+                "width": 26,
+                "height": 26
+            },
+            "type": "icon",
+            "center": {
+                "x": 147,
+                "y": 95
+            }
+        },
+        {
+            "id": 107,
+            "label": "[ICON]",
+            "box": {
+                "x": 784,
+                "y": 18,
+                "width": 28,
+                "height": 24
+            },
+            "type": "icon",
+            "center": {
+                "x": 798,
+                "y": 30
+            }
+        },
+        {
+            "id": 108,
+            "label": "[ICON]",
+            "box": {
+                "x": 30,
+                "y": 204,
+                "width": 26,
+                "height": 24
+            },
+            "type": "icon",
+            "center": {
+                "x": 43,
+                "y": 216
+            }
+        },
+        {
+            "id": 109,
+            "label": "[ICON]",
+            "box": {
+                "x": 1806,
+                "y": 468,
+                "width": 28,
+                "height": 20
+            },
+            "type": "icon",
+            "center": {
+                "x": 1820,
+                "y": 478
+            }
+        },
+        {
+            "id": 110,
+            "label": "[ICON]",
+            "box": {
+                "x": 78,
+                "y": 84,
+                "width": 24,
+                "height": 22
+            },
+            "type": "icon",
+            "center": {
+                "x": 90,
+                "y": 95
+            }
+        },
+        {
+            "id": 111,
+            "label": "[ICON]",
+            "box": {
+                "x": 1804,
+                "y": 18,
+                "width": 24,
+                "height": 22
+            },
+            "type": "icon",
+            "center": {
+                "x": 1816,
+                "y": 29
+            }
+        },
+        {
+            "id": 112,
+            "label": "[ICON]",
+            "box": {
+                "x": 22,
+                "y": 84,
+                "width": 22,
+                "height": 22
+            },
+            "type": "icon",
+            "center": {
+                "x": 33,
+                "y": 95
+            }
+        },
+        {
+            "id": 113,
+            "label": "[ICON]",
+            "box": {
+                "x": 1874,
+                "y": 18,
+                "width": 22,
+                "height": 22
+            },
+            "type": "icon",
+            "center": {
+                "x": 1885,
+                "y": 29
+            }
+        },
+        {
+            "id": 114,
+            "label": "[ICON]",
+            "box": {
+                "x": 372,
+                "y": 468,
+                "width": 24,
+                "height": 20
+            },
+            "type": "icon",
+            "center": {
+                "x": 384,
+                "y": 478
+            }
+        },
+        {
+            "id": 115,
+            "label": "[ICON]",
+            "box": {
+                "x": 74,
+                "y": 18,
+                "width": 20,
+                "height": 24
+            },
+            "type": "icon",
+            "center": {
+                "x": 84,
+                "y": 30
+            }
+        },
+        {
+            "id": 116,
+            "label": "[ICON]",
+            "box": {
+                "x": 1500,
+                "y": 20,
+                "width": 18,
+                "height": 20
+            },
+            "type": "icon",
+            "center": {
+                "x": 1509,
+                "y": 30
+            }
+        },
+        {
+            "id": 117,
+            "label": "[ICON]",
+            "box": {
+                "x": 1446,
+                "y": 22,
+                "width": 18,
+                "height": 16
+            },
+            "type": "icon",
+            "center": {
+                "x": 1455,
+                "y": 30
+            }
+        },
+        {
+            "id": 118,
+            "label": "[ICON]",
+            "box": {
+                "x": 732,
+                "y": 22,
+                "width": 18,
+                "height": 16
+            },
+            "type": "icon",
+            "center": {
+                "x": 741,
+                "y": 30
+            }
+        },
+        {
+            "id": 119,
+            "label": "[ICON]",
+            "box": {
+                "x": 1818,
+                "y": 812,
+                "width": 20,
+                "height": 14
+            },
+            "type": "icon",
+            "center": {
+                "x": 1828,
+                "y": 819
+            }
+        },
+        {
+            "id": 120,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 102,
+                "y": 136,
+                "width": 10,
+                "height": 28
+            },
+            "type": "unknown",
+            "center": {
+                "x": 107,
+                "y": 150
+            }
+        },
+        {
+            "id": 121,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1730,
+                "y": 80,
+                "width": 10,
+                "height": 28
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1735,
+                "y": 94
+            }
+        },
+        {
+            "id": 122,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1650,
+                "y": 80,
+                "width": 10,
+                "height": 28
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1655,
+                "y": 94
+            }
+        },
+        {
+            "id": 123,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1478,
+                "y": 16,
+                "width": 10,
+                "height": 28
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1483,
+                "y": 30
+            }
+        },
+        {
+            "id": 124,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 408,
+                "y": 16,
+                "width": 10,
+                "height": 28
+            },
+            "type": "unknown",
+            "center": {
+                "x": 413,
+                "y": 30
+            }
+        },
+        {
+            "id": 125,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1882,
+                "y": 82,
+                "width": 10,
+                "height": 26
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1887,
+                "y": 95
+            }
+        },
+        {
+            "id": 126,
+            "label": "[ICON]",
+            "box": {
+                "x": 1090,
+                "y": 22,
+                "width": 16,
+                "height": 16
+            },
+            "type": "icon",
+            "center": {
+                "x": 1098,
+                "y": 30
+            }
+        },
+        {
+            "id": 127,
+            "label": "[ICON]",
+            "box": {
+                "x": 376,
+                "y": 22,
+                "width": 16,
+                "height": 16
+            },
+            "type": "icon",
+            "center": {
+                "x": 384,
+                "y": 30
+            }
+        },
+        {
+            "id": 128,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1330,
+                "y": 884,
+                "width": 10,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1335,
+                "y": 896
+            }
+        },
+        {
+            "id": 129,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 806,
+                "y": 884,
+                "width": 10,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 811,
+                "y": 896
+            }
+        },
+        {
+            "id": 130,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1854,
+                "y": 442,
+                "width": 10,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1859,
+                "y": 454
+            }
+        },
+        {
+            "id": 131,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 806,
+                "y": 442,
+                "width": 10,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 811,
+                "y": 454
+            }
+        },
+        {
+            "id": 132,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1722,
+                "y": 204,
+                "width": 10,
+                "height": 24
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1727,
+                "y": 216
+            }
+        },
+        {
+            "id": 133,
+            "label": "[UNKNOWN]",
+            "box": {
+                "x": 1736,
+                "y": 24,
+                "width": 22,
+                "height": 10
+            },
+            "type": "unknown",
+            "center": {
+                "x": 1747,
+                "y": 29
+            }
+        },
+        {
+            "id": 134,
+            "label": "[ICON]",
+            "box": {
+                "x": 850,
+                "y": 390,
+                "width": 12,
+                "height": 10
+            },
+            "type": "icon",
+            "center": {
+                "x": 856,
+                "y": 395
+            }
+        },
+        {
+            "id": 135,
+            "label": "[ICON]",
+            "box": {
+                "x": 868,
+                "y": 388,
+                "width": 10,
+                "height": 12
+            },
+            "type": "icon",
+            "center": {
+                "x": 873,
+                "y": 394
+            }
+        },
+        {
+            "id": 136,
+            "label": "[ICON]",
+            "box": {
+                "x": 1020,
+                "y": 386,
+                "width": 12,
+                "height": 10
+            },
+            "type": "icon",
+            "center": {
+                "x": 1026,
+                "y": 391
+            }
+        },
+        {
+            "id": 137,
+            "label": "[ICON]",
+            "box": {
+                "x": 886,
+                "y": 348,
+                "width": 12,
+                "height": 10
+            },
+            "type": "icon",
+            "center": {
+                "x": 892,
+                "y": 353
+            }
+        }
+    ]
+}

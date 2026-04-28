@@ -1,0 +1,227 @@
+{
+  "run_id": "run_1777022231",
+  "task": {
+    "prompt": "Learn what clicking safe controls opens in the current app",
+    "goal": "Learn what clicking safe controls opens in the current app",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_fbf6363c6d",
+    "created_at": 1777022231.4207704
+  },
+  "plan": {
+    "task": {
+      "prompt": "Learn what clicking safe controls opens in the current app",
+      "goal": "Learn what clicking safe controls opens in the current app",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_fbf6363c6d",
+      "created_at": 1777022231.4207704
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Learn safe click outcomes",
+        "action_type": "interaction_learning",
+        "target": {
+          "kind": "application",
+          "value": "current_window",
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "current_window"
+          }
+        },
+        "intent": {
+          "verb": "interaction_learning",
+          "semantic_target": "current_window",
+          "description": "Learn safe click outcomes",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "current_window",
+          "max_actions": 5,
+          "settle_wait": 0.8,
+          "recover_after_each": true,
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "current_window"
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "medium",
+        "requires_approval": false,
+        "success_criteria": "Safe clicks should produce rewarded or punished interaction edges.",
+        "fallback_hint": "Reduce action count and retry if scene changes are unstable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [],
+    "success_conditions": [
+      "Safe clicks should produce rewarded or punished interaction edges."
+    ],
+    "generated_at": 1777022231.9315162
+  },
+  "status": "blocked",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777022232.4404306,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 1
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Interaction learning is only allowed inside trusted apps; 'current_window' is not trusted.",
+      "timestamp": 1777022232.4404306,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "critical"
+      }
+    },
+    {
+      "phase": "blocked",
+      "message": "Policy blocked execution.",
+      "timestamp": 1777022232.4404306,
+      "metadata": {
+        "step_id": "step_1"
+      }
+    }
+  ],
+  "approvals": [],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 155,
+      "known_visuals": 118,
+      "known_concepts": 14,
+      "known_controls": 409,
+      "known_entities": 1,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 0,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 2,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 9,
+      "scene_deltas": 2,
+      "action_outcomes": 2
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "Windows Copilot Robot",
+          "left": 359,
+          "top": 68,
+          "width": 1342,
+          "height": 916
+        },
+        "open_windows": [
+          {
+            "title": "Windows Copilot Robot",
+            "left": 359,
+            "top": 68,
+            "width": 1342,
+            "height": 916
+          },
+          {
+            "title": "Downloads - File Explorer",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "‎Saved Messages – (406210)",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Gigs - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "run_task.py - vlm_agent - Visual Studio Code",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    }
+  },
+  "mission": {
+    "mission_id": "mission_task_fbf6363c6d",
+    "goal": "Learn what clicking safe controls opens in the current app",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "",
+    "status": "blocked",
+    "current_checkpoint_id": "step_1",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Learn safe click outcomes",
+        "expected_scene": "Safe clicks should produce rewarded or punished interaction edges.",
+        "completion_rule": "Safe clicks should produce rewarded or punished interaction edges.",
+        "recovery_rule": "Reduce action count and retry if scene changes are unstable.",
+        "status": "blocked",
+        "notes": [
+          "Interaction learning is only allowed inside trusted apps; 'current_window' is not trusted."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777022231.9315162
+  },
+  "scene_deltas": [],
+  "action_outcomes": [],
+  "started_at": 1777022231.9315162,
+  "finished_at": 1777022232.4404306
+}

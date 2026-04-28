@@ -1,0 +1,3750 @@
+{
+    "timestamp": 1776971028.2618706,
+    "context_window": [
+        -11,
+        -11,
+        1942,
+        1030
+    ],
+    "element_count": 150,
+    "ui_graph": [
+        {
+            "id": "top_menu",
+            "label": "Top Menu",
+            "box": {
+                "x": 0,
+                "y": 0,
+                "width": 1920,
+                "height": 220
+            },
+            "type": "container",
+            "center": {
+                "x": 960,
+                "y": 110
+            },
+            "semantic_role": "top_menu",
+            "region": "top_menu",
+            "children": [
+                {
+                    "id": "top_menu_item_0",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1790,
+                        "y": 2,
+                        "width": 44,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1812,
+                        "y": 22
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 146,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1800,
+                                "y": 10,
+                                "width": 24,
+                                "height": 24
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1812,
+                                "y": 22
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_1",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 732,
+                        "y": 4,
+                        "width": 50,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 757,
+                        "y": 24
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 121,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 742,
+                                "y": 12,
+                                "width": 30,
+                                "height": 24
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 757,
+                                "y": 24
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_2",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 14,
+                        "y": 6,
+                        "width": 48,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 38,
+                        "y": 25
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 138,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 24,
+                                "y": 14,
+                                "width": 28,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 38,
+                                "y": 25
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_3",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 374,
+                        "y": 6,
+                        "width": 48,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 398,
+                        "y": 25
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 137,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 384,
+                                "y": 14,
+                                "width": 28,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 398,
+                                "y": 25
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_4",
+                    "label": "- Desktop - vlm_agent X debug_steps X X",
+                    "box": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 1920,
+                        "height": 60
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 960,
+                        "y": 26
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 2,
+                            "label": "- Desktop - vlm_agent X debug_steps X X",
+                            "box": {
+                                "x": 0,
+                                "y": 0,
+                                "width": 1920,
+                                "height": 52
+                            },
+                            "type": "text_field",
+                            "center": {
+                                "x": 960,
+                                "y": 26
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_5",
+                    "label": "Desktop",
+                    "box": {
+                        "x": 52,
+                        "y": 8,
+                        "width": 94,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 99,
+                        "y": 27
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 61,
+                            "label": "Desktop",
+                            "box": {
+                                "x": 62,
+                                "y": 16,
+                                "width": 74,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 99,
+                                "y": 27
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_6",
+                    "label": "vlm_agent",
+                    "box": {
+                        "x": 412,
+                        "y": 8,
+                        "width": 108,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 466,
+                        "y": 28
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 47,
+                            "label": "vlm_agent",
+                            "box": {
+                                "x": 422,
+                                "y": 16,
+                                "width": 88,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 466,
+                                "y": 28
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_7",
+                    "label": "debug_steps",
+                    "box": {
+                        "x": 772,
+                        "y": 8,
+                        "width": 128,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 836,
+                        "y": 28
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 29,
+                            "label": "debug_steps",
+                            "box": {
+                                "x": 782,
+                                "y": 16,
+                                "width": 108,
+                                "height": 24
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 836,
+                                "y": 28
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_8",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 234,
+                        "y": 64,
+                        "width": 46,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 257,
+                        "y": 86
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 120,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 244,
+                                "y": 72,
+                                "width": 26,
+                                "height": 28
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 257,
+                                "y": 86
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_9",
+                    "label": "Error",
+                    "box": {
+                        "x": 344,
+                        "y": 66,
+                        "width": 66,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 377,
+                        "y": 86
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 80,
+                            "label": "Error",
+                            "box": {
+                                "x": 354,
+                                "y": 74,
+                                "width": 46,
+                                "height": 24
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 377,
+                                "y": 86
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_10",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1852,
+                        "y": 66,
+                        "width": 44,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1874,
+                        "y": 86
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 145,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1862,
+                                "y": 74,
+                                "width": 24,
+                                "height": 24
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1874,
+                                "y": 86
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_11",
+                    "label": "Personal",
+                    "box": {
+                        "x": 554,
+                        "y": 68,
+                        "width": 104,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 606,
+                        "y": 87
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 53,
+                            "label": "Personal",
+                            "box": {
+                                "x": 564,
+                                "y": 76,
+                                "width": 84,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 606,
+                                "y": 87
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_12",
+                    "label": "Search",
+                    "box": {
+                        "x": 1454,
+                        "y": 68,
+                        "width": 86,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1497,
+                        "y": 87
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 72,
+                            "label": "Search",
+                            "box": {
+                                "x": 1464,
+                                "y": 76,
+                                "width": 66,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1497,
+                                "y": 87
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_13",
+                    "label": "Tasfiqual",
+                    "box": {
+                        "x": 456,
+                        "y": 66,
+                        "width": 104,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 508,
+                        "y": 88
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 34,
+                            "label": "Tasfiqual",
+                            "box": {
+                                "x": 466,
+                                "y": 74,
+                                "width": 84,
+                                "height": 28
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 508,
+                                "y": 88
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_14",
+                    "label": "Desktop",
+                    "box": {
+                        "x": 694,
+                        "y": 66,
+                        "width": 102,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 745,
+                        "y": 88
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 35,
+                            "label": "Desktop",
+                            "box": {
+                                "x": 704,
+                                "y": 74,
+                                "width": 82,
+                                "height": 28
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 745,
+                                "y": 88
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_15",
+                    "label": "Desktop",
+                    "box": {
+                        "x": 1522,
+                        "y": 68,
+                        "width": 100,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1572,
+                        "y": 89
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 48,
+                            "label": "Desktop",
+                            "box": {
+                                "x": 1532,
+                                "y": 76,
+                                "width": 80,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1572,
+                                "y": 89
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_16",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 12,
+                        "y": 134,
+                        "width": 52,
+                        "height": 48
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 38,
+                        "y": 158
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 90,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 22,
+                                "y": 142,
+                                "width": 32,
+                                "height": 32
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 38,
+                                "y": 158
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_17",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 160,
+                        "y": 136,
+                        "width": 50,
+                        "height": 46
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 185,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 101,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 170,
+                                "y": 144,
+                                "width": 30,
+                                "height": 30
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 185,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_18",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 232,
+                        "y": 136,
+                        "width": 50,
+                        "height": 46
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 257,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 100,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 242,
+                                "y": 144,
+                                "width": 30,
+                                "height": 30
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 257,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_19",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 304,
+                        "y": 134,
+                        "width": 50,
+                        "height": 50
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 329,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 92,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 314,
+                                "y": 142,
+                                "width": 30,
+                                "height": 34
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 329,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_20",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 374,
+                        "y": 136,
+                        "width": 54,
+                        "height": 46
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 401,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 91,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 384,
+                                "y": 144,
+                                "width": 34,
+                                "height": 30
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 401,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_21",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 598,
+                        "y": 140,
+                        "width": 48,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 622,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 136,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 608,
+                                "y": 148,
+                                "width": 28,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 622,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_22",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 730,
+                        "y": 140,
+                        "width": 48,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 754,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 135,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 740,
+                                "y": 148,
+                                "width": 28,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 754,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_23",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1780,
+                        "y": 138,
+                        "width": 54,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1807,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 102,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1790,
+                                "y": 146,
+                                "width": 34,
+                                "height": 26
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1807,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_24",
+                    "label": "Details",
+                    "box": {
+                        "x": 1818,
+                        "y": 140,
+                        "width": 80,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1858,
+                        "y": 159
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 76,
+                            "label": "Details",
+                            "box": {
+                                "x": 1828,
+                                "y": 148,
+                                "width": 60,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1858,
+                                "y": 159
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_25",
+                    "label": "New",
+                    "box": {
+                        "x": 50,
+                        "y": 142,
+                        "width": 62,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 81,
+                        "y": 160
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 110,
+                            "label": "New",
+                            "box": {
+                                "x": 60,
+                                "y": 150,
+                                "width": 42,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 81,
+                                "y": 160
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_26",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 448,
+                        "y": 138,
+                        "width": 50,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 473,
+                        "y": 160
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 111,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 458,
+                                "y": 146,
+                                "width": 30,
+                                "height": 28
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 473,
+                                "y": 160
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_27",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 522,
+                        "y": 136,
+                        "width": 46,
+                        "height": 48
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 545,
+                        "y": 160
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 113,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 532,
+                                "y": 144,
+                                "width": 26,
+                                "height": 32
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 545,
+                                "y": 160
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_28",
+                    "label": "Sort",
+                    "box": {
+                        "x": 634,
+                        "y": 142,
+                        "width": 58,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 663,
+                        "y": 160
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 115,
+                            "label": "Sort",
+                            "box": {
+                                "x": 644,
+                                "y": 150,
+                                "width": 38,
+                                "height": 20
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 663,
+                                "y": 160
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_29",
+                    "label": "View",
+                    "box": {
+                        "x": 764,
+                        "y": 142,
+                        "width": 66,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 797,
+                        "y": 160
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 98,
+                            "label": "View",
+                            "box": {
+                                "x": 774,
+                                "y": 150,
+                                "width": 46,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 797,
+                                "y": 160
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_30",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 360,
+                        "y": 192,
+                        "width": 44,
+                        "height": 28
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 382,
+                        "y": 213
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 131,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 370,
+                                "y": 200,
+                                "width": 24,
+                                "height": 26
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 382,
+                                "y": 213
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_31",
+                    "label": "Status",
+                    "box": {
+                        "x": 792,
+                        "y": 196,
+                        "width": 72,
+                        "height": 24
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 828,
+                        "y": 215
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 79,
+                            "label": "Status",
+                            "box": {
+                                "x": 802,
+                                "y": 204,
+                                "width": 52,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 828,
+                                "y": 215
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_32",
+                    "label": "Date modified",
+                    "box": {
+                        "x": 926,
+                        "y": 196,
+                        "width": 140,
+                        "height": 24
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 996,
+                        "y": 215
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 25,
+                            "label": "Date modified",
+                            "box": {
+                                "x": 936,
+                                "y": 204,
+                                "width": 120,
+                                "height": 22
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 996,
+                                "y": 215
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_33",
+                    "label": "Size",
+                    "box": {
+                        "x": 1372,
+                        "y": 196,
+                        "width": 58,
+                        "height": 24
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1401,
+                        "y": 215
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 112,
+                            "label": "Size",
+                            "box": {
+                                "x": 1382,
+                                "y": 204,
+                                "width": 38,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1401,
+                                "y": 215
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_34",
+                    "label": "Name",
+                    "box": {
+                        "x": 394,
+                        "y": 198,
+                        "width": 74,
+                        "height": 22
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 431,
+                        "y": 216
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 82,
+                            "label": "Name",
+                            "box": {
+                                "x": 404,
+                                "y": 206,
+                                "width": 54,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 431,
+                                "y": 216
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_35",
+                    "label": "Type",
+                    "box": {
+                        "x": 1170,
+                        "y": 196,
+                        "width": 62,
+                        "height": 24
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1201,
+                        "y": 216
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 95,
+                            "label": "Type",
+                            "box": {
+                                "x": 1180,
+                                "y": 204,
+                                "width": 42,
+                                "height": 24
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1201,
+                                "y": 216
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "left_menu",
+            "label": "Left Menu",
+            "box": {
+                "x": 0,
+                "y": 220,
+                "width": 360,
+                "height": 740
+            },
+            "type": "container",
+            "center": {
+                "x": 180,
+                "y": 590
+            },
+            "semantic_role": "left_menu",
+            "region": "left_menu",
+            "children": [
+                {
+                    "id": "left_menu_item_0",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 40,
+                        "y": 220,
+                        "width": 46,
+                        "height": 26
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 63,
+                        "y": 226
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 119,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 50,
+                                "y": 212,
+                                "width": 26,
+                                "height": 28
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 63,
+                                "y": 226
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_1",
+                    "label": "Home",
+                    "box": {
+                        "x": 68,
+                        "y": 220,
+                        "width": 74,
+                        "height": 24
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 105,
+                        "y": 228
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 81,
+                            "label": "Home",
+                            "box": {
+                                "x": 78,
+                                "y": 218,
+                                "width": 54,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 105,
+                                "y": 228
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_2",
+                    "label": "Home Gallery Tasfiqual - Personal",
+                    "box": {
+                        "x": 0,
+                        "y": 220,
+                        "width": 316,
+                        "height": 134
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 153,
+                        "y": 269
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 4,
+                            "label": "Home Gallery Tasfiqual - Personal",
+                            "box": {
+                                "x": 0,
+                                "y": 190,
+                                "width": 306,
+                                "height": 158
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 153,
+                                "y": 269
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_3",
+                    "label": "Gallery",
+                    "box": {
+                        "x": 38,
+                        "y": 252,
+                        "width": 108,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 92,
+                        "y": 274
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 21,
+                            "label": "Gallery",
+                            "box": {
+                                "x": 48,
+                                "y": 258,
+                                "width": 88,
+                                "height": 32
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 92,
+                                "y": 274
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_4",
+                    "label": "Gilbert",
+                    "box": {
+                        "x": 38,
+                        "y": 352,
+                        "width": 106,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 91,
+                        "y": 370
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 50,
+                            "label": "Gilbert",
+                            "box": {
+                                "x": 48,
+                                "y": 358,
+                                "width": 86,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 91,
+                                "y": 370
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_5",
+                    "label": "MSFT",
+                    "box": {
+                        "x": 126,
+                        "y": 354,
+                        "width": 78,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 165,
+                        "y": 371
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 77,
+                            "label": "MSFT",
+                            "box": {
+                                "x": 136,
+                                "y": 360,
+                                "width": 58,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 165,
+                                "y": 371
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_6",
+                    "label": "Attachments",
+                    "box": {
+                        "x": 52,
+                        "y": 400,
+                        "width": 152,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 128,
+                        "y": 418
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 19,
+                            "label": "Attachments",
+                            "box": {
+                                "x": 62,
+                                "y": 406,
+                                "width": 132,
+                                "height": 24
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 128,
+                                "y": 418
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_7",
+                    "label": "Desktop",
+                    "box": {
+                        "x": 80,
+                        "y": 450,
+                        "width": 92,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 126,
+                        "y": 468
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 60,
+                            "label": "Desktop",
+                            "box": {
+                                "x": 90,
+                                "y": 456,
+                                "width": 72,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 126,
+                                "y": 468
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_8",
+                    "label": "Imon",
+                    "box": {
+                        "x": 80,
+                        "y": 500,
+                        "width": 68,
+                        "height": 32
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 114,
+                        "y": 516
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 97,
+                            "label": "Imon",
+                            "box": {
+                                "x": 90,
+                                "y": 506,
+                                "width": 48,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 114,
+                                "y": 516
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_9",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 52,
+                        "y": 544,
+                        "width": 46,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 75,
+                        "y": 561
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 149,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 62,
+                                "y": 550,
+                                "width": 26,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 75,
+                                "y": 561
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_10",
+                    "label": "Tasfia",
+                    "box": {
+                        "x": 80,
+                        "y": 546,
+                        "width": 68,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 114,
+                        "y": 563
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 87,
+                            "label": "Tasfia",
+                            "box": {
+                                "x": 90,
+                                "y": 552,
+                                "width": 48,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 114,
+                                "y": 563
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_11",
+                    "label": "left_menu item",
+                    "box": {
+                        "x": 4,
+                        "y": 598,
+                        "width": 300,
+                        "height": 22
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 154,
+                        "y": 609
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 22,
+                            "label": "[TEXT_FIELD]",
+                            "box": {
+                                "x": 14,
+                                "y": 604,
+                                "width": 280,
+                                "height": 10
+                            },
+                            "type": "text_field",
+                            "center": {
+                                "x": 154,
+                                "y": 609
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_12",
+                    "label": "Desktop",
+                    "box": {
+                        "x": 38,
+                        "y": 640,
+                        "width": 122,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 99,
+                        "y": 659
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 24,
+                            "label": "Desktop",
+                            "box": {
+                                "x": 48,
+                                "y": 646,
+                                "width": 102,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 99,
+                                "y": 659
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_13",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 42,
+                        "y": 686,
+                        "width": 42,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 63,
+                        "y": 707
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 128,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 52,
+                                "y": 692,
+                                "width": 22,
+                                "height": 30
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 63,
+                                "y": 707
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_14",
+                    "label": "Downloads",
+                    "box": {
+                        "x": 68,
+                        "y": 690,
+                        "width": 114,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 125,
+                        "y": 707
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 49,
+                            "label": "Downloads",
+                            "box": {
+                                "x": 78,
+                                "y": 696,
+                                "width": 94,
+                                "height": 22
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 125,
+                                "y": 707
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_15",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 42,
+                        "y": 732,
+                        "width": 42,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 63,
+                        "y": 753
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 127,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 52,
+                                "y": 738,
+                                "width": 22,
+                                "height": 30
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 63,
+                                "y": 753
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_16",
+                    "label": "Documents",
+                    "box": {
+                        "x": 68,
+                        "y": 738,
+                        "width": 116,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 126,
+                        "y": 755
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 46,
+                            "label": "Documents",
+                            "box": {
+                                "x": 78,
+                                "y": 744,
+                                "width": 96,
+                                "height": 22
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 126,
+                                "y": 755
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_17",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 40,
+                        "y": 782,
+                        "width": 46,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 63,
+                        "y": 802
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 116,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 50,
+                                "y": 788,
+                                "width": 26,
+                                "height": 28
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 63,
+                                "y": 802
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_18",
+                    "label": "Pictures",
+                    "box": {
+                        "x": 68,
+                        "y": 786,
+                        "width": 86,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 111,
+                        "y": 803
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 71,
+                            "label": "Pictures",
+                            "box": {
+                                "x": 78,
+                                "y": 792,
+                                "width": 66,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 111,
+                                "y": 803
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_19",
+                    "label": "Music",
+                    "box": {
+                        "x": 38,
+                        "y": 828,
+                        "width": 102,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 89,
+                        "y": 850
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 27,
+                            "label": "Music",
+                            "box": {
+                                "x": 48,
+                                "y": 834,
+                                "width": 82,
+                                "height": 32
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 89,
+                                "y": 850
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_20",
+                    "label": "Videos",
+                    "box": {
+                        "x": 40,
+                        "y": 876,
+                        "width": 106,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 93,
+                        "y": 898
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 23,
+                            "label": "Videos",
+                            "box": {
+                                "x": 50,
+                                "y": 882,
+                                "width": 86,
+                                "height": 32
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 93,
+                                "y": 898
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_21",
+                    "label": "vlm_agent",
+                    "box": {
+                        "x": 40,
+                        "y": 928,
+                        "width": 134,
+                        "height": 32
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 107,
+                        "y": 948
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 18,
+                            "label": "vlm_agent",
+                            "box": {
+                                "x": 50,
+                                "y": 934,
+                                "width": 114,
+                                "height": 28
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 107,
+                                "y": 948
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "main_page",
+            "label": "Main Page",
+            "box": {
+                "x": 360,
+                "y": 220,
+                "width": 1560,
+                "height": 740
+            },
+            "type": "container",
+            "center": {
+                "x": 1140,
+                "y": 590
+            },
+            "semantic_role": "main_page",
+            "region": "main_page",
+            "children": [
+                {
+                    "id": "main_list",
+                    "label": "List: excell",
+                    "box": {
+                        "x": 360,
+                        "y": 236,
+                        "width": 1168,
+                        "height": 672
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 880,
+                        "y": 570
+                    },
+                    "semantic_role": "list_container",
+                    "region": "main_page",
+                    "children": [
+                        {
+                            "id": "row_0",
+                            "label": "Row: excell",
+                            "box": {
+                                "x": 372,
+                                "y": 246,
+                                "width": 902,
+                                "height": 38
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 776,
+                                "y": 264
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 134,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 384,
+                                        "y": 252,
+                                        "width": 28,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 398,
+                                        "y": 263
+                                    }
+                                },
+                                {
+                                    "id": 89,
+                                    "label": "excell",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 254,
+                                        "width": 48,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 438,
+                                        "y": 265
+                                    }
+                                },
+                                {
+                                    "id": 144,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 252,
+                                        "width": 24,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 264
+                                    }
+                                },
+                                {
+                                    "id": 12,
+                                    "label": "16/03/2026 20:10",
+                                    "box": {
+                                        "x": 940,
+                                        "y": 254,
+                                        "width": 146,
+                                        "height": 24
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 1013,
+                                        "y": 266
+                                    }
+                                },
+                                {
+                                    "id": 59,
+                                    "label": "File folder",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 254,
+                                        "width": 82,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1221,
+                                        "y": 265
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_1",
+                            "label": "Row: Nowshin work",
+                            "box": {
+                                "x": 372,
+                                "y": 292,
+                                "width": 902,
+                                "height": 38
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 825,
+                                "y": 312
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 126,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 384,
+                                        "y": 298,
+                                        "width": 28,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 398,
+                                        "y": 310
+                                    }
+                                },
+                                {
+                                    "id": 28,
+                                    "label": "Nowshin work",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 302,
+                                        "width": 118,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 473,
+                                        "y": 313
+                                    }
+                                },
+                                {
+                                    "id": 130,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 298,
+                                        "width": 24,
+                                        "height": 26
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 311
+                                    }
+                                },
+                                {
+                                    "id": 44,
+                                    "label": "06/03/2026",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 302,
+                                        "width": 100,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 986,
+                                        "y": 313
+                                    }
+                                },
+                                {
+                                    "id": 88,
+                                    "label": "14:39",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 302,
+                                        "width": 48,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1062,
+                                        "y": 313
+                                    }
+                                },
+                                {
+                                    "id": 58,
+                                    "label": "File folder",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 302,
+                                        "width": 82,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1221,
+                                        "y": 313
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_2",
+                            "label": "Row: patterns",
+                            "box": {
+                                "x": 372,
+                                "y": 340,
+                                "width": 902,
+                                "height": 38
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 778,
+                                "y": 359
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 133,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 384,
+                                        "y": 346,
+                                        "width": 28,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 398,
+                                        "y": 357
+                                    }
+                                },
+                                {
+                                    "id": 74,
+                                    "label": "patterns",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 352,
+                                        "width": 70,
+                                        "height": 20
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 449,
+                                        "y": 362
+                                    }
+                                },
+                                {
+                                    "id": 143,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 346,
+                                        "width": 24,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 358
+                                    }
+                                },
+                                {
+                                    "id": 13,
+                                    "label": "14/03/2026 22:21",
+                                    "box": {
+                                        "x": 940,
+                                        "y": 348,
+                                        "width": 142,
+                                        "height": 24
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 1011,
+                                        "y": 360
+                                    }
+                                },
+                                {
+                                    "id": 57,
+                                    "label": "File folder",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 348,
+                                        "width": 82,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1221,
+                                        "y": 359
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_3",
+                            "label": "Row: session",
+                            "box": {
+                                "x": 372,
+                                "y": 386,
+                                "width": 902,
+                                "height": 38
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 822,
+                                "y": 406
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 125,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 384,
+                                        "y": 392,
+                                        "width": 28,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 398,
+                                        "y": 404
+                                    }
+                                },
+                                {
+                                    "id": 73,
+                                    "label": "session",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 396,
+                                        "width": 64,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 446,
+                                        "y": 407
+                                    }
+                                },
+                                {
+                                    "id": 43,
+                                    "label": "27/02/2026",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 396,
+                                        "width": 100,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 986,
+                                        "y": 407
+                                    }
+                                },
+                                {
+                                    "id": 94,
+                                    "label": "19:52",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 396,
+                                        "width": 46,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1061,
+                                        "y": 407
+                                    }
+                                },
+                                {
+                                    "id": 56,
+                                    "label": "File folder",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 396,
+                                        "width": 82,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1221,
+                                        "y": 407
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_4",
+                            "label": "Row: two_opamp",
+                            "box": {
+                                "x": 372,
+                                "y": 434,
+                                "width": 902,
+                                "height": 40
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 826,
+                                "y": 453
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 132,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 384,
+                                        "y": 440,
+                                        "width": 28,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 398,
+                                        "y": 451
+                                    }
+                                },
+                                {
+                                    "id": 41,
+                                    "label": "two_opamp",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 446,
+                                        "width": 100,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 464,
+                                        "y": 457
+                                    }
+                                },
+                                {
+                                    "id": 42,
+                                    "label": "27/02/2026",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 442,
+                                        "width": 100,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 986,
+                                        "y": 453
+                                    }
+                                },
+                                {
+                                    "id": 93,
+                                    "label": "19:52",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 442,
+                                        "width": 46,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1061,
+                                        "y": 453
+                                    }
+                                },
+                                {
+                                    "id": 55,
+                                    "label": "File folder",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 442,
+                                        "width": 82,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1221,
+                                        "y": 453
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_5",
+                            "label": "Row: 6figure.zip",
+                            "box": {
+                                "x": 372,
+                                "y": 478,
+                                "width": 1142,
+                                "height": 44
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 918,
+                                "y": 500
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 118,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 384,
+                                        "y": 484,
+                                        "width": 28,
+                                        "height": 26
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 398,
+                                        "y": 497
+                                    }
+                                },
+                                {
+                                    "id": 36,
+                                    "label": "6figure.zip",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 490,
+                                        "width": 88,
+                                        "height": 26
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 458,
+                                        "y": 503
+                                    }
+                                },
+                                {
+                                    "id": 17,
+                                    "label": "16/03/2026 20:10",
+                                    "box": {
+                                        "x": 940,
+                                        "y": 490,
+                                        "width": 146,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 1013,
+                                        "y": 501
+                                    }
+                                },
+                                {
+                                    "id": 11,
+                                    "label": "WinRAR ZIP archive",
+                                    "box": {
+                                        "x": 1178,
+                                        "y": 490,
+                                        "width": 162,
+                                        "height": 22
+                                    },
+                                    "type": "text_field",
+                                    "center": {
+                                        "x": 1259,
+                                        "y": 501
+                                    }
+                                },
+                                {
+                                    "id": 68,
+                                    "label": "1,516 KB",
+                                    "box": {
+                                        "x": 1430,
+                                        "y": 490,
+                                        "width": 72,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1466,
+                                        "y": 501
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_6",
+                            "label": "Row: autoclicker.py",
+                            "box": {
+                                "x": 376,
+                                "y": 526,
+                                "width": 1138,
+                                "height": 42
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 900,
+                                "y": 547
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 124,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 388,
+                                        "y": 532,
+                                        "width": 24,
+                                        "height": 28
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 400,
+                                        "y": 546
+                                    }
+                                },
+                                {
+                                    "id": 30,
+                                    "label": "autoclicker.py",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 538,
+                                        "width": 114,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 471,
+                                        "y": 549
+                                    }
+                                },
+                                {
+                                    "id": 142,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 534,
+                                        "width": 24,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 546
+                                    }
+                                },
+                                {
+                                    "id": 15,
+                                    "label": "09/02/2026 08:48",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 536,
+                                        "width": 150,
+                                        "height": 22
+                                    },
+                                    "type": "text_field",
+                                    "center": {
+                                        "x": 1011,
+                                        "y": 547
+                                    }
+                                },
+                                {
+                                    "id": 33,
+                                    "label": "Python File",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 536,
+                                        "width": 92,
+                                        "height": 26
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1226,
+                                        "y": 549
+                                    }
+                                },
+                                {
+                                    "id": 108,
+                                    "label": "2 KB",
+                                    "box": {
+                                        "x": 1462,
+                                        "y": 536,
+                                        "width": 40,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1482,
+                                        "y": 547
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_7",
+                            "label": "Row: awake.py",
+                            "box": {
+                                "x": 376,
+                                "y": 574,
+                                "width": 1138,
+                                "height": 40
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 936,
+                                "y": 595
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 123,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 388,
+                                        "y": 580,
+                                        "width": 24,
+                                        "height": 28
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 400,
+                                        "y": 594
+                                    }
+                                },
+                                {
+                                    "id": 52,
+                                    "label": "awake.py",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 584,
+                                        "width": 78,
+                                        "height": 24
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 453,
+                                        "y": 596
+                                    }
+                                },
+                                {
+                                    "id": 40,
+                                    "label": "23/04/2026",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 584,
+                                        "width": 100,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 986,
+                                        "y": 595
+                                    }
+                                },
+                                {
+                                    "id": 86,
+                                    "label": "18:26",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 584,
+                                        "width": 48,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1062,
+                                        "y": 595
+                                    }
+                                },
+                                {
+                                    "id": 37,
+                                    "label": "Python File",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 584,
+                                        "width": 92,
+                                        "height": 24
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1226,
+                                        "y": 596
+                                    }
+                                },
+                                {
+                                    "id": 148,
+                                    "label": "KB",
+                                    "box": {
+                                        "x": 1476,
+                                        "y": 584,
+                                        "width": 26,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1489,
+                                        "y": 595
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_8",
+                            "label": "Row: Blender",
+                            "box": {
+                                "x": 370,
+                                "y": 622,
+                                "width": 1144,
+                                "height": 38
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 836,
+                                "y": 641
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 117,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 382,
+                                        "y": 628,
+                                        "width": 28,
+                                        "height": 26
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 396,
+                                        "y": 641
+                                    }
+                                },
+                                {
+                                    "id": 75,
+                                    "label": "Blender",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 630,
+                                        "width": 62,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 445,
+                                        "y": 641
+                                    }
+                                },
+                                {
+                                    "id": 129,
+                                    "label": "5.0",
+                                    "box": {
+                                        "x": 478,
+                                        "y": 630,
+                                        "width": 30,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 493,
+                                        "y": 641
+                                    }
+                                },
+                                {
+                                    "id": 141,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 628,
+                                        "width": 24,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 640
+                                    }
+                                },
+                                {
+                                    "id": 10,
+                                    "label": "06/01/2026 22:36",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 630,
+                                        "width": 150,
+                                        "height": 24
+                                    },
+                                    "type": "text_field",
+                                    "center": {
+                                        "x": 1011,
+                                        "y": 642
+                                    }
+                                },
+                                {
+                                    "id": 67,
+                                    "label": "Shortcut",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 630,
+                                        "width": 72,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1216,
+                                        "y": 641
+                                    }
+                                },
+                                {
+                                    "id": 107,
+                                    "label": "2 KB",
+                                    "box": {
+                                        "x": 1462,
+                                        "y": 630,
+                                        "width": 40,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1482,
+                                        "y": 641
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_9",
+                            "label": "Row: CapCut",
+                            "box": {
+                                "x": 370,
+                                "y": 668,
+                                "width": 1144,
+                                "height": 40
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 1035,
+                                "y": 688
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 26,
+                                    "label": "CapCut",
+                                    "box": {
+                                        "x": 382,
+                                        "y": 674,
+                                        "width": 94,
+                                        "height": 28
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 429,
+                                        "y": 688
+                                    }
+                                },
+                                {
+                                    "id": 39,
+                                    "label": "23/04/2026",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 678,
+                                        "width": 100,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 986,
+                                        "y": 689
+                                    }
+                                },
+                                {
+                                    "id": 85,
+                                    "label": "17:16",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 678,
+                                        "width": 48,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1062,
+                                        "y": 689
+                                    }
+                                },
+                                {
+                                    "id": 66,
+                                    "label": "Shortcut",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 678,
+                                        "width": 72,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1216,
+                                        "y": 689
+                                    }
+                                },
+                                {
+                                    "id": 106,
+                                    "label": "2 KB",
+                                    "box": {
+                                        "x": 1462,
+                                        "y": 678,
+                                        "width": 40,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1482,
+                                        "y": 689
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_10",
+                            "label": "Row: cursor.py",
+                            "box": {
+                                "x": 376,
+                                "y": 714,
+                                "width": 1138,
+                                "height": 42
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 1002,
+                                "y": 735
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 20,
+                                    "label": "cursor.py",
+                                    "box": {
+                                        "x": 388,
+                                        "y": 720,
+                                        "width": 104,
+                                        "height": 30
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 440,
+                                        "y": 735
+                                    }
+                                },
+                                {
+                                    "id": 140,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 722,
+                                        "width": 24,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 734
+                                    }
+                                },
+                                {
+                                    "id": 31,
+                                    "label": "31/01/2026",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 724,
+                                        "width": 100,
+                                        "height": 24
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 986,
+                                        "y": 736
+                                    }
+                                },
+                                {
+                                    "id": 84,
+                                    "label": "13:00",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 724,
+                                        "width": 48,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1062,
+                                        "y": 735
+                                    }
+                                },
+                                {
+                                    "id": 32,
+                                    "label": "Python File",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 724,
+                                        "width": 92,
+                                        "height": 26
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1226,
+                                        "y": 737
+                                    }
+                                },
+                                {
+                                    "id": 147,
+                                    "label": "KB",
+                                    "box": {
+                                        "x": 1476,
+                                        "y": 724,
+                                        "width": 26,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1489,
+                                        "y": 735
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_11",
+                            "label": "Row: Docker Desktop",
+                            "box": {
+                                "x": 370,
+                                "y": 760,
+                                "width": 1144,
+                                "height": 42
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 937,
+                                "y": 782
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 99,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 382,
+                                        "y": 766,
+                                        "width": 30,
+                                        "height": 30
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 397,
+                                        "y": 781
+                                    }
+                                },
+                                {
+                                    "id": 16,
+                                    "label": "Docker Desktop",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 772,
+                                        "width": 134,
+                                        "height": 24
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 481,
+                                        "y": 784
+                                    }
+                                },
+                                {
+                                    "id": 45,
+                                    "label": "11/12/2025",
+                                    "box": {
+                                        "x": 940,
+                                        "y": 772,
+                                        "width": 96,
+                                        "height": 22
+                                    },
+                                    "type": "unknown",
+                                    "center": {
+                                        "x": 988,
+                                        "y": 783
+                                    }
+                                },
+                                {
+                                    "id": 83,
+                                    "label": "13:28",
+                                    "box": {
+                                        "x": 1038,
+                                        "y": 772,
+                                        "width": 48,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1062,
+                                        "y": 783
+                                    }
+                                },
+                                {
+                                    "id": 65,
+                                    "label": "Shortcut",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 772,
+                                        "width": 72,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1216,
+                                        "y": 783
+                                    }
+                                },
+                                {
+                                    "id": 105,
+                                    "label": "3 KB",
+                                    "box": {
+                                        "x": 1462,
+                                        "y": 772,
+                                        "width": 40,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1482,
+                                        "y": 783
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_12",
+                            "label": "Row: exchange",
+                            "box": {
+                                "x": 370,
+                                "y": 810,
+                                "width": 1144,
+                                "height": 40
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 814,
+                                "y": 829
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 114,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 382,
+                                        "y": 816,
+                                        "width": 30,
+                                        "height": 26
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 397,
+                                        "y": 829
+                                    }
+                                },
+                                {
+                                    "id": 51,
+                                    "label": "exchange",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 820,
+                                        "width": 78,
+                                        "height": 24
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 453,
+                                        "y": 832
+                                    }
+                                },
+                                {
+                                    "id": 54,
+                                    "label": "Shortcut",
+                                    "box": {
+                                        "x": 494,
+                                        "y": 818,
+                                        "width": 82,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 535,
+                                        "y": 829
+                                    }
+                                },
+                                {
+                                    "id": 69,
+                                    "label": "Copy",
+                                    "box": {
+                                        "x": 578,
+                                        "y": 818,
+                                        "width": 58,
+                                        "height": 26
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 607,
+                                        "y": 831
+                                    }
+                                },
+                                {
+                                    "id": 139,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 800,
+                                        "y": 816,
+                                        "width": 24,
+                                        "height": 24
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 812,
+                                        "y": 828
+                                    }
+                                },
+                                {
+                                    "id": 9,
+                                    "label": "28/07/2025 02:09",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 818,
+                                        "width": 150,
+                                        "height": 24
+                                    },
+                                    "type": "text_field",
+                                    "center": {
+                                        "x": 1011,
+                                        "y": 830
+                                    }
+                                },
+                                {
+                                    "id": 64,
+                                    "label": "Shortcut",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 818,
+                                        "width": 72,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1216,
+                                        "y": 829
+                                    }
+                                },
+                                {
+                                    "id": 104,
+                                    "label": "2 KB",
+                                    "box": {
+                                        "x": 1462,
+                                        "y": 818,
+                                        "width": 40,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1482,
+                                        "y": 829
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "row_13",
+                            "label": "Row: exchange - Shortcut",
+                            "box": {
+                                "x": 370,
+                                "y": 856,
+                                "width": 1144,
+                                "height": 42
+                            },
+                            "type": "container",
+                            "center": {
+                                "x": 920,
+                                "y": 877
+                            },
+                            "semantic_role": "list_row",
+                            "children": [
+                                {
+                                    "id": 109,
+                                    "label": "[ICON]",
+                                    "box": {
+                                        "x": 382,
+                                        "y": 862,
+                                        "width": 30,
+                                        "height": 28
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 397,
+                                        "y": 876
+                                    }
+                                },
+                                {
+                                    "id": 7,
+                                    "label": "exchange - Shortcut",
+                                    "box": {
+                                        "x": 414,
+                                        "y": 866,
+                                        "width": 162,
+                                        "height": 26
+                                    },
+                                    "type": "text_field",
+                                    "center": {
+                                        "x": 495,
+                                        "y": 879
+                                    }
+                                },
+                                {
+                                    "id": 14,
+                                    "label": "28/07/2025 02:09",
+                                    "box": {
+                                        "x": 936,
+                                        "y": 866,
+                                        "width": 150,
+                                        "height": 22
+                                    },
+                                    "type": "text_field",
+                                    "center": {
+                                        "x": 1011,
+                                        "y": 877
+                                    }
+                                },
+                                {
+                                    "id": 63,
+                                    "label": "Shortcut",
+                                    "box": {
+                                        "x": 1180,
+                                        "y": 866,
+                                        "width": 72,
+                                        "height": 22
+                                    },
+                                    "type": "button",
+                                    "center": {
+                                        "x": 1216,
+                                        "y": 877
+                                    }
+                                },
+                                {
+                                    "id": 103,
+                                    "label": "2 KB",
+                                    "box": {
+                                        "x": 1462,
+                                        "y": 866,
+                                        "width": 40,
+                                        "height": 22
+                                    },
+                                    "type": "icon",
+                                    "center": {
+                                        "x": 1482,
+                                        "y": 877
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bottom_menu",
+            "label": "Bottom Menu",
+            "box": {
+                "x": 0,
+                "y": 960,
+                "width": 1920,
+                "height": 60
+            },
+            "type": "container",
+            "center": {
+                "x": 960,
+                "y": 990
+            },
+            "semantic_role": "bottom_menu",
+            "region": "bottom_menu",
+            "children": [
+                {
+                    "id": "bottom_menu_item_0",
+                    "label": "bottom_menu item",
+                    "box": {
+                        "x": 926,
+                        "y": 960,
+                        "width": 168,
+                        "height": 22
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1022,
+                        "y": 966
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "children": [
+                        {
+                            "id": 78,
+                            "label": "[UNKNOWN]",
+                            "box": {
+                                "x": 936,
+                                "y": 960,
+                                "width": 98,
+                                "height": 12
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 985,
+                                "y": 966
+                            }
+                        },
+                        {
+                            "id": 122,
+                            "label": "[BUTTON]",
+                            "box": {
+                                "x": 1036,
+                                "y": 960,
+                                "width": 48,
+                                "height": 14
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1060,
+                                "y": 967
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "bottom_menu_loose_96",
+                    "label": "bottom_menu item",
+                    "box": {
+                        "x": 1172,
+                        "y": 960,
+                        "width": 86,
+                        "height": 20
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1215,
+                        "y": 967
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "children": [
+                        {
+                            "id": 96,
+                            "label": "[UNKNOWN]",
+                            "box": {
+                                "x": 1180,
+                                "y": 960,
+                                "width": 70,
+                                "height": 14
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 1215,
+                                "y": 967
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "bottom_menu_item_1",
+                    "label": "23 items",
+                    "box": {
+                        "x": 10,
+                        "y": 970,
+                        "width": 92,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 56,
+                        "y": 989
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "children": [
+                        {
+                            "id": 62,
+                            "label": "23 items",
+                            "box": {
+                                "x": 20,
+                                "y": 978,
+                                "width": 72,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 56,
+                                "y": 989
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "bottom_menu_item_2",
+                    "label": "2.10 KB",
+                    "box": {
+                        "x": 240,
+                        "y": 970,
+                        "width": 86,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 283,
+                        "y": 989
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "children": [
+                        {
+                            "id": 70,
+                            "label": "2.10 KB",
+                            "box": {
+                                "x": 250,
+                                "y": 978,
+                                "width": 66,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 283,
+                                "y": 989
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "bottom_menu_item_3",
+                    "label": "item selected",
+                    "box": {
+                        "x": 126,
+                        "y": 972,
+                        "width": 130,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 191,
+                        "y": 990
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "children": [
+                        {
+                            "id": 38,
+                            "label": "item selected",
+                            "box": {
+                                "x": 136,
+                                "y": 980,
+                                "width": 110,
+                                "height": 20
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 191,
+                                "y": 990
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "bottom_menu_item_4",
+                    "label": "Available on this device",
+                    "box": {
+                        "x": 332,
+                        "y": 972,
+                        "width": 212,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 438,
+                        "y": 990
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "children": [
+                        {
+                            "id": 8,
+                            "label": "Available on this device",
+                            "box": {
+                                "x": 342,
+                                "y": 980,
+                                "width": 192,
+                                "height": 20
+                            },
+                            "type": "text_field",
+                            "center": {
+                                "x": 438,
+                                "y": 990
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

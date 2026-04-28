@@ -1,0 +1,1349 @@
+{
+  "run_id": "run_1777138801",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_8862c1ef6f",
+    "created_at": 1777138801.7584076
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_8862c1ef6f",
+      "created_at": 1777138801.7584076
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Parse Explorer for folder summary",
+        "action_type": "parse_ui",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "parse_ui",
+          "semantic_target": "explorer",
+          "description": "Parse Explorer for folder summary",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "output_filename": "explorer_summary.png"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer UI should be parsed for summarization.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Summarize current Explorer folder",
+        "action_type": "checkpoint",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          }
+        },
+        "intent": {
+          "verb": "checkpoint",
+          "semantic_target": "explorer",
+          "description": "Summarize current Explorer folder",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "The current Explorer folder contents should be summarized.",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          },
+          "recovery_hint": "Reparse Explorer and retry summarization."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The current Explorer folder contents should be summarized.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer UI should be parsed for summarization.",
+      "The current Explorer folder contents should be summarized."
+    ],
+    "generated_at": 1777138801.8469822
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777138801.8508842,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777138801.8508842,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777138801.8508842,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777138808.6862235,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777138808.700078,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777138808.700078,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777138808.8056788,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777138808.8274446,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse Explorer for folder summary",
+      "timestamp": 1777138808.8274446,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777138815.4208825,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 1 nodes; highlights: Main Page"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777138815.444622,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize current Explorer folder",
+      "timestamp": 1777138815.444622,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "checkpoint"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777138822.0019107,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "checkpoint",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 1 nodes; highlights: Main Page"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777138801.8508842
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 380,
+      "known_visuals": 781,
+      "known_concepts": 26,
+      "known_controls": 1533,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 9,
+      "trusted_workflows": 1,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 29,
+      "scene_deltas": 162,
+      "action_outcomes": 162
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "open_windows": [
+          {
+            "title": "Desktop - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 1008
+          },
+          {
+            "title": "README.md - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "ISDD FINAL.pdf - Google Chrome",
+            "left": -9,
+            "top": 0,
+            "width": 1115,
+            "height": 1017
+          },
+          {
+            "title": "YouTube",
+            "left": 75,
+            "top": 0,
+            "width": 1725,
+            "height": 978
+          },
+          {
+            "title": "WhatsApp",
+            "left": 729,
+            "top": 0,
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "title": "vlm_agent and 1 more tab - File Explorer",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "ChatGPT - AK",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "Downloads - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 1008
+          },
+          {
+            "title": "Google - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "classes.txt - Notepad",
+            "left": 41,
+            "top": 473,
+            "width": 1151,
+            "height": 545
+          },
+          {
+            "title": "Fiverr / Inbox - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "(37) WhatsApp",
+            "left": 740,
+            "top": 1,
+            "width": 1178,
+            "height": 888
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "explorer",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 3,
+        "tab_titles": [
+          "Google",
+          "youtube - Google Search",
+          "Google"
+        ],
+        "active_title": "Google",
+        "active_url": "https://www.google.com/"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777138801.8508842
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777138808.6862235
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer UI should be parsed for summarization.",
+        "timeline_entry_at": 1777138808.8056788
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The current Explorer folder contents should be summarized.",
+        "timeline_entry_at": 1777138815.4208825
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777138822.0019107
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "0214fb22bc60d7a7",
+        "timestamp": 1777138801.880101,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "cebb2a794d5c661d",
+        "timestamp": 1777138808.6376143,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "ee426de1869263d5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "1921b525a9cb258f",
+        "timestamp": 1777138808.7321334,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "ee426de1869263d5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "e11177cc29b44012",
+        "timestamp": 1777138808.768301,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "ee426de1869263d5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "2fd51d623a35b96a",
+        "timestamp": 1777138808.8606029,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "ee426de1869263d5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:parse_ui",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "758417453fb133c6",
+        "timestamp": 1777138815.3819053,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "c7be70511ebcd98f",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:parse_ui",
+        "last_verified_change": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "f5ff78966d513fb3",
+        "timestamp": 1777138815.4759414,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "c7be70511ebcd98f",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:checkpoint",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "b0654abfa02cf036",
+        "timestamp": 1777138821.9382906,
+        "active_window": {
+          "title": "Desktop - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "ea543900039c722f",
+        "ui_tree_hash": "d4591bd169b7dc3d",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:checkpoint",
+        "last_verified_change": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "confidence": 0.5
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "0214fb22bc60d7a7",
+        "after_state_id": "cebb2a794d5c661d",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "1921b525a9cb258f",
+        "after_state_id": "e11177cc29b44012",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "2fd51d623a35b96a",
+        "after_state_id": "758417453fb133c6",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "f5ff78966d513fb3",
+        "after_state_id": "b0654abfa02cf036",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "added: main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "main page"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777138808.6376143
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138808.768301
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138815.3819053
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138821.9401255
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "0214fb22bc60d7a7",
+          "after_state_id": "cebb2a794d5c661d",
+          "confidence_delta": 0.25
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": false,
+          "ui_tree_changed": false,
+          "dom_changed": false,
+          "changed": false,
+          "before_state_id": "1921b525a9cb258f",
+          "after_state_id": "e11177cc29b44012",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_3",
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_3",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "2fd51d623a35b96a",
+          "after_state_id": "758417453fb133c6",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "failed_step_ids": []
+      }
+    ],
+    "plan_replacements": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_3",
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_3",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      }
+    ],
+    "last_observation": {
+      "nodes": [
+        {
+          "node_id": "main_page",
+          "label": "Main Page",
+          "learned_label": "",
+          "learned_concepts": [
+            "content",
+            "tile",
+            "file",
+            "code",
+            "container",
+            "folder"
+          ],
+          "node_type": "container",
+          "semantic_role": "main_page",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "main_page",
+          "state_tags": [
+            "main_page"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 307,
+            "y": 181,
+            "width": 1613,
+            "height": 827
+          },
+          "center": {
+            "x": 1113,
+            "y": 594
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": []
+        }
+      ],
+      "source": "vision",
+      "metadata": {
+        "output_filename": "explorer_summary.png",
+        "environment": {
+          "windows": {
+            "active_window": {
+              "title": "Desktop - File Explorer",
+              "left": 0,
+              "top": 0,
+              "width": 1919,
+              "height": 1008
+            },
+            "open_windows": [
+              {
+                "title": "Desktop - File Explorer",
+                "left": 0,
+                "top": 0,
+                "width": 1919,
+                "height": 1008
+              },
+              {
+                "title": "README.md - vlm_agent - Visual Studio Code",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "ISDD FINAL.pdf - Google Chrome",
+                "left": -9,
+                "top": 0,
+                "width": 1115,
+                "height": 1017
+              },
+              {
+                "title": "YouTube",
+                "left": 75,
+                "top": 0,
+                "width": 1725,
+                "height": 978
+              },
+              {
+                "title": "WhatsApp",
+                "left": 729,
+                "top": 0,
+                "width": 1200,
+                "height": 900
+              },
+              {
+                "title": "vlm_agent and 1 more tab - File Explorer",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "ChatGPT - AK",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "Downloads - File Explorer",
+                "left": 0,
+                "top": 0,
+                "width": 1919,
+                "height": 1008
+              },
+              {
+                "title": "Google - Google Chrome",
+                "left": -32000,
+                "top": -32000,
+                "width": 237,
+                "height": 39
+              },
+              {
+                "title": "classes.txt - Notepad",
+                "left": 41,
+                "top": 473,
+                "width": 1151,
+                "height": 545
+              },
+              {
+                "title": "Fiverr / Inbox - Google Chrome",
+                "left": -32000,
+                "top": -32000,
+                "width": 237,
+                "height": 39
+              },
+              {
+                "title": "Windows Input Experience",
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 1080
+              },
+              {
+                "title": "(37) WhatsApp",
+                "left": 740,
+                "top": 1,
+                "width": 1178,
+                "height": 888
+              },
+              {
+                "title": "Program Manager",
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 1080
+              }
+            ],
+            "active_app_guess": "explorer",
+            "adapter_mode": "native_window_metadata"
+          },
+          "browser": {
+            "adapter_mode": "browser_dom_metadata",
+            "available": true,
+            "cdp_available": true,
+            "tab_count": 3,
+            "tab_titles": [
+              "Google",
+              "youtube - Google Search",
+              "Google"
+            ],
+            "active_title": "Google",
+            "active_url": "https://www.google.com/"
+          }
+        },
+        "app_id": "explorer",
+        "app_name": "File Explorer",
+        "scene": {
+          "app_id": "explorer",
+          "app_name": "File Explorer",
+          "active_window_title": "Desktop - File Explorer",
+          "node_count": 1,
+          "salient_labels": [
+            "Main Page"
+          ],
+          "ambiguous": true,
+          "summary": "File Explorer scene with 1 nodes; highlights: Main Page"
+        },
+        "scene_summary": "File Explorer scene with 1 nodes; highlights: Main Page"
+      }
+    }
+  },
+  "mission": {
+    "mission_id": "mission_task_8862c1ef6f",
+    "goal": "Open explorer and parse screen",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_4",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Parse Explorer for folder summary",
+        "expected_scene": "Explorer UI should be parsed for summarization.",
+        "completion_rule": "Explorer UI should be parsed for summarization.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 1 nodes; highlights: Main Page"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Summarize current Explorer folder",
+        "expected_scene": "The current Explorer folder contents should be summarized.",
+        "completion_rule": "The current Explorer folder contents should be summarized.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 1 nodes; highlights: Main Page"
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777138801.8469822
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "added: main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "main page"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777138808.6376143
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777138808.768301
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer UI should be parsed for summarization.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777138815.3819053
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "The current Explorer folder contents should be summarized.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777138821.9401255
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "added: main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "main page"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777138808.6376143
+      },
+      "timestamp": 1777138808.6583352
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138808.768301
+      },
+      "timestamp": 1777138808.7858472
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "parse_ui",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138815.3819053
+      },
+      "timestamp": 1777138815.4024267
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "checkpoint",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777138821.9401255
+      },
+      "timestamp": 1777138821.966478
+    }
+  ],
+  "started_at": 1777138801.8469822,
+  "finished_at": 1777138822.0019107
+}

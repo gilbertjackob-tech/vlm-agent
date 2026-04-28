@@ -1,0 +1,2203 @@
+{
+    "timestamp": 1777199687.3936276,
+    "context_window": "Full Screen",
+    "element_count": 42,
+    "parse_health": {
+        "screen_hash": "33ee9c056421d2ba2dc43240ac01f451",
+        "candidate_count": 42,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 41,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.328079,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 4.610276
+    },
+    "memory_summary": {
+        "known_labels": 403,
+        "known_visuals": 1268,
+        "known_concepts": 26,
+        "transition_count": 0
+    },
+    "ui_graph": [
+        {
+            "id": "left_menu",
+            "label": "Left Menu",
+            "box": {
+                "x": 0,
+                "y": 194,
+                "width": 180,
+                "height": 827
+            },
+            "type": "container",
+            "center": {
+                "x": 90,
+                "y": 607
+            },
+            "semantic_role": "left_menu",
+            "region": "left_menu",
+            "children": [
+                {
+                    "id": "left_menu_item_0",
+                    "label": "bottom_menu item",
+                    "box": {
+                        "x": 4,
+                        "y": 928,
+                        "width": 52,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 30,
+                        "y": 950
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "visual_id": "4bc3effb0d1e1d91368c750816948b87",
+                    "visual_ids": [
+                        "4bc3effb0d1e1d91368c750816948b87"
+                    ],
+                    "children": [
+                        {
+                            "id": 22,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 14,
+                                "y": 934,
+                                "width": 32,
+                                "height": 32
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 30,
+                                "y": 950
+                            },
+                            "visual_id": "4bc3effb0d1e1d91368c750816948b87",
+                            "region": "left_menu",
+                            "learned_label": "bottom_menu item",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "tile"
+                            ],
+                            "memory_votes": 161
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "content",
+                        "tile",
+                        "file"
+                    ],
+                    "memory_votes": 988
+                }
+            ],
+            "learned_concepts": [
+                "control",
+                "file",
+                "content",
+                "tile",
+                "code",
+                "container"
+            ],
+            "memory_votes": 1475
+        },
+        {
+            "id": "main_page",
+            "label": "Main Page",
+            "box": {
+                "x": 180,
+                "y": 194,
+                "width": 1439,
+                "height": 827
+            },
+            "type": "container",
+            "center": {
+                "x": 899,
+                "y": 607
+            },
+            "semantic_role": "main_page",
+            "region": "main_page",
+            "children": [
+                {
+                    "id": "main_page_tile_0",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1272,
+                        "y": 882,
+                        "width": 44,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1294,
+                        "y": 902
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "6127dc1ba1d29a20970baf14f8fb042c",
+                    "visual_ids": [
+                        "6127dc1ba1d29a20970baf14f8fb042c"
+                    ],
+                    "children": [
+                        {
+                            "id": 29,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1284,
+                                "y": 892,
+                                "width": 20,
+                                "height": 20
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1294,
+                                "y": 902
+                            },
+                            "visual_id": "6127dc1ba1d29a20970baf14f8fb042c",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_label": "tile",
+                    "learned_concepts": [
+                        "content",
+                        "tile"
+                    ],
+                    "memory_votes": 14
+                },
+                {
+                    "id": "main_page_tile_1",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1582,
+                        "y": 882,
+                        "width": 37,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1607,
+                        "y": 902
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "6c93335df1e3dd4fd915fb41cb22d6ea",
+                    "visual_ids": [
+                        "6c93335df1e3dd4fd915fb41cb22d6ea"
+                    ],
+                    "children": [
+                        {
+                            "id": 26,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1594,
+                                "y": 892,
+                                "width": 26,
+                                "height": 20
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1607,
+                                "y": 902
+                            },
+                            "visual_id": "6c93335df1e3dd4fd915fb41cb22d6ea",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_label": "tile",
+                    "learned_concepts": [
+                        "content",
+                        "tile"
+                    ],
+                    "memory_votes": 14
+                },
+                {
+                    "id": "main_page_tile_2",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1414,
+                        "y": 886,
+                        "width": 42,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1435,
+                        "y": 903
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "2a692194ed277d7b243f9cb491122ada",
+                    "visual_ids": [
+                        "2a692194ed277d7b243f9cb491122ada"
+                    ],
+                    "children": [
+                        {
+                            "id": 33,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1426,
+                                "y": 896,
+                                "width": 18,
+                                "height": 14
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1435,
+                                "y": 903
+                            },
+                            "visual_id": "2a692194ed277d7b243f9cb491122ada",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_label": "tile",
+                    "learned_concepts": [
+                        "content",
+                        "tile"
+                    ],
+                    "memory_votes": 14
+                },
+                {
+                    "id": "main_page_tile_3",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1542,
+                        "y": 882,
+                        "width": 44,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1564,
+                        "y": 903
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "57186e331ee83792960d076ff953b205",
+                    "visual_ids": [
+                        "57186e331ee83792960d076ff953b205"
+                    ],
+                    "children": [
+                        {
+                            "id": 28,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1554,
+                                "y": 892,
+                                "width": 20,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1564,
+                                "y": 903
+                            },
+                            "visual_id": "57186e331ee83792960d076ff953b205",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_label": "tile",
+                    "learned_concepts": [
+                        "content",
+                        "tile"
+                    ],
+                    "memory_votes": 14
+                },
+                {
+                    "id": "main_page_tile_4",
+                    "label": "tile",
+                    "box": {
+                        "x": 892,
+                        "y": 906,
+                        "width": 92,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 938,
+                        "y": 926
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "77d0be0a79bab02bbad8857134f4fb1f",
+                    "visual_ids": [
+                        "77d0be0a79bab02bbad8857134f4fb1f"
+                    ],
+                    "children": [
+                        {
+                            "id": 19,
+                            "label": "[BUTTON]",
+                            "box": {
+                                "x": 904,
+                                "y": 916,
+                                "width": 68,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 938,
+                                "y": 926
+                            },
+                            "visual_id": "77d0be0a79bab02bbad8857134f4fb1f",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_concepts": [
+                        "content",
+                        "tile",
+                        "file",
+                        "code",
+                        "archive",
+                        "document"
+                    ],
+                    "memory_votes": 6646
+                },
+                {
+                    "id": "main_page_tile_5",
+                    "label": "tile",
+                    "box": {
+                        "x": 1090,
+                        "y": 904,
+                        "width": 136,
+                        "height": 46
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1158,
+                        "y": 927
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "8abef8d71743f37c31e7c325ead07a13",
+                    "visual_ids": [
+                        "8abef8d71743f37c31e7c325ead07a13"
+                    ],
+                    "children": [
+                        {
+                            "id": 4,
+                            "label": "[UNKNOWN]",
+                            "box": {
+                                "x": 1102,
+                                "y": 914,
+                                "width": 112,
+                                "height": 26
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 1158,
+                                "y": 927
+                            },
+                            "visual_id": "8abef8d71743f37c31e7c325ead07a13",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_concepts": [
+                        "content",
+                        "tile",
+                        "file",
+                        "code",
+                        "archive",
+                        "document"
+                    ],
+                    "memory_votes": 6646
+                },
+                {
+                    "id": "main_page_tile_6",
+                    "label": "tile",
+                    "box": {
+                        "x": 440,
+                        "y": 884,
+                        "width": 468,
+                        "height": 88
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 674,
+                        "y": 928
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "f8de157970120f91af08b306ca53f7dd",
+                    "visual_ids": [
+                        "f8de157970120f91af08b306ca53f7dd"
+                    ],
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "[TEXT_FIELD]",
+                            "box": {
+                                "x": 452,
+                                "y": 894,
+                                "width": 444,
+                                "height": 68
+                            },
+                            "type": "text_field",
+                            "center": {
+                                "x": 674,
+                                "y": 928
+                            },
+                            "visual_id": "f8de157970120f91af08b306ca53f7dd",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_concepts": [
+                        "content",
+                        "tile",
+                        "file",
+                        "code",
+                        "archive",
+                        "document"
+                    ],
+                    "memory_votes": 6646
+                },
+                {
+                    "id": "main_page_tile_7",
+                    "label": "tile",
+                    "box": {
+                        "x": 964,
+                        "y": 906,
+                        "width": 144,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1036,
+                        "y": 928
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "104fcc6a15a4ec76a10aef3f7892d2c0",
+                    "visual_ids": [
+                        "104fcc6a15a4ec76a10aef3f7892d2c0"
+                    ],
+                    "children": [
+                        {
+                            "id": 6,
+                            "label": "[UNKNOWN]",
+                            "box": {
+                                "x": 976,
+                                "y": 916,
+                                "width": 120,
+                                "height": 24
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 1036,
+                                "y": 928
+                            },
+                            "visual_id": "104fcc6a15a4ec76a10aef3f7892d2c0",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_concepts": [
+                        "content",
+                        "tile",
+                        "file",
+                        "code",
+                        "archive",
+                        "document"
+                    ],
+                    "memory_votes": 6646
+                },
+                {
+                    "id": "main_page_tile_8",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1214,
+                        "y": 916,
+                        "width": 36,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1232,
+                        "y": 935
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "e7ac7fae74a4fb9fcb32b9b3abc9c5b6",
+                    "visual_ids": [
+                        "e7ac7fae74a4fb9fcb32b9b3abc9c5b6"
+                    ],
+                    "children": [
+                        {
+                            "id": 34,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1226,
+                                "y": 926,
+                                "width": 12,
+                                "height": 18
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1232,
+                                "y": 935
+                            },
+                            "visual_id": "e7ac7fae74a4fb9fcb32b9b3abc9c5b6",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_label": "tile",
+                    "learned_concepts": [
+                        "content",
+                        "tile"
+                    ],
+                    "memory_votes": 14
+                },
+                {
+                    "id": "main_page_tile_9",
+                    "label": "tile",
+                    "box": {
+                        "x": 1272,
+                        "y": 932,
+                        "width": 156,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1350,
+                        "y": 953
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "47bae76c6ce314a72a6edfe3ee4edfe7",
+                    "visual_ids": [
+                        "47bae76c6ce314a72a6edfe3ee4edfe7"
+                    ],
+                    "children": [
+                        {
+                            "id": 5,
+                            "label": "[UNKNOWN]",
+                            "box": {
+                                "x": 1284,
+                                "y": 942,
+                                "width": 132,
+                                "height": 22
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 1350,
+                                "y": 953
+                            },
+                            "visual_id": "47bae76c6ce314a72a6edfe3ee4edfe7",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_concepts": [
+                        "content",
+                        "tile",
+                        "file",
+                        "code",
+                        "archive",
+                        "document"
+                    ],
+                    "memory_votes": 6646
+                },
+                {
+                    "id": "main_page_tile_10",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1406,
+                        "y": 936,
+                        "width": 42,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1427,
+                        "y": 953
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "ab1807e0311774cecace08009e83a043",
+                    "visual_ids": [
+                        "ab1807e0311774cecace08009e83a043"
+                    ],
+                    "children": [
+                        {
+                            "id": 32,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1418,
+                                "y": 946,
+                                "width": 18,
+                                "height": 14
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1427,
+                                "y": 953
+                            },
+                            "visual_id": "ab1807e0311774cecace08009e83a043",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile"
+                            ],
+                            "memory_votes": 7
+                        }
+                    ],
+                    "learned_label": "tile",
+                    "learned_concepts": [
+                        "content",
+                        "tile"
+                    ],
+                    "memory_votes": 14
+                },
+                {
+                    "id": "main_page_tile_11",
+                    "label": "tile",
+                    "box": {
+                        "x": 1226,
+                        "y": 976,
+                        "width": 34,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1243,
+                        "y": 994
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "visual_id": "5541c64409a470a3aa3b3608a14b3446",
+                    "visual_ids": [
+                        "5541c64409a470a3aa3b3608a14b3446"
+                    ],
+                    "children": [
+                        {
+                            "id": 36,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1238,
+                                "y": 986,
+                                "width": 10,
+                                "height": 16
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1243,
+                                "y": 994
+                            },
+                            "visual_id": "5541c64409a470a3aa3b3608a14b3446",
+                            "region": "main_page",
+                            "learned_label": "tile",
+                            "learned_concepts": [
+                                "content",
+                                "tile",
+                                "file",
+                                "control",
+                                "archive",
+                                "code"
+                            ],
+                            "memory_votes": 270
+                        }
+                    ],
+                    "learned_concepts": [
+                        "content",
+                        "tile",
+                        "file",
+                        "code",
+                        "archive",
+                        "document"
+                    ],
+                    "memory_votes": 7172
+                }
+            ],
+            "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+            ],
+            "memory_votes": 44637
+        },
+        {
+            "id": "bottom_menu",
+            "label": "Bottom Menu",
+            "box": {
+                "x": 0,
+                "y": 1021,
+                "width": 1920,
+                "height": 57
+            },
+            "type": "container",
+            "center": {
+                "x": 960,
+                "y": 1049
+            },
+            "semantic_role": "bottom_menu",
+            "region": "bottom_menu",
+            "children": [
+                {
+                    "id": "bottom_menu_item_1",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 18,
+                        "y": 1021,
+                        "width": 66,
+                        "height": 51
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 51,
+                        "y": 1040
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "0be77f328bb31a21eebcf4bb78155b9c",
+                    "visual_ids": [
+                        "0be77f328bb31a21eebcf4bb78155b9c"
+                    ],
+                    "children": [
+                        {
+                            "id": 9,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 28,
+                                "y": 1016,
+                                "width": 46,
+                                "height": 48
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 51,
+                                "y": 1040
+                            },
+                            "visual_id": "0be77f328bb31a21eebcf4bb78155b9c",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control"
+                            ],
+                            "memory_votes": 2
+                        }
+                    ],
+                    "learned_label": "Search",
+                    "learned_concepts": [
+                        "control"
+                    ],
+                    "memory_votes": 4
+                },
+                {
+                    "id": "bottom_menu_item_4",
+                    "label": "Search",
+                    "box": {
+                        "x": 828,
+                        "y": 1021,
+                        "width": 60,
+                        "height": 49
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 858,
+                        "y": 1043
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "e5787605c134fe1145d7dc946c9d14a6",
+                    "visual_ids": [
+                        "e5787605c134fe1145d7dc946c9d14a6"
+                    ],
+                    "children": [
+                        {
+                            "id": 18,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 838,
+                                "y": 1024,
+                                "width": 40,
+                                "height": 38
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 858,
+                                "y": 1043
+                            },
+                            "visual_id": "e5787605c134fe1145d7dc946c9d14a6",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 209
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5393
+                },
+                {
+                    "id": "bottom_menu_item_5",
+                    "label": "Search",
+                    "box": {
+                        "x": 1574,
+                        "y": 1022,
+                        "width": 94,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1619,
+                        "y": 1043
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "22fa9c983b116ed8728b8c1e7f1384ef",
+                    "visual_ids": [
+                        "22fa9c983b116ed8728b8c1e7f1384ef",
+                        "1017afae35e513f97affe60f2e4a9c59"
+                    ],
+                    "children": [
+                        {
+                            "id": 31,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1584,
+                                "y": 1036,
+                                "width": 22,
+                                "height": 14
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1595,
+                                "y": 1043
+                            },
+                            "visual_id": "22fa9c983b116ed8728b8c1e7f1384ef",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "search_field",
+                                "content",
+                                "file",
+                                "list_item",
+                                "tile"
+                            ],
+                            "memory_votes": 285
+                        },
+                        {
+                            "id": 25,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1628,
+                                "y": 1030,
+                                "width": 30,
+                                "height": 26
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1643,
+                                "y": 1043
+                            },
+                            "visual_id": "1017afae35e513f97affe60f2e4a9c59",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "search_field",
+                                "content",
+                                "file",
+                                "list_item",
+                                "tile"
+                            ],
+                            "memory_votes": 254
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5799
+                },
+                {
+                    "id": "bottom_menu_item_0",
+                    "label": "Search",
+                    "box": {
+                        "x": 1786,
+                        "y": 1021,
+                        "width": 118,
+                        "height": 53
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1857,
+                        "y": 1043
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "06b6d7b99c01cefc32d5da3d00429f65",
+                    "visual_ids": [
+                        "06b6d7b99c01cefc32d5da3d00429f65",
+                        "d89681ad1e84ad0017e71a55a6991b8e"
+                    ],
+                    "children": [
+                        {
+                            "id": 21,
+                            "label": "[BUTTON]",
+                            "box": {
+                                "x": 1846,
+                                "y": 1020,
+                                "width": 48,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1870,
+                                "y": 1031
+                            },
+                            "visual_id": "06b6d7b99c01cefc32d5da3d00429f65",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control"
+                            ],
+                            "memory_votes": 2
+                        },
+                        {
+                            "id": 10,
+                            "label": "[UNKNOWN]",
+                            "box": {
+                                "x": 1796,
+                                "y": 1044,
+                                "width": 98,
+                                "height": 22
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 1845,
+                                "y": 1055
+                            },
+                            "visual_id": "d89681ad1e84ad0017e71a55a6991b8e",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "tile",
+                                "list_item",
+                                "search_field"
+                            ],
+                            "memory_votes": 208
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5187
+                },
+                {
+                    "id": "bottom_menu_item_6",
+                    "label": "Search",
+                    "box": {
+                        "x": 424,
+                        "y": 1021,
+                        "width": 60,
+                        "height": 51
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 454,
+                        "y": 1044
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "0ab4e378d0212e16ae8f5e3596d36465",
+                    "visual_ids": [
+                        "0ab4e378d0212e16ae8f5e3596d36465"
+                    ],
+                    "children": [
+                        {
+                            "id": 16,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 434,
+                                "y": 1024,
+                                "width": 40,
+                                "height": 40
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 454,
+                                "y": 1044
+                            },
+                            "visual_id": "0ab4e378d0212e16ae8f5e3596d36465",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 165
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5305
+                },
+                {
+                    "id": "bottom_menu_item_7",
+                    "label": "Search",
+                    "box": {
+                        "x": 478,
+                        "y": 1021,
+                        "width": 358,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 657,
+                        "y": 1044
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "b2a085dfc41f4cde9e1a2578271edd98",
+                    "visual_ids": [
+                        "b2a085dfc41f4cde9e1a2578271edd98"
+                    ],
+                    "children": [
+                        {
+                            "id": 2,
+                            "label": "[TEXT_FIELD]",
+                            "box": {
+                                "x": 488,
+                                "y": 1016,
+                                "width": 338,
+                                "height": 56
+                            },
+                            "type": "text_field",
+                            "center": {
+                                "x": 657,
+                                "y": 1044
+                            },
+                            "visual_id": "b2a085dfc41f4cde9e1a2578271edd98",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "tile",
+                                "list_item",
+                                "search_field"
+                            ],
+                            "memory_votes": 179
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5333
+                },
+                {
+                    "id": "bottom_menu_item_8",
+                    "label": "Search",
+                    "box": {
+                        "x": 962,
+                        "y": 1021,
+                        "width": 56,
+                        "height": 49
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 990,
+                        "y": 1044
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "2eb78708971f60d662d090afb93fd38e",
+                    "visual_ids": [
+                        "2eb78708971f60d662d090afb93fd38e"
+                    ],
+                    "children": [
+                        {
+                            "id": 20,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 972,
+                                "y": 1026,
+                                "width": 36,
+                                "height": 36
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 990,
+                                "y": 1044
+                            },
+                            "visual_id": "2eb78708971f60d662d090afb93fd38e",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 209
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5393
+                },
+                {
+                    "id": "bottom_menu_item_12",
+                    "label": "Search",
+                    "box": {
+                        "x": 1652,
+                        "y": 1022,
+                        "width": 54,
+                        "height": 44
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1679,
+                        "y": 1044
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "5b0ed439bcf15aa50a11df699b2666a5",
+                    "visual_ids": [
+                        "5b0ed439bcf15aa50a11df699b2666a5"
+                    ],
+                    "children": [
+                        {
+                            "id": 23,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1662,
+                                "y": 1030,
+                                "width": 34,
+                                "height": 28
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1679,
+                                "y": 1044
+                            },
+                            "visual_id": "5b0ed439bcf15aa50a11df699b2666a5",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 115
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5205
+                },
+                {
+                    "id": "bottom_menu_item_13",
+                    "label": "bottom_menu item",
+                    "box": {
+                        "x": 1688,
+                        "y": 1024,
+                        "width": 98,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1737,
+                        "y": 1044
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "6e9c5f09abec0f4e560cffe2b6ee6496",
+                    "visual_ids": [
+                        "6e9c5f09abec0f4e560cffe2b6ee6496"
+                    ],
+                    "children": [
+                        {
+                            "id": 12,
+                            "label": "[BUTTON]",
+                            "box": {
+                                "x": 1698,
+                                "y": 1032,
+                                "width": 78,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1737,
+                                "y": 1044
+                            },
+                            "visual_id": "6e9c5f09abec0f4e560cffe2b6ee6496",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control"
+                            ],
+                            "memory_votes": 2
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "content",
+                        "tile",
+                        "file"
+                    ],
+                    "memory_votes": 670
+                },
+                {
+                    "id": "bottom_menu_item_14",
+                    "label": "Search",
+                    "box": {
+                        "x": 1024,
+                        "y": 1021,
+                        "width": 74,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1061,
+                        "y": 1046
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "0a5f83e0d6ce19e37737ad350a46d8d1",
+                    "visual_ids": [
+                        "0a5f83e0d6ce19e37737ad350a46d8d1"
+                    ],
+                    "children": [
+                        {
+                            "id": 3,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1034,
+                                "y": 1016,
+                                "width": 54,
+                                "height": 60
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1061,
+                                "y": 1046
+                            },
+                            "visual_id": "0a5f83e0d6ce19e37737ad350a46d8d1",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 111
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5197
+                },
+                {
+                    "id": "bottom_menu_item_15",
+                    "label": "Search",
+                    "box": {
+                        "x": 1222,
+                        "y": 1021,
+                        "width": 64,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1254,
+                        "y": 1049
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "b7f20180d90169a2dc271d19f4fc9136",
+                    "visual_ids": [
+                        "b7f20180d90169a2dc271d19f4fc9136"
+                    ],
+                    "children": [
+                        {
+                            "id": 8,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1232,
+                                "y": 1022,
+                                "width": 44,
+                                "height": 54
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1254,
+                                "y": 1049
+                            },
+                            "visual_id": "b7f20180d90169a2dc271d19f4fc9136",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 209
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5393
+                },
+                {
+                    "id": "bottom_menu_item_2",
+                    "label": "Search",
+                    "box": {
+                        "x": 1092,
+                        "y": 1021,
+                        "width": 70,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1125,
+                        "y": 1055
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "a99094b7f285b779162db69058101ffd",
+                    "visual_ids": [
+                        "a99094b7f285b779162db69058101ffd",
+                        "dbdc1c49a8b6a132ac9586fcb007806d"
+                    ],
+                    "children": [
+                        {
+                            "id": 7,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1102,
+                                "y": 1016,
+                                "width": 50,
+                                "height": 48
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1127,
+                                "y": 1040
+                            },
+                            "visual_id": "a99094b7f285b779162db69058101ffd",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 209
+                        },
+                        {
+                            "id": 41,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1116,
+                                "y": 1066,
+                                "width": 14,
+                                "height": 10
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1123,
+                                "y": 1071
+                            },
+                            "visual_id": "dbdc1c49a8b6a132ac9586fcb007806d",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 196
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5589
+                },
+                {
+                    "id": "bottom_menu_item_3",
+                    "label": "Search",
+                    "box": {
+                        "x": 1422,
+                        "y": 1021,
+                        "width": 64,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1453,
+                        "y": 1056
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "dcac74a3d7e801169b793c86b80a3279",
+                    "visual_ids": [
+                        "dcac74a3d7e801169b793c86b80a3279",
+                        "1c5ceb99ab0dcc35ef1eeb98a85b87f3"
+                    ],
+                    "children": [
+                        {
+                            "id": 11,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1432,
+                                "y": 1018,
+                                "width": 44,
+                                "height": 46
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1454,
+                                "y": 1041
+                            },
+                            "visual_id": "dcac74a3d7e801169b793c86b80a3279",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 131
+                        },
+                        {
+                            "id": 37,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1446,
+                                "y": 1066,
+                                "width": 14,
+                                "height": 10
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1453,
+                                "y": 1071
+                            },
+                            "visual_id": "1c5ceb99ab0dcc35ef1eeb98a85b87f3",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 155
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5392
+                },
+                {
+                    "id": "bottom_menu_item_9",
+                    "label": "Search",
+                    "box": {
+                        "x": 1158,
+                        "y": 1021,
+                        "width": 60,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1188,
+                        "y": 1057
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "c490c2dfbc898bdba60c312f733ad2e9",
+                    "visual_ids": [
+                        "c490c2dfbc898bdba60c312f733ad2e9",
+                        "0cb6664dadc3a74f538afb13881ccce4"
+                    ],
+                    "children": [
+                        {
+                            "id": 15,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1168,
+                                "y": 1024,
+                                "width": 40,
+                                "height": 40
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1188,
+                                "y": 1044
+                            },
+                            "visual_id": "c490c2dfbc898bdba60c312f733ad2e9",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 159
+                        },
+                        {
+                            "id": 40,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1182,
+                                "y": 1066,
+                                "width": 14,
+                                "height": 10
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1189,
+                                "y": 1071
+                            },
+                            "visual_id": "0cb6664dadc3a74f538afb13881ccce4",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 150
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5443
+                },
+                {
+                    "id": "bottom_menu_item_10",
+                    "label": "Search",
+                    "box": {
+                        "x": 1290,
+                        "y": 1021,
+                        "width": 60,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1320,
+                        "y": 1057
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "4f9b4c28b1e2f220fa6abfff03e36ca0",
+                    "visual_ids": [
+                        "4f9b4c28b1e2f220fa6abfff03e36ca0",
+                        "bd970229edbe8e878df555cad5927e4e"
+                    ],
+                    "children": [
+                        {
+                            "id": 14,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1300,
+                                "y": 1024,
+                                "width": 40,
+                                "height": 40
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1320,
+                                "y": 1044
+                            },
+                            "visual_id": "4f9b4c28b1e2f220fa6abfff03e36ca0",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 183
+                        },
+                        {
+                            "id": 39,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1314,
+                                "y": 1066,
+                                "width": 14,
+                                "height": 10
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1321,
+                                "y": 1071
+                            },
+                            "visual_id": "bd970229edbe8e878df555cad5927e4e",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 218
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5559
+                },
+                {
+                    "id": "bottom_menu_item_11",
+                    "label": "Search",
+                    "box": {
+                        "x": 1356,
+                        "y": 1021,
+                        "width": 60,
+                        "height": 57
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1386,
+                        "y": 1057
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "bottom_menu",
+                    "visual_id": "92f463ccc7d236a9d5538bd574ae67ab",
+                    "visual_ids": [
+                        "92f463ccc7d236a9d5538bd574ae67ab",
+                        "842505c614e52ad10c962629f266b5d9"
+                    ],
+                    "children": [
+                        {
+                            "id": 13,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1366,
+                                "y": 1024,
+                                "width": 40,
+                                "height": 40
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1386,
+                                "y": 1044
+                            },
+                            "visual_id": "92f463ccc7d236a9d5538bd574ae67ab",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 173
+                        },
+                        {
+                            "id": 38,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1380,
+                                "y": 1066,
+                                "width": 14,
+                                "height": 10
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1387,
+                                "y": 1071
+                            },
+                            "visual_id": "842505c614e52ad10c962629f266b5d9",
+                            "region": "bottom_menu",
+                            "learned_label": "Search",
+                            "learned_concepts": [
+                                "control",
+                                "content",
+                                "file",
+                                "list_item",
+                                "search_field",
+                                "tile"
+                            ],
+                            "memory_votes": 163
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "search_field",
+                        "content",
+                        "file",
+                        "list_item",
+                        "tile"
+                    ],
+                    "memory_votes": 5484
+                }
+            ],
+            "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item",
+                "tile"
+            ],
+            "memory_votes": 76654
+        },
+        {
+            "id": "right_menu",
+            "label": "Right Menu",
+            "box": {
+                "x": 1619,
+                "y": 194,
+                "width": 301,
+                "height": 827
+            },
+            "type": "container",
+            "center": {
+                "x": 1769,
+                "y": 607
+            },
+            "semantic_role": "right_menu",
+            "region": "right_menu",
+            "children": [
+                {
+                    "id": "right_menu_item_0",
+                    "label": "right_menu item",
+                    "box": {
+                        "x": 1724,
+                        "y": 886,
+                        "width": 100,
+                        "height": 32
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1774,
+                        "y": 902
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "right_menu",
+                    "visual_id": "dd1dc12561f0433ca6c230a0f58994c0",
+                    "visual_ids": [
+                        "dd1dc12561f0433ca6c230a0f58994c0"
+                    ],
+                    "children": [
+                        {
+                            "id": 17,
+                            "label": "[BUTTON]",
+                            "box": {
+                                "x": 1734,
+                                "y": 892,
+                                "width": 80,
+                                "height": 20
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 1774,
+                                "y": 902
+                            },
+                            "visual_id": "dd1dc12561f0433ca6c230a0f58994c0",
+                            "region": "right_menu",
+                            "learned_label": "right_menu item",
+                            "learned_concepts": [
+                                "control"
+                            ],
+                            "memory_votes": 2
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "archive",
+                        "document",
+                        "file",
+                        "image",
+                        "pdf"
+                    ],
+                    "memory_votes": 887
+                },
+                {
+                    "id": "right_menu_item_1",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 1700,
+                        "y": 886,
+                        "width": 42,
+                        "height": 34
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1721,
+                        "y": 903
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "right_menu",
+                    "visual_id": "e2a0bec84e6b9b12b0bbfcce99965c82",
+                    "visual_ids": [
+                        "e2a0bec84e6b9b12b0bbfcce99965c82"
+                    ],
+                    "children": [
+                        {
+                            "id": 27,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1710,
+                                "y": 892,
+                                "width": 22,
+                                "height": 22
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1721,
+                                "y": 903
+                            },
+                            "visual_id": "e2a0bec84e6b9b12b0bbfcce99965c82",
+                            "region": "right_menu",
+                            "learned_label": "right_menu item",
+                            "learned_concepts": [
+                                "control"
+                            ],
+                            "memory_votes": 2
+                        }
+                    ],
+                    "learned_label": "right_menu item",
+                    "learned_concepts": [
+                        "control"
+                    ],
+                    "memory_votes": 4
+                },
+                {
+                    "id": "right_menu_item_2",
+                    "label": "right_menu item",
+                    "box": {
+                        "x": 1619,
+                        "y": 886,
+                        "width": 69,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1655,
+                        "y": 904
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "right_menu",
+                    "visual_id": "b4f93b953653123e77b318d5c09a4c63",
+                    "visual_ids": [
+                        "b4f93b953653123e77b318d5c09a4c63",
+                        "84d9331fbae359dd65e9a17cf3b96222"
+                    ],
+                    "children": [
+                        {
+                            "id": 24,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1622,
+                                "y": 892,
+                                "width": 38,
+                                "height": 24
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1641,
+                                "y": 904
+                            },
+                            "visual_id": "b4f93b953653123e77b318d5c09a4c63",
+                            "region": "right_menu",
+                            "learned_label": "right_menu item",
+                            "learned_concepts": [
+                                "control"
+                            ],
+                            "memory_votes": 2
+                        },
+                        {
+                            "id": 35,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1662,
+                                "y": 898,
+                                "width": 16,
+                                "height": 12
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1670,
+                                "y": 904
+                            },
+                            "visual_id": "84d9331fbae359dd65e9a17cf3b96222",
+                            "region": "right_menu",
+                            "learned_label": "right_menu item",
+                            "learned_concepts": [
+                                "control",
+                                "archive",
+                                "document",
+                                "file",
+                                "image",
+                                "pdf"
+                            ],
+                            "memory_votes": 150
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "archive",
+                        "document",
+                        "file",
+                        "image",
+                        "pdf"
+                    ],
+                    "memory_votes": 1037
+                },
+                {
+                    "id": "right_menu_loose_30",
+                    "label": "right_menu item",
+                    "box": {
+                        "x": 1892,
+                        "y": 950,
+                        "width": 28,
+                        "height": 28
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 1910,
+                        "y": 964
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "right_menu",
+                    "visual_id": "f2e1ddcc9860ef872e2b4243f1b68f4f",
+                    "visual_ids": [
+                        "f2e1ddcc9860ef872e2b4243f1b68f4f"
+                    ],
+                    "children": [
+                        {
+                            "id": 30,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 1900,
+                                "y": 956,
+                                "width": 20,
+                                "height": 16
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 1910,
+                                "y": 964
+                            },
+                            "visual_id": "f2e1ddcc9860ef872e2b4243f1b68f4f",
+                            "region": "right_menu",
+                            "learned_label": "right_menu item",
+                            "learned_concepts": [
+                                "control",
+                                "archive",
+                                "document",
+                                "file",
+                                "image",
+                                "pdf"
+                            ],
+                            "memory_votes": 201
+                        }
+                    ],
+                    "learned_concepts": [
+                        "control",
+                        "archive",
+                        "document",
+                        "file",
+                        "image",
+                        "pdf"
+                    ],
+                    "memory_votes": 1285
+                }
+            ],
+            "learned_concepts": [
+                "control",
+                "archive",
+                "document",
+                "file",
+                "image",
+                "pdf"
+            ],
+            "memory_votes": 3441
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+  "session_id": "interact_1777198516",
+  "timestamp": 1777198516.1926134,
+  "app_id": "explorer",
+  "status": "completed",
+  "candidate_count": 6,
+  "trial_count": 2,
+  "positive_rewards": 1,
+  "negative_rewards": 1,
+  "skipped_count": 4,
+  "skipped": [
+    {
+      "label": "Main Page",
+      "node_id": "main_page",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Row: awake.py",
+      "node_id": "row_awake",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Row: demo.mp4",
+      "node_id": "row_video",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Search",
+      "node_id": "search_explorer",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    }
+  ],
+  "trials": [
+    {
+      "target": "Desktop",
+      "node_id": "nav_desktop",
+      "entity_type": "navigation_item",
+      "semantic_role": "menu_item",
+      "click_count": 1,
+      "reward": -0.25,
+      "outcome": "no_visible_change",
+      "edge_id": "edge_1",
+      "recovery": "back"
+    },
+    {
+      "target": "Downloads",
+      "node_id": "nav_downloads",
+      "entity_type": "navigation_item",
+      "semantic_role": "menu_item",
+      "click_count": 1,
+      "reward": 1.05,
+      "outcome": "opened_or_navigated",
+      "edge_id": "edge_2",
+      "recovery": "back"
+    }
+  ],
+  "memory_before": {
+    "known_labels": 0,
+    "known_visuals": 0,
+    "known_concepts": 0,
+    "known_controls": 0,
+    "known_entities": 0,
+    "transition_count": 0,
+    "negative_examples": 0,
+    "review_queue": 0,
+    "learning_sessions": 0,
+    "interaction_edges": 0,
+    "action_values": 0,
+    "workflow_count": 0,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 0,
+    "scene_deltas": 2,
+    "action_outcomes": 2
+  },
+  "memory_after": {
+    "known_labels": 9,
+    "known_visuals": 0,
+    "known_concepts": 5,
+    "known_controls": 9,
+    "known_entities": 1,
+    "transition_count": 2,
+    "negative_examples": 0,
+    "review_queue": 0,
+    "learning_sessions": 0,
+    "interaction_edges": 2,
+    "action_values": 2,
+    "workflow_count": 0,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 0,
+    "scene_deltas": 2,
+    "action_outcomes": 2
+  }
+}

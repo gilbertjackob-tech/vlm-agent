@@ -1,0 +1,19 @@
+{
+  "mission": {
+    "mission_id": "explorer_parse_current",
+    "category": "file_explorer",
+    "prompt": "Open explorer and parse screen",
+    "expected_apps": [
+      "explorer"
+    ],
+    "setup": "",
+    "success_signal": "Explorer UI is parsed and a trace is saved.",
+    "tags": [
+      "observe",
+      "baseline"
+    ]
+  },
+  "iteration": 1,
+  "error": "'charmap' codec can't encode character '\\U0001f9e0' in position 0: character maps to <undefined>",
+  "events": []
+}

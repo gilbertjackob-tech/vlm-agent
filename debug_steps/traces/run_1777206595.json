@@ -1,0 +1,1226 @@
+{
+  "run_id": "run_1777206595",
+  "task": {
+    "prompt": "Switch from explorer to chrome and verify chrome is focused",
+    "goal": "Switch from explorer to chrome and verify chrome is focused",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_683a54cbe4",
+    "created_at": 1777206592.8357193
+  },
+  "plan": {
+    "task": {
+      "prompt": "Switch from explorer to chrome and verify chrome is focused",
+      "goal": "Switch from explorer to chrome and verify chrome is focused",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_683a54cbe4",
+      "created_at": 1777206592.8357193
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Route to chrome",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "chrome",
+          "description": "Route to chrome",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "chrome",
+          "window_title": "Google Chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Confirm chrome focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "chrome",
+          "description": "Confirm chrome focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "chrome",
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "chrome should be visible and focused.",
+      "chrome should remain focused."
+    ],
+    "generated_at": 1777206595.3588712
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777206595.8728406,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777206595.8728406,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777206595.8728406,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206598.4628093,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206598.4628093,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777206598.4628093,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206600.65305,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777206600.65305,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "timestamp": 1777206600.65305,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206603.8051722,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206603.8071926,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "timestamp": 1777206603.8071926,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206605.9554272,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777206595.8728406
+    },
+    {
+      "step_id": "step_3",
+      "approved": true,
+      "timestamp": 1777206600.65305
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 533,
+      "known_visuals": 1519,
+      "known_concepts": 26,
+      "known_controls": 3644,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 17,
+      "trusted_workflows": 2,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 107,
+      "scene_deltas": 400,
+      "action_outcomes": 400
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777206595.3588712,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "benchmark",
+        "line": "I am starting the benchmark.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777206595.8728406,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777206596.8898919,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777206598.4628093,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777206598.4628093,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777206599.4904678,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777206600.65305,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777206600.65305,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206601.6732912,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206603.8071926,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777206603.8071926,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206604.8110132,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206605.9554272,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777206605.9554272,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Mission completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "open_windows": [
+          {
+            "title": "Downloads - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 895
+          },
+          {
+            "title": "README.md - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "New Tab - Google Chrome",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "AK - PC Assistant System Review",
+            "left": 274,
+            "top": 55,
+            "width": 1369,
+            "height": 895
+          },
+          {
+            "title": "WhatsApp",
+            "left": 729,
+            "top": 0,
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "(39) WhatsApp",
+            "left": 740,
+            "top": 1,
+            "width": 1178,
+            "height": 888
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "explorer",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Switch from explorer to chrome and verify chrome is focused",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777206595.8728406
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Switch from explorer to chrome and verify chrome is focused",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777206598.4628093
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Switch from explorer to chrome and verify chrome is focused",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should be visible and focused.",
+        "timeline_entry_at": 1777206600.65305
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Switch from explorer to chrome and verify chrome is focused",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should remain focused.",
+        "timeline_entry_at": 1777206603.8051722
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Switch from explorer to chrome and verify chrome is focused",
+        "current_subgoal": "Focus confirmed for chrome.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777206605.9554272
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "4e886d1f3825f451",
+        "timestamp": 1777206596.8898919,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "976302af0cd59821",
+        "timestamp": 1777206598.359026,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "6962dff301f2c792",
+        "timestamp": 1777206599.4904678,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "31145b7f1bb29b29",
+        "timestamp": 1777206600.5071301,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "4e886d1f3825f451",
+        "timestamp": 1777206601.6726794,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "137a137d5bd6fe01",
+        "timestamp": 1777206603.6566725,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "a3f1979d84fd73cb",
+        "timestamp": 1777206604.8110132,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "6c0423d5ea20c4c4",
+        "timestamp": 1777206605.8240192,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for chrome.",
+        "confidence": 0.25
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "4e886d1f3825f451",
+        "after_state_id": "976302af0cd59821",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "6962dff301f2c792",
+        "after_state_id": "31145b7f1bb29b29",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "4e886d1f3825f451",
+        "after_state_id": "137a137d5bd6fe01",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "a3f1979d84fd73cb",
+        "after_state_id": "6c0423d5ea20c4c4",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206598.359026
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206600.5071301
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206603.6566725
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206605.8240192
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_683a54cbe4",
+    "goal": "Switch from explorer to chrome and verify chrome is focused",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "chrome",
+    "status": "success",
+    "current_checkpoint_id": "step_4",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Route to chrome",
+        "expected_scene": "chrome should be visible and focused.",
+        "completion_rule": "chrome should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Confirm chrome focus",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for chrome."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777206595.3588712
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206598.359026
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206600.5071301
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "chrome should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206603.6566725
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206605.8240192
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206598.359026
+      },
+      "timestamp": 1777206598.417589
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206600.5071301
+      },
+      "timestamp": 1777206600.5690808
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206603.6566725
+      },
+      "timestamp": 1777206603.74986
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for chrome.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206605.8240192
+      },
+      "timestamp": 1777206605.8890584
+    }
+  ],
+  "started_at": 1777206595.3588712,
+  "finished_at": 1777206605.9554272
+}

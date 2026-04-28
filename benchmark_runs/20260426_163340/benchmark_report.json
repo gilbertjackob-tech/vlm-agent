@@ -1,0 +1,166 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777199626.5346453,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": true,
+  "repeat_count": 1,
+  "mission_count": 1,
+  "attempt_count": 1,
+  "expected_attempt_count": 1,
+  "complete": false,
+  "interrupted": true,
+  "output_dir": "benchmark_runs\\20260426_163340",
+  "metrics": {
+    "success_rate": 0.0,
+    "stable_success_rate": 0.0,
+    "unstable_success_count": 0,
+    "wrong_click_count": 0,
+    "recovery_count": 0,
+    "recovery_rate_per_successful_task": 0.0,
+    "recovery_depth_per_step": 0.0,
+    "focus_failure_count": 0,
+    "target_ambiguity_count": 0,
+    "target_switch_after_recovery_count": 0,
+    "duplicate_disambiguation_count": 0,
+    "avg_score_gap": 0.0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {},
+    "avg_steps_per_task": 0.0,
+    "avg_latency_per_step": 0.0,
+    "avg_ocr_time_per_task": 0.0,
+    "avg_parse_time_per_task": 0.0,
+    "avg_parse_time_per_parse": 0.0,
+    "ocr_timeout_count": 0,
+    "ocr_call_count": 0,
+    "ocr_cache_hit_count": 0,
+    "parse_cache_hit_count": 0,
+    "dom_parse_count": 0,
+    "parse_worker_count": 0,
+    "parse_worker_elapsed_seconds": 0.0,
+    "parse_worker_queue_wait_seconds": 0.0,
+    "structured_skip_count": 0,
+    "screen_hash_elapsed_seconds": 0.0,
+    "failure_reason_distribution": {
+      "BENCHMARK_INTERRUPTED": 1
+    }
+  },
+  "category_metrics": {
+    "file_explorer": {
+      "success_rate": 0.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 0,
+      "wrong_click_count": 0,
+      "recovery_count": 0,
+      "recovery_rate_per_successful_task": 0.0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {},
+      "avg_steps_per_task": 0.0,
+      "avg_latency_per_step": 0.0,
+      "avg_ocr_time_per_task": 0.0,
+      "avg_parse_time_per_task": 0.0,
+      "avg_parse_time_per_parse": 0.0,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 0,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.0,
+      "failure_reason_distribution": {
+        "BENCHMARK_INTERRUPTED": 1
+      }
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ],
+      "events": 6,
+      "error": "KeyboardInterrupt",
+      "status": "interrupted",
+      "success": false,
+      "stable_success": false,
+      "step_count": 0,
+      "latency_seconds": 6.158497,
+      "latency_per_step": 0.0,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {},
+      "failure_reason_distribution": {
+        "BENCHMARK_INTERRUPTED": 1
+      },
+      "trace_path": "",
+      "contract_count": 0,
+      "state_snapshot_count": 0,
+      "state_diff_count": 0,
+      "parse_count": 0,
+      "ocr_elapsed_seconds": 0.0,
+      "parse_elapsed_seconds": 0.0,
+      "ocr_timeout_count": 0,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 0,
+      "dom_parse_count": 0,
+      "parse_worker_count": 0,
+      "parse_worker_elapsed_seconds": 0.0,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.0,
+      "artifact_dir": "benchmark_runs\\20260426_163340\\failed_artifacts\\explorer_parse_current_run_01",
+      "trace_copy": "",
+      "screenshot_copies": []
+    }
+  ],
+  "failed_artifacts": [
+    {
+      "mission_id": "explorer_parse_current",
+      "iteration": 1,
+      "artifact_dir": "benchmark_runs\\20260426_163340\\failed_artifacts\\explorer_parse_current_run_01",
+      "trace_copy": "",
+      "screenshots": []
+    }
+  ]
+}

@@ -1,0 +1,2044 @@
+{
+  "run_id": "run_1777136929",
+  "task": {
+    "prompt": "Open explorer and open downloads",
+    "goal": "Open explorer and open downloads",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_5ce90653d6",
+    "created_at": 1777136929.0324726
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and open downloads",
+      "goal": "Open explorer and open downloads",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_5ce90653d6",
+      "created_at": 1777136929.0324726
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Navigate Explorer to downloads",
+        "action_type": "click_node",
+        "target": {
+          "kind": "location",
+          "value": "downloads",
+          "filters": {
+            "region": "left_menu",
+            "semantic_role": "menu_item",
+            "entity_type": "navigation_item",
+            "label_contains": "downloads",
+            "affordance": "navigate",
+            "min_score": 0.52,
+            "app_id": "explorer",
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads"
+            ]
+          }
+        },
+        "intent": {
+          "verb": "click_node",
+          "semantic_target": "downloads",
+          "description": "Navigate Explorer to downloads",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "hybrid",
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "filters": {
+            "region": "left_menu",
+            "semantic_role": "menu_item",
+            "entity_type": "navigation_item",
+            "label_contains": "downloads",
+            "affordance": "navigate",
+            "min_score": 0.52,
+            "app_id": "explorer",
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads"
+            ]
+          },
+          "selector_candidates": [],
+          "expected_change": "Explorer should show the downloads location.",
+          "expected_app": "explorer",
+          "settle_wait": 0.7,
+          "click_count": 1
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer should show the downloads location.",
+        "fallback_hint": "Retry Explorer sidebar navigation to downloads.",
+        "control_modes": [
+          "browser_dom",
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Wait for explorer to settle",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "explorer",
+          "description": "Wait for explorer to settle",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.2,
+          "expected_focus": "explorer",
+          "timeout": 1.0
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Verify scene after navigate explorer to downloads",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "explorer",
+          "description": "Verify scene after navigate explorer to downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "explorer",
+          "filters": {},
+          "expected_labels": [
+            "downloads"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer should show the downloads location.",
+        "fallback_hint": "Retry Explorer sidebar navigation to downloads.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "title": "Summarize scene change after navigate explorer to downloads",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "explorer",
+          "description": "Summarize scene change after navigate explorer to downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Explorer should show the downloads location.",
+          "recovery_hint": "Retry Explorer sidebar navigation to downloads."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer should show the downloads location.",
+      "explorer should remain focused.",
+      "Explorer should show the downloads location.",
+      "Scene delta should be recorded."
+    ],
+    "generated_at": 1777136929.1704535
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777136929.1852453,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 6
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136929.1852453,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777136929.1852453,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777136937.9569483,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136937.9667497,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777136937.9667497,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777136938.064171,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136938.091832,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Navigate Explorer to downloads",
+      "timestamp": 1777136938.091832,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777136938.1768808,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "No node matched the requested target filters."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777136950.2909284,
+      "metadata": {
+        "step_id": "step_3"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136950.2909284,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for explorer to settle",
+      "timestamp": 1777136950.2909284,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777136950.5281835,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136950.5704894,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Navigate Explorer to downloads",
+      "timestamp": 1777136950.5704894,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777136950.6392286,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "No node matched the requested target filters."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777136962.4515865,
+      "metadata": {
+        "step_id": "step_3"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136962.4515865,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify scene after navigate explorer to downloads",
+      "timestamp": 1777136962.4515865,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777136968.1287715,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected labels were not visible: ['downloads']"
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777136979.636691,
+      "metadata": {
+        "step_id": "step_5"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777136979.636691,
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize scene change after navigate explorer to downloads",
+      "timestamp": 1777136979.636691,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777136985.6717644,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "No obvious scene change."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777136929.1852453
+    },
+    {
+      "step_id": "step_2",
+      "approved": true,
+      "timestamp": 1777136937.9667497
+    },
+    {
+      "step_id": "step_3",
+      "approved": true,
+      "timestamp": 1777136938.091832
+    },
+    {
+      "step_id": "step_4",
+      "approved": true,
+      "timestamp": 1777136950.2909284
+    },
+    {
+      "step_id": "step_3",
+      "approved": true,
+      "timestamp": 1777136950.5704894
+    },
+    {
+      "step_id": "step_5",
+      "approved": true,
+      "timestamp": 1777136962.4515865
+    },
+    {
+      "step_id": "step_6",
+      "approved": true,
+      "timestamp": 1777136979.636691
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 310,
+      "known_visuals": 526,
+      "known_concepts": 23,
+      "known_controls": 1020,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 4,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 15,
+      "scene_deltas": 7,
+      "action_outcomes": 7
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "ISDD FINAL.pdf - Google Chrome",
+          "left": -9,
+          "top": 0,
+          "width": 1115,
+          "height": 1017
+        },
+        "open_windows": [
+          {
+            "title": "ISDD FINAL.pdf - Google Chrome",
+            "left": -9,
+            "top": 0,
+            "width": 1115,
+            "height": 1017
+          },
+          {
+            "title": "vlm_agent and 1 more tab - File Explorer",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "Google - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "README.md - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "Home - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 1008
+          },
+          {
+            "title": "ChatGPT - AK",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "classes.txt - Notepad",
+            "left": 41,
+            "top": 473,
+            "width": 1151,
+            "height": 545
+          },
+          {
+            "title": "WhatsApp",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Downloads - File Explorer",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Fiverr / Inbox - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "chrome",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 3,
+        "tab_titles": [
+          "Google",
+          "youtube - Google Search",
+          "Google"
+        ],
+        "active_title": "Google",
+        "active_url": "https://www.google.com/"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777136929.1846237
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777136937.9569483
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer should show the downloads location.",
+        "timeline_entry_at": 1777136938.064171
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "No node matched the requested target filters.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_3"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777136938.1768808
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "Wait condition satisfied.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_3"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "Explorer should show the downloads location.",
+        "timeline_entry_at": 1777136950.5281835
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "No node matched the requested target filters.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_3"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "Explorer should show the downloads location.",
+        "timeline_entry_at": 1777136950.6392286
+      },
+      {
+        "phase": "after_step_5",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "Expected labels were not visible: ['downloads']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_3",
+          "step_5"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "Scene delta should be recorded.",
+        "timeline_entry_at": 1777136968.1287715
+      },
+      {
+        "phase": "after_step_6",
+        "user_goal": "Open explorer and open downloads",
+        "current_subgoal": "No obvious scene change.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "pending_steps": [],
+        "failed_steps": [
+          "step_3",
+          "step_5"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777136985.6717644
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "31212cfec386af01",
+        "timestamp": 1777136929.2032743,
+        "active_window": {
+          "title": "ISDD FINAL.pdf - Google Chrome",
+          "left": -9,
+          "top": 0,
+          "width": 1115,
+          "height": 1017
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "75de1388d0aad29f",
+        "timestamp": 1777136937.9489012,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "0dd088ee6c98b0c5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "70c8d692c406e344",
+        "timestamp": 1777136938.0260983,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "0dd088ee6c98b0c5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "f92f6951ef49907d",
+        "timestamp": 1777136938.0558646,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "0dd088ee6c98b0c5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "237ee78c588aaaa1",
+        "timestamp": 1777136938.1348865,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "0dd088ee6c98b0c5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "5c97daee976be081",
+        "timestamp": 1777136938.1716278,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "0dd088ee6c98b0c5",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "retry_1_before",
+        "state_id": "95b5d76286ebca08",
+        "timestamp": 1777136944.3067973,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "d5df4db5591c920b",
+        "ui_tree_hash": "9ace9b7764303f74",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "b4d0dab3c2a4dcf2",
+        "timestamp": 1777136950.2998157,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "c7861586094368a0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:wait_for",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "1e82106132b27f3f",
+        "timestamp": 1777136950.5224895,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "c7861586094368a0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:wait_for",
+        "last_verified_change": "Wait condition satisfied.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "a70de2564d121f71",
+        "timestamp": 1777136950.6040564,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "c7861586094368a0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "6b24c6349ead0878",
+        "timestamp": 1777136950.6373067,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "c7861586094368a0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "retry_2_before",
+        "state_id": "9ea9090fc2ee290e",
+        "timestamp": 1777136956.411101,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7d43ef2f6f5b8736",
+        "ui_tree_hash": "75e544570d16532b",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "before",
+        "state_id": "13d91e5d006fcb09",
+        "timestamp": 1777136962.481456,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "c7861586094368a0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "after",
+        "state_id": "2b7edeacc8eccf77",
+        "timestamp": 1777136968.118704,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "a3dbdbd9d34f9d0c",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "retry_1_before",
+        "state_id": "1e1777bdaf63cd57",
+        "timestamp": 1777136973.773379,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7e04181ff1117ad0",
+        "ui_tree_hash": "a65cc25d2e2bff75",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_6",
+        "phase": "before",
+        "state_id": "764d332710d6962d",
+        "timestamp": 1777136979.696249,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "3f308e32912711b6",
+        "ui_tree_hash": "72a767a96bf5373b",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:scene_diff",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_6",
+        "phase": "after",
+        "state_id": "f11081f28ec5f8c3",
+        "timestamp": 1777136985.6636708,
+        "active_window": {
+          "title": "Downloads - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "735f570db4f4efc7",
+        "ui_tree_hash": "bd546ed80c906a27",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:scene_diff",
+        "last_verified_change": "No obvious scene change.",
+        "confidence": 0.5
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "31212cfec386af01",
+        "after_state_id": "75de1388d0aad29f",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "70c8d692c406e344",
+        "after_state_id": "f92f6951ef49907d",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "237ee78c588aaaa1",
+        "after_state_id": "5c97daee976be081",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "b4d0dab3c2a4dcf2",
+        "after_state_id": "1e82106132b27f3f",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "a70de2564d121f71",
+        "after_state_id": "6b24c6349ead0878",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_5",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "13d91e5d006fcb09",
+        "after_state_id": "2b7edeacc8eccf77",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_6",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "764d332710d6962d",
+        "after_state_id": "f11081f28ec5f8c3",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "added: main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "main page"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777136937.9489012
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136938.060148
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer should show the downloads location.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136938.1716278
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136950.5224895
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer should show the downloads location.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136950.6373067
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "Explorer should show the downloads location.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136968.118704
+      },
+      {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136985.6636708
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": true,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "31212cfec386af01",
+          "after_state_id": "75de1388d0aad29f",
+          "confidence_delta": 0.25
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [
+          "step_1"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": false,
+          "ui_tree_changed": false,
+          "dom_changed": false,
+          "changed": false,
+          "before_state_id": "70c8d692c406e344",
+          "after_state_id": "f92f6951ef49907d",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_3",
+        "reason": "TARGET_NOT_FOUND",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2"
+        ],
+        "failed_step_ids": [
+          "step_3"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": false,
+          "ui_tree_changed": false,
+          "dom_changed": false,
+          "changed": false,
+          "before_state_id": "b4d0dab3c2a4dcf2",
+          "after_state_id": "1e82106132b27f3f",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "failed_step_ids": [
+          "step_3"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "reason": "TARGET_NOT_FOUND",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "failed_step_ids": [
+          "step_3"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "failed_step_ids": [
+          "step_3",
+          "step_5"
+        ]
+      }
+    ],
+    "plan_replacements": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "pending_preserved": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_4",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_5",
+          "step_6"
+        ],
+        "pending_preserved": [
+          "step_5",
+          "step_6"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      }
+    ],
+    "failure_recovery": [
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "failure_reason": "TARGET_NOT_FOUND",
+        "strategy": [
+          "retry_with_uia",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "Target was not found. Reparse and retry with stronger metadata sources."
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "failure_reason": "TARGET_NOT_FOUND",
+        "strategy": [
+          "retry_with_uia",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "Target was not found. Reparse and retry with stronger metadata sources."
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      }
+    ],
+    "recovery_attempts": [
+      {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_NOT_FOUND",
+        "strategy_attempted": [
+          "retry_with_uia",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "resolver_used": "",
+        "new_evidence_score": 0.0,
+        "retry_success": false,
+        "note": "No alternate target resolved."
+      },
+      {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_NOT_FOUND",
+        "strategy_attempted": [
+          "retry_with_uia",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "resolver_used": "",
+        "new_evidence_score": 0.0,
+        "retry_success": false,
+        "note": "No alternate target resolved."
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "intent": "Wait for explorer to settle",
+        "target": "explorer",
+        "evidence": [
+          "timeout:1.00"
+        ],
+        "before_checks": {
+          "bounded_wait": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "traceable_wait": true
+        },
+        "evidence_score": 0.25,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136985.6289527
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_5ce90653d6",
+    "goal": "Open explorer and open downloads",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_6",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Navigate Explorer to downloads",
+        "expected_scene": "Explorer should show the downloads location.",
+        "completion_rule": "Explorer should show the downloads location.",
+        "recovery_rule": "Retry Explorer sidebar navigation to downloads.",
+        "status": "recovered",
+        "notes": [
+          "Recovered by sending Escape and reparsing.",
+          "Recovered by sending Escape and reparsing."
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Wait for explorer to settle",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Verify scene after navigate explorer to downloads",
+        "expected_scene": "Explorer should show the downloads location.",
+        "completion_rule": "Explorer should show the downloads location.",
+        "recovery_rule": "Retry Explorer sidebar navigation to downloads.",
+        "status": "recovered",
+        "notes": [
+          "Recovered by sending Escape and reparsing."
+        ]
+      },
+      {
+        "checkpoint_id": "step_6",
+        "title": "Summarize scene change after navigate explorer to downloads",
+        "expected_scene": "Scene delta should be recorded.",
+        "completion_rule": "Scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "No obvious scene change."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777136929.1704535
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "added: main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "main page"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777136937.9489012
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777136938.060148
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer should show the downloads location.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777136938.1716278
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777136950.5224895
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer should show the downloads location.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777136950.6373067
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "Explorer should show the downloads location.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777136968.118704
+    },
+    {
+      "step_id": "step_6",
+      "expected_change": "Scene delta should be recorded.",
+      "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777136985.6636708
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "added: main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "main page"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777136937.9489012
+      },
+      "timestamp": 1777136937.9529264
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136938.060148
+      },
+      "timestamp": 1777136938.0621607
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "click_node",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No node matched the requested target filters.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer should show the downloads location.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136938.1716278
+      },
+      "timestamp": 1777136938.1735017
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136950.5224895
+      },
+      "timestamp": 1777136950.5261748
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "click_node",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No node matched the requested target filters.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer should show the downloads location.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136950.6373067
+      },
+      "timestamp": 1777136950.6392286
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "verify_scene",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Expected labels were not visible: ['downloads']",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "Explorer should show the downloads location.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136968.118704
+      },
+      "timestamp": 1777136968.122727
+    },
+    {
+      "step_id": "step_6",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No obvious scene change.",
+      "scene_delta": {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "after_summary": "File Explorer scene with 1 nodes; highlights: Main Page",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777136985.6636708
+      },
+      "timestamp": 1777136985.6636708
+    }
+  ],
+  "started_at": 1777136929.1704535,
+  "finished_at": 1777136985.6717644
+}

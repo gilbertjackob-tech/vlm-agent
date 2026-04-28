@@ -1,0 +1,83 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777140592.106139,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": false,
+  "repeat_count": 1,
+  "mission_count": 1,
+  "attempt_count": 1,
+  "expected_attempt_count": 1,
+  "complete": true,
+  "interrupted": false,
+  "output_dir": "benchmark_runs\\codex_incremental_check_utf8",
+  "metrics": {
+    "success_rate": 1.0,
+    "wrong_click_count": 0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {},
+    "avg_steps_per_task": 4.0,
+    "avg_latency_per_step": 0.001249,
+    "failure_reason_distribution": {}
+  },
+  "category_metrics": {
+    "file_explorer": {
+      "success_rate": 1.0,
+      "wrong_click_count": 0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {},
+      "avg_steps_per_task": 4.0,
+      "avg_latency_per_step": 0.001249,
+      "failure_reason_distribution": {}
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ],
+      "events": 1,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 4,
+      "latency_seconds": 0.004994,
+      "latency_per_step": 0.001249,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {},
+      "failure_reason_distribution": {},
+      "trace_path": "debug_steps\\traces\\run_1777140592.json",
+      "contract_count": 0,
+      "state_snapshot_count": 0,
+      "state_diff_count": 0
+    }
+  ],
+  "failed_artifacts": []
+}

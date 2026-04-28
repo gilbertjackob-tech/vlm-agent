@@ -1,0 +1,100 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777140562.3823588,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": false,
+  "repeat_count": 1,
+  "mission_count": 1,
+  "attempt_count": 1,
+  "expected_attempt_count": 1,
+  "complete": true,
+  "interrupted": false,
+  "output_dir": "benchmark_runs\\codex_incremental_check",
+  "metrics": {
+    "success_rate": 0.0,
+    "wrong_click_count": 0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {},
+    "avg_steps_per_task": 0.0,
+    "avg_latency_per_step": 0.0,
+    "failure_reason_distribution": {
+      "HARNESS_EXCEPTION": 1
+    }
+  },
+  "category_metrics": {
+    "file_explorer": {
+      "success_rate": 0.0,
+      "wrong_click_count": 0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {},
+      "avg_steps_per_task": 0.0,
+      "avg_latency_per_step": 0.0,
+      "failure_reason_distribution": {
+        "HARNESS_EXCEPTION": 1
+      }
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ],
+      "events": 0,
+      "error": "'charmap' codec can't encode character '\\U0001f9e0' in position 0: character maps to <undefined>",
+      "status": "exception",
+      "success": false,
+      "step_count": 0,
+      "latency_seconds": 0.07133,
+      "latency_per_step": 0.0,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {},
+      "failure_reason_distribution": {
+        "HARNESS_EXCEPTION": 1
+      },
+      "trace_path": "",
+      "contract_count": 0,
+      "state_snapshot_count": 0,
+      "state_diff_count": 0,
+      "artifact_dir": "benchmark_runs\\codex_incremental_check\\failed_artifacts\\explorer_parse_current_run_01",
+      "trace_copy": "",
+      "screenshot_copies": []
+    }
+  ],
+  "failed_artifacts": [
+    {
+      "mission_id": "explorer_parse_current",
+      "iteration": 1,
+      "artifact_dir": "benchmark_runs\\codex_incremental_check\\failed_artifacts\\explorer_parse_current_run_01",
+      "trace_copy": "",
+      "screenshots": []
+    }
+  ]
+}

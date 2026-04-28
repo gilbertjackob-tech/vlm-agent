@@ -1,0 +1,456 @@
+{
+  "mission": {
+    "mission_id": "focus_shift_typing_case",
+    "category": "focus_verification",
+    "prompt": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+    "expected_apps": [
+      "chrome"
+    ],
+    "setup": "Chrome should be available; page may contain another text field.",
+    "success_signal": "Typed text is verified in the focused Chrome address/search field.",
+    "tags": [
+      "focus",
+      "typing",
+      "verification"
+    ]
+  },
+  "iteration": 1,
+  "error": "",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 12
+      },
+      "timestamp": 1777200652.8584437
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200652.8590853
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777200652.8590853
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      },
+      "timestamp": 1777200655.554961
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200655.5577517
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      },
+      "timestamp": 1777200655.5577517
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      },
+      "timestamp": 1777200657.8332212
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200657.8332212
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      },
+      "timestamp": 1777200657.8332212
+    },
+    {
+      "phase": "contract",
+      "message": "click_node contract blocked.",
+      "metadata": {
+        "step_id": "step_3",
+        "target": "top_menu item"
+      },
+      "timestamp": 1777200662.2044084
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Target identity is ambiguous in the current UI."
+      },
+      "timestamp": 1777200663.431079
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: resolve_by_role_text_region, retry_with_uia, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_AMBIGUOUS"
+      },
+      "timestamp": 1777200687.1551917
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200691.0027559
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for chrome to settle",
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for"
+      },
+      "timestamp": 1777200691.0027559
+    },
+    {
+      "phase": "contract",
+      "message": "wait_for contract verified.",
+      "metadata": {
+        "step_id": "step_4",
+        "target": "chrome"
+      },
+      "timestamp": 1777200692.2310364
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      },
+      "timestamp": 1777200693.4720328
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200694.2093928
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      },
+      "timestamp": 1777200694.2093928
+    },
+    {
+      "phase": "contract",
+      "message": "click_node contract blocked.",
+      "metadata": {
+        "step_id": "step_3",
+        "target": "top_menu item"
+      },
+      "timestamp": 1777200695.24352
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Target identity is ambiguous in the current UI."
+      },
+      "timestamp": 1777200696.5441318
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: resolve_by_role_text_region, retry_with_uia, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_AMBIGUOUS"
+      },
+      "timestamp": 1777200701.0813713
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200725.2239542
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify scene after focus chrome omnibox",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      },
+      "timestamp": 1777200725.2239542
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected labels were not visible: ['search', 'address']"
+      },
+      "timestamp": 1777200731.835111
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_5",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777200736.3377569
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200762.1379063
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize scene change after focus chrome omnibox",
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff"
+      },
+      "timestamp": 1777200762.1379063
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Scene summary changed."
+      },
+      "timestamp": 1777200768.6879704
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200769.2136648
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      },
+      "timestamp": 1777200769.2136648
+    },
+    {
+      "phase": "contract",
+      "message": "click_node contract blocked.",
+      "metadata": {
+        "step_id": "step_3",
+        "target": "top_menu item"
+      },
+      "timestamp": 1777200770.2487285
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Target identity is ambiguous in the current UI."
+      },
+      "timestamp": 1777200771.5306861
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: resolve_by_role_text_region, retry_with_uia, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_AMBIGUOUS"
+      },
+      "timestamp": 1777200771.5306861
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200795.209936
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify scene after focus chrome omnibox",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      },
+      "timestamp": 1777200795.209936
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected labels were not visible: ['search', 'address']"
+      },
+      "timestamp": 1777200802.1257572
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_5",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777200806.7046492
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_7",
+        "risk_level": "low"
+      },
+      "timestamp": 1777200825.1763892
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Type Chrome query: focus shift benchmark",
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "type_text"
+      },
+      "timestamp": 1777200825.1763892
+    },
+    {
+      "phase": "contract",
+      "message": "type_text contract blocked.",
+      "metadata": {
+        "step_id": "step_7",
+        "target": "active_focus"
+      },
+      "timestamp": 1777200826.7288668
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "type_text",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Typing requires text and editable target evidence."
+      },
+      "timestamp": 1777200827.983613
+    },
+    {
+      "phase": "contract",
+      "message": "type_text contract blocked.",
+      "metadata": {
+        "step_id": "step_7_retry_1",
+        "target": "active_focus"
+      },
+      "timestamp": 1777200833.5957696
+    },
+    {
+      "phase": "recover",
+      "message": "Executable recovery retry completed.",
+      "metadata": {
+        "step_id": "step_7",
+        "resolver_used": "field_check",
+        "retry_success": false
+      },
+      "timestamp": 1777200834.639003
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: refocus_window, retry_with_uia, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_7",
+        "failure_reason": "FOCUS_NOT_CONFIRMED"
+      },
+      "timestamp": 1777200834.639003
+    },
+    {
+      "phase": "done",
+      "message": "Run completed with status: failed",
+      "metadata": {
+        "trace_path": "debug_steps\\traces\\run_1777200652.json"
+      },
+      "timestamp": 1777200839.2347054
+    }
+  ]
+}

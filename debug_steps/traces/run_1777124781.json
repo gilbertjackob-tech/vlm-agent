@@ -1,0 +1,753 @@
+{
+  "run_id": "run_1777124781",
+  "task": {
+    "prompt": "Open explorer and learn what clicking safe folders opens",
+    "goal": "Open explorer and learn what clicking safe folders opens",
+    "constraints": [],
+    "trust_mode": "mostly_autonomous",
+    "task_id": "task_ed920e3975",
+    "created_at": 1777124781.946208
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and learn what clicking safe folders opens",
+      "goal": "Open explorer and learn what clicking safe folders opens",
+      "constraints": [],
+      "trust_mode": "mostly_autonomous",
+      "task_id": "task_ed920e3975",
+      "created_at": 1777124781.946208
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Learn safe click outcomes",
+        "action_type": "interaction_learning",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "explorer"
+          }
+        },
+        "intent": {
+          "verb": "interaction_learning",
+          "semantic_target": "explorer",
+          "description": "Learn safe click outcomes",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "max_actions": 5,
+          "settle_wait": 0.8,
+          "recover_after_each": true,
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "explorer"
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "medium",
+        "requires_approval": false,
+        "success_criteria": "Safe clicks should produce rewarded or punished interaction edges.",
+        "fallback_hint": "Reduce action count and retry if scene changes are unstable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Safe clicks should produce rewarded or punished interaction edges."
+    ],
+    "generated_at": 1777124781.946208
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777124781.946208,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 3
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777124781.946208,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777124781.946208,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777124781.9512064,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777124781.952253,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777124781.952253,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777124781.9573786,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777124781.9573786,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "medium"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Learn safe click outcomes",
+      "timestamp": 1777124781.9573786,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "interaction_learning"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777124781.9920099,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "interaction_learning",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Interaction learning ran 2 trials; rewards +1/-1."
+      }
+    }
+  ],
+  "approvals": [],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 9,
+      "known_visuals": 0,
+      "known_concepts": 5,
+      "known_controls": 9,
+      "known_entities": 1,
+      "transition_count": 2,
+      "negative_examples": 0,
+      "review_queue": 0,
+      "learning_sessions": 0,
+      "interaction_edges": 2,
+      "action_values": 2,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 2,
+      "action_outcomes": 2
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "148fcae5f1b6de0d",
+        "timestamp": 1777124781.9472084,
+        "active_window": {
+          "title": ""
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "1c7d122dac627334",
+        "timestamp": 1777124781.950207,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "7d081958e087303d",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "bacda9857254d240",
+        "timestamp": 1777124781.953377,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "7d081958e087303d",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "c93e52b7db6ba03f",
+        "timestamp": 1777124781.9543777,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "7d081958e087303d",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "fc551f3b55f84c2e",
+        "timestamp": 1777124781.958656,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "7d081958e087303d",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:interaction_learning",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "551c8c641c724d29",
+        "timestamp": 1777124781.988968,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "8b0e8f05b6987528",
+        "ui_tree_hash": "7e7598a4c05dcdd4",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:interaction_learning",
+        "last_verified_change": "Interaction learning ran 2 trials; rewards +1/-1.",
+        "confidence": 0.75
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "148fcae5f1b6de0d",
+        "after_state_id": "1c7d122dac627334",
+        "confidence_delta": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "bacda9857254d240",
+        "after_state_id": "c93e52b7db6ba03f",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "fc551f3b55f84c2e",
+        "after_state_id": "551c8c641c724d29",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777124781.950207
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777124781.9553776
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Safe clicks should produce rewarded or punished interaction edges.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777124781.988968
+      }
+    ],
+    "interaction_learning": [
+      {
+        "session_id": "interact_1777124781",
+        "timestamp": 1777124781.9849668,
+        "app_id": "explorer",
+        "status": "completed",
+        "candidate_count": 6,
+        "trial_count": 2,
+        "positive_rewards": 1,
+        "negative_rewards": 1,
+        "skipped_count": 4,
+        "skipped": [
+          {
+            "label": "Main Page",
+            "node_id": "main_page",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Row: awake.py",
+            "node_id": "row_awake",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Row: demo.mp4",
+            "node_id": "row_video",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          },
+          {
+            "label": "Search",
+            "node_id": "search_explorer",
+            "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+          }
+        ],
+        "trials": [
+          {
+            "target": "Desktop",
+            "node_id": "nav_desktop",
+            "entity_type": "navigation_item",
+            "semantic_role": "menu_item",
+            "click_count": 1,
+            "reward": -0.25,
+            "outcome": "no_visible_change",
+            "edge_id": "edge_1",
+            "recovery": "back"
+          },
+          {
+            "target": "Downloads",
+            "node_id": "nav_downloads",
+            "entity_type": "navigation_item",
+            "semantic_role": "menu_item",
+            "click_count": 1,
+            "reward": 1.05,
+            "outcome": "opened_or_navigated",
+            "edge_id": "edge_2",
+            "recovery": "back"
+          }
+        ],
+        "memory_before": {
+          "known_labels": 8,
+          "known_visuals": 0,
+          "known_concepts": 4,
+          "known_controls": 8,
+          "known_entities": 1,
+          "transition_count": 0,
+          "negative_examples": 0,
+          "review_queue": 0,
+          "learning_sessions": 0,
+          "interaction_edges": 0,
+          "action_values": 0,
+          "workflow_count": 0,
+          "trusted_workflows": 0,
+          "trusted_apps": 2,
+          "blocked_apps": 0,
+          "blocked_concepts": 0,
+          "recent_runs": 0,
+          "scene_deltas": 2,
+          "action_outcomes": 2
+        },
+        "memory_after": {
+          "known_labels": 9,
+          "known_visuals": 0,
+          "known_concepts": 5,
+          "known_controls": 9,
+          "known_entities": 1,
+          "transition_count": 2,
+          "negative_examples": 0,
+          "review_queue": 0,
+          "learning_sessions": 0,
+          "interaction_edges": 2,
+          "action_values": 2,
+          "workflow_count": 0,
+          "trusted_workflows": 0,
+          "trusted_apps": 2,
+          "blocked_apps": 0,
+          "blocked_concepts": 0,
+          "recent_runs": 0,
+          "scene_deltas": 2,
+          "action_outcomes": 2
+        },
+        "report_path": "debug_steps\\learning_sessions\\interact_1777124781.json"
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_ed920e3975",
+    "goal": "Open explorer and learn what clicking safe folders opens",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_3",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Learn safe click outcomes",
+        "expected_scene": "Safe clicks should produce rewarded or punished interaction edges.",
+        "completion_rule": "Safe clicks should produce rewarded or punished interaction edges.",
+        "recovery_rule": "Reduce action count and retry if scene changes are unstable.",
+        "status": "completed",
+        "notes": [
+          "Interaction learning ran 2 trials; rewards +1/-1."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777124781.946208
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777124781.950207
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777124781.9553776
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Safe clicks should produce rewarded or punished interaction edges.",
+      "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777124781.988968
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777124781.950207
+      },
+      "timestamp": 1777124781.9512064
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777124781.9553776
+      },
+      "timestamp": 1777124781.9563775
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "interaction_learning",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Interaction learning ran 2 trials; rewards +1/-1.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Safe clicks should produce rewarded or punished interaction edges.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777124781.988968
+      },
+      "timestamp": 1777124781.9909706
+    }
+  ],
+  "started_at": 1777124781.946208,
+  "finished_at": 1777124781.9920099
+}

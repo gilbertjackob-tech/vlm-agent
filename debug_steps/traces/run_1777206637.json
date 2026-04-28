@@ -1,0 +1,2879 @@
+{
+  "run_id": "run_1777206637",
+  "task": {
+    "prompt": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+    "goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_a5881c91b4",
+    "created_at": 1777206635.4446352
+  },
+  "plan": {
+    "task": {
+      "prompt": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+      "goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_a5881c91b4",
+      "created_at": 1777206635.4446352
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to chrome",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "chrome",
+          "description": "Route to chrome",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "chrome",
+          "window_title": "Google Chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm chrome focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "chrome",
+          "description": "Confirm chrome focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Focus Chrome address bar",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "ctrl+l",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "ctrl+l",
+          "description": "Focus Chrome address bar",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "keys": [
+            "ctrl",
+            "l"
+          ],
+          "hotkey": true,
+          "expected_app": "chrome",
+          "ranking": {
+            "candidate_count": 1,
+            "top_candidate_score": 1.0,
+            "runner_up_score": 0.0,
+            "score_gap": 1.0,
+            "duplicate_disambiguation_used": true,
+            "ambiguous": false,
+            "ambiguity_reason": "",
+            "selected_label": "Chrome address bar"
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome address bar should be focused by deterministic shortcut.",
+        "fallback_hint": "Refocus Chrome and retry Ctrl+L; do not click page UI for the address bar.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Type Chrome query: benchmark query",
+        "action_type": "type_text",
+        "target": {
+          "kind": "text",
+          "value": "benchmark query",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "type_text",
+          "semantic_target": "benchmark query",
+          "description": "Type Chrome query: benchmark query",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "text": "benchmark query",
+          "selector": "",
+          "clear_first": false,
+          "focused_target": "Chrome address bar",
+          "expected_app": "chrome",
+          "deterministic_focus": "ctrl+l"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome query 'benchmark query' should be entered.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Verify Chrome query text for benchmark query",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome query text for benchmark query",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "benchmark query",
+            "benchmark",
+            "query",
+            "chrome"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The query 'benchmark query' should be visible in Chrome.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "title": "Submit Chrome query",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "enter",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "enter",
+          "description": "Submit Chrome query",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "keys": [
+            "enter"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should submit the typed query.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "title": "Wait for Chrome results page",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "chrome",
+          "description": "Wait for Chrome results page",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.4,
+          "expected_focus": "chrome",
+          "timeout": 1.2
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should remain focused while results load.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "title": "Verify Chrome results page",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome results page",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "benchmark query",
+            "benchmark",
+            "query",
+            "search"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should run the requested search and show a results page.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "title": "Summarize Chrome results page change",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "chrome",
+          "description": "Summarize Chrome results page change",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Chrome should run the requested search and show a results page.",
+          "recovery_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome search scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "chrome"
+    ],
+    "success_conditions": [
+      "chrome should be visible and focused.",
+      "chrome should remain focused.",
+      "Chrome address bar should be focused by deterministic shortcut.",
+      "The Chrome query 'benchmark query' should be entered.",
+      "The query 'benchmark query' should be visible in Chrome.",
+      "Chrome should submit the typed query.",
+      "Chrome should remain focused while results load.",
+      "Chrome should run the requested search and show a results page.",
+      "The Chrome search scene delta should be recorded."
+    ],
+    "generated_at": 1777206637.9801683
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777206638.49315,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 9
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777206638.49315,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "timestamp": 1777206638.49315,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206641.601803,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206641.601803,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "timestamp": 1777206641.601803,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206643.7428648,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206643.7443743,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome address bar",
+      "timestamp": 1777206643.7443743,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206650.4192095,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['ctrl', 'l']"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206650.4231246,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Type Chrome query: benchmark query",
+      "timestamp": 1777206650.4231246,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "type_text"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206662.9470494,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified typed 15 characters."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206662.9470494,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome query text for benchmark query",
+      "timestamp": 1777206662.9470494,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777206668.7848287,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777206668.7848287,
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Submit Chrome query",
+      "timestamp": 1777206668.7848287,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "press_key"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206676.831917,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['enter']"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206676.831917,
+      "metadata": {
+        "step_id": "step_7",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for Chrome results page",
+      "timestamp": 1777206676.831917,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "wait_for"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777206679.4020689,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206679.4129713,
+      "metadata": {
+        "step_id": "step_8",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome results page",
+      "timestamp": 1777206679.4129713,
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777206685.3238616,
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777206685.3238616,
+      "metadata": {
+        "step_id": "step_9",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize Chrome results page change",
+      "timestamp": 1777206685.3238616,
+      "metadata": {
+        "step_id": "step_9",
+        "action_type": "scene_diff"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777206690.1074026,
+      "metadata": {
+        "step_id": "step_9",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "No obvious scene change."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777206638.49315
+    },
+    {
+      "step_id": "step_6",
+      "approved": true,
+      "timestamp": 1777206668.7848287
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 533,
+      "known_visuals": 1519,
+      "known_concepts": 26,
+      "known_controls": 3644,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 17,
+      "trusted_workflows": 2,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 109,
+      "scene_deltas": 400,
+      "action_outcomes": 400
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777206637.9801683,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "benchmark",
+        "line": "I am starting the benchmark.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777206638.49315,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206639.5101268,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206641.601803,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777206641.601803,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206642.6107342,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206643.7443743,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777206643.7448812,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key",
+          "app_id": "",
+          "target": "ctrl+l"
+        }
+      },
+      {
+        "timestamp": 1777206644.7470496,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777206650.4192095,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777206650.4231246,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "type_text",
+        "line": "I found the input field. I am typing now.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text",
+          "app_id": "",
+          "target": "benchmark query"
+        }
+      },
+      {
+        "timestamp": 1777206651.4484406,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "type_text",
+        "line": "I found the input field. I am typing now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text"
+        }
+      },
+      {
+        "timestamp": 1777206662.9470494,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text"
+        }
+      },
+      {
+        "timestamp": 1777206662.9470494,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene",
+          "app_id": "",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206663.9678395,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777206668.7848287,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777206668.7848287,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key",
+          "app_id": "",
+          "target": "enter"
+        }
+      },
+      {
+        "timestamp": 1777206669.8000805,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777206676.831917,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777206676.831917,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206677.860228,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777206679.4020689,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777206679.4129713,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene",
+          "app_id": "",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206680.4179544,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777206685.3238616,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777206685.3238616,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff",
+          "app_id": "",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777206686.3340127,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777206690.1074026,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777206690.1074026,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Mission completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "vlm_agent - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "open_windows": [
+          {
+            "title": "vlm_agent - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 895
+          },
+          {
+            "title": "New Tab - Google Chrome",
+            "left": 929,
+            "top": 60,
+            "width": 986,
+            "height": 1008
+          },
+          {
+            "title": "README.md - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "AK - PC Assistant System Review",
+            "left": 274,
+            "top": 55,
+            "width": 1369,
+            "height": 895
+          },
+          {
+            "title": "WhatsApp",
+            "left": 729,
+            "top": 0,
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "(39) WhatsApp",
+            "left": 740,
+            "top": 1,
+            "width": 1178,
+            "height": 888
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "explorer",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should be visible and focused.",
+        "timeline_entry_at": 1777206638.49315
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should remain focused.",
+        "timeline_entry_at": 1777206641.601803
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Focus confirmed for chrome.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome address bar should be focused by deterministic shortcut.",
+        "timeline_entry_at": 1777206643.7428648
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Verified keys: ['ctrl', 'l']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome query 'benchmark query' should be entered.",
+        "timeline_entry_at": 1777206650.4192095
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Verified typed 15 characters.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The query 'benchmark query' should be visible in Chrome.",
+        "timeline_entry_at": 1777206662.9470494
+      },
+      {
+        "phase": "after_step_5",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "pending_steps": [
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome should submit the typed query.",
+        "timeline_entry_at": 1777206668.7848287
+      },
+      {
+        "phase": "after_step_6",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Verified keys: ['enter']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "pending_steps": [
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome should remain focused while results load.",
+        "timeline_entry_at": 1777206676.831917
+      },
+      {
+        "phase": "after_step_7",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Wait condition satisfied.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "pending_steps": [
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome should run the requested search and show a results page.",
+        "timeline_entry_at": 1777206679.4020689
+      },
+      {
+        "phase": "after_step_8",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8"
+        ],
+        "pending_steps": [
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome search scene delta should be recorded.",
+        "timeline_entry_at": 1777206685.3238616
+      },
+      {
+        "phase": "after_step_9",
+        "user_goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+        "current_subgoal": "No obvious scene change.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777206690.1074026
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "389bb284e20f2d46",
+        "timestamp": 1777206639.5101268,
+        "active_window": {
+          "title": "vlm_agent - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "137a137d5bd6fe01",
+        "timestamp": 1777206641.5105226,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "a3f1979d84fd73cb",
+        "timestamp": 1777206642.6101592,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "6c0423d5ea20c4c4",
+        "timestamp": 1777206643.6276016,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for chrome.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "a003ace68f99921d",
+        "timestamp": 1777206644.7470496,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:press_key",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "8ca3c201cdcf7185",
+        "timestamp": 1777206650.2634594,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "00e5793ffdfe0ac0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:press_key",
+        "last_verified_change": "Verified keys: ['ctrl', 'l']",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "3a456c4d31e9b57e",
+        "timestamp": 1777206651.4484406,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "00e5793ffdfe0ac0",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:type_text",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "f462fd39417ab410",
+        "timestamp": 1777206662.832891,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "c0b0692a91a3862a",
+        "ui_tree_hash": "80bb6a7d25281dba",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:type_text",
+        "last_verified_change": "Verified typed 15 characters.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "before",
+        "state_id": "9ffdd06f99abd96b",
+        "timestamp": 1777206663.9672992,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "c0b0692a91a3862a",
+        "ui_tree_hash": "80bb6a7d25281dba",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "after",
+        "state_id": "250948900573f2db",
+        "timestamp": 1777206668.6978295,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "a31db8a8a5394c99",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_6",
+        "phase": "before",
+        "state_id": "4fea962e21f27d36",
+        "timestamp": 1777206669.7976813,
+        "active_window": {
+          "title": "New Tab - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "a31db8a8a5394c99",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:press_key",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_6",
+        "phase": "after",
+        "state_id": "74bee4625cf6672c",
+        "timestamp": 1777206676.6945517,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "a881167744933291",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:press_key",
+        "last_verified_change": "Verified keys: ['enter']",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_7",
+        "phase": "before",
+        "state_id": "af1e8ff6bdfb5ed0",
+        "timestamp": 1777206677.8592284,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "a881167744933291",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:wait_for",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_7",
+        "phase": "after",
+        "state_id": "c526a695376326c3",
+        "timestamp": 1777206679.2658517,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "a881167744933291",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:wait_for",
+        "last_verified_change": "Wait condition satisfied.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_8",
+        "phase": "before",
+        "state_id": "f2fc13ce15bf3b8c",
+        "timestamp": 1777206680.4179544,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "a881167744933291",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_8",
+        "phase": "after",
+        "state_id": "23116d2a17f71f12",
+        "timestamp": 1777206685.2113779,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7ce8552719df6c07",
+        "ui_tree_hash": "b1feb6789ee05b78",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_9",
+        "phase": "before",
+        "state_id": "ad96cf93295f2082",
+        "timestamp": 1777206686.3340127,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7ce8552719df6c07",
+        "ui_tree_hash": "b1feb6789ee05b78",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:scene_diff",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_9",
+        "phase": "after",
+        "state_id": "ade5bf8867ef8325",
+        "timestamp": 1777206690.0184016,
+        "active_window": {
+          "title": "benchmark query - Google Search - Google Chrome",
+          "left": 929,
+          "top": 60,
+          "width": 986,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "661d8a5ee213245b",
+        "ui_tree_hash": "da3b6014d539bff7",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:scene_diff",
+        "last_verified_change": "No obvious scene change.",
+        "confidence": 0.5
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "389bb284e20f2d46",
+        "after_state_id": "137a137d5bd6fe01",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "a3f1979d84fd73cb",
+        "after_state_id": "6c0423d5ea20c4c4",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "a003ace68f99921d",
+        "after_state_id": "8ca3c201cdcf7185",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "3a456c4d31e9b57e",
+        "after_state_id": "f462fd39417ab410",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_5",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "9ffdd06f99abd96b",
+        "after_state_id": "250948900573f2db",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_6",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "4fea962e21f27d36",
+        "after_state_id": "74bee4625cf6672c",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_7",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "af1e8ff6bdfb5ed0",
+        "after_state_id": "c526a695376326c3",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_8",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "f2fc13ce15bf3b8c",
+        "after_state_id": "23116d2a17f71f12",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_9",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "ad96cf93295f2082",
+        "after_state_id": "ade5bf8867ef8325",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206641.5105226
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206643.6276016
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Chrome address bar should be focused by deterministic shortcut.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "added: bottom menu, bottom_menu item, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "bottom menu",
+          "bottom_menu item",
+          "main page"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206650.2634594
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "The Chrome query 'benchmark query' should be entered.",
+        "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206662.8340595
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "The query 'benchmark query' should be visible in Chrome.",
+        "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206668.7008224
+      },
+      {
+        "step_id": "step_6",
+        "expected_change": "Chrome should submit the typed query.",
+        "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206676.696613
+      },
+      {
+        "step_id": "step_7",
+        "expected_change": "Chrome should remain focused while results load.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206679.2658517
+      },
+      {
+        "step_id": "step_8",
+        "expected_change": "Chrome should run the requested search and show a results page.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206685.2124288
+      },
+      {
+        "step_id": "step_9",
+        "expected_change": "The Chrome search scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206690.0196133
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "candidate_count": 1,
+        "top_candidate_score": 1.0,
+        "runner_up_score": 0.0,
+        "score_gap": 1.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": true,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_8",
+        "action_type": "verify_scene",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_9",
+        "action_type": "scene_diff",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "target_rankings": [
+      {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "candidate_count": 1,
+        "top_candidate_score": 1.0,
+        "runner_up_score": 0.0,
+        "score_gap": 1.0,
+        "duplicate_disambiguation_used": true,
+        "ambiguous": false,
+        "ambiguity_reason": "",
+        "selected_label": "Chrome address bar"
+      }
+    ],
+    "parse_health": [
+      {
+        "screen_hash": "4708fa4b915503d0",
+        "candidate_count": 15,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 15,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.680233,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.110078,
+        "worker_boot_seconds": 22.007395,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.0662,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "e928ba31fbed1754",
+        "candidate_count": 15,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 14,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.097471,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 4.042428,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 3.480921,
+        "worker_boot_seconds": 22.007395,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.047462,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "7a9744d75e2bccd5",
+        "candidate_count": 15,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 15,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.676815,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.10576,
+        "worker_boot_seconds": 22.007395,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.067678,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "7fd3a2a12a4f6dd6",
+        "candidate_count": 14,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 14,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.721361,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.142403,
+        "worker_boot_seconds": 22.007395,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.070407,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "753eb301d0de7c89",
+        "candidate_count": 14,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 14,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.703815,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.116544,
+        "worker_boot_seconds": 22.007395,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.069806,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "parse_mode": "vision_cache",
+        "screen_hash": "753eb301d0de7c89",
+        "cache_hit": true,
+        "screen_hash_cache_hit": true,
+        "screen_hash_elapsed_seconds": 0.066233,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "worker_used": false,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.0,
+        "worker_boot_seconds": 0.0,
+        "parse_elapsed_seconds": 0.570633,
+        "element_count": 2
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_3",
+        "action_type": "hotkey",
+        "intent": "Focus Chrome address bar",
+        "target": "ctrl+l",
+        "evidence": [
+          "active_window:New Tab - Google Chrome",
+          "expected_change:Chrome address bar should be focused by deterministic shortcut."
+        ],
+        "before_checks": {
+          "keys_present": true,
+          "active_window_known": true,
+          "no_destructive_ambiguity": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "dom_changed": false,
+          "scene_changed": true,
+          "no_destructive_ambiguity": true,
+          "screenshot_before": "",
+          "screenshot_after": "step_3_after.png"
+        },
+        "evidence_score": 0.5,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "intent": "Type Chrome query: benchmark query",
+        "target": "Chrome address bar",
+        "evidence": [
+          "focused_target:Chrome address bar",
+          "active_window:New Tab - Google Chrome",
+          "expected_app:chrome",
+          "deterministic_focus:ctrl+l"
+        ],
+        "before_checks": {
+          "text_present": true,
+          "active_window_matches": true,
+          "editable_target_exists": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "typed_value_appeared": true,
+          "field_content_changed": true,
+          "screenshot_after": "step_4_after.png"
+        },
+        "evidence_score": 1.0,
+        "evidence_grade": "strong",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "intent": "Submit Chrome query",
+        "target": "enter",
+        "evidence": [
+          "active_window:New Tab - Google Chrome",
+          "expected_change:Chrome should submit the typed query."
+        ],
+        "before_checks": {
+          "keys_present": true,
+          "active_window_known": true,
+          "no_destructive_ambiguity": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "dom_changed": false,
+          "scene_changed": true,
+          "no_destructive_ambiguity": true,
+          "screenshot_before": "step_5_verify.png",
+          "screenshot_after": "step_6_after.png"
+        },
+        "evidence_score": 0.5,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "intent": "Wait for Chrome results page",
+        "target": "chrome",
+        "evidence": [
+          "timeout:1.20"
+        ],
+        "before_checks": {
+          "bounded_wait": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "traceable_wait": true
+        },
+        "evidence_score": 0.25,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_9",
+        "expected_change": "The Chrome search scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206688.9936562
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_a5881c91b4",
+    "goal": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "chrome",
+    "status": "success",
+    "current_checkpoint_id": "step_9",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to chrome",
+        "expected_scene": "chrome should be visible and focused.",
+        "completion_rule": "chrome should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm chrome focus",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for chrome."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Focus Chrome address bar",
+        "expected_scene": "Chrome address bar should be focused by deterministic shortcut.",
+        "completion_rule": "Chrome address bar should be focused by deterministic shortcut.",
+        "recovery_rule": "Refocus Chrome and retry Ctrl+L; do not click page UI for the address bar.",
+        "status": "completed",
+        "notes": [
+          "Verified keys: ['ctrl', 'l']"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Type Chrome query: benchmark query",
+        "expected_scene": "The Chrome query 'benchmark query' should be entered.",
+        "completion_rule": "The Chrome query 'benchmark query' should be entered.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Verified typed 15 characters."
+        ]
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Verify Chrome query text for benchmark query",
+        "expected_scene": "The query 'benchmark query' should be visible in Chrome.",
+        "completion_rule": "The query 'benchmark query' should be visible in Chrome.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item"
+        ]
+      },
+      {
+        "checkpoint_id": "step_6",
+        "title": "Submit Chrome query",
+        "expected_scene": "Chrome should submit the typed query.",
+        "completion_rule": "Chrome should submit the typed query.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Verified keys: ['enter']"
+        ]
+      },
+      {
+        "checkpoint_id": "step_7",
+        "title": "Wait for Chrome results page",
+        "expected_scene": "Chrome should remain focused while results load.",
+        "completion_rule": "Chrome should remain focused while results load.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_8",
+        "title": "Verify Chrome results page",
+        "expected_scene": "Chrome should run the requested search and show a results page.",
+        "completion_rule": "Chrome should run the requested search and show a results page.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item"
+        ]
+      },
+      {
+        "checkpoint_id": "step_9",
+        "title": "Summarize Chrome results page change",
+        "expected_scene": "The Chrome search scene delta should be recorded.",
+        "completion_rule": "The Chrome search scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "No obvious scene change."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777206637.9801683
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "chrome should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206641.5105226
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206643.6276016
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Chrome address bar should be focused by deterministic shortcut.",
+      "before_summary": "No prior scene.",
+      "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "added: bottom menu, bottom_menu item, main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "bottom menu",
+        "bottom_menu item",
+        "main page"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206650.2634594
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "The Chrome query 'benchmark query' should be entered.",
+      "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777206662.8340595
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "The query 'benchmark query' should be visible in Chrome.",
+      "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777206668.7008224
+    },
+    {
+      "step_id": "step_6",
+      "expected_change": "Chrome should submit the typed query.",
+      "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777206676.696613
+    },
+    {
+      "step_id": "step_7",
+      "expected_change": "Chrome should remain focused while results load.",
+      "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777206679.2658517
+    },
+    {
+      "step_id": "step_8",
+      "expected_change": "Chrome should run the requested search and show a results page.",
+      "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777206685.2124288
+    },
+    {
+      "step_id": "step_9",
+      "expected_change": "The Chrome search scene delta should be recorded.",
+      "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777206690.0196133
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206641.5105226
+      },
+      "timestamp": 1777206641.5518637
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for chrome.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206643.6276016
+      },
+      "timestamp": 1777206643.6787698
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "press_key",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified keys: ['ctrl', 'l']",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Chrome address bar should be focused by deterministic shortcut.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "added: bottom menu, bottom_menu item, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "bottom menu",
+          "bottom_menu item",
+          "main page"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206650.2634594
+      },
+      "timestamp": 1777206650.3239
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "type_text",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified typed 15 characters.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "The Chrome query 'benchmark query' should be entered.",
+        "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206662.8340595
+      },
+      "timestamp": 1777206662.8882177
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "verify_scene",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "The query 'benchmark query' should be visible in Chrome.",
+        "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206668.7008224
+      },
+      "timestamp": 1777206668.7409492
+    },
+    {
+      "step_id": "step_6",
+      "action_type": "press_key",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified keys: ['enter']",
+      "scene_delta": {
+        "step_id": "step_6",
+        "expected_change": "Chrome should submit the typed query.",
+        "before_summary": "Google Chrome scene with 28 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777206676.696613
+      },
+      "timestamp": 1777206676.7714167
+    },
+    {
+      "step_id": "step_7",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_7",
+        "expected_change": "Chrome should remain focused while results load.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206679.2658517
+      },
+      "timestamp": 1777206679.3236384
+    },
+    {
+      "step_id": "step_8",
+      "action_type": "verify_scene",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+      "scene_delta": {
+        "step_id": "step_8",
+        "expected_change": "Chrome should run the requested search and show a results page.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206685.2124288
+      },
+      "timestamp": 1777206685.267835
+    },
+    {
+      "step_id": "step_9",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No obvious scene change.",
+      "scene_delta": {
+        "step_id": "step_9",
+        "expected_change": "The Chrome search scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "after_summary": "Google Chrome scene with 26 nodes; highlights: Main Page, Bottom Menu, bottom_menu item, bottom_menu item, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777206690.0196133
+      },
+      "timestamp": 1777206690.065942
+    }
+  ],
+  "started_at": 1777206637.9801683,
+  "finished_at": 1777206690.1074026
+}

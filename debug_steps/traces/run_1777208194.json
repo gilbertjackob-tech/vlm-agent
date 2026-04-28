@@ -1,0 +1,2628 @@
+{
+  "run_id": "run_1777208194",
+  "task": {
+    "prompt": "Open chrome and search youtube for lo-fi coding mix",
+    "goal": "Open chrome and search youtube for lo-fi coding mix",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_cd145da1c8",
+    "created_at": 1777208194.989503
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open chrome and search youtube for lo-fi coding mix",
+      "goal": "Open chrome and search youtube for lo-fi coding mix",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_cd145da1c8",
+      "created_at": 1777208194.989503
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to chrome",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "chrome",
+          "description": "Route to chrome",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "chrome",
+          "window_title": "Google Chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm chrome focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "chrome",
+          "description": "Confirm chrome focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Focus Chrome address bar",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "ctrl+l",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "ctrl+l",
+          "description": "Focus Chrome address bar",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "keys": [
+            "ctrl",
+            "l"
+          ],
+          "hotkey": true,
+          "expected_app": "chrome",
+          "ranking": {
+            "candidate_count": 1,
+            "top_candidate_score": 1.0,
+            "runner_up_score": 0.0,
+            "score_gap": 1.0,
+            "duplicate_disambiguation_used": true,
+            "ambiguous": false,
+            "ambiguity_reason": "",
+            "selected_label": "Chrome address bar"
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome address bar should be focused by deterministic shortcut.",
+        "fallback_hint": "Refocus Chrome and retry Ctrl+L; do not click page UI for the address bar.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Type Chrome query: youtube lo-fi coding mix",
+        "action_type": "type_text",
+        "target": {
+          "kind": "text",
+          "value": "youtube lo-fi coding mix",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "type_text",
+          "semantic_target": "youtube lo-fi coding mix",
+          "description": "Type Chrome query: youtube lo-fi coding mix",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "text": "youtube lo-fi coding mix",
+          "selector": "",
+          "clear_first": false,
+          "focused_target": "Chrome address bar",
+          "expected_app": "chrome",
+          "deterministic_focus": "ctrl+l"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Verify Chrome query text for youtube lo-fi coding mix",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome query text for youtube lo-fi coding mix",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "youtube lo-fi coding mix",
+            "youtube",
+            "lo-fi",
+            "coding",
+            "mix"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "title": "Submit Chrome query",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "enter",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "enter",
+          "description": "Submit Chrome query",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "keys": [
+            "enter"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should submit the typed query.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "title": "Wait for Chrome results page",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "chrome",
+          "description": "Wait for Chrome results page",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.4,
+          "expected_focus": "chrome",
+          "timeout": 1.2
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should remain focused while results load.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "title": "Verify Chrome results page",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome results page",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "lo-fi coding mix",
+            "lo-fi",
+            "coding",
+            "mix",
+            "youtube"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should run the requested search and show a results page.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "title": "Summarize Chrome results page change",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "chrome",
+          "description": "Summarize Chrome results page change",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Chrome should run the requested search and show a results page.",
+          "recovery_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome search scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "chrome"
+    ],
+    "success_conditions": [
+      "chrome should be visible and focused.",
+      "chrome should remain focused.",
+      "Chrome address bar should be focused by deterministic shortcut.",
+      "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+      "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+      "Chrome should submit the typed query.",
+      "Chrome should remain focused while results load.",
+      "Chrome should run the requested search and show a results page.",
+      "The Chrome search scene delta should be recorded."
+    ],
+    "generated_at": 1777208194.990977
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777208194.990977,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 9
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777208194.990977,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "timestamp": 1777208194.990977,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777208194.9933758,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208194.9943726,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "timestamp": 1777208194.9943726,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777208194.995814,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208194.995814,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome address bar",
+      "timestamp": 1777208194.995814,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777208195.0053327,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['ctrl', 'l']"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208195.0053327,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Type Chrome query: youtube lo-fi coding mix",
+      "timestamp": 1777208195.0053327,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "type_text"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777208195.0119874,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified typed 24 characters."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208195.0119874,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome query text for youtube lo-fi coding mix",
+      "timestamp": 1777208195.0119874,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777208195.019568,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777208195.019568,
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Submit Chrome query",
+      "timestamp": 1777208195.019568,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "press_key"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777208195.0266304,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['enter']"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208195.0266304,
+      "metadata": {
+        "step_id": "step_7",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for Chrome results page",
+      "timestamp": 1777208195.0266304,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "wait_for"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777208195.0321836,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208195.0321836,
+      "metadata": {
+        "step_id": "step_8",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify Chrome results page",
+      "timestamp": 1777208195.0321836,
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777208195.040722,
+      "metadata": {
+        "step_id": "step_8",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777208195.040722,
+      "metadata": {
+        "step_id": "step_9",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize Chrome results page change",
+      "timestamp": 1777208195.040722,
+      "metadata": {
+        "step_id": "step_9",
+        "action_type": "scene_diff"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777208195.0477521,
+      "metadata": {
+        "step_id": "step_9",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "No obvious scene change."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777208194.990977
+    },
+    {
+      "step_id": "step_6",
+      "approved": true,
+      "timestamp": 1777208195.019568
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 0,
+      "known_visuals": 0,
+      "known_concepts": 0,
+      "known_controls": 0,
+      "known_entities": 0,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 0,
+      "learning_sessions": 0,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 0,
+      "action_outcomes": 0
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777208194.990977,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "runtime",
+        "line": "I am starting the task.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777208194.990977,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Chrome.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777208194.992298,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208194.9943726,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777208194.9943726,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Chrome.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "chrome",
+          "target": "chrome"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208194.9943726,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777208194.995814,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777208194.995814,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key",
+          "app_id": "",
+          "target": "ctrl+l"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208194.995814,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777208195.0053327,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777208195.0053327,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "type_text",
+        "line": "I found the input field. I am typing now.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text",
+          "app_id": "",
+          "target": "youtube lo-fi coding mix"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.0053327,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "type_text",
+        "line": "I found the input field. I am typing now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text"
+        }
+      },
+      {
+        "timestamp": 1777208195.0119874,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text"
+        }
+      },
+      {
+        "timestamp": 1777208195.0119874,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene",
+          "app_id": "",
+          "target": "chrome"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.0119874,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777208195.019568,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777208195.019568,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key",
+          "app_id": "",
+          "target": "enter"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.0206032,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777208195.0266304,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777208195.0266304,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for",
+          "app_id": "chrome",
+          "target": "chrome"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.0281467,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777208195.0321836,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777208195.0321836,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene",
+          "app_id": "",
+          "target": "chrome"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.0331848,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777208195.040722,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777208195.040722,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff",
+          "app_id": "",
+          "target": "chrome"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.041722,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777208195.0477521,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777208195.0477521,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Task completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should be visible and focused.",
+        "timeline_entry_at": 1777208194.990977
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should remain focused.",
+        "timeline_entry_at": 1777208194.9933758
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Focus confirmed for chrome.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome address bar should be focused by deterministic shortcut.",
+        "timeline_entry_at": 1777208194.995814
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Verified keys: ['ctrl', 'l']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "timeline_entry_at": 1777208195.0043344
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Verified typed 24 characters.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "timeline_entry_at": 1777208195.0119874
+      },
+      {
+        "phase": "after_step_5",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "pending_steps": [
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome should submit the typed query.",
+        "timeline_entry_at": 1777208195.019568
+      },
+      {
+        "phase": "after_step_6",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Verified keys: ['enter']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "pending_steps": [
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome should remain focused while results load.",
+        "timeline_entry_at": 1777208195.0266304
+      },
+      {
+        "phase": "after_step_7",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Wait condition satisfied.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "pending_steps": [
+          "step_8",
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome should run the requested search and show a results page.",
+        "timeline_entry_at": 1777208195.0321836
+      },
+      {
+        "phase": "after_step_8",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8"
+        ],
+        "pending_steps": [
+          "step_9"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome search scene delta should be recorded.",
+        "timeline_entry_at": 1777208195.039723
+      },
+      {
+        "phase": "after_step_9",
+        "user_goal": "Open chrome and search youtube for lo-fi coding mix",
+        "current_subgoal": "No obvious scene change.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777208195.0477521
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "148fcae5f1b6de0d",
+        "timestamp": 1777208194.990977,
+        "active_window": {
+          "title": ""
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "be2b1f7d4bbb901a",
+        "timestamp": 1777208194.992298,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "39340a5e3ccd2632",
+        "timestamp": 1777208194.9943726,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "baae97fcd793be4d",
+        "timestamp": 1777208194.9943726,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for chrome.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "ad8556db01ae2e4d",
+        "timestamp": 1777208194.995814,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:press_key",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "dd07b6a0e3246555",
+        "timestamp": 1777208195.002339,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "74ed6544e07770f5",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:press_key",
+        "last_verified_change": "Verified keys: ['ctrl', 'l']",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "3dde5a45a8906cb7",
+        "timestamp": 1777208195.0053327,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "74ed6544e07770f5",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:type_text",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "8c0e1b1b48bbadaa",
+        "timestamp": 1777208195.0090253,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "c0b0692a91a3862a",
+        "ui_tree_hash": "136040a66904bdf6",
+        "dom_hash": "be989c874f4658d6",
+        "last_action": "after:type_text",
+        "last_verified_change": "Verified typed 24 characters.",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_5",
+        "phase": "before",
+        "state_id": "e1aec621e7e96a10",
+        "timestamp": 1777208195.0119874,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "c0b0692a91a3862a",
+        "ui_tree_hash": "136040a66904bdf6",
+        "dom_hash": "be989c874f4658d6",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_5",
+        "phase": "after",
+        "state_id": "3ee229ea9c85b1ac",
+        "timestamp": 1777208195.0164943,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "3f2b5fe4ac9aee1e",
+        "dom_hash": "be989c874f4658d6",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_6",
+        "phase": "before",
+        "state_id": "6ed53fb15ddd65a0",
+        "timestamp": 1777208195.0206032,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "3f2b5fe4ac9aee1e",
+        "dom_hash": "be989c874f4658d6",
+        "last_action": "before:press_key",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_6",
+        "phase": "after",
+        "state_id": "525fe2016277ef2a",
+        "timestamp": 1777208195.0236318,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "c94d1786c80c4ffa",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "after:press_key",
+        "last_verified_change": "Verified keys: ['enter']",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_7",
+        "phase": "before",
+        "state_id": "d21819428b48c485",
+        "timestamp": 1777208195.0281467,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "c94d1786c80c4ffa",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "before:wait_for",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_7",
+        "phase": "after",
+        "state_id": "d5431f4de6fc1576",
+        "timestamp": 1777208195.029184,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "c94d1786c80c4ffa",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "after:wait_for",
+        "last_verified_change": "Wait condition satisfied.",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_8",
+        "phase": "before",
+        "state_id": "003db904f21b1716",
+        "timestamp": 1777208195.0331848,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "a107df7688d0fd7e",
+        "ui_tree_hash": "c94d1786c80c4ffa",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_8",
+        "phase": "after",
+        "state_id": "f923620f7523c4a6",
+        "timestamp": 1777208195.0371866,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "7ce8552719df6c07",
+        "ui_tree_hash": "7ed78152d4a5fbce",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_9",
+        "phase": "before",
+        "state_id": "a5974bfc7e08149e",
+        "timestamp": 1777208195.040722,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "7ce8552719df6c07",
+        "ui_tree_hash": "7ed78152d4a5fbce",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "before:scene_diff",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_9",
+        "phase": "after",
+        "state_id": "1bef843b1d30d8b0",
+        "timestamp": 1777208195.044721,
+        "active_window": {
+          "title": "Google Chrome"
+        },
+        "focused_element": "",
+        "screen_hash": "661d8a5ee213245b",
+        "ui_tree_hash": "c82cac00375eb7d8",
+        "dom_hash": "44d80a2cb9b099fa",
+        "last_action": "after:scene_diff",
+        "last_verified_change": "No obvious scene change.",
+        "confidence": 0.75
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "148fcae5f1b6de0d",
+        "after_state_id": "be2b1f7d4bbb901a",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "39340a5e3ccd2632",
+        "after_state_id": "baae97fcd793be4d",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "ad8556db01ae2e4d",
+        "after_state_id": "dd07b6a0e3246555",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": true,
+        "changed": true,
+        "before_state_id": "3dde5a45a8906cb7",
+        "after_state_id": "8c0e1b1b48bbadaa",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_5",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "e1aec621e7e96a10",
+        "after_state_id": "3ee229ea9c85b1ac",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_6",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": true,
+        "changed": true,
+        "before_state_id": "6ed53fb15ddd65a0",
+        "after_state_id": "525fe2016277ef2a",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_7",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "d21819428b48c485",
+        "after_state_id": "d5431f4de6fc1576",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_8",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "003db904f21b1716",
+        "after_state_id": "f923620f7523c4a6",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_9",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "a5974bfc7e08149e",
+        "after_state_id": "1bef843b1d30d8b0",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777208194.992298
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777208194.9943726
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Chrome address bar should be focused by deterministic shortcut.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "added: chrome top bar, lo-fi coding mix - youtube, search or type web address, search results",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "chrome top bar",
+          "lo-fi coding mix - youtube",
+          "search or type web address",
+          "search results"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777208195.002339
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0090253
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0164943
+      },
+      {
+        "step_id": "step_6",
+        "expected_change": "Chrome should submit the typed query.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0246305
+      },
+      {
+        "step_id": "step_7",
+        "expected_change": "Chrome should remain focused while results load.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.029184
+      },
+      {
+        "step_id": "step_8",
+        "expected_change": "Chrome should run the requested search and show a results page.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0371866
+      },
+      {
+        "step_id": "step_9",
+        "expected_change": "The Chrome search scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.044721
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "candidate_count": 1,
+        "top_candidate_score": 1.0,
+        "runner_up_score": 0.0,
+        "score_gap": 1.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": true,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_8",
+        "action_type": "verify_scene",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_9",
+        "action_type": "scene_diff",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "target_rankings": [
+      {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "candidate_count": 1,
+        "top_candidate_score": 1.0,
+        "runner_up_score": 0.0,
+        "score_gap": 1.0,
+        "duplicate_disambiguation_used": true,
+        "ambiguous": false,
+        "ambiguity_reason": "",
+        "selected_label": "Chrome address bar"
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_3",
+        "action_type": "hotkey",
+        "intent": "Focus Chrome address bar",
+        "target": "ctrl+l",
+        "evidence": [
+          "active_window:Google Chrome",
+          "expected_change:Chrome address bar should be focused by deterministic shortcut."
+        ],
+        "before_checks": {
+          "keys_present": true,
+          "active_window_known": true,
+          "no_destructive_ambiguity": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "dom_changed": false,
+          "scene_changed": true,
+          "no_destructive_ambiguity": true,
+          "screenshot_before": "",
+          "screenshot_after": "step_3_after.png"
+        },
+        "evidence_score": 0.5,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "type_text",
+        "intent": "Type Chrome query: youtube lo-fi coding mix",
+        "target": "Chrome address bar",
+        "evidence": [
+          "focused_target:Chrome address bar",
+          "dom:available",
+          "active_window:Google Chrome",
+          "expected_app:chrome",
+          "deterministic_focus:ctrl+l"
+        ],
+        "before_checks": {
+          "text_present": true,
+          "active_window_matches": true,
+          "editable_target_exists": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "typed_value_appeared": true,
+          "field_content_changed": true,
+          "screenshot_after": "step_4_after.png"
+        },
+        "evidence_score": 1.0,
+        "evidence_grade": "strong",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_6",
+        "action_type": "press_key",
+        "intent": "Submit Chrome query",
+        "target": "enter",
+        "evidence": [
+          "active_window:Google Chrome",
+          "expected_change:Chrome should submit the typed query."
+        ],
+        "before_checks": {
+          "keys_present": true,
+          "active_window_known": true,
+          "no_destructive_ambiguity": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "dom_changed": true,
+          "scene_changed": false,
+          "no_destructive_ambiguity": true,
+          "screenshot_before": "step_5_verify.png",
+          "screenshot_after": "step_6_after.png"
+        },
+        "evidence_score": 0.5,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "wait_for",
+        "intent": "Wait for Chrome results page",
+        "target": "chrome",
+        "evidence": [
+          "timeout:1.20"
+        ],
+        "before_checks": {
+          "bounded_wait": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "traceable_wait": true
+        },
+        "evidence_score": 0.25,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_9",
+        "expected_change": "The Chrome search scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.043722
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_cd145da1c8",
+    "goal": "Open chrome and search youtube for lo-fi coding mix",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "chrome",
+    "status": "success",
+    "current_checkpoint_id": "step_9",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to chrome",
+        "expected_scene": "chrome should be visible and focused.",
+        "completion_rule": "chrome should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm chrome focus",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for chrome."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Focus Chrome address bar",
+        "expected_scene": "Chrome address bar should be focused by deterministic shortcut.",
+        "completion_rule": "Chrome address bar should be focused by deterministic shortcut.",
+        "recovery_rule": "Refocus Chrome and retry Ctrl+L; do not click page UI for the address bar.",
+        "status": "completed",
+        "notes": [
+          "Verified keys: ['ctrl', 'l']"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Type Chrome query: youtube lo-fi coding mix",
+        "expected_scene": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "completion_rule": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Verified typed 24 characters."
+        ]
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Verify Chrome query text for youtube lo-fi coding mix",
+        "expected_scene": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "completion_rule": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+        ]
+      },
+      {
+        "checkpoint_id": "step_6",
+        "title": "Submit Chrome query",
+        "expected_scene": "Chrome should submit the typed query.",
+        "completion_rule": "Chrome should submit the typed query.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Verified keys: ['enter']"
+        ]
+      },
+      {
+        "checkpoint_id": "step_7",
+        "title": "Wait for Chrome results page",
+        "expected_scene": "Chrome should remain focused while results load.",
+        "completion_rule": "Chrome should remain focused while results load.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_8",
+        "title": "Verify Chrome results page",
+        "expected_scene": "Chrome should run the requested search and show a results page.",
+        "completion_rule": "Chrome should run the requested search and show a results page.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "completed",
+        "notes": [
+          "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube"
+        ]
+      },
+      {
+        "checkpoint_id": "step_9",
+        "title": "Summarize Chrome results page change",
+        "expected_scene": "The Chrome search scene delta should be recorded.",
+        "completion_rule": "The Chrome search scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "No obvious scene change."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777208194.990977
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "chrome should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777208194.992298
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777208194.9943726
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Chrome address bar should be focused by deterministic shortcut.",
+      "before_summary": "No prior scene.",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "added: chrome top bar, lo-fi coding mix - youtube, search or type web address, search results",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "chrome top bar",
+        "lo-fi coding mix - youtube",
+        "search or type web address",
+        "search results"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777208195.002339
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777208195.0090253
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777208195.0164943
+    },
+    {
+      "step_id": "step_6",
+      "expected_change": "Chrome should submit the typed query.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777208195.0246305
+    },
+    {
+      "step_id": "step_7",
+      "expected_change": "Chrome should remain focused while results load.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777208195.029184
+    },
+    {
+      "step_id": "step_8",
+      "expected_change": "Chrome should run the requested search and show a results page.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777208195.0371866
+    },
+    {
+      "step_id": "step_9",
+      "expected_change": "The Chrome search scene delta should be recorded.",
+      "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777208195.044721
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777208194.992298
+      },
+      "timestamp": 1777208194.9933758
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for chrome.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777208194.9943726
+      },
+      "timestamp": 1777208194.995814
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "press_key",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified keys: ['ctrl', 'l']",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Chrome address bar should be focused by deterministic shortcut.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "added: chrome top bar, lo-fi coding mix - youtube, search or type web address, search results",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "chrome top bar",
+          "lo-fi coding mix - youtube",
+          "search or type web address",
+          "search results"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777208195.002339
+      },
+      "timestamp": 1777208195.0033352
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "type_text",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified typed 24 characters.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "The Chrome query 'youtube lo-fi coding mix' should be entered.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0090253
+      },
+      "timestamp": 1777208195.0090253
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "verify_scene",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "The query 'youtube lo-fi coding mix' should be visible in Chrome.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0164943
+      },
+      "timestamp": 1777208195.0180216
+    },
+    {
+      "step_id": "step_6",
+      "action_type": "press_key",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified keys: ['enter']",
+      "scene_delta": {
+        "step_id": "step_6",
+        "expected_change": "Chrome should submit the typed query.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0246305
+      },
+      "timestamp": 1777208195.0256307
+    },
+    {
+      "step_id": "step_7",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_7",
+        "expected_change": "Chrome should remain focused while results load.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.029184
+      },
+      "timestamp": 1777208195.0301852
+    },
+    {
+      "step_id": "step_8",
+      "action_type": "verify_scene",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+      "scene_delta": {
+        "step_id": "step_8",
+        "expected_change": "Chrome should run the requested search and show a results page.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.0371866
+      },
+      "timestamp": 1777208195.0387044
+    },
+    {
+      "step_id": "step_9",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No obvious scene change.",
+      "scene_delta": {
+        "step_id": "step_9",
+        "expected_change": "The Chrome search scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "after_summary": "Google Chrome scene with 4 nodes; highlights: Chrome top bar, Search or type web address, Search Results, Lo-fi Coding Mix - YouTube",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777208195.044721
+      },
+      "timestamp": 1777208195.045722
+    }
+  ],
+  "started_at": 1777208194.990977,
+  "finished_at": 1777208195.0477521
+}

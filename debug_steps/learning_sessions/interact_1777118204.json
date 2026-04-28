@@ -1,0 +1,131 @@
+{
+  "session_id": "interact_1777118204",
+  "timestamp": 1777118222.8824818,
+  "app_id": "explorer",
+  "status": "completed",
+  "candidate_count": 15,
+  "trial_count": 0,
+  "positive_rewards": 0,
+  "negative_rewards": 0,
+  "skipped_count": 15,
+  "skipped": [
+    {
+      "label": "Main Page",
+      "node_id": "main_page",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "List: VLM",
+      "node_id": "main_list",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Row: VLM",
+      "node_id": "row_1",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "AUTOPILOT",
+      "node_id": "8",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "ONLINE",
+      "node_id": "26",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Row: hybrid vision",
+      "node_id": "row_2",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "deterministic control",
+      "node_id": "10",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "reward graph",
+      "node_id": "14",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Row: Learn",
+      "node_id": "row_4",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "what",
+      "node_id": "38",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "clicking",
+      "node_id": "15",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "opens",
+      "node_id": "35",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "current",
+      "node_id": "30",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Row: Thinking",
+      "node_id": "row_6",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    },
+    {
+      "label": "Doing: Executing: Learn safe click outcomes",
+      "node_id": "5",
+      "reason": "explorer_interaction_learning_only_clicks_navigation_and_folders"
+    }
+  ],
+  "trials": [],
+  "memory_before": {
+    "known_labels": 226,
+    "known_visuals": 338,
+    "known_concepts": 18,
+    "known_controls": 632,
+    "known_entities": 1,
+    "transition_count": 0,
+    "negative_examples": 0,
+    "review_queue": 4,
+    "learning_sessions": 0,
+    "interaction_edges": 0,
+    "action_values": 0,
+    "workflow_count": 2,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 13,
+    "scene_deltas": 2,
+    "action_outcomes": 2
+  },
+  "memory_after": {
+    "known_labels": 261,
+    "known_visuals": 378,
+    "known_concepts": 19,
+    "known_controls": 702,
+    "known_entities": 1,
+    "transition_count": 0,
+    "negative_examples": 0,
+    "review_queue": 4,
+    "learning_sessions": 0,
+    "interaction_edges": 0,
+    "action_values": 0,
+    "workflow_count": 2,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 13,
+    "scene_deltas": 2,
+    "action_outcomes": 2
+  }
+}

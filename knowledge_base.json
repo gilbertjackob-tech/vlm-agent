@@ -1,0 +1,68 @@
+{
+  "version": "1.5",
+  "entities": {
+    "chrome": {
+      "type": "application",
+      "visual_prompts": ["the Google Chrome browser icon", "a circular red, yellow, green, and blue logo"],
+      "expected_zones": ["taskbar", "desktop"],
+      "os_window_title": "Google Chrome"
+    },
+    "blender": {
+      "type": "application",
+      "visual_prompts": ["the Blender 3D software icon", "an orange circle with three blue lines"],
+      "expected_zones": ["taskbar", "desktop"],
+      "os_window_title": "Blender"
+    },
+    "explorer": {
+      "type": "application",
+      "visual_prompts": ["the File Explorer icon", "a yellow folder icon", "the Windows Explorer folder icon"],
+      "expected_zones": ["taskbar", "desktop"],
+      "os_window_title": "File Explorer"
+    }
+  },
+  "skills": {
+    "open_app": {
+      "description": "Opens an application by finding its icon and clicking it.",
+      "parameters": ["app_name"],
+      "pre_conditions": [
+        {"type": "window_not_active", "target": "{app_name}"}
+      ],
+      "execution": [
+        ["click", "{entities[{app_name}].visual_prompts}", 12, "{entities[{app_name}].expected_zones[0]}"],
+        ["wait", 2],
+        ["focus_window", "{entities[{app_name}].os_window_title}"]
+      ],
+      "post_conditions": [
+        {"type": "window_exists", "target": "{entities[{app_name}].os_window_title}"}
+      ],
+      "fallback": [
+        ["press", "win"],
+        ["wait", 0.5],
+        ["type", "{app_name}"],
+        ["press", "enter"]
+      ]
+    },
+    "youtube_search": {
+      "description": "Searches for a specific query on YouTube.",
+      "parameters": ["query"],
+      "pre_conditions": [
+        {"type": "window_active", "target": "chrome"}
+      ],
+      "execution": [
+        ["focus_window", "Google Chrome"],
+        [
+          "click_structured", 
+          {
+            "type": "text_field",
+            "label_contains": "Search",
+            "y_max": 260
+          }, 
+          ["the YouTube search bar"],
+          "topbar"
+        ],
+        ["type", "{query}"],
+        ["press", "enter"]
+      ]
+    }
+  }
+}

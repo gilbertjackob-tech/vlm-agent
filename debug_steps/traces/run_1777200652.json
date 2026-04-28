@@ -1,0 +1,4521 @@
+{
+  "run_id": "run_1777200652",
+  "task": {
+    "prompt": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+    "goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_efc3c76e4a",
+    "created_at": 1777200649.804042
+  },
+  "plan": {
+    "task": {
+      "prompt": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+      "goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_efc3c76e4a",
+      "created_at": 1777200649.804042
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to chrome",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "chrome",
+          "description": "Route to chrome",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "chrome",
+          "window_title": "Google Chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm chrome focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "chrome",
+          "description": "Confirm chrome focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "chrome"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Focus Chrome omnibox",
+        "action_type": "click_node",
+        "target": {
+          "kind": "search_field",
+          "value": "Chrome omnibox",
+          "filters": {
+            "app_id": "chrome",
+            "region": "top_menu",
+            "entity_type": "omnibox",
+            "affordance": "focus",
+            "min_score": 0.5,
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Search",
+              "Search vlm_agent"
+            ]
+          }
+        },
+        "intent": {
+          "verb": "click_node",
+          "semantic_target": "Chrome omnibox",
+          "description": "Focus Chrome omnibox",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "hybrid",
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "filters": {
+            "app_id": "chrome",
+            "region": "top_menu",
+            "entity_type": "omnibox",
+            "affordance": "focus",
+            "min_score": 0.5,
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Search",
+              "Search vlm_agent"
+            ]
+          },
+          "selector_candidates": [],
+          "expected_change": "Chrome omnibox should be focused.",
+          "expected_app": "chrome",
+          "settle_wait": 0.7,
+          "click_count": 1
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome omnibox should be focused.",
+        "fallback_hint": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "control_modes": [
+          "browser_dom",
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Wait for chrome to settle",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "chrome",
+          "description": "Wait for chrome to settle",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.2,
+          "expected_focus": "chrome",
+          "timeout": 1.0
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "chrome should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Verify scene after focus chrome omnibox",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify scene after focus chrome omnibox",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "filters": {},
+          "expected_labels": [
+            "search",
+            "address"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome omnibox should be focused.",
+        "fallback_hint": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "title": "Summarize scene change after focus chrome omnibox",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "chrome",
+          "description": "Summarize scene change after focus chrome omnibox",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Chrome omnibox should be focused.",
+          "recovery_hint": "Retry Chrome omnibox focus using DOM or vision fallback."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "title": "Type Chrome query: focus shift benchmark",
+        "action_type": "type_text",
+        "target": {
+          "kind": "text",
+          "value": "focus shift benchmark",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "type_text",
+          "semantic_target": "focus shift benchmark",
+          "description": "Type Chrome query: focus shift benchmark",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "text": "focus shift benchmark",
+          "selector": "",
+          "clear_first": true
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome query 'focus shift benchmark' should be entered.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "title": "Verify Chrome query text for focus shift benchmark",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome query text for focus shift benchmark",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "focus shift benchmark",
+            "focus",
+            "shift",
+            "benchmark",
+            "chrome"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The query 'focus shift benchmark' should be visible in Chrome.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "title": "Submit Chrome query",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "enter",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "enter",
+          "description": "Submit Chrome query",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "keys": [
+            "enter"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should submit the typed query.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_10",
+        "title": "Wait for Chrome results page",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "chrome",
+          "description": "Wait for Chrome results page",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.4,
+          "expected_focus": "chrome",
+          "timeout": 1.2
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should remain focused while results load.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_11",
+        "title": "Verify Chrome results page",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "chrome",
+          "description": "Verify Chrome results page",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "chrome",
+          "expected_labels": [
+            "focus shift benchmark",
+            "focus",
+            "shift",
+            "benchmark",
+            "search"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Chrome should run the requested search and show a results page.",
+        "fallback_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_12",
+        "title": "Summarize Chrome results page change",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "chrome",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "chrome",
+          "description": "Summarize Chrome results page change",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Chrome should run the requested search and show a results page.",
+          "recovery_hint": "Retry via the omnibox or vision fallback if the selector path is unavailable."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The Chrome search scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "chrome"
+    ],
+    "success_conditions": [
+      "chrome should be visible and focused.",
+      "chrome should remain focused.",
+      "Chrome omnibox should be focused.",
+      "chrome should remain focused.",
+      "Chrome omnibox should be focused.",
+      "Scene delta should be recorded.",
+      "The Chrome query 'focus shift benchmark' should be entered.",
+      "The query 'focus shift benchmark' should be visible in Chrome.",
+      "Chrome should submit the typed query.",
+      "Chrome should remain focused while results load.",
+      "Chrome should run the requested search and show a results page.",
+      "The Chrome search scene delta should be recorded."
+    ],
+    "generated_at": 1777200652.3459594
+  },
+  "status": "failed",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777200652.8584437,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 12
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777200652.8590853,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to chrome",
+      "timestamp": 1777200652.8590853,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777200655.554961,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200655.5577517,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm chrome focus",
+      "timestamp": 1777200655.5577517,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777200657.8332212,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for chrome."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200657.8332212,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "timestamp": 1777200657.8332212,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777200663.431079,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Target identity is ambiguous in the current UI."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777200691.0027559,
+      "metadata": {
+        "step_id": "step_3"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200691.0027559,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait for chrome to settle",
+      "timestamp": 1777200691.0027559,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777200693.4720328,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200694.2093928,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "timestamp": 1777200694.2093928,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777200696.5441318,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Target identity is ambiguous in the current UI."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777200725.2239542,
+      "metadata": {
+        "step_id": "step_3"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200725.2239542,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify scene after focus chrome omnibox",
+      "timestamp": 1777200725.2239542,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777200731.835111,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected labels were not visible: ['search', 'address']"
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777200762.1379063,
+      "metadata": {
+        "step_id": "step_5"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200762.1379063,
+      "metadata": {
+        "step_id": "step_6",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize scene change after focus chrome omnibox",
+      "timestamp": 1777200762.1379063,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777200768.6879704,
+      "metadata": {
+        "step_id": "step_6",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Scene summary changed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200769.2136648,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Focus Chrome omnibox",
+      "timestamp": 1777200769.2136648,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777200771.5306861,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Target identity is ambiguous in the current UI."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777200795.209936,
+      "metadata": {
+        "step_id": "step_3"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200795.209936,
+      "metadata": {
+        "step_id": "step_5",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Verify scene after focus chrome omnibox",
+      "timestamp": 1777200795.209936,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777200802.1257572,
+      "metadata": {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Expected labels were not visible: ['search', 'address']"
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777200825.1763892,
+      "metadata": {
+        "step_id": "step_5"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777200825.1763892,
+      "metadata": {
+        "step_id": "step_7",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Type Chrome query: focus shift benchmark",
+      "timestamp": 1777200825.1763892,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "type_text"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777200827.983613,
+      "metadata": {
+        "step_id": "step_7",
+        "action_type": "type_text",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Typing requires text and editable target evidence."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777200838.9105241,
+      "metadata": {
+        "step_id": "step_7"
+      }
+    },
+    {
+      "phase": "failure",
+      "message": "Mission runtime budget exceeded.",
+      "timestamp": 1777200838.9105241,
+      "metadata": {
+        "step_id": "step_8"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777200652.8590853
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 403,
+      "known_visuals": 1317,
+      "known_concepts": 26,
+      "known_controls": 3151,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 13,
+      "trusted_workflows": 2,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 86,
+      "scene_deltas": 400,
+      "action_outcomes": 400
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777200652.3459594,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "benchmark",
+        "line": "I am starting the benchmark.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777200652.8590853,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200653.879867,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200655.554961,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777200655.5577517,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200656.5907345,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Chrome.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200657.8332212,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777200657.8332212,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click_node",
+        "line": "",
+        "status": "disabled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "click_node",
+          "app_id": "",
+          "target": "Chrome omnibox"
+        }
+      },
+      {
+        "timestamp": 1777200662.20196,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "target_found",
+        "line": "I found the top_menu item.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "target": "top_menu item",
+          "action_type": "click_node"
+        }
+      },
+      {
+        "timestamp": 1777200662.20196,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click",
+        "line": "I am clicking it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777200663.431079,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "This step failed safely because the target was ambiguous.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_3"
+        }
+      },
+      {
+        "timestamp": 1777200691.0027559,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for",
+          "app_id": "chrome",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200692.0305388,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "wait_for",
+        "line": "I am waiting for the page to load.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777200693.4720328,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777200693.6635242,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "wait_for"
+        }
+      },
+      {
+        "timestamp": 1777200694.21039,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click_node",
+        "line": "",
+        "status": "disabled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "click_node",
+          "app_id": "",
+          "target": "Chrome omnibox"
+        }
+      },
+      {
+        "timestamp": 1777200695.2393143,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "target_found",
+        "line": "I found the top_menu item.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "target": "top_menu item",
+          "action_type": "click_node"
+        }
+      },
+      {
+        "timestamp": 1777200695.2393143,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click",
+        "line": "I am clicking it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777200696.5441318,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "This step failed safely because the target was ambiguous.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_3"
+        }
+      },
+      {
+        "timestamp": 1777200725.2239542,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene",
+          "app_id": "",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200726.2565372,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777200731.835111,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_5",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777200762.1379063,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff",
+          "app_id": "",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200763.2899725,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "scene_diff",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777200768.6879704,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777200768.6879704,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "scene_diff"
+        }
+      },
+      {
+        "timestamp": 1777200769.2136648,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click_node",
+        "line": "",
+        "status": "disabled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "click_node",
+          "app_id": "",
+          "target": "Chrome omnibox"
+        }
+      },
+      {
+        "timestamp": 1777200770.242599,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "target_found",
+        "line": "I found the top_menu item.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "target": "top_menu item",
+          "action_type": "click_node"
+        }
+      },
+      {
+        "timestamp": 1777200770.2444434,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click",
+        "line": "I am clicking it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777200771.5306861,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "This step failed safely because the target was ambiguous.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_3"
+        }
+      },
+      {
+        "timestamp": 1777200795.209936,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene",
+          "app_id": "",
+          "target": "chrome"
+        }
+      },
+      {
+        "timestamp": 1777200796.2421527,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "verify_scene",
+        "line": "I am checking whether the screen changed.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "verify_scene"
+        }
+      },
+      {
+        "timestamp": 1777200802.127771,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_5",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777200825.1763892,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "type_text",
+        "line": "I found the input field. I am typing now.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text",
+          "app_id": "",
+          "target": "focus shift benchmark"
+        }
+      },
+      {
+        "timestamp": 1777200826.2191558,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "type_text",
+        "line": "I found the input field. I am typing now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "type_text"
+        }
+      },
+      {
+        "timestamp": 1777200827.983613,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_7",
+          "failure_reason": "FOCUS_NOT_CONFIRMED"
+        }
+      },
+      {
+        "timestamp": 1777200838.9105241,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "failure",
+        "line": "This mission timed out safely.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777200838.9155514,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Run completed with status failed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "open_windows": [
+          {
+            "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+            "left": 944,
+            "top": 75,
+            "width": 985,
+            "height": 1008
+          },
+          {
+            "title": "vlm_agent - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 895
+          },
+          {
+            "title": "README.md - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "AK - PC Assistant System Review",
+            "left": 274,
+            "top": 55,
+            "width": 1369,
+            "height": 895
+          },
+          {
+            "title": "Verify your identity - OpenAI - Google Chrome",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "WhatsApp",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Containers - Docker Desktop",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Settings",
+            "left": 0,
+            "top": 11,
+            "width": 1920,
+            "height": 1008
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "Settings",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "chrome",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should be visible and focused.",
+        "timeline_entry_at": 1777200652.8584437
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "chrome should remain focused.",
+        "timeline_entry_at": 1777200655.554961
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Focus confirmed for chrome.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Chrome omnibox should be focused.",
+        "timeline_entry_at": 1777200657.8332212
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Target identity is ambiguous in the current UI.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "chrome should remain focused.",
+        "timeline_entry_at": 1777200663.431079
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Wait condition satisfied.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "Chrome omnibox should be focused.",
+        "timeline_entry_at": 1777200693.4700172
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Target identity is ambiguous in the current UI.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "Chrome omnibox should be focused.",
+        "timeline_entry_at": 1777200696.5441318
+      },
+      {
+        "phase": "after_step_5",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Expected labels were not visible: ['search', 'address']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "pending_steps": [
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3",
+          "step_5"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "Scene delta should be recorded.",
+        "timeline_entry_at": 1777200731.835111
+      },
+      {
+        "phase": "after_step_6",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Scene summary changed.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "pending_steps": [
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3",
+          "step_5"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome query 'focus shift benchmark' should be entered.",
+        "timeline_entry_at": 1777200768.6879704
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Target identity is ambiguous in the current UI.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "pending_steps": [
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3",
+          "step_5"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome query 'focus shift benchmark' should be entered.",
+        "timeline_entry_at": 1777200771.5306861
+      },
+      {
+        "phase": "after_step_5",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Expected labels were not visible: ['search', 'address']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "pending_steps": [
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3",
+          "step_5"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "The Chrome query 'focus shift benchmark' should be entered.",
+        "timeline_entry_at": 1777200802.1257572
+      },
+      {
+        "phase": "after_step_7",
+        "user_goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+        "current_subgoal": "Typing requires text and editable target evidence.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "pending_steps": [
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "failed_steps": [
+          "step_3",
+          "step_5",
+          "step_7"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "The query 'focus shift benchmark' should be visible in Chrome.",
+        "timeline_entry_at": 1777200827.983613
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "82c827797503577d",
+        "timestamp": 1777200653.879867,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "41e73e413702fd7b",
+        "timestamp": 1777200655.3504674,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "e46d4b54cb88aca1",
+        "timestamp": 1777200656.5907345,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "b1fa589c9a64c946",
+        "timestamp": 1777200657.6071987,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for chrome.",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "725568d82bb7d6e0",
+        "timestamp": 1777200658.841335,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:click_node",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "cfe7ae3461165d37",
+        "timestamp": 1777200663.2241275,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a89b71eadc2e9404",
+        "ui_tree_hash": "9fd7cb4a37d4cde9",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "retry_1_before",
+        "state_id": "8f2a99a63eaf244f",
+        "timestamp": 1777200687.149129,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "d5df4db5591c920b",
+        "ui_tree_hash": "93c9e78585e28f37",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "96dd6ac4984c4439",
+        "timestamp": 1777200692.0299938,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "391bd523a3ca4daf",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:wait_for",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "154b4c3399a1b20f",
+        "timestamp": 1777200693.2522702,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "391bd523a3ca4daf",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:wait_for",
+        "last_verified_change": "Wait condition satisfied.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "5d945a9e4b033714",
+        "timestamp": 1777200695.2358146,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "391bd523a3ca4daf",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "3d9a2f0645b91f45",
+        "timestamp": 1777200696.270534,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "391bd523a3ca4daf",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "retry_2_before",
+        "state_id": "b1d9bf74a7ac5fd8",
+        "timestamp": 1777200701.077816,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7d43ef2f6f5b8736",
+        "ui_tree_hash": "a600cbb0feca06f7",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "before",
+        "state_id": "824d44e65e243d0e",
+        "timestamp": 1777200726.2529638,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "b73982a6050b1527",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "after",
+        "state_id": "88a1fe0dd93bfb40",
+        "timestamp": 1777200731.60675,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "0abaea758b6d027a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "retry_1_before",
+        "state_id": "511435ea4d273782",
+        "timestamp": 1777200736.33526,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7e04181ff1117ad0",
+        "ui_tree_hash": "89e0f50cc80a9c32",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_6",
+        "phase": "before",
+        "state_id": "42b94a66aa0b0fe9",
+        "timestamp": 1777200763.2870166,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "3f308e32912711b6",
+        "ui_tree_hash": "2010a57790613daa",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:scene_diff",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_6",
+        "phase": "after",
+        "state_id": "9fa20e1b252958ab",
+        "timestamp": 1777200768.4407847,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "735f570db4f4efc7",
+        "ui_tree_hash": "71a13b19569ce87f",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:scene_diff",
+        "last_verified_change": "Scene summary changed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "4156182c45a595e7",
+        "timestamp": 1777200770.2360694,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "735f570db4f4efc7",
+        "ui_tree_hash": "71a13b19569ce87f",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "2bb292066b22de0b",
+        "timestamp": 1777200771.2795694,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "735f570db4f4efc7",
+        "ui_tree_hash": "71a13b19569ce87f",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:click_node",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "before",
+        "state_id": "23dcf1da8d15e578",
+        "timestamp": 1777200796.2385826,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "debec17330fdaba9",
+        "ui_tree_hash": "f0f0cb7c32857f1a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "after",
+        "state_id": "e59a9a6841b9c85c",
+        "timestamp": 1777200801.8674548,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "a6c2e2893dd3a4c6",
+        "ui_tree_hash": "e3dbe5ea6391e90f",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_5",
+        "phase": "retry_1_before",
+        "state_id": "f3479c3076e033d6",
+        "timestamp": 1777200806.7021947,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "7e04181ff1117ad0",
+        "ui_tree_hash": "6e101a868674c608",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:verify_scene",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_7",
+        "phase": "before",
+        "state_id": "d644336f9862a967",
+        "timestamp": 1777200826.2160537,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "3f308e32912711b6",
+        "ui_tree_hash": "5c3bb3bc82c928a8",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:type_text",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_7",
+        "phase": "after",
+        "state_id": "5a6d666c86e400ba",
+        "timestamp": 1777200827.762493,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "3f308e32912711b6",
+        "ui_tree_hash": "5c3bb3bc82c928a8",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:type_text",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_7",
+        "phase": "retry_1_before",
+        "state_id": "03903377ae3e9b34",
+        "timestamp": 1777200832.585839,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "5bdf247110435ffd",
+        "ui_tree_hash": "07590188babd68a6",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:type_text",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_7",
+        "phase": "retry_1_after",
+        "state_id": "3d72dd1dd4729d24",
+        "timestamp": 1777200834.6352372,
+        "active_window": {
+          "title": "HairStyle AI Studio | Google AI Studio - Google Chrome",
+          "left": 944,
+          "top": 75,
+          "width": 985,
+          "height": 1008
+        },
+        "focused_element": "",
+        "screen_hash": "5bdf247110435ffd",
+        "ui_tree_hash": "07590188babd68a6",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:retry:type_text",
+        "last_verified_change": "",
+        "confidence": 0.5
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "82c827797503577d",
+        "after_state_id": "41e73e413702fd7b",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "e46d4b54cb88aca1",
+        "after_state_id": "b1fa589c9a64c946",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "725568d82bb7d6e0",
+        "after_state_id": "cfe7ae3461165d37",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "96dd6ac4984c4439",
+        "after_state_id": "154b4c3399a1b20f",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "5d945a9e4b033714",
+        "after_state_id": "3d9a2f0645b91f45",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_5",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "824d44e65e243d0e",
+        "after_state_id": "88a1fe0dd93bfb40",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_6",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "42b94a66aa0b0fe9",
+        "after_state_id": "9fa20e1b252958ab",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "4156182c45a595e7",
+        "after_state_id": "2bb292066b22de0b",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_5",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "23dcf1da8d15e578",
+        "after_state_id": "e59a9a6841b9c85c",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_7",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "d644336f9862a967",
+        "after_state_id": "5a6d666c86e400ba",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_7",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "03903377ae3e9b34",
+        "after_state_id": "3d72dd1dd4729d24",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200655.3504674
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200657.6076667
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "added: bottom menu, bottom_menu item, main page, top menu, top_menu item",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "bottom menu",
+          "bottom_menu item",
+          "main page",
+          "top menu",
+          "top_menu item"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200663.2260723
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200693.2557387
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200696.2735868
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200731.6093552
+      },
+      {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200768.4434621
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200771.2816653
+      },
+      {
+        "step_id": "step_5",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200801.8674548
+      },
+      {
+        "step_id": "step_7",
+        "expected_change": "The Chrome query 'focus shift benchmark' should be entered.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200827.765057
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.25,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "candidate_count": 2,
+        "top_candidate_score": 0.5838,
+        "runner_up_score": 0.5838,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": true,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "candidate_count": 2,
+        "top_candidate_score": 0.5838,
+        "runner_up_score": 0.5838,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": true,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 1
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_6",
+        "action_type": "scene_diff",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "candidate_count": 2,
+        "top_candidate_score": 0.5838,
+        "runner_up_score": 0.5838,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": true,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 2
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "type_text",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 1
+      }
+    ],
+    "parse_health": [
+      {
+        "screen_hash": "f30e3ba150343e9f",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.84074,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.224264,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.106278,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "a5e2dfe776980aff",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 24,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 3.503685,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 7.102849,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 6.511308,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.084456,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "471ca05cd17868d7",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.932443,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.004905,
+        "worker_exec_seconds": 0.289769,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.121112,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "5192696400e25fe0",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.832567,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.213568,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.112449,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "65a12192036917f3",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 24,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.6496,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 9.089438,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 8.500919,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.078425,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "2ad2b7d6a44757eb",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.956076,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.340167,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.101709,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "de432cd4c49c0f32",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.82054,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.220442,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.09321,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "e4780a0d3ad6815c",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 24,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.238628,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 6.828111,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 6.222483,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.099422,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "6cb68d7eac6c8590",
+        "candidate_count": 26,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 26,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 1.127241,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.001013,
+        "worker_exec_seconds": 0.523473,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.088787,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "5b48da4061b14ae9",
+        "candidate_count": 26,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.784164,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 8.179881,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 7.555952,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.104518,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "6447d01473136c87",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 1.503772,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.896702,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.090503,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "f4d5c3b3107dd023",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.953683,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.304755,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.141588,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "8608bf9dc2931f30",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 24,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.711868,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 7.285703,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.000668,
+        "worker_exec_seconds": 6.673301,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.098343,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "40435a7af068cc69",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.924312,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.294927,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.115566,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      },
+      {
+        "screen_hash": "8b60567e101f7efc",
+        "candidate_count": 25,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 25,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.887009,
+        "worker_used": true,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.278594,
+        "worker_boot_seconds": 31.830718,
+        "screen_hash_cache_hit": false,
+        "screen_hash_elapsed_seconds": 0.096566,
+        "parse_mode": "vision_worker",
+        "cache_hit": false,
+        "ocr_skipped_by_dom": false,
+        "ocr_skipped_by_uia": false
+      }
+    ],
+    "target_rankings": [
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "selected_node_id": "2",
+        "selected_label": "top_menu item",
+        "candidate_count": 2,
+        "top_candidate_score": 0.5838,
+        "runner_up_score": 0.5838,
+        "score_gap": 0.0,
+        "duplicate_disambiguation_used": true,
+        "ambiguous": false,
+        "ambiguity_reason": "",
+        "candidates": [
+          {
+            "node_id": "2",
+            "label": "top_menu item",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "top_menu",
+            "app_id": "chrome",
+            "score": 0.5838,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 382,
+              "y": 33
+            }
+          },
+          {
+            "node_id": "1",
+            "label": "top_menu item",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "top_menu",
+            "app_id": "chrome",
+            "score": 0.5838,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 452,
+              "y": 94
+            }
+          }
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "selected_node_id": "2",
+        "selected_label": "top_menu item",
+        "candidate_count": 2,
+        "top_candidate_score": 0.5838,
+        "runner_up_score": 0.5838,
+        "score_gap": 0.0,
+        "duplicate_disambiguation_used": true,
+        "ambiguous": false,
+        "ambiguity_reason": "",
+        "candidates": [
+          {
+            "node_id": "2",
+            "label": "top_menu item",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "top_menu",
+            "app_id": "chrome",
+            "score": 0.5838,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 382,
+              "y": 33
+            }
+          },
+          {
+            "node_id": "1",
+            "label": "top_menu item",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "top_menu",
+            "app_id": "chrome",
+            "score": 0.5838,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 452,
+              "y": 94
+            }
+          }
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "selected_node_id": "2",
+        "selected_label": "top_menu item",
+        "candidate_count": 2,
+        "top_candidate_score": 0.5838,
+        "runner_up_score": 0.5838,
+        "score_gap": 0.0,
+        "duplicate_disambiguation_used": true,
+        "ambiguous": false,
+        "ambiguity_reason": "",
+        "candidates": [
+          {
+            "node_id": "2",
+            "label": "top_menu item",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "top_menu",
+            "app_id": "chrome",
+            "score": 0.5838,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 382,
+              "y": 33
+            }
+          },
+          {
+            "node_id": "1",
+            "label": "top_menu item",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "top_menu",
+            "app_id": "chrome",
+            "score": 0.5838,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 452,
+              "y": 94
+            }
+          }
+        ]
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "intent": "Focus Chrome omnibox",
+        "target": "top_menu item",
+        "evidence": [
+          "label:top_menu item",
+          "region:top_menu",
+          "affordances:focus,type",
+          "visual:5dd710d5599d530f1cdb4a13d5829524",
+          "center:382,33",
+          "ocr:[TEXT_FIELD]",
+          "app:chrome",
+          "screenshot:step_3_target.png"
+        ],
+        "before_checks": {
+          "target_exists": true,
+          "target_visible": true,
+          "target_clickable": true,
+          "safe_click_count": true
+        },
+        "during_checks": {},
+        "verification": {},
+        "evidence_score": 1.0,
+        "evidence_grade": "strong",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "recovery_strategy": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "target_identity": {
+          "target_id": "target_17dc77c830969b76",
+          "role": "text_field",
+          "name": "top_menu item",
+          "bounds": {
+            "x": 254,
+            "y": 20,
+            "width": 256,
+            "height": 26
+          },
+          "parent_window": "chrome",
+          "source": "Vision",
+          "stable_signature": "17dc77c830969b76",
+          "confidence": 1.0
+        },
+        "target_ranking": {
+          "selected_node_id": "2",
+          "selected_label": "top_menu item",
+          "candidate_count": 2,
+          "top_candidate_score": 0.5838,
+          "runner_up_score": 0.5838,
+          "score_gap": 0.0,
+          "duplicate_disambiguation_used": true,
+          "ambiguous": false,
+          "ambiguity_reason": ""
+        },
+        "identity_drifted": false,
+        "identity_ambiguous": true,
+        "status": "blocked",
+        "notes": [
+          "Target identity is ambiguous in the current UI."
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "wait_for",
+        "intent": "Wait for chrome to settle",
+        "target": "chrome",
+        "evidence": [
+          "timeout:1.00"
+        ],
+        "before_checks": {
+          "bounded_wait": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "traceable_wait": true
+        },
+        "evidence_score": 0.25,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "intent": "Focus Chrome omnibox",
+        "target": "top_menu item",
+        "evidence": [
+          "label:top_menu item",
+          "region:top_menu",
+          "affordances:focus,type",
+          "visual:5dd710d5599d530f1cdb4a13d5829524",
+          "center:382,33",
+          "ocr:[TEXT_FIELD]",
+          "app:chrome",
+          "screenshot:step_3_recover.png"
+        ],
+        "before_checks": {
+          "target_exists": true,
+          "target_visible": true,
+          "target_clickable": true,
+          "safe_click_count": true
+        },
+        "during_checks": {},
+        "verification": {},
+        "evidence_score": 1.0,
+        "evidence_grade": "strong",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "recovery_strategy": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "target_identity": {
+          "target_id": "target_17dc77c830969b76",
+          "role": "text_field",
+          "name": "top_menu item",
+          "bounds": {
+            "x": 254,
+            "y": 20,
+            "width": 256,
+            "height": 26
+          },
+          "parent_window": "chrome",
+          "source": "Vision",
+          "stable_signature": "17dc77c830969b76",
+          "confidence": 1.0
+        },
+        "target_ranking": {
+          "selected_node_id": "2",
+          "selected_label": "top_menu item",
+          "candidate_count": 2,
+          "top_candidate_score": 0.5838,
+          "runner_up_score": 0.5838,
+          "score_gap": 0.0,
+          "duplicate_disambiguation_used": true,
+          "ambiguous": false,
+          "ambiguity_reason": ""
+        },
+        "identity_drifted": false,
+        "identity_ambiguous": true,
+        "status": "blocked",
+        "notes": [
+          "Target identity is ambiguous in the current UI."
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "intent": "Focus Chrome omnibox",
+        "target": "top_menu item",
+        "evidence": [
+          "label:top_menu item",
+          "region:top_menu",
+          "affordances:focus,type",
+          "visual:5dd710d5599d530f1cdb4a13d5829524",
+          "center:382,33",
+          "ocr:[TEXT_FIELD]",
+          "app:chrome",
+          "screenshot:step_6_diff.png"
+        ],
+        "before_checks": {
+          "target_exists": true,
+          "target_visible": true,
+          "target_clickable": true,
+          "safe_click_count": true
+        },
+        "during_checks": {},
+        "verification": {},
+        "evidence_score": 1.0,
+        "evidence_grade": "strong",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "recovery_strategy": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "target_identity": {
+          "target_id": "target_17dc77c830969b76",
+          "role": "text_field",
+          "name": "top_menu item",
+          "bounds": {
+            "x": 254,
+            "y": 20,
+            "width": 256,
+            "height": 26
+          },
+          "parent_window": "chrome",
+          "source": "Vision",
+          "stable_signature": "17dc77c830969b76",
+          "confidence": 1.0
+        },
+        "target_ranking": {
+          "selected_node_id": "2",
+          "selected_label": "top_menu item",
+          "candidate_count": 2,
+          "top_candidate_score": 0.5838,
+          "runner_up_score": 0.5838,
+          "score_gap": 0.0,
+          "duplicate_disambiguation_used": true,
+          "ambiguous": false,
+          "ambiguity_reason": ""
+        },
+        "identity_drifted": false,
+        "identity_ambiguous": true,
+        "status": "blocked",
+        "notes": [
+          "Target identity is ambiguous in the current UI."
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "type_text",
+        "intent": "Type Chrome query: focus shift benchmark",
+        "target": "active_focus",
+        "evidence": [],
+        "before_checks": {
+          "text_present": true,
+          "editable_target_exists": false
+        },
+        "during_checks": {},
+        "verification": {},
+        "evidence_score": 0.0,
+        "evidence_grade": "none",
+        "failure_reason": "FOCUS_NOT_CONFIRMED",
+        "recovery_strategy": [
+          "refocus_window",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "blocked",
+        "notes": [
+          "Typing requires text and editable target evidence."
+        ]
+      },
+      {
+        "step_id": "step_7_retry_1",
+        "action_type": "type_text",
+        "intent": "Recovery retry for Type Chrome query: focus shift benchmark",
+        "target": "active_focus",
+        "evidence": [],
+        "before_checks": {
+          "text_present": true,
+          "editable_target_exists": false
+        },
+        "during_checks": {},
+        "verification": {},
+        "evidence_score": 0.0,
+        "evidence_grade": "none",
+        "failure_reason": "FOCUS_NOT_CONFIRMED",
+        "recovery_strategy": [
+          "refocus_window",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "blocked",
+        "notes": [
+          "Typing requires text and editable target evidence."
+        ]
+      }
+    ],
+    "failure_recovery": [
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "strategy": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "Target was ambiguous. Resolve by role, text, region, proximity, and task context.",
+        "contract_target": "top_menu item",
+        "evidence_score": 1.0,
+        "evidence_grade": "strong"
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "strategy": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "Target was ambiguous. Resolve by role, text, region, proximity, and task context.",
+        "contract_target": "top_menu item",
+        "evidence_score": 1.0,
+        "evidence_grade": "strong"
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "click_node",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "strategy": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "Target was ambiguous. Resolve by role, text, region, proximity, and task context.",
+        "contract_target": "top_menu item",
+        "evidence_score": 1.0,
+        "evidence_grade": "strong"
+      },
+      {
+        "step_id": "step_5",
+        "action_type": "verify_scene",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_7",
+        "action_type": "type_text",
+        "failure_reason": "FOCUS_NOT_CONFIRMED",
+        "strategy": [
+          "refocus_window",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "Focus was not confirmed. Refocus the expected app before retry.",
+        "contract_target": "active_focus",
+        "evidence_score": 0.0,
+        "evidence_grade": "none"
+      },
+      {
+        "step_id": "step_8",
+        "failure_reason": "MISSION_TIMEOUT",
+        "notes": "Mission exceeded benchmark runtime budget."
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_3",
+        "reason": "TARGET_AMBIGUOUS",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2"
+        ],
+        "failed_step_ids": [
+          "step_3"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": false,
+          "ui_tree_changed": false,
+          "dom_changed": false,
+          "changed": false,
+          "before_state_id": "96dd6ac4984c4439",
+          "after_state_id": "154b4c3399a1b20f",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "failed_step_ids": [
+          "step_3"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "reason": "TARGET_AMBIGUOUS",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "failed_step_ids": [
+          "step_3"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4"
+        ],
+        "failed_step_ids": [
+          "step_3",
+          "step_5"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "42b94a66aa0b0fe9",
+          "after_state_id": "9fa20e1b252958ab",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "failed_step_ids": [
+          "step_3",
+          "step_5"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "reason": "TARGET_AMBIGUOUS",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_3",
+          "step_5",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "failed_step_ids": [
+          "step_3",
+          "step_5"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_3",
+          "step_5",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "failed_step_ids": [
+          "step_3",
+          "step_5"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "reason": "FOCUS_NOT_CONFIRMED",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_3",
+          "step_3",
+          "step_5",
+          "step_3",
+          "step_5",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_4",
+          "step_6"
+        ],
+        "failed_step_ids": [
+          "step_3",
+          "step_5",
+          "step_7"
+        ]
+      }
+    ],
+    "recovery_attempts": [
+      {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "strategy_attempted": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "resolver_used": "",
+        "new_evidence_score": 0.0,
+        "recovery_depth_per_step": 1,
+        "target_switch_after_recovery": false,
+        "retry_success": false,
+        "note": "No alternate target resolved."
+      },
+      {
+        "step_id": "step_3",
+        "failure_reason": "TARGET_AMBIGUOUS",
+        "strategy_attempted": [
+          "resolve_by_role_text_region",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "resolver_used": "",
+        "new_evidence_score": 0.0,
+        "recovery_depth_per_step": 2,
+        "target_switch_after_recovery": false,
+        "retry_success": false,
+        "note": "No alternate target resolved."
+      },
+      {
+        "step_id": "step_7",
+        "failure_reason": "FOCUS_NOT_CONFIRMED",
+        "strategy_attempted": [
+          "refocus_window",
+          "retry_with_uia",
+          "ask_user_or_stop"
+        ],
+        "resolver_used": "field_check",
+        "new_evidence_score": 0.0,
+        "recovery_depth_per_step": 1,
+        "target_switch_after_recovery": false,
+        "retry_success": false,
+        "target": "active_focus"
+      }
+    ],
+    "plan_replacements": [
+      {
+        "step_id": "step_4",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "pending_preserved": [
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_6",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_3",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_5",
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "pending_preserved": [
+          "step_7",
+          "step_8",
+          "step_9",
+          "step_10",
+          "step_11",
+          "step_12"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200767.4056988
+      }
+    ],
+    "runtime_limits": [
+      {
+        "limit": "max_runtime_seconds",
+        "max_runtime_seconds": 180.0,
+        "elapsed_seconds": 189.107123,
+        "step_id": "step_8"
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_efc3c76e4a",
+    "goal": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "chrome",
+    "status": "failed",
+    "current_checkpoint_id": "step_7",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to chrome",
+        "expected_scene": "chrome should be visible and focused.",
+        "completion_rule": "chrome should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm chrome focus",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for chrome."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Focus Chrome omnibox",
+        "expected_scene": "Chrome omnibox should be focused.",
+        "completion_rule": "Chrome omnibox should be focused.",
+        "recovery_rule": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "status": "recovered",
+        "notes": [
+          "Recovered by sending Escape and reparsing.",
+          "Recovered by sending Escape and reparsing.",
+          "Recovered by sending Escape and reparsing."
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Wait for chrome to settle",
+        "expected_scene": "chrome should remain focused.",
+        "completion_rule": "chrome should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Verify scene after focus chrome omnibox",
+        "expected_scene": "Chrome omnibox should be focused.",
+        "completion_rule": "Chrome omnibox should be focused.",
+        "recovery_rule": "Retry Chrome omnibox focus using DOM or vision fallback.",
+        "status": "recovered",
+        "notes": [
+          "Recovered by sending Escape and reparsing.",
+          "Recovered by sending Escape and reparsing."
+        ]
+      },
+      {
+        "checkpoint_id": "step_6",
+        "title": "Summarize scene change after focus chrome omnibox",
+        "expected_scene": "Scene delta should be recorded.",
+        "completion_rule": "Scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Scene summary changed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_7",
+        "title": "Type Chrome query: focus shift benchmark",
+        "expected_scene": "The Chrome query 'focus shift benchmark' should be entered.",
+        "completion_rule": "The Chrome query 'focus shift benchmark' should be entered.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "recovered",
+        "notes": [
+          "Recovered by sending Escape and reparsing."
+        ]
+      },
+      {
+        "checkpoint_id": "step_8",
+        "title": "Verify Chrome query text for focus shift benchmark",
+        "expected_scene": "The query 'focus shift benchmark' should be visible in Chrome.",
+        "completion_rule": "The query 'focus shift benchmark' should be visible in Chrome.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_9",
+        "title": "Submit Chrome query",
+        "expected_scene": "Chrome should submit the typed query.",
+        "completion_rule": "Chrome should submit the typed query.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_10",
+        "title": "Wait for Chrome results page",
+        "expected_scene": "Chrome should remain focused while results load.",
+        "completion_rule": "Chrome should remain focused while results load.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_11",
+        "title": "Verify Chrome results page",
+        "expected_scene": "Chrome should run the requested search and show a results page.",
+        "completion_rule": "Chrome should run the requested search and show a results page.",
+        "recovery_rule": "Retry via the omnibox or vision fallback if the selector path is unavailable.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_12",
+        "title": "Summarize Chrome results page change",
+        "expected_scene": "The Chrome search scene delta should be recorded.",
+        "completion_rule": "The Chrome search scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      }
+    ],
+    "notes": [],
+    "created_at": 1777200652.3459594
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "chrome should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777200655.3504674
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777200657.6076667
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "added: bottom menu, bottom_menu item, main page, top menu, top_menu item",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "bottom menu",
+        "bottom_menu item",
+        "main page",
+        "top menu",
+        "top_menu item"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777200663.2260723
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "chrome should remain focused.",
+      "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777200693.2557387
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777200696.2735868
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777200731.6093552
+    },
+    {
+      "step_id": "step_6",
+      "expected_change": "Scene delta should be recorded.",
+      "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777200768.4434621
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777200771.2816653
+    },
+    {
+      "step_id": "step_5",
+      "expected_change": "Chrome omnibox should be focused.",
+      "before_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777200801.8674548
+    },
+    {
+      "step_id": "step_7",
+      "expected_change": "The Chrome query 'focus shift benchmark' should be entered.",
+      "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777200827.765057
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "chrome should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200655.3504674
+      },
+      "timestamp": 1777200655.4563205
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for chrome.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200657.6076667
+      },
+      "timestamp": 1777200657.7279866
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "click_node",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "top_menu item",
+      "target_node_id": "2",
+      "focus_confirmed": true,
+      "notes": "Target identity is ambiguous in the current UI.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "added: bottom menu, bottom_menu item, main page, top menu, top_menu item",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "bottom menu",
+          "bottom_menu item",
+          "main page",
+          "top menu",
+          "top_menu item"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200663.2260723
+      },
+      "timestamp": 1777200663.3341935
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "chrome should remain focused.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200693.2557387
+      },
+      "timestamp": 1777200693.3598871
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "click_node",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "top_menu item",
+      "target_node_id": "2",
+      "focus_confirmed": true,
+      "notes": "Target identity is ambiguous in the current UI.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200696.2735868
+      },
+      "timestamp": 1777200696.4302952
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "verify_scene",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Expected labels were not visible: ['search', 'address']",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200731.6093552
+      },
+      "timestamp": 1777200731.736883
+    },
+    {
+      "step_id": "step_6",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Scene summary changed.",
+      "scene_delta": {
+        "step_id": "step_6",
+        "expected_change": "Scene delta should be recorded.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200768.4434621
+      },
+      "timestamp": 1777200768.5572886
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "click_node",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "top_menu item",
+      "target_node_id": "2",
+      "focus_confirmed": true,
+      "notes": "Target identity is ambiguous in the current UI.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200771.2816653
+      },
+      "timestamp": 1777200771.4060693
+    },
+    {
+      "step_id": "step_5",
+      "action_type": "verify_scene",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Expected labels were not visible: ['search', 'address']",
+      "scene_delta": {
+        "step_id": "step_5",
+        "expected_change": "Chrome omnibox should be focused.",
+        "before_summary": "Google Chrome scene with 47 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777200801.8674548
+      },
+      "timestamp": 1777200802.0003479
+    },
+    {
+      "step_id": "step_7",
+      "action_type": "type_text",
+      "ok": false,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Typing requires text and editable target evidence.",
+      "scene_delta": {
+        "step_id": "step_7",
+        "expected_change": "The Chrome query 'focus shift benchmark' should be entered.",
+        "before_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "after_summary": "Google Chrome scene with 45 nodes; highlights: Top Menu, top_menu item, top_menu item, top_menu item, top_menu item, top_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777200827.765057
+      },
+      "timestamp": 1777200827.8887198
+    }
+  ],
+  "started_at": 1777200652.3459594,
+  "finished_at": 1777200838.9105241
+}

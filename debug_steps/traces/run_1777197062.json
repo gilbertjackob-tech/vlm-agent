@@ -1,0 +1,2117 @@
+{
+  "run_id": "run_1777197062",
+  "task": {
+    "prompt": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+    "goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_337018171d",
+    "created_at": 1777197061.2337885
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+      "goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_337018171d",
+      "created_at": 1777197061.2337885
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Navigate Explorer to downloads",
+        "action_type": "click_node",
+        "target": {
+          "kind": "location",
+          "value": "downloads",
+          "filters": {
+            "region": "left_menu",
+            "semantic_role": "menu_item",
+            "entity_type": "navigation_item",
+            "label_contains": "downloads",
+            "affordance": "navigate",
+            "min_score": 0.52,
+            "app_id": "explorer",
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads",
+              "Downloads-"
+            ]
+          }
+        },
+        "intent": {
+          "verb": "click_node",
+          "semantic_target": "downloads",
+          "description": "Navigate Explorer to downloads",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "hybrid",
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "filters": {
+            "region": "left_menu",
+            "semantic_role": "menu_item",
+            "entity_type": "navigation_item",
+            "label_contains": "downloads",
+            "affordance": "navigate",
+            "min_score": 0.52,
+            "app_id": "explorer",
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads",
+              "Downloads-"
+            ]
+          },
+          "selector_candidates": [],
+          "expected_change": "Explorer should show the downloads location.",
+          "expected_app": "explorer",
+          "settle_wait": 0.7,
+          "click_count": 1
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer should show the downloads location.",
+        "fallback_hint": "Retry Explorer sidebar navigation to downloads.",
+        "control_modes": [
+          "browser_dom",
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Wait for explorer to settle",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "explorer",
+          "description": "Wait for explorer to settle",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.2,
+          "expected_focus": "explorer",
+          "timeout": 1.0
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "title": "Verify scene after navigate explorer to downloads",
+        "action_type": "verify_scene",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "verify_scene",
+          "semantic_target": "explorer",
+          "description": "Verify scene after navigate explorer to downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_app": "explorer",
+          "filters": {},
+          "expected_labels": [
+            "downloads"
+          ]
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer should show the downloads location.",
+        "fallback_hint": "Retry Explorer sidebar navigation to downloads.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "title": "Summarize scene change after navigate explorer to downloads",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "explorer",
+          "description": "Summarize scene change after navigate explorer to downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Explorer should show the downloads location.",
+          "recovery_hint": "Retry Explorer sidebar navigation to downloads."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer should show the downloads location.",
+      "explorer should remain focused.",
+      "Explorer should show the downloads location.",
+      "Scene delta should be recorded."
+    ],
+    "generated_at": 1777197062.771265
+  },
+  "status": "failed",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777197063.2812016,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 6
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777197063.2812016,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777197063.2817123,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777197083.2579482,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777197104.7233534,
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "timestamp": 1777197104.7233534,
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777197124.661686,
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777197145.916549,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "timestamp": 1777197145.916549,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777197166.0403852,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777197187.2540932,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "timestamp": 1777197187.2540932,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777197207.116004,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777197228.35035,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "timestamp": 1777197228.35035,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777197248.2900872,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      }
+    },
+    {
+      "phase": "failure",
+      "message": "Mission runtime budget exceeded.",
+      "timestamp": 1777197269.7108638,
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route_repair_route"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777197063.2817123
+    },
+    {
+      "step_id": "step_1_repair_route",
+      "approved": true,
+      "timestamp": 1777197104.7233534
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route",
+      "approved": true,
+      "timestamp": 1777197145.916549
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route_repair_route",
+      "approved": true,
+      "timestamp": 1777197187.2540932
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+      "approved": true,
+      "timestamp": 1777197228.35035
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 403,
+      "known_visuals": 1153,
+      "known_concepts": 26,
+      "known_controls": 2763,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 13,
+      "trusted_workflows": 3,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 68,
+      "scene_deltas": 400,
+      "action_outcomes": 400
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777197062.771265,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "benchmark",
+        "line": "I am starting the benchmark.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777197063.2817123,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197064.297647,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197083.2579482,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_1",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777197104.7233534,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "repair",
+        "line": "I found a local problem in the current step. I am repairing it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197104.7233534,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197104.7233534,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197105.750004,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197124.661686,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_1_repair_route",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777197145.916549,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "repair",
+        "line": "I found a local problem in the current step. I am repairing it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197145.916549,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197145.916549,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197146.9379165,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197166.0403852,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_1_repair_route_repair_route",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777197187.2540932,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "repair",
+        "line": "I found a local problem in the current step. I am repairing it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197187.2540932,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197187.2540932,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197188.2604814,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197207.116004,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_1_repair_route_repair_route_repair_route",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777197228.35035,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "repair",
+        "line": "I found a local problem in the current step. I am repairing it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197228.35035,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197228.35035,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197229.3788269,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777197248.2900872,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+          "failure_reason": "NO_STATE_CHANGE"
+        }
+      },
+      {
+        "timestamp": 1777197269.7108638,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "repair",
+        "line": "I found a local problem in the current step. I am repairing it.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197269.7108638,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "replan",
+        "line": "The current plan no longer matches the screen. I am updating the next steps.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777197269.7108638,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "failure",
+        "line": "This mission timed out safely.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777197269.7125347,
+        "mode": "console",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Run completed with status failed.",
+        "status": "console",
+        "sensitive_redacted": false,
+        "metadata": {}
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {},
+        "open_windows": [
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777197063.2812016
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+        "current_subgoal": "Could not route the requested window.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_1"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777197083.2579482
+      },
+      {
+        "phase": "after_step_1_repair_route",
+        "user_goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+        "current_subgoal": "Could not route the requested window.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_1",
+          "step_1_repair_route"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777197124.661686
+      },
+      {
+        "phase": "after_step_1_repair_route_repair_route",
+        "user_goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+        "current_subgoal": "Could not route the requested window.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_1",
+          "step_1_repair_route",
+          "step_1_repair_route_repair_route"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777197166.0403852
+      },
+      {
+        "phase": "after_step_1_repair_route_repair_route_repair_route",
+        "user_goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+        "current_subgoal": "Could not route the requested window.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_1",
+          "step_1_repair_route",
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777197207.116004
+      },
+      {
+        "phase": "after_step_1_repair_route_repair_route_repair_route_repair_route",
+        "user_goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+        "current_subgoal": "Could not route the requested window.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "failed_steps": [
+          "step_1",
+          "step_1_repair_route",
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route_repair_route"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777197248.2900872
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "38bb5e6ff570b6ae",
+        "timestamp": 1777197064.297647,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "537a73f6837b2397",
+        "timestamp": 1777197083.134838,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1",
+        "phase": "retry_1_before",
+        "state_id": "881d70309f1eebef",
+        "timestamp": 1777197086.9489152,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "23e6bd7dda3853cb",
+        "ui_tree_hash": "5617c70ff05ac294",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "phase": "before",
+        "state_id": "df303b31ed5c665d",
+        "timestamp": 1777197105.750004,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "23e6bd7dda3853cb",
+        "ui_tree_hash": "5617c70ff05ac294",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "phase": "after",
+        "state_id": "f987b6f5034eb0fb",
+        "timestamp": 1777197124.5194929,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "23e6bd7dda3853cb",
+        "ui_tree_hash": "5617c70ff05ac294",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "phase": "retry_1_before",
+        "state_id": "c7a51875d2cb4b5f",
+        "timestamp": 1777197128.1693156,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "d33c63aa04a6a4e8",
+        "ui_tree_hash": "4f10a3c29e7ddb38",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "phase": "before",
+        "state_id": "eeeeb659ebe6ee91",
+        "timestamp": 1777197146.9373,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "d33c63aa04a6a4e8",
+        "ui_tree_hash": "4f10a3c29e7ddb38",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "phase": "after",
+        "state_id": "b4c06a689e53e67f",
+        "timestamp": 1777197165.9392178,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "d33c63aa04a6a4e8",
+        "ui_tree_hash": "4f10a3c29e7ddb38",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "phase": "retry_1_before",
+        "state_id": "56f36b926fdb70af",
+        "timestamp": 1777197169.5171182,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "5aa73f2f363b8026",
+        "ui_tree_hash": "0c7f8b36de3f6836",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "phase": "before",
+        "state_id": "c4d83b82479e5673",
+        "timestamp": 1777197188.2604814,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "5aa73f2f363b8026",
+        "ui_tree_hash": "0c7f8b36de3f6836",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "phase": "after",
+        "state_id": "ce82a111000f432a",
+        "timestamp": 1777197207.0277548,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "5aa73f2f363b8026",
+        "ui_tree_hash": "0c7f8b36de3f6836",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "phase": "retry_1_before",
+        "state_id": "c0d0af9be87fe213",
+        "timestamp": 1777197210.560573,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "02f8d1ac27f97d2f",
+        "ui_tree_hash": "e4ac6d97f595a221",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "phase": "before",
+        "state_id": "6badf56fd8a905d6",
+        "timestamp": 1777197229.3788269,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "02f8d1ac27f97d2f",
+        "ui_tree_hash": "e4ac6d97f595a221",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "phase": "after",
+        "state_id": "5a43afe20b24c80a",
+        "timestamp": 1777197248.197372,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "02f8d1ac27f97d2f",
+        "ui_tree_hash": "e4ac6d97f595a221",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "phase": "retry_1_before",
+        "state_id": "8d1e6f9f0ab7b0bb",
+        "timestamp": 1777197251.7164388,
+        "active_window": {},
+        "focused_element": "",
+        "screen_hash": "a22c903c2489b3a5",
+        "ui_tree_hash": "e28024f1df10755d",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:retry:route_window",
+        "last_verified_change": "",
+        "confidence": 0.0
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "38bb5e6ff570b6ae",
+        "after_state_id": "537a73f6837b2397",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "df303b31ed5c665d",
+        "after_state_id": "f987b6f5034eb0fb",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "eeeeb659ebe6ee91",
+        "after_state_id": "b4c06a689e53e67f",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "c4d83b82479e5673",
+        "after_state_id": "ce82a111000f432a",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "6badf56fd8a905d6",
+        "after_state_id": "5a43afe20b24c80a",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777197083.134838
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197124.5198464
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197165.9401631
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197207.0277548
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197248.197372
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.0,
+        "focus_confirmed": false,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.0,
+        "focus_confirmed": false,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.0,
+        "focus_confirmed": false,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.0,
+        "focus_confirmed": false,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.0,
+        "focus_confirmed": false,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "failure_recovery": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "action_type": "route_window",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "action_type": "route_window",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action."
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route_repair_route",
+        "failure_reason": "MISSION_TIMEOUT",
+        "notes": "Mission exceeded benchmark runtime budget."
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_1",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [],
+        "failed_step_ids": [
+          "step_1"
+        ]
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_1_repair_route",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [],
+        "failed_step_ids": [
+          "step_1",
+          "step_1_repair_route"
+        ]
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_focus",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [],
+        "failed_step_ids": [
+          "step_1",
+          "step_1_repair_route",
+          "step_1_repair_route_repair_route"
+        ]
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_1_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_focus",
+          "step_1_repair_route_repair_focus",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [],
+        "failed_step_ids": [
+          "step_1",
+          "step_1_repair_route",
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route"
+        ]
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_1_repair_route_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route_repair_focus",
+          "step_1_repair_route_repair_route_repair_focus",
+          "step_1_repair_route_repair_focus",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "completed_step_ids": [],
+        "failed_step_ids": [
+          "step_1",
+          "step_1_repair_route",
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route_repair_route"
+        ]
+      }
+    ],
+    "parse_health": [
+      {
+        "parse_mode": "vision_cache",
+        "screen_hash": "d2a70550489de356a2cd6bfc40711204",
+        "cache_hit": true,
+        "screen_hash_cache_hit": true,
+        "screen_hash_elapsed_seconds": 0.01808,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "worker_used": false,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.0,
+        "worker_boot_seconds": 0.0,
+        "parse_elapsed_seconds": 0.532612,
+        "element_count": 0
+      },
+      {
+        "parse_mode": "vision_cache",
+        "screen_hash": "d2a70550489de356a2cd6bfc40711204",
+        "cache_hit": true,
+        "screen_hash_cache_hit": true,
+        "screen_hash_elapsed_seconds": 0.017644,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "worker_used": false,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.0,
+        "worker_boot_seconds": 0.0,
+        "parse_elapsed_seconds": 0.518528,
+        "element_count": 0
+      },
+      {
+        "parse_mode": "vision_cache",
+        "screen_hash": "d2a70550489de356a2cd6bfc40711204",
+        "cache_hit": true,
+        "screen_hash_cache_hit": true,
+        "screen_hash_elapsed_seconds": 0.013835,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "worker_used": false,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.0,
+        "worker_boot_seconds": 0.0,
+        "parse_elapsed_seconds": 0.516915,
+        "element_count": 0
+      },
+      {
+        "parse_mode": "vision_cache",
+        "screen_hash": "d2a70550489de356a2cd6bfc40711204",
+        "cache_hit": true,
+        "screen_hash_cache_hit": true,
+        "screen_hash_elapsed_seconds": 0.013898,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "worker_used": false,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.0,
+        "worker_boot_seconds": 0.0,
+        "parse_elapsed_seconds": 0.524815,
+        "element_count": 0
+      },
+      {
+        "parse_mode": "vision_cache",
+        "screen_hash": "d2a70550489de356a2cd6bfc40711204",
+        "cache_hit": true,
+        "screen_hash_cache_hit": true,
+        "screen_hash_elapsed_seconds": 0.014814,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "worker_used": false,
+        "worker_queue_wait_seconds": 0.0,
+        "worker_exec_seconds": 0.0,
+        "worker_boot_seconds": 0.0,
+        "parse_elapsed_seconds": 0.516045,
+        "element_count": 0
+      }
+    ],
+    "plan_replacements": [
+      {
+        "step_id": "step_1",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_1_repair_route",
+          "step_1_repair_focus"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "reason": "NO_STATE_CHANGE",
+        "planner_type": "repair",
+        "full_restart_required": false
+      },
+      {
+        "step_id": "step_1_repair_route",
+        "old_plan_step_ids": [
+          "step_1_repair_route",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_focus"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "reason": "NO_STATE_CHANGE",
+        "planner_type": "repair",
+        "full_restart_required": false
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route",
+        "old_plan_step_ids": [
+          "step_1_repair_route_repair_route",
+          "step_1_repair_route_repair_focus",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_1_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_focus"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "reason": "NO_STATE_CHANGE",
+        "planner_type": "repair",
+        "full_restart_required": false
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "old_plan_step_ids": [
+          "step_1_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_focus",
+          "step_1_repair_route_repair_focus",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_1_repair_route_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route_repair_focus"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "reason": "NO_STATE_CHANGE",
+        "planner_type": "repair",
+        "full_restart_required": false
+      },
+      {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "old_plan_step_ids": [
+          "step_1_repair_route_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route_repair_focus",
+          "step_1_repair_route_repair_route_repair_focus",
+          "step_1_repair_route_repair_focus",
+          "step_1_repair_focus",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "new_plan_step_ids": [
+          "step_1_repair_route_repair_route_repair_route_repair_route_repair_route",
+          "step_1_repair_route_repair_route_repair_route_repair_route_repair_focus"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6"
+        ],
+        "reason": "NO_STATE_CHANGE",
+        "planner_type": "repair",
+        "full_restart_required": false
+      }
+    ],
+    "runtime_limits": [
+      {
+        "limit": "max_runtime_seconds",
+        "max_runtime_seconds": 180.0,
+        "elapsed_seconds": 208.477075,
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route_repair_route"
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_337018171d",
+    "goal": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "failed",
+    "current_checkpoint_id": "step_1",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Navigate Explorer to downloads",
+        "expected_scene": "Explorer should show the downloads location.",
+        "completion_rule": "Explorer should show the downloads location.",
+        "recovery_rule": "Retry Explorer sidebar navigation to downloads.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Wait for explorer to settle",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_5",
+        "title": "Verify scene after navigate explorer to downloads",
+        "expected_scene": "Explorer should show the downloads location.",
+        "completion_rule": "Explorer should show the downloads location.",
+        "recovery_rule": "Retry Explorer sidebar navigation to downloads.",
+        "status": "pending",
+        "notes": []
+      },
+      {
+        "checkpoint_id": "step_6",
+        "title": "Summarize scene change after navigate explorer to downloads",
+        "expected_scene": "Scene delta should be recorded.",
+        "completion_rule": "Scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "pending",
+        "notes": []
+      }
+    ],
+    "notes": [],
+    "created_at": 1777197062.771265
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777197083.134838
+    },
+    {
+      "step_id": "step_1_repair_route",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "Scene is sparse or unreadable.",
+      "after_summary": "Scene is sparse or unreadable.",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777197124.5198464
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "Scene is sparse or unreadable.",
+      "after_summary": "Scene is sparse or unreadable.",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777197165.9401631
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route_repair_route",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "Scene is sparse or unreadable.",
+      "after_summary": "Scene is sparse or unreadable.",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777197207.0277548
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "Scene is sparse or unreadable.",
+      "after_summary": "Scene is sparse or unreadable.",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777197248.197372
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": false,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": false,
+      "notes": "Could not route the requested window.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777197083.134838
+      },
+      "timestamp": 1777197083.1891887
+    },
+    {
+      "step_id": "step_1_repair_route",
+      "action_type": "route_window",
+      "ok": false,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": false,
+      "notes": "Could not route the requested window.",
+      "scene_delta": {
+        "step_id": "step_1_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197124.5198464
+      },
+      "timestamp": 1777197124.576959
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route",
+      "action_type": "route_window",
+      "ok": false,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": false,
+      "notes": "Could not route the requested window.",
+      "scene_delta": {
+        "step_id": "step_1_repair_route_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197165.9401631
+      },
+      "timestamp": 1777197165.990091
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route_repair_route",
+      "action_type": "route_window",
+      "ok": false,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": false,
+      "notes": "Could not route the requested window.",
+      "scene_delta": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197207.0277548
+      },
+      "timestamp": 1777197207.0710406
+    },
+    {
+      "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+      "action_type": "route_window",
+      "ok": false,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": false,
+      "notes": "Could not route the requested window.",
+      "scene_delta": {
+        "step_id": "step_1_repair_route_repair_route_repair_route_repair_route",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "Scene is sparse or unreadable.",
+        "after_summary": "Scene is sparse or unreadable.",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777197248.197372
+      },
+      "timestamp": 1777197248.2485242
+    }
+  ],
+  "started_at": 1777197062.771265,
+  "finished_at": 1777197269.7108638
+}

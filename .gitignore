@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_chache/
+
+# Legacy/archive artifacts
+__legacy_versions__/
+*.zip
+
+# Local heavyweight model artifact; GitHub rejects files over 100 MB.
+clip-local/model.safetensors

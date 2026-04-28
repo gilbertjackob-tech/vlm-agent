@@ -1,0 +1,585 @@
+{
+  "run_id": "run_1777120410",
+  "task": {
+    "prompt": "open downloads",
+    "goal": "open downloads",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_eb1f67b12a",
+    "created_at": 1777120410.8901393
+  },
+  "plan": {
+    "task": {
+      "prompt": "open downloads",
+      "goal": "open downloads",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_eb1f67b12a",
+      "created_at": 1777120410.8901393
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Replay learned action for Downloads",
+        "action_type": "replay_interaction",
+        "target": {
+          "kind": "learned_control",
+          "value": "Downloads",
+          "filters": {
+            "label_contains": "Downloads",
+            "app_id": "explorer",
+            "min_score": 0.5,
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads",
+              "Downloads folder contents"
+            ],
+            "entity_type": "navigation_item",
+            "semantic_role": "menu_item",
+            "region": "left_menu"
+          }
+        },
+        "intent": {
+          "verb": "replay_interaction",
+          "semantic_target": "Downloads",
+          "description": "Replay learned action for Downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "filters": {
+            "label_contains": "Downloads",
+            "app_id": "explorer",
+            "min_score": 0.5,
+            "exclude_destructive": true,
+            "preferred_labels": [
+              "Downloads",
+              "Downloads folder contents"
+            ],
+            "entity_type": "navigation_item",
+            "semantic_role": "menu_item",
+            "region": "left_menu"
+          },
+          "control_signature": "explorer|menu_item|navigation_item|left_menu|downloads|",
+          "settle_wait": 0.8,
+          "expected_reward": 1.05
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "fallback_hint": "If the learned target is missing, re-map the current UI and run interaction learning again.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Wait after replaying Downloads",
+        "action_type": "wait_for",
+        "target": {
+          "kind": "time",
+          "value": "0.8",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "wait_for",
+          "semantic_target": "0.8",
+          "description": "Wait after replaying Downloads",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "seconds": 0.8,
+          "expected_focus": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The UI should settle after replay.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Summarize replay result for Downloads",
+        "action_type": "scene_diff",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "scene_diff",
+          "semantic_target": "explorer",
+          "description": "Summarize replay result for Downloads",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+          "recovery_hint": "Run interaction learning again if the scene no longer matches learned memory."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Replay scene delta should be recorded.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "interaction_graph_replay",
+    "summary": "Replayed learned interaction for Downloads.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "Learned interaction for Downloads should reproduce its rewarded outcome.",
+      "The UI should settle after replay.",
+      "Replay scene delta should be recorded."
+    ],
+    "generated_at": 1777120410.8911407
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777120410.8911407,
+      "metadata": {
+        "source": "interaction_graph_replay",
+        "step_count": 3
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777120410.8911407,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Replay learned action for Downloads",
+      "timestamp": 1777120410.8911407,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "replay_interaction"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777120410.9001377,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "replay_interaction",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Replayed learned interaction 'Downloads' with reward 1.05."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777120410.9001377,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Wait after replaying Downloads",
+      "timestamp": 1777120410.9001377,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "wait_for"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777120410.9021397,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "wait_for",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Wait condition satisfied."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777120410.9021397,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize replay result for Downloads",
+      "timestamp": 1777120410.9021397,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "scene_diff"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777120410.9094756,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "scene_diff",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "No obvious scene change."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777120410.8911407
+    },
+    {
+      "step_id": "step_2",
+      "approved": true,
+      "timestamp": 1777120410.9001377
+    },
+    {
+      "step_id": "step_3",
+      "approved": true,
+      "timestamp": 1777120410.9021397
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 9,
+      "known_visuals": 0,
+      "known_concepts": 5,
+      "known_controls": 9,
+      "known_entities": 1,
+      "transition_count": 2,
+      "negative_examples": 0,
+      "review_queue": 0,
+      "learning_sessions": 1,
+      "interaction_edges": 2,
+      "action_values": 2,
+      "workflow_count": 1,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 1,
+      "scene_deltas": 3,
+      "action_outcomes": 3
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "active_app_guess": "explorer",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, downloads folder contents",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "downloads folder contents",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777120410.8981402
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "The UI should settle after replay.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777120410.9001377
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Replay scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777120410.9061427
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_2",
+        "action_type": "wait_for",
+        "intent": "Wait after replaying Downloads",
+        "target": "explorer",
+        "evidence": [
+          "timeout:0.00"
+        ],
+        "before_checks": {
+          "bounded_wait": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "traceable_wait": true
+        },
+        "status": "verified",
+        "notes": []
+      }
+    ],
+    "manual_scene_diffs": [
+      {
+        "step_id": "step_3",
+        "expected_change": "Replay scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777120410.9061427
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_eb1f67b12a",
+    "goal": "open downloads",
+    "subgoal": "Replayed learned interaction for Downloads.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_3",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Replay learned action for Downloads",
+        "expected_scene": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "completion_rule": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "recovery_rule": "If the learned target is missing, re-map the current UI and run interaction learning again.",
+        "status": "completed",
+        "notes": [
+          "Replayed learned interaction 'Downloads' with reward 1.05."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Wait after replaying Downloads",
+        "expected_scene": "The UI should settle after replay.",
+        "completion_rule": "The UI should settle after replay.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Wait condition satisfied."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Summarize replay result for Downloads",
+        "expected_scene": "Replay scene delta should be recorded.",
+        "completion_rule": "Replay scene delta should be recorded.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "No obvious scene change."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777120410.8911407
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, downloads folder contents",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "downloads folder contents",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777120410.8981402
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "The UI should settle after replay.",
+      "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777120410.9001377
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Replay scene delta should be recorded.",
+      "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777120410.9061427
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "replay_interaction",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "Downloads",
+      "target_node_id": "nav_downloads",
+      "focus_confirmed": true,
+      "notes": "Replayed learned interaction 'Downloads' with reward 1.05.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "Learned interaction for Downloads should reproduce its rewarded outcome.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, downloads folder contents",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "downloads folder contents",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777120410.8981402
+      },
+      "timestamp": 1777120410.899139
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "wait_for",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Wait condition satisfied.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "The UI should settle after replay.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777120410.9001377
+      },
+      "timestamp": 1777120410.901138
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "scene_diff",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "No obvious scene change.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Replay scene delta should be recorded.",
+        "before_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 9 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777120410.9061427
+      },
+      "timestamp": 1777120410.9071434
+    }
+  ],
+  "started_at": 1777120410.8911407,
+  "finished_at": 1777120410.9094756
+}

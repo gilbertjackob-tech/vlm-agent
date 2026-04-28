@@ -1,0 +1,45 @@
+{
+    "timestamp": 1777140223.7086456,
+    "context_window": [
+        -9,
+        0,
+        1115,
+        1017
+    ],
+    "element_count": 1,
+    "memory_summary": {
+        "known_labels": 403,
+        "known_visuals": 824,
+        "known_concepts": 26,
+        "transition_count": 0
+    },
+    "ui_graph": [
+        {
+            "id": "main_page",
+            "label": "Main Page",
+            "box": {
+                "x": 180,
+                "y": 182,
+                "width": 926,
+                "height": 832
+            },
+            "type": "container",
+            "center": {
+                "x": 643,
+                "y": 598
+            },
+            "semantic_role": "main_page",
+            "region": "main_page",
+            "children": [],
+            "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "container",
+                "folder"
+            ],
+            "memory_votes": 3505
+        }
+    ]
+}

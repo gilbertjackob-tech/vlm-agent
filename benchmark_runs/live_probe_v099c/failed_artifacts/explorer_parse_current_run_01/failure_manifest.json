@@ -1,0 +1,149 @@
+{
+  "mission": {
+    "mission_id": "explorer_parse_current",
+    "category": "file_explorer",
+    "prompt": "Open explorer and parse screen",
+    "expected_apps": [
+      "explorer"
+    ],
+    "setup": "",
+    "success_signal": "Explorer UI is parsed and a trace is saved.",
+    "tags": [
+      "observe",
+      "baseline"
+    ]
+  },
+  "iteration": 1,
+  "error": "KeyboardInterrupt",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      },
+      "timestamp": 1777184660.8182256
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      },
+      "timestamp": 1777184660.8182256
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777184660.8182256
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      },
+      "timestamp": 1777184729.465617
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_1",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777184742.4530058
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_1"
+      },
+      "timestamp": 1777184742.4530058
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      },
+      "timestamp": 1777184746.4571497
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      },
+      "timestamp": 1777184746.4571497
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Focus mismatch for explorer."
+      },
+      "timestamp": 1777184748.652129
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: refocus_window, retry_with_uia, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_2",
+        "failure_reason": "FOCUS_NOT_CONFIRMED"
+      },
+      "timestamp": 1777184752.680925
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_2"
+      },
+      "timestamp": 1777184752.680925
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      },
+      "timestamp": 1777184756.3206587
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse Explorer for folder summary",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui"
+      },
+      "timestamp": 1777184756.3206587
+    },
+    {
+      "phase": "observation",
+      "message": "UI parsed successfully.",
+      "metadata": {
+        "output_filename": "explorer_summary.png"
+      },
+      "timestamp": 1777184760.2453535
+    }
+  ]
+}

@@ -1,0 +1,1022 @@
+{
+  "run_id": "run_1777204636",
+  "task": {
+    "prompt": "Open explorer and learn the current UI by hovering",
+    "goal": "Open explorer and learn the current UI by hovering",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_57d2cc934f",
+    "created_at": 1777204636.9513388
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and learn the current UI by hovering",
+      "goal": "Open explorer and learn the current UI by hovering",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_57d2cc934f",
+      "created_at": 1777204636.9513388
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Run safe learning session",
+        "action_type": "learning_session",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "explorer"
+          }
+        },
+        "intent": {
+          "verb": "learning_session",
+          "semantic_target": "explorer",
+          "description": "Run safe learning session",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "max_nodes": 8,
+          "settle_wait": 0.45,
+          "filters": {
+            "exclude_destructive": true,
+            "app_id": "explorer"
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+        "fallback_hint": "Reduce target count and retry if hover feedback is unstable.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Safe hover-only learning should harvest feedback and queue uncertain detections."
+    ],
+    "generated_at": 1777204636.9513388
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777204636.9513388,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 3
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777204636.9513388,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777204636.9513388,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777204636.9537501,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777204636.9537501,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777204636.9537501,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777204636.9568782,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777204636.9568782,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Run safe learning session",
+      "timestamp": 1777204636.9568782,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "learning_session"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777204637.0068662,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "learning_session",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "Learning session hovered 6 safe targets; queued 4 reviews."
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777204636.9513388
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 10,
+      "known_visuals": 0,
+      "known_concepts": 6,
+      "known_controls": 10,
+      "known_entities": 1,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 0,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 2,
+      "action_outcomes": 2
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777204636.9513388,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "runtime",
+        "line": "I am starting the task.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777204636.9513388,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777204636.9513388,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777204636.9537501,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777204636.9537501,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "explorer",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777204636.9537501,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777204636.9568782,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777204636.9568782,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "learning_session",
+        "line": "",
+        "status": "disabled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "learning_session",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777204637.0068662,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "learning_session"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777204637.0068662,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Task completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and learn the current UI by hovering",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777204636.9513388
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and learn the current UI by hovering",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777204636.9537501
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and learn the current UI by hovering",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+        "timeline_entry_at": 1777204636.9568782
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and learn the current UI by hovering",
+        "current_subgoal": "Learning session hovered 6 safe targets; queued 4 reviews.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777204637.0068662
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "148fcae5f1b6de0d",
+        "timestamp": 1777204636.9513388,
+        "active_window": {
+          "title": ""
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "b916a44fc4dad863",
+        "timestamp": 1777204636.9532406,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "31c34632e56cf016",
+        "timestamp": 1777204636.9537501,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "d6942a4619fef754",
+        "timestamp": 1777204636.9537501,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "02d0c6858751a89c",
+        "timestamp": 1777204636.9568782,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "before:learning_session",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "821a7ef53617f1f5",
+        "timestamp": 1777204637.0038667,
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "64b7f907ad0072a1",
+        "ui_tree_hash": "cf03ef9c706fcec9",
+        "dom_hash": "7cae59c4aafa8771",
+        "last_action": "after:learning_session",
+        "last_verified_change": "Learning session hovered 6 safe targets; queued 4 reviews.",
+        "confidence": 0.75
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "148fcae5f1b6de0d",
+        "after_state_id": "b916a44fc4dad863",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "31c34632e56cf016",
+        "after_state_id": "d6942a4619fef754",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "02d0c6858751a89c",
+        "after_state_id": "821a7ef53617f1f5",
+        "confidence_delta": 0.25
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777204636.9532406
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777204636.9537501
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777204637.0048664
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "learning_session",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "learning_sessions": [
+      {
+        "session_id": "learn_1777204636",
+        "timestamp": 1777204636.9998477,
+        "app_id": "explorer",
+        "status": "completed",
+        "baseline_node_count": 8,
+        "candidate_count": 6,
+        "hovered_count": 6,
+        "learned_count": 2,
+        "uncertain_count": 4,
+        "skipped_risky_count": 0,
+        "skipped": [],
+        "hover_results": [
+          {
+            "target": "Main Page",
+            "node_id": "main_page",
+            "entity_type": "",
+            "confidence": 0.5,
+            "feedback_labels": []
+          },
+          {
+            "target": "Row: awake.py",
+            "node_id": "row_awake",
+            "entity_type": "python_file",
+            "confidence": 0.7000000000000001,
+            "feedback_labels": []
+          },
+          {
+            "target": "Row: demo.mp4",
+            "node_id": "row_video",
+            "entity_type": "video",
+            "confidence": 0.7000000000000001,
+            "feedback_labels": []
+          },
+          {
+            "target": "Desktop",
+            "node_id": "nav_desktop",
+            "entity_type": "navigation_item",
+            "confidence": 0.8500000000000001,
+            "feedback_labels": [
+              "Desktop Shows desktop files and folders"
+            ]
+          },
+          {
+            "target": "Downloads",
+            "node_id": "nav_downloads",
+            "entity_type": "navigation_item",
+            "confidence": 0.8500000000000001,
+            "feedback_labels": [
+              "Downloads Opens your downloads folder"
+            ]
+          },
+          {
+            "target": "Search",
+            "node_id": "search_explorer",
+            "entity_type": "search_field",
+            "confidence": 0.7000000000000001,
+            "feedback_labels": []
+          }
+        ],
+        "review_ids": [
+          "review_1777204636966_1",
+          "review_1777204636968_2",
+          "review_1777204636977_3",
+          "review_1777204636997_4"
+        ],
+        "memory_before": {
+          "known_labels": 0,
+          "known_visuals": 0,
+          "known_concepts": 0,
+          "known_controls": 0,
+          "known_entities": 0,
+          "transition_count": 0,
+          "negative_examples": 0,
+          "review_queue": 0,
+          "learning_sessions": 0,
+          "interaction_edges": 0,
+          "action_values": 0,
+          "workflow_count": 0,
+          "trusted_workflows": 0,
+          "trusted_apps": 2,
+          "blocked_apps": 0,
+          "blocked_concepts": 0,
+          "recent_runs": 0,
+          "scene_deltas": 2,
+          "action_outcomes": 2
+        },
+        "memory_after": {
+          "known_labels": 10,
+          "known_visuals": 0,
+          "known_concepts": 6,
+          "known_controls": 10,
+          "known_entities": 1,
+          "transition_count": 0,
+          "negative_examples": 0,
+          "review_queue": 4,
+          "learning_sessions": 0,
+          "interaction_edges": 0,
+          "action_values": 0,
+          "workflow_count": 0,
+          "trusted_workflows": 0,
+          "trusted_apps": 2,
+          "blocked_apps": 0,
+          "blocked_concepts": 0,
+          "recent_runs": 0,
+          "scene_deltas": 2,
+          "action_outcomes": 2
+        },
+        "report_path": "debug_steps\\learning_sessions\\learn_1777204636.json"
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_57d2cc934f",
+    "goal": "Open explorer and learn the current UI by hovering",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_3",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Run safe learning session",
+        "expected_scene": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+        "completion_rule": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+        "recovery_rule": "Reduce target count and retry if hover feedback is unstable.",
+        "status": "completed",
+        "notes": [
+          "Learning session hovered 6 safe targets; queued 4 reviews."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777204636.9513388
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777204636.9532406
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777204636.9537501
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777204637.0048664
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777204636.9532406
+      },
+      "timestamp": 1777204636.9537501
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777204636.9537501
+      },
+      "timestamp": 1777204636.9537501
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "learning_session",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Learning session hovered 6 safe targets; queued 4 reviews.",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Safe hover-only learning should harvest feedback and queue uncertain detections.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777204637.0048664
+      },
+      "timestamp": 1777204637.0058665
+    }
+  ],
+  "started_at": 1777204636.9513388,
+  "finished_at": 1777204637.0068662
+}

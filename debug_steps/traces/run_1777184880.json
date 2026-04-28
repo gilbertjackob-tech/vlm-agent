@@ -1,0 +1,5361 @@
+{
+  "run_id": "run_1777184880",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_73a9949dd4",
+    "created_at": 1777184878.6836672
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_73a9949dd4",
+      "created_at": 1777184878.6836672
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Parse Explorer for folder summary",
+        "action_type": "parse_ui",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "parse_ui",
+          "semantic_target": "explorer",
+          "description": "Parse Explorer for folder summary",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "output_filename": "explorer_summary.png"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer UI should be parsed for summarization.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Summarize current Explorer folder",
+        "action_type": "checkpoint",
+        "target": {
+          "kind": "ui_surface",
+          "value": "explorer",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          }
+        },
+        "intent": {
+          "verb": "checkpoint",
+          "semantic_target": "explorer",
+          "description": "Summarize current Explorer folder",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected_scene": "The current Explorer folder contents should be summarized.",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "min_score": 0.35
+          },
+          "recovery_hint": "Reparse Explorer and retry summarization."
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "The current Explorer folder contents should be summarized.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer UI should be parsed for summarization.",
+      "The current Explorer folder contents should be summarized."
+    ],
+    "generated_at": 1777184880.2235959
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777184880.7384374,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777184880.7384374,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777184880.7384374,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777184930.7477555,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777184931.2566261,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777184931.2566261,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777184933.475222,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777184933.9953444,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse Explorer for folder summary",
+      "timestamp": 1777184933.9953444,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777184939.710318,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777184940.224458,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Summarize current Explorer folder",
+      "timestamp": 1777184940.224458,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "checkpoint"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777184945.8196373,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "checkpoint",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777184880.7384374
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 403,
+      "known_visuals": 1056,
+      "known_concepts": 26,
+      "known_controls": 2548,
+      "known_entities": 2,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 4,
+      "learning_sessions": 1,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 9,
+      "trusted_workflows": 3,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 48,
+      "scene_deltas": 361,
+      "action_outcomes": 361
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777184880.2235959,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "neutts-air",
+        "voice": "default",
+        "event_type": "benchmark",
+        "line": "I am starting the benchmark.",
+        "status": "fallback_console",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "error": "LocalAI TTS request failed: HTTP Error 500: Internal Server Error"
+      },
+      {
+        "timestamp": 1777184945.8274918,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "neutts-air",
+        "voice": "default",
+        "event_type": "done",
+        "line": "Mission completed successfully.",
+        "status": "fallback_console",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "error": "LocalAI TTS request failed: HTTP Error 500: Internal Server Error"
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": "run_task.py - vlm_agent - Visual Studio Code",
+          "left": -11,
+          "top": -11,
+          "width": 1942,
+          "height": 1030
+        },
+        "open_windows": [
+          {
+            "title": "run_task.py - vlm_agent - Visual Studio Code",
+            "left": -11,
+            "top": -11,
+            "width": 1942,
+            "height": 1030
+          },
+          {
+            "title": "AK - PC Assistant System Review",
+            "left": 274,
+            "top": 55,
+            "width": 1369,
+            "height": 895
+          },
+          {
+            "title": "Home - File Explorer",
+            "left": 0,
+            "top": 0,
+            "width": 1919,
+            "height": 895
+          },
+          {
+            "title": "Settings",
+            "left": 0,
+            "top": 11,
+            "width": 1920,
+            "height": 1008
+          },
+          {
+            "title": "Windows Input Experience",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "title": "Settings",
+            "left": -32000,
+            "top": -32000,
+            "width": 237,
+            "height": 39
+          },
+          {
+            "title": "Program Manager",
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "active_app_guess": "",
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "active_title": "",
+        "active_url": ""
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777184880.7384374
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777184930.7477555
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer UI should be parsed for summarization.",
+        "timeline_entry_at": 1777184933.475222
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "The current Explorer folder contents should be summarized.",
+        "timeline_entry_at": 1777184939.710318
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open explorer and parse screen",
+        "current_subgoal": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_steps": [],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777184945.8196373
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "9f6d5d7620f3b24f",
+        "timestamp": 1777184881.7473423,
+        "active_window": {
+          "title": "run_task.py - vlm_agent - Visual Studio Code",
+          "left": -11,
+          "top": -11,
+          "width": 1942,
+          "height": 1030
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "86a1b7c6832afa6d",
+        "timestamp": 1777184930.5212321,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "2da88dd8487162e9",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "6bf689d0c43cb816",
+        "timestamp": 1777184932.2826111,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "2da88dd8487162e9",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "c4cbbdf98da848da",
+        "timestamp": 1777184933.3090427,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "2da88dd8487162e9",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "0a92c97404e7656f",
+        "timestamp": 1777184935.0434933,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "f8c7f8a6ebd3a61b",
+        "ui_tree_hash": "2da88dd8487162e9",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:parse_ui",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "b2a3e85319f6c207",
+        "timestamp": 1777184939.5117767,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "81c1ba3b53850a27",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:parse_ui",
+        "last_verified_change": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "3ea1544a48d6f17f",
+        "timestamp": 1777184941.249063,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "fbfe20fe0863fec9",
+        "ui_tree_hash": "81c1ba3b53850a27",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "before:checkpoint",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "435475563d8a7732",
+        "timestamp": 1777184945.5914695,
+        "active_window": {
+          "title": "Home - File Explorer",
+          "left": 0,
+          "top": 0,
+          "width": 1919,
+          "height": 895
+        },
+        "focused_element": "",
+        "screen_hash": "ea543900039c722f",
+        "ui_tree_hash": "af1f7e39d67ab114",
+        "dom_hash": "44136fa355b3678a",
+        "last_action": "after:checkpoint",
+        "last_verified_change": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "confidence": 0.5
+      }
+    ],
+    "parse_health": [
+      {
+        "screen_hash": "8a726ff34fabbdc0fa9f3fdd0d0a94ff",
+        "candidate_count": 41,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 40,
+        "ocr_timeouts": 1,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 2.008825,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 3.439935,
+        "parse_mode": "vision",
+        "cache_hit": false
+      },
+      {
+        "screen_hash": "d32df52d5db9f903a0eb8037936a0722",
+        "candidate_count": 55,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 55,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.351737,
+        "parse_mode": "vision",
+        "cache_hit": false
+      },
+      {
+        "screen_hash": "7c5f96da2fc7908821c038aba3e9842d",
+        "candidate_count": 55,
+        "ocr_candidate_limit": 40,
+        "ocr_calls": 0,
+        "ocr_cache_hits": 0,
+        "ocr_skipped": 55,
+        "ocr_timeouts": 0,
+        "ocr_errors": 0,
+        "ocr_elapsed_seconds": 0.0,
+        "ocr_budget_seconds": 6.0,
+        "parse_elapsed_seconds": 0.303204,
+        "parse_mode": "vision",
+        "cache_hit": false
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "9f6d5d7620f3b24f",
+        "after_state_id": "86a1b7c6832afa6d",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "changed": false,
+        "before_state_id": "6bf689d0c43cb816",
+        "after_state_id": "c4cbbdf98da848da",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "0a92c97404e7656f",
+        "after_state_id": "b2a3e85319f6c207",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "changed": true,
+        "before_state_id": "3ea1544a48d6f17f",
+        "after_state_id": "435475563d8a7732",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "added: bottom menu, bottom_menu item, left menu, main page, partly sunny",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "bottom menu",
+          "bottom_menu item",
+          "left menu",
+          "main page",
+          "partly sunny",
+          "right menu",
+          "right_menu item",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777184930.5268192
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "after_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777184933.3090427
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "after_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777184939.5117767
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "after_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "removed: partly sunny",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [
+          "partly sunny"
+        ],
+        "recovery_hint": "",
+        "timestamp": 1777184945.6018934
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": true,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "9f6d5d7620f3b24f",
+          "after_state_id": "86a1b7c6832afa6d",
+          "confidence_delta": 0.25
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": false,
+          "ui_tree_changed": false,
+          "dom_changed": false,
+          "changed": false,
+          "before_state_id": "6bf689d0c43cb816",
+          "after_state_id": "c4cbbdf98da848da",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_3",
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2"
+        ],
+        "failed_step_ids": []
+      },
+      {
+        "step_id": "step_3",
+        "reason": "PLAN_DRIFT",
+        "state_diff": {
+          "active_window_changed": false,
+          "focused_element_changed": false,
+          "screen_changed": true,
+          "ui_tree_changed": true,
+          "dom_changed": false,
+          "changed": true,
+          "before_state_id": "0a92c97404e7656f",
+          "after_state_id": "b2a3e85319f6c207",
+          "confidence_delta": 0.0
+        },
+        "needs_replan": false,
+        "pending_step_ids": [
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "failed_step_ids": []
+      }
+    ],
+    "plan_replacements": [
+      {
+        "step_id": "step_1",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_2",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_3",
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_3",
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      },
+      {
+        "step_id": "step_3",
+        "reason": "PLAN_DRIFT",
+        "old_plan_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "new_plan_step_ids": [
+          "step_4"
+        ],
+        "pending_preserved": [
+          "step_4"
+        ],
+        "full_restart_required": false,
+        "planner_type": "replan"
+      }
+    ],
+    "last_observation": {
+      "nodes": [
+        {
+          "node_id": "left_menu",
+          "label": "Left Menu",
+          "learned_label": "",
+          "learned_concepts": [
+            "control",
+            "file",
+            "code",
+            "container",
+            "folder",
+            "video"
+          ],
+          "node_type": "container",
+          "semantic_role": "left_menu",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "left_menu",
+          "state_tags": [
+            "left_menu"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 0,
+            "y": 194,
+            "width": 360,
+            "height": 829
+          },
+          "center": {
+            "x": 180,
+            "y": 608
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": [
+            {
+              "node_id": "left_menu_item_0",
+              "label": "Left Menu",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "code",
+                "file",
+                "container",
+                "folder",
+                "video"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "left_menu",
+              "state_tags": [
+                "left_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 58,
+                "y": 924,
+                "width": 98,
+                "height": 30
+              },
+              "center": {
+                "x": 94,
+                "y": 939
+              },
+              "visual_id": "7ae09ac247d7c0e5b6651ab8d604de4a",
+              "visual_ids": [
+                "7ae09ac247d7c0e5b6651ab8d604de4a",
+                "18a4df49be7489b5178307657a23089b"
+              ],
+              "children": [
+                {
+                  "node_id": "50",
+                  "label": "[ICON]",
+                  "learned_label": "Left Menu",
+                  "learned_concepts": [
+                    "control",
+                    "code",
+                    "container",
+                    "file",
+                    "folder",
+                    "video"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "left_menu",
+                  "state_tags": [
+                    "left_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 68,
+                    "y": 930,
+                    "width": 12,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 74,
+                    "y": 939
+                  },
+                  "visual_id": "7ae09ac247d7c0e5b6651ab8d604de4a",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "27",
+                  "label": "[BUTTON]",
+                  "learned_label": "Left Menu",
+                  "learned_concepts": [
+                    "control",
+                    "code",
+                    "container",
+                    "file",
+                    "folder",
+                    "video"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "left_menu",
+                  "state_tags": [
+                    "left_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 82,
+                    "y": 932,
+                    "width": 64,
+                    "height": 16
+                  },
+                  "center": {
+                    "x": 114,
+                    "y": 940
+                  },
+                  "visual_id": "18a4df49be7489b5178307657a23089b",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "left_menu_item_1",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "file",
+                "tile"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "left_menu",
+              "state_tags": [
+                "left_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 4,
+                "y": 928,
+                "width": 52,
+                "height": 44
+              },
+              "center": {
+                "x": 30,
+                "y": 950
+              },
+              "visual_id": "4bc3effb0d1e1d91368c750816948b87",
+              "visual_ids": [
+                "4bc3effb0d1e1d91368c750816948b87"
+              ],
+              "children": [
+                {
+                  "node_id": "26",
+                  "label": "[ICON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "left_menu",
+                  "state_tags": [
+                    "left_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 14,
+                    "y": 934,
+                    "width": 32,
+                    "height": 32
+                  },
+                  "center": {
+                    "x": 30,
+                    "y": 950
+                  },
+                  "visual_id": "4bc3effb0d1e1d91368c750816948b87",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "left_menu_item_2",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "file",
+                "tile"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "left_menu",
+              "state_tags": [
+                "left_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 58,
+                "y": 952,
+                "width": 102,
+                "height": 30
+              },
+              "center": {
+                "x": 95,
+                "y": 967
+              },
+              "visual_id": "3d86690d185739cccab7d2adc3621442",
+              "visual_ids": [
+                "3d86690d185739cccab7d2adc3621442",
+                "d2a3fcd51abb5a2d31694a8cb1590ce1"
+              ],
+              "children": [
+                {
+                  "node_id": "49",
+                  "label": "[ICON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "left_menu",
+                  "state_tags": [
+                    "left_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 68,
+                    "y": 958,
+                    "width": 12,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 74,
+                    "y": 967
+                  },
+                  "visual_id": "3d86690d185739cccab7d2adc3621442",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "24",
+                  "label": "[BUTTON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "left_menu",
+                  "state_tags": [
+                    "left_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 84,
+                    "y": 958,
+                    "width": 66,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 117,
+                    "y": 967
+                  },
+                  "visual_id": "d2a3fcd51abb5a2d31694a8cb1590ce1",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "node_id": "main_page",
+          "label": "Main Page",
+          "learned_label": "",
+          "learned_concepts": [
+            "content",
+            "tile",
+            "file",
+            "code",
+            "archive",
+            "document"
+          ],
+          "node_type": "container",
+          "semantic_role": "main_page",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "main_page",
+          "state_tags": [
+            "main_page"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 360,
+            "y": 194,
+            "width": 1259,
+            "height": 829
+          },
+          "center": {
+            "x": 989,
+            "y": 608
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": [
+            {
+              "node_id": "main_page_tile_0",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1272,
+                "y": 882,
+                "width": 44,
+                "height": 40
+              },
+              "center": {
+                "x": 1294,
+                "y": 902
+              },
+              "visual_id": "63b607451ad59a1d4e636493620633a2",
+              "visual_ids": [
+                "63b607451ad59a1d4e636493620633a2"
+              ],
+              "children": [
+                {
+                  "node_id": "42",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1284,
+                    "y": 892,
+                    "width": 20,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1294,
+                    "y": 902
+                  },
+                  "visual_id": "63b607451ad59a1d4e636493620633a2",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_1",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1340,
+                "y": 882,
+                "width": 58,
+                "height": 40
+              },
+              "center": {
+                "x": 1369,
+                "y": 902
+              },
+              "visual_id": "4ca72b5916b2522a9d6a1cc683a66e41",
+              "visual_ids": [
+                "4ca72b5916b2522a9d6a1cc683a66e41"
+              ],
+              "children": [
+                {
+                  "node_id": "36",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1352,
+                    "y": 892,
+                    "width": 34,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1369,
+                    "y": 902
+                  },
+                  "visual_id": "4ca72b5916b2522a9d6a1cc683a66e41",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_2",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1582,
+                "y": 882,
+                "width": 37,
+                "height": 40
+              },
+              "center": {
+                "x": 1607,
+                "y": 902
+              },
+              "visual_id": "52138288f0f68f6261499f891c48115b",
+              "visual_ids": [
+                "52138288f0f68f6261499f891c48115b"
+              ],
+              "children": [
+                {
+                  "node_id": "37",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1594,
+                    "y": 892,
+                    "width": 26,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1607,
+                    "y": 902
+                  },
+                  "visual_id": "52138288f0f68f6261499f891c48115b",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_3",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 586,
+                "y": 882,
+                "width": 134,
+                "height": 42
+              },
+              "center": {
+                "x": 653,
+                "y": 903
+              },
+              "visual_id": "ef8b8366a0f701046858b37ad18793df",
+              "visual_ids": [
+                "ef8b8366a0f701046858b37ad18793df"
+              ],
+              "children": [
+                {
+                  "node_id": "8",
+                  "label": "[UNKNOWN]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 598,
+                    "y": 892,
+                    "width": 110,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 653,
+                    "y": 903
+                  },
+                  "visual_id": "ef8b8366a0f701046858b37ad18793df",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_4",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1316,
+                "y": 884,
+                "width": 46,
+                "height": 38
+              },
+              "center": {
+                "x": 1339,
+                "y": 903
+              },
+              "visual_id": "ae60120b665c8cbcd60f75f69ee0443c",
+              "visual_ids": [
+                "ae60120b665c8cbcd60f75f69ee0443c"
+              ],
+              "children": [
+                {
+                  "node_id": "43",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1328,
+                    "y": 894,
+                    "width": 22,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 1339,
+                    "y": 903
+                  },
+                  "visual_id": "ae60120b665c8cbcd60f75f69ee0443c",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_5",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1496,
+                "y": 886,
+                "width": 40,
+                "height": 34
+              },
+              "center": {
+                "x": 1516,
+                "y": 903
+              },
+              "visual_id": "2d1fcf63112588f33324aaaeaca7c480",
+              "visual_ids": [
+                "2d1fcf63112588f33324aaaeaca7c480"
+              ],
+              "children": [
+                {
+                  "node_id": "48",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1508,
+                    "y": 896,
+                    "width": 16,
+                    "height": 14
+                  },
+                  "center": {
+                    "x": 1516,
+                    "y": 903
+                  },
+                  "visual_id": "2d1fcf63112588f33324aaaeaca7c480",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_6",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1548,
+                "y": 882,
+                "width": 38,
+                "height": 42
+              },
+              "center": {
+                "x": 1567,
+                "y": 903
+              },
+              "visual_id": "36a932c015de14f491599e4999559389",
+              "visual_ids": [
+                "36a932c015de14f491599e4999559389"
+              ],
+              "children": [
+                {
+                  "node_id": "46",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1560,
+                    "y": 892,
+                    "width": 14,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1567,
+                    "y": 903
+                  },
+                  "visual_id": "36a932c015de14f491599e4999559389",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_7",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 404,
+                "y": 884,
+                "width": 58,
+                "height": 40
+              },
+              "center": {
+                "x": 433,
+                "y": 904
+              },
+              "visual_id": "4f824e82da4bdefe8d0b8bf342d37f7d",
+              "visual_ids": [
+                "4f824e82da4bdefe8d0b8bf342d37f7d"
+              ],
+              "children": [
+                {
+                  "node_id": "35",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 416,
+                    "y": 894,
+                    "width": 34,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 433,
+                    "y": 904
+                  },
+                  "visual_id": "4f824e82da4bdefe8d0b8bf342d37f7d",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_8",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 512,
+                "y": 886,
+                "width": 92,
+                "height": 38
+              },
+              "center": {
+                "x": 558,
+                "y": 905
+              },
+              "visual_id": "a4ae462cbf88bd409f10cbd67b11fd56",
+              "visual_ids": [
+                "a4ae462cbf88bd409f10cbd67b11fd56"
+              ],
+              "children": [
+                {
+                  "node_id": "23",
+                  "label": "[BUTTON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 524,
+                    "y": 896,
+                    "width": 68,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 558,
+                    "y": 905
+                  },
+                  "visual_id": "a4ae462cbf88bd409f10cbd67b11fd56",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_9",
+              "label": "[ICON]",
+              "learned_label": "tile",
+              "learned_concepts": [
+                "content",
+                "tile"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 360,
+                "y": 884,
+                "width": 66,
+                "height": 62
+              },
+              "center": {
+                "x": 375,
+                "y": 915
+              },
+              "visual_id": "761b1271c5c06a54ca8a46667260520e",
+              "visual_ids": [
+                "761b1271c5c06a54ca8a46667260520e"
+              ],
+              "children": [
+                {
+                  "node_id": "5",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 336,
+                    "y": 894,
+                    "width": 78,
+                    "height": 42
+                  },
+                  "center": {
+                    "x": 375,
+                    "y": 915
+                  },
+                  "visual_id": "761b1271c5c06a54ca8a46667260520e",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_10",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 440,
+                "y": 884,
+                "width": 130,
+                "height": 62
+              },
+              "center": {
+                "x": 505,
+                "y": 915
+              },
+              "visual_id": "89d1693cc006ed9517ea0b10f5f2cda4",
+              "visual_ids": [
+                "89d1693cc006ed9517ea0b10f5f2cda4"
+              ],
+              "children": [
+                {
+                  "node_id": "4",
+                  "label": "[BUTTON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 452,
+                    "y": 894,
+                    "width": 106,
+                    "height": 42
+                  },
+                  "center": {
+                    "x": 505,
+                    "y": 915
+                  },
+                  "visual_id": "89d1693cc006ed9517ea0b10f5f2cda4",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_11",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 360,
+                "y": 906,
+                "width": 38,
+                "height": 40
+              },
+              "center": {
+                "x": 361,
+                "y": 926
+              },
+              "visual_id": "707af423ae1c685d51c8144934aed043",
+              "visual_ids": [
+                "707af423ae1c685d51c8144934aed043"
+              ],
+              "children": [
+                {
+                  "node_id": "28",
+                  "label": "[BUTTON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 336,
+                    "y": 916,
+                    "width": 50,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 361,
+                    "y": 926
+                  },
+                  "visual_id": "707af423ae1c685d51c8144934aed043",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_12",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 404,
+                "y": 906,
+                "width": 108,
+                "height": 40
+              },
+              "center": {
+                "x": 458,
+                "y": 926
+              },
+              "visual_id": "da39e9a35490b12b7fda948c0d2e8b68",
+              "visual_ids": [
+                "da39e9a35490b12b7fda948c0d2e8b68"
+              ],
+              "children": [
+                {
+                  "node_id": "16",
+                  "label": "[UNKNOWN]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 416,
+                    "y": 916,
+                    "width": 84,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 458,
+                    "y": 926
+                  },
+                  "visual_id": "da39e9a35490b12b7fda948c0d2e8b68",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_13",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 586,
+                "y": 908,
+                "width": 48,
+                "height": 38
+              },
+              "center": {
+                "x": 610,
+                "y": 927
+              },
+              "visual_id": "aeaac97245e3486205c3a138841004c0",
+              "visual_ids": [
+                "aeaac97245e3486205c3a138841004c0"
+              ],
+              "children": [
+                {
+                  "node_id": "41",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 598,
+                    "y": 918,
+                    "width": 24,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 610,
+                    "y": 927
+                  },
+                  "visual_id": "aeaac97245e3486205c3a138841004c0",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_14",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 548,
+                "y": 908,
+                "width": 58,
+                "height": 40
+              },
+              "center": {
+                "x": 577,
+                "y": 928
+              },
+              "visual_id": "c1ae0ad44da8e453937ea05393d835d9",
+              "visual_ids": [
+                "c1ae0ad44da8e453937ea05393d835d9"
+              ],
+              "children": [
+                {
+                  "node_id": "34",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 560,
+                    "y": 918,
+                    "width": 34,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 577,
+                    "y": 928
+                  },
+                  "visual_id": "c1ae0ad44da8e453937ea05393d835d9",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_15",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 584,
+                "y": 906,
+                "width": 310,
+                "height": 66
+              },
+              "center": {
+                "x": 739,
+                "y": 939
+              },
+              "visual_id": "b9fb31fee6e0189ad5173f90f3546225",
+              "visual_ids": [
+                "b9fb31fee6e0189ad5173f90f3546225"
+              ],
+              "children": [
+                {
+                  "node_id": "3",
+                  "label": "[TEXT_FIELD]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "text_field",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [
+                    "focus",
+                    "type"
+                  ],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 596,
+                    "y": 916,
+                    "width": 286,
+                    "height": 46
+                  },
+                  "center": {
+                    "x": 739,
+                    "y": 939
+                  },
+                  "visual_id": "b9fb31fee6e0189ad5173f90f3546225",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_16",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "tile",
+                "file"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 378,
+                "y": 928,
+                "width": 120,
+                "height": 40
+              },
+              "center": {
+                "x": 438,
+                "y": 948
+              },
+              "visual_id": "f53d14b7aa1f4478c3c74b677c6c506f",
+              "visual_ids": [
+                "f53d14b7aa1f4478c3c74b677c6c506f"
+              ],
+              "children": [
+                {
+                  "node_id": "12",
+                  "label": "[UNKNOWN]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 390,
+                    "y": 938,
+                    "width": 96,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 438,
+                    "y": 948
+                  },
+                  "visual_id": "f53d14b7aa1f4478c3c74b677c6c506f",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_17",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "tile",
+                "file"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 476,
+                "y": 928,
+                "width": 46,
+                "height": 40
+              },
+              "center": {
+                "x": 499,
+                "y": 948
+              },
+              "visual_id": "cf349466697a726881adf5c1cf721abd",
+              "visual_ids": [
+                "cf349466697a726881adf5c1cf721abd"
+              ],
+              "children": [
+                {
+                  "node_id": "39",
+                  "label": "[ICON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 488,
+                    "y": 938,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 499,
+                    "y": 948
+                  },
+                  "visual_id": "cf349466697a726881adf5c1cf721abd",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_18",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "tile",
+                "file"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 502,
+                "y": 928,
+                "width": 76,
+                "height": 42
+              },
+              "center": {
+                "x": 540,
+                "y": 949
+              },
+              "visual_id": "f838b71928c305abe69bd990ca3ffd90",
+              "visual_ids": [
+                "f838b71928c305abe69bd990ca3ffd90"
+              ],
+              "children": [
+                {
+                  "node_id": "25",
+                  "label": "[BUTTON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 514,
+                    "y": 938,
+                    "width": 52,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 540,
+                    "y": 949
+                  },
+                  "visual_id": "f838b71928c305abe69bd990ca3ffd90",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_19",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "tile",
+                "file"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 558,
+                "y": 930,
+                "width": 48,
+                "height": 38
+              },
+              "center": {
+                "x": 582,
+                "y": 949
+              },
+              "visual_id": "dbecfb7299d40a6f4ba5d24d62b987fa",
+              "visual_ids": [
+                "dbecfb7299d40a6f4ba5d24d62b987fa"
+              ],
+              "children": [
+                {
+                  "node_id": "40",
+                  "label": "[ICON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 570,
+                    "y": 940,
+                    "width": 24,
+                    "height": 18
+                  },
+                  "center": {
+                    "x": 582,
+                    "y": 949
+                  },
+                  "visual_id": "dbecfb7299d40a6f4ba5d24d62b987fa",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_20",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1272,
+                "y": 932,
+                "width": 132,
+                "height": 42
+              },
+              "center": {
+                "x": 1338,
+                "y": 953
+              },
+              "visual_id": "639c52717c803519885b327d20bf4ed6",
+              "visual_ids": [
+                "639c52717c803519885b327d20bf4ed6"
+              ],
+              "children": [
+                {
+                  "node_id": "9",
+                  "label": "[UNKNOWN]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile",
+                    "archive",
+                    "code",
+                    "document",
+                    "file"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1284,
+                    "y": 942,
+                    "width": 108,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1338,
+                    "y": 953
+                  },
+                  "visual_id": "639c52717c803519885b327d20bf4ed6",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_21",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1382,
+                "y": 936,
+                "width": 42,
+                "height": 34
+              },
+              "center": {
+                "x": 1403,
+                "y": 953
+              },
+              "visual_id": "2aff8f0e55a07e2c028f46119058f31f",
+              "visual_ids": [
+                "2aff8f0e55a07e2c028f46119058f31f"
+              ],
+              "children": [
+                {
+                  "node_id": "47",
+                  "label": "[ICON]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1394,
+                    "y": 946,
+                    "width": 18,
+                    "height": 14
+                  },
+                  "center": {
+                    "x": 1403,
+                    "y": 953
+                  },
+                  "visual_id": "2aff8f0e55a07e2c028f46119058f31f",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_22",
+              "label": "tile",
+              "learned_label": "",
+              "learned_concepts": [
+                "content",
+                "tile",
+                "file",
+                "code",
+                "archive",
+                "document"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 360,
+                "y": 884,
+                "width": 1259,
+                "height": 139
+              },
+              "center": {
+                "x": 960,
+                "y": 986
+              },
+              "visual_id": "d6a99fc37dffb2dd678dd09ec5135c5f",
+              "visual_ids": [
+                "d6a99fc37dffb2dd678dd09ec5135c5f"
+              ],
+              "children": [
+                {
+                  "node_id": "1",
+                  "label": "[TEXT_FIELD]",
+                  "learned_label": "tile",
+                  "learned_concepts": [
+                    "content",
+                    "tile"
+                  ],
+                  "node_type": "text_field",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [
+                    "focus",
+                    "type"
+                  ],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 0,
+                    "y": 894,
+                    "width": 1920,
+                    "height": 184
+                  },
+                  "center": {
+                    "x": 960,
+                    "y": 986
+                  },
+                  "visual_id": "d6a99fc37dffb2dd678dd09ec5135c5f",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "main_page_tile_23",
+              "label": "bottom_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "content",
+                "tile",
+                "file"
+              ],
+              "node_type": "container",
+              "semantic_role": "clickable_container",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "clickable_container",
+                "main_page"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1226,
+                "y": 976,
+                "width": 34,
+                "height": 36
+              },
+              "center": {
+                "x": 1243,
+                "y": 994
+              },
+              "visual_id": "5541c64409a470a3aa3b3608a14b3446",
+              "visual_ids": [
+                "5541c64409a470a3aa3b3608a14b3446"
+              ],
+              "children": [
+                {
+                  "node_id": "52",
+                  "label": "[ICON]",
+                  "learned_label": "bottom_menu item",
+                  "learned_concepts": [
+                    "content",
+                    "control",
+                    "tile",
+                    "file"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1238,
+                    "y": 986,
+                    "width": 10,
+                    "height": 16
+                  },
+                  "center": {
+                    "x": 1243,
+                    "y": 994
+                  },
+                  "visual_id": "5541c64409a470a3aa3b3608a14b3446",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "node_id": "bottom_menu",
+          "label": "Bottom Menu",
+          "learned_label": "",
+          "learned_concepts": [
+            "control",
+            "search_field",
+            "content",
+            "file",
+            "list_item",
+            "code"
+          ],
+          "node_type": "container",
+          "semantic_role": "bottom_menu",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "bottom_menu",
+          "state_tags": [
+            "bottom_menu"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 0,
+            "y": 1023,
+            "width": 1920,
+            "height": 55
+          },
+          "center": {
+            "x": 960,
+            "y": 1050
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": [
+            {
+              "node_id": "bottom_menu_item_0",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 64,
+                "y": 1023,
+                "width": 62,
+                "height": 27
+              },
+              "center": {
+                "x": 95,
+                "y": 1031
+              },
+              "visual_id": "42889de91abf7eaef628525767d33828",
+              "visual_ids": [
+                "42889de91abf7eaef628525767d33828"
+              ],
+              "children": [
+                {
+                  "node_id": "30",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 74,
+                    "y": 1020,
+                    "width": 42,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 95,
+                    "y": 1031
+                  },
+                  "visual_id": "42889de91abf7eaef628525767d33828",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_2",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1098,
+                "y": 1023,
+                "width": 72,
+                "height": 51
+              },
+              "center": {
+                "x": 1134,
+                "y": 1041
+              },
+              "visual_id": "5c225d69a02bd520aba128a45e176cfd",
+              "visual_ids": [
+                "5c225d69a02bd520aba128a45e176cfd"
+              ],
+              "children": [
+                {
+                  "node_id": "6",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1108,
+                    "y": 1016,
+                    "width": 52,
+                    "height": 50
+                  },
+                  "center": {
+                    "x": 1134,
+                    "y": 1041
+                  },
+                  "visual_id": "5c225d69a02bd520aba128a45e176cfd",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_3",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 900,
+                "y": 1023,
+                "width": 62,
+                "height": 47
+              },
+              "center": {
+                "x": 931,
+                "y": 1043
+              },
+              "visual_id": "149626cc192b381fd3d71a35961c6e4e",
+              "visual_ids": [
+                "149626cc192b381fd3d71a35961c6e4e"
+              ],
+              "children": [
+                {
+                  "node_id": "20",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 910,
+                    "y": 1024,
+                    "width": 42,
+                    "height": 38
+                  },
+                  "center": {
+                    "x": 931,
+                    "y": 1043
+                  },
+                  "visual_id": "149626cc192b381fd3d71a35961c6e4e",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_4",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1574,
+                "y": 1023,
+                "width": 94,
+                "height": 41
+              },
+              "center": {
+                "x": 1619,
+                "y": 1043
+              },
+              "visual_id": "22fa9c983b116ed8728b8c1e7f1384ef",
+              "visual_ids": [
+                "22fa9c983b116ed8728b8c1e7f1384ef",
+                "1017afae35e513f97affe60f2e4a9c59"
+              ],
+              "children": [
+                {
+                  "node_id": "45",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1584,
+                    "y": 1036,
+                    "width": 22,
+                    "height": 14
+                  },
+                  "center": {
+                    "x": 1595,
+                    "y": 1043
+                  },
+                  "visual_id": "22fa9c983b116ed8728b8c1e7f1384ef",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "32",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1628,
+                    "y": 1030,
+                    "width": 30,
+                    "height": 26
+                  },
+                  "center": {
+                    "x": 1643,
+                    "y": 1043
+                  },
+                  "visual_id": "1017afae35e513f97affe60f2e4a9c59",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_1",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item",
+                "tile"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1786,
+                "y": 1023,
+                "width": 118,
+                "height": 51
+              },
+              "center": {
+                "x": 1857,
+                "y": 1043
+              },
+              "visual_id": "722f99267c720339236460399b662669",
+              "visual_ids": [
+                "722f99267c720339236460399b662669",
+                "d89681ad1e84ad0017e71a55a6991b8e"
+              ],
+              "children": [
+                {
+                  "node_id": "29",
+                  "label": "[BUTTON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1846,
+                    "y": 1022,
+                    "width": 48,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1870,
+                    "y": 1032
+                  },
+                  "visual_id": "722f99267c720339236460399b662669",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "11",
+                  "label": "[UNKNOWN]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1796,
+                    "y": 1044,
+                    "width": 98,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1845,
+                    "y": 1055
+                  },
+                  "visual_id": "d89681ad1e84ad0017e71a55a6991b8e",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_5",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 498,
+                "y": 1023,
+                "width": 60,
+                "height": 49
+              },
+              "center": {
+                "x": 528,
+                "y": 1044
+              },
+              "visual_id": "28d4c6190a243b51c31639905d15f016",
+              "visual_ids": [
+                "28d4c6190a243b51c31639905d15f016"
+              ],
+              "children": [
+                {
+                  "node_id": "18",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 508,
+                    "y": 1024,
+                    "width": 40,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 528,
+                    "y": 1044
+                  },
+                  "visual_id": "28d4c6190a243b51c31639905d15f016",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_6",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item",
+                "tile"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 552,
+                "y": 1023,
+                "width": 356,
+                "height": 55
+              },
+              "center": {
+                "x": 730,
+                "y": 1044
+              },
+              "visual_id": "fd290e7a57b41349310d7f029c785e98",
+              "visual_ids": [
+                "fd290e7a57b41349310d7f029c785e98"
+              ],
+              "children": [
+                {
+                  "node_id": "2",
+                  "label": "[TEXT_FIELD]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "text_field",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [
+                    "focus",
+                    "type"
+                  ],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 562,
+                    "y": 1016,
+                    "width": 336,
+                    "height": 56
+                  },
+                  "center": {
+                    "x": 730,
+                    "y": 1044
+                  },
+                  "visual_id": "fd290e7a57b41349310d7f029c785e98",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_7",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1034,
+                "y": 1023,
+                "width": 58,
+                "height": 47
+              },
+              "center": {
+                "x": 1063,
+                "y": 1044
+              },
+              "visual_id": "e10375051c2e95c12142784c6c275c67",
+              "visual_ids": [
+                "e10375051c2e95c12142784c6c275c67"
+              ],
+              "children": [
+                {
+                  "node_id": "22",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1044,
+                    "y": 1026,
+                    "width": 38,
+                    "height": 36
+                  },
+                  "center": {
+                    "x": 1063,
+                    "y": 1044
+                  },
+                  "visual_id": "e10375051c2e95c12142784c6c275c67",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_8",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1164,
+                "y": 1023,
+                "width": 62,
+                "height": 49
+              },
+              "center": {
+                "x": 1195,
+                "y": 1044
+              },
+              "visual_id": "89de9a50d7b3cdd67ecdba974c878c31",
+              "visual_ids": [
+                "89de9a50d7b3cdd67ecdba974c878c31"
+              ],
+              "children": [
+                {
+                  "node_id": "15",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1174,
+                    "y": 1024,
+                    "width": 42,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 1195,
+                    "y": 1044
+                  },
+                  "visual_id": "89de9a50d7b3cdd67ecdba974c878c31",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_11",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1652,
+                "y": 1026,
+                "width": 54,
+                "height": 36
+              },
+              "center": {
+                "x": 1679,
+                "y": 1044
+              },
+              "visual_id": "445fe6ac3316893feb9bd4ba717618cc",
+              "visual_ids": [
+                "445fe6ac3316893feb9bd4ba717618cc"
+              ],
+              "children": [
+                {
+                  "node_id": "33",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1662,
+                    "y": 1034,
+                    "width": 34,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1679,
+                    "y": 1044
+                  },
+                  "visual_id": "445fe6ac3316893feb9bd4ba717618cc",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_12",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item",
+                "tile"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1688,
+                "y": 1024,
+                "width": 98,
+                "height": 40
+              },
+              "center": {
+                "x": 1737,
+                "y": 1044
+              },
+              "visual_id": "37cab198f8670eb646de9834259f4c88",
+              "visual_ids": [
+                "37cab198f8670eb646de9834259f4c88"
+              ],
+              "children": [
+                {
+                  "node_id": "13",
+                  "label": "[BUTTON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "content",
+                    "file",
+                    "tile"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1698,
+                    "y": 1032,
+                    "width": 78,
+                    "height": 24
+                  },
+                  "center": {
+                    "x": 1737,
+                    "y": 1044
+                  },
+                  "visual_id": "37cab198f8670eb646de9834259f4c88",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_14",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1296,
+                "y": 1023,
+                "width": 62,
+                "height": 55
+              },
+              "center": {
+                "x": 1327,
+                "y": 1049
+              },
+              "visual_id": "04e1ed8f42533e191f4fd1d1b246eca5",
+              "visual_ids": [
+                "04e1ed8f42533e191f4fd1d1b246eca5"
+              ],
+              "children": [
+                {
+                  "node_id": "10",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1306,
+                    "y": 1022,
+                    "width": 42,
+                    "height": 54
+                  },
+                  "center": {
+                    "x": 1327,
+                    "y": 1049
+                  },
+                  "visual_id": "04e1ed8f42533e191f4fd1d1b246eca5",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_13",
+              "label": "Partly sunny",
+              "learned_label": "",
+              "learned_concepts": [
+                "control"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 20,
+                "y": 1023,
+                "width": 166,
+                "height": 55
+              },
+              "center": {
+                "x": 86,
+                "y": 1051
+              },
+              "visual_id": "666315e70659f808ade1cb3fa860b54d",
+              "visual_ids": [
+                "666315e70659f808ade1cb3fa860b54d",
+                "578d9354616c87976e344219ec35549a"
+              ],
+              "children": [
+                {
+                  "node_id": "21",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 30,
+                    "y": 1026,
+                    "width": 38,
+                    "height": 38
+                  },
+                  "center": {
+                    "x": 49,
+                    "y": 1045
+                  },
+                  "visual_id": "666315e70659f808ade1cb3fa860b54d",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "7",
+                  "label": "[UNKNOWN]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "unknown",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 72,
+                    "y": 1046,
+                    "width": 104,
+                    "height": 24
+                  },
+                  "center": {
+                    "x": 124,
+                    "y": 1058
+                  },
+                  "visual_id": "578d9354616c87976e344219ec35549a",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_9",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1232,
+                "y": 1023,
+                "width": 60,
+                "height": 55
+              },
+              "center": {
+                "x": 1261,
+                "y": 1057
+              },
+              "visual_id": "8d1852b41b832e805450ca96ded19894",
+              "visual_ids": [
+                "8d1852b41b832e805450ca96ded19894",
+                "a0a9da8145e9486c82952708c237a2d6"
+              ],
+              "children": [
+                {
+                  "node_id": "17",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1242,
+                    "y": 1024,
+                    "width": 40,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 1262,
+                    "y": 1044
+                  },
+                  "visual_id": "8d1852b41b832e805450ca96ded19894",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "54",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control",
+                    "search_field",
+                    "content",
+                    "file",
+                    "list_item"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1254,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1261,
+                    "y": 1071
+                  },
+                  "visual_id": "a0a9da8145e9486c82952708c237a2d6",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "bottom_menu_item_10",
+              "label": "Search",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "search_field",
+                "content",
+                "file",
+                "list_item"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "bottom_menu",
+              "state_tags": [
+                "bottom_menu",
+                "menu_item"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1362,
+                "y": 1023,
+                "width": 62,
+                "height": 55
+              },
+              "center": {
+                "x": 1393,
+                "y": 1057
+              },
+              "visual_id": "eedb32a4c29675e3c0f32ebff0740d19",
+              "visual_ids": [
+                "eedb32a4c29675e3c0f32ebff0740d19",
+                "90d64b8954ea74f4f8c97243a4dff1c6"
+              ],
+              "children": [
+                {
+                  "node_id": "14",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1372,
+                    "y": 1024,
+                    "width": 42,
+                    "height": 40
+                  },
+                  "center": {
+                    "x": 1393,
+                    "y": 1044
+                  },
+                  "visual_id": "eedb32a4c29675e3c0f32ebff0740d19",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "53",
+                  "label": "[ICON]",
+                  "learned_label": "Search",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "bottom_menu",
+                  "state_tags": [
+                    "bottom_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1386,
+                    "y": 1066,
+                    "width": 14,
+                    "height": 10
+                  },
+                  "center": {
+                    "x": 1393,
+                    "y": 1071
+                  },
+                  "visual_id": "90d64b8954ea74f4f8c97243a4dff1c6",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "node_id": "right_menu",
+          "label": "Right Menu",
+          "learned_label": "",
+          "learned_concepts": [
+            "control",
+            "archive",
+            "document",
+            "file",
+            "image",
+            "pdf"
+          ],
+          "node_type": "container",
+          "semantic_role": "right_menu",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "right_menu",
+          "state_tags": [
+            "right_menu"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 1619,
+            "y": 194,
+            "width": 301,
+            "height": 829
+          },
+          "center": {
+            "x": 1769,
+            "y": 608
+          },
+          "visual_id": "",
+          "visual_ids": [],
+          "children": [
+            {
+              "node_id": "right_menu_item_0",
+              "label": "right_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "archive",
+                "document",
+                "file",
+                "image",
+                "pdf"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "right_menu",
+              "state_tags": [
+                "menu_item",
+                "right_menu"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1724,
+                "y": 886,
+                "width": 100,
+                "height": 32
+              },
+              "center": {
+                "x": 1774,
+                "y": 902
+              },
+              "visual_id": "be1519aef02d081770c3def4008fd0ef",
+              "visual_ids": [
+                "be1519aef02d081770c3def4008fd0ef"
+              ],
+              "children": [
+                {
+                  "node_id": "19",
+                  "label": "[BUTTON]",
+                  "learned_label": "right_menu item",
+                  "learned_concepts": [
+                    "control",
+                    "archive",
+                    "document",
+                    "file",
+                    "image",
+                    "pdf"
+                  ],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "right_menu",
+                  "state_tags": [
+                    "right_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1734,
+                    "y": 892,
+                    "width": 80,
+                    "height": 20
+                  },
+                  "center": {
+                    "x": 1774,
+                    "y": 902
+                  },
+                  "visual_id": "be1519aef02d081770c3def4008fd0ef",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "right_menu_item_1",
+              "label": "right_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "archive",
+                "document",
+                "file",
+                "image",
+                "pdf"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "right_menu",
+              "state_tags": [
+                "menu_item",
+                "right_menu"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1700,
+                "y": 886,
+                "width": 42,
+                "height": 34
+              },
+              "center": {
+                "x": 1721,
+                "y": 903
+              },
+              "visual_id": "cb0918701a3660b1ea51ee6119eab5ad",
+              "visual_ids": [
+                "cb0918701a3660b1ea51ee6119eab5ad"
+              ],
+              "children": [
+                {
+                  "node_id": "38",
+                  "label": "[ICON]",
+                  "learned_label": "right_menu item",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "right_menu",
+                  "state_tags": [
+                    "right_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1710,
+                    "y": 892,
+                    "width": 22,
+                    "height": 22
+                  },
+                  "center": {
+                    "x": 1721,
+                    "y": 903
+                  },
+                  "visual_id": "cb0918701a3660b1ea51ee6119eab5ad",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "right_menu_item_2",
+              "label": "right_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "archive",
+                "document",
+                "file",
+                "image",
+                "pdf"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "right_menu",
+              "state_tags": [
+                "menu_item",
+                "right_menu"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1619,
+                "y": 886,
+                "width": 69,
+                "height": 36
+              },
+              "center": {
+                "x": 1655,
+                "y": 904
+              },
+              "visual_id": "af5ad6cad42777993e4a9ad17805c6fe",
+              "visual_ids": [
+                "af5ad6cad42777993e4a9ad17805c6fe",
+                "84d9331fbae359dd65e9a17cf3b96222"
+              ],
+              "children": [
+                {
+                  "node_id": "31",
+                  "label": "[ICON]",
+                  "learned_label": "right_menu item",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "right_menu",
+                  "state_tags": [
+                    "right_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1622,
+                    "y": 892,
+                    "width": 38,
+                    "height": 24
+                  },
+                  "center": {
+                    "x": 1641,
+                    "y": 904
+                  },
+                  "visual_id": "af5ad6cad42777993e4a9ad17805c6fe",
+                  "visual_ids": [],
+                  "children": []
+                },
+                {
+                  "node_id": "51",
+                  "label": "[ICON]",
+                  "learned_label": "right_menu item",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "right_menu",
+                  "state_tags": [
+                    "right_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1662,
+                    "y": 898,
+                    "width": 16,
+                    "height": 12
+                  },
+                  "center": {
+                    "x": 1670,
+                    "y": 904
+                  },
+                  "visual_id": "84d9331fbae359dd65e9a17cf3b96222",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "right_menu_loose_44",
+              "label": "right_menu item",
+              "learned_label": "",
+              "learned_concepts": [
+                "control",
+                "archive",
+                "document",
+                "file",
+                "image",
+                "pdf"
+              ],
+              "node_type": "container",
+              "semantic_role": "menu_item",
+              "entity_type": "",
+              "app_id": "explorer",
+              "region": "right_menu",
+              "state_tags": [
+                "menu_item",
+                "right_menu"
+              ],
+              "affordances": [
+                "click",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 1892,
+                "y": 950,
+                "width": 28,
+                "height": 28
+              },
+              "center": {
+                "x": 1910,
+                "y": 964
+              },
+              "visual_id": "f2e1ddcc9860ef872e2b4243f1b68f4f",
+              "visual_ids": [
+                "f2e1ddcc9860ef872e2b4243f1b68f4f"
+              ],
+              "children": [
+                {
+                  "node_id": "44",
+                  "label": "[ICON]",
+                  "learned_label": "right_menu item",
+                  "learned_concepts": [
+                    "control"
+                  ],
+                  "node_type": "icon",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "right_menu",
+                  "state_tags": [
+                    "right_menu"
+                  ],
+                  "affordances": [],
+                  "stability": 0.6,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 1900,
+                    "y": 956,
+                    "width": 20,
+                    "height": 16
+                  },
+                  "center": {
+                    "x": 1910,
+                    "y": 964
+                  },
+                  "visual_id": "f2e1ddcc9860ef872e2b4243f1b68f4f",
+                  "visual_ids": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source": "vision",
+      "metadata": {
+        "output_filename": "explorer_summary.png",
+        "environment": {
+          "windows": {
+            "active_window": {
+              "title": "Home - File Explorer",
+              "left": 0,
+              "top": 0,
+              "width": 1919,
+              "height": 895
+            },
+            "open_windows": [
+              {
+                "title": "Home - File Explorer",
+                "left": 0,
+                "top": 0,
+                "width": 1919,
+                "height": 895
+              },
+              {
+                "title": "run_task.py - vlm_agent - Visual Studio Code",
+                "left": -11,
+                "top": -11,
+                "width": 1942,
+                "height": 1030
+              },
+              {
+                "title": "AK - PC Assistant System Review",
+                "left": 274,
+                "top": 55,
+                "width": 1369,
+                "height": 895
+              },
+              {
+                "title": "Settings",
+                "left": 0,
+                "top": 11,
+                "width": 1920,
+                "height": 1008
+              },
+              {
+                "title": "Windows Input Experience",
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 1080
+              },
+              {
+                "title": "Settings",
+                "left": -32000,
+                "top": -32000,
+                "width": 237,
+                "height": 39
+              },
+              {
+                "title": "Program Manager",
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 1080
+              }
+            ],
+            "active_app_guess": "explorer",
+            "adapter_mode": "native_window_metadata"
+          },
+          "browser": {
+            "adapter_mode": "browser_dom_metadata",
+            "available": false,
+            "cdp_available": false,
+            "tab_count": 0,
+            "tab_titles": [],
+            "active_title": "",
+            "active_url": ""
+          }
+        },
+        "parse_health": {
+          "screen_hash": "d32df52d5db9f903a0eb8037936a0722",
+          "candidate_count": 55,
+          "ocr_candidate_limit": 40,
+          "ocr_calls": 0,
+          "ocr_cache_hits": 0,
+          "ocr_skipped": 55,
+          "ocr_timeouts": 0,
+          "ocr_errors": 0,
+          "ocr_elapsed_seconds": 0.0,
+          "ocr_budget_seconds": 6.0,
+          "parse_elapsed_seconds": 0.351737,
+          "parse_mode": "vision",
+          "cache_hit": false
+        },
+        "app_id": "explorer",
+        "app_name": "File Explorer",
+        "scene": {
+          "app_id": "explorer",
+          "app_name": "File Explorer",
+          "active_window_title": "Home - File Explorer",
+          "node_count": 104,
+          "salient_labels": [
+            "Left Menu",
+            "Left Menu",
+            "Left Menu",
+            "Left Menu",
+            "bottom_menu item",
+            "bottom_menu item",
+            "bottom_menu item",
+            "bottom_menu item",
+            "bottom_menu item",
+            "Main Page"
+          ],
+          "ambiguous": false,
+          "summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item"
+        },
+        "scene_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item"
+      }
+    }
+  },
+  "mission": {
+    "mission_id": "mission_task_73a9949dd4",
+    "goal": "Open explorer and parse screen",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_4",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Parse Explorer for folder summary",
+        "expected_scene": "Explorer UI should be parsed for summarization.",
+        "completion_rule": "Explorer UI should be parsed for summarization.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Summarize current Explorer folder",
+        "expected_scene": "The current Explorer folder contents should be summarized.",
+        "completion_rule": "The current Explorer folder contents should be summarized.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item"
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777184880.2235959
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "actual_change": "added: bottom menu, bottom_menu item, left menu, main page, partly sunny",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "bottom menu",
+        "bottom_menu item",
+        "left menu",
+        "main page",
+        "partly sunny",
+        "right menu",
+        "right_menu item",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777184930.5268192
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "after_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777184933.3090427
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer UI should be parsed for summarization.",
+      "before_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "after_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777184939.5117767
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "The current Explorer folder contents should be summarized.",
+      "before_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "after_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "actual_change": "removed: partly sunny",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [
+        "partly sunny"
+      ],
+      "recovery_hint": "",
+      "timestamp": 1777184945.6018934
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "added: bottom menu, bottom_menu item, left menu, main page, partly sunny",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "bottom menu",
+          "bottom_menu item",
+          "left menu",
+          "main page",
+          "partly sunny",
+          "right menu",
+          "right_menu item",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777184930.5268192
+      },
+      "timestamp": 1777184930.6341715
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "after_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777184933.3090427
+      },
+      "timestamp": 1777184933.3943408
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "parse_ui",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer UI should be parsed for summarization.",
+        "before_summary": "File Explorer scene with 74 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "after_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777184939.5117767
+      },
+      "timestamp": 1777184939.595786
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "checkpoint",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "The current Explorer folder contents should be summarized.",
+        "before_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "after_summary": "File Explorer scene with 104 nodes; highlights: Left Menu, Left Menu, Left Menu, Left Menu, bottom_menu item, bottom_menu item",
+        "actual_change": "removed: partly sunny",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [
+          "partly sunny"
+        ],
+        "recovery_hint": "",
+        "timestamp": 1777184945.6018934
+      },
+      "timestamp": 1777184945.6995332
+    }
+  ],
+  "started_at": 1777184880.2235959,
+  "finished_at": 1777184945.8196373
+}

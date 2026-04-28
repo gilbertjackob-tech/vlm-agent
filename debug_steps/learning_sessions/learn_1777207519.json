@@ -1,0 +1,109 @@
+{
+  "session_id": "learn_1777207519",
+  "timestamp": 1777207519.7322273,
+  "app_id": "explorer",
+  "status": "completed",
+  "baseline_node_count": 8,
+  "candidate_count": 6,
+  "hovered_count": 6,
+  "learned_count": 2,
+  "uncertain_count": 4,
+  "skipped_risky_count": 0,
+  "skipped": [],
+  "hover_results": [
+    {
+      "target": "Main Page",
+      "node_id": "main_page",
+      "entity_type": "",
+      "confidence": 0.5,
+      "feedback_labels": []
+    },
+    {
+      "target": "Row: awake.py",
+      "node_id": "row_awake",
+      "entity_type": "python_file",
+      "confidence": 0.7000000000000001,
+      "feedback_labels": []
+    },
+    {
+      "target": "Row: demo.mp4",
+      "node_id": "row_video",
+      "entity_type": "video",
+      "confidence": 0.7000000000000001,
+      "feedback_labels": []
+    },
+    {
+      "target": "Desktop",
+      "node_id": "nav_desktop",
+      "entity_type": "navigation_item",
+      "confidence": 0.8500000000000001,
+      "feedback_labels": [
+        "Desktop Shows desktop files and folders"
+      ]
+    },
+    {
+      "target": "Downloads",
+      "node_id": "nav_downloads",
+      "entity_type": "navigation_item",
+      "confidence": 0.8500000000000001,
+      "feedback_labels": [
+        "Downloads Opens your downloads folder"
+      ]
+    },
+    {
+      "target": "Search",
+      "node_id": "search_explorer",
+      "entity_type": "search_field",
+      "confidence": 0.7000000000000001,
+      "feedback_labels": []
+    }
+  ],
+  "review_ids": [
+    "review_1777207519692_1",
+    "review_1777207519697_2",
+    "review_1777207519705_3",
+    "review_1777207519730_4"
+  ],
+  "memory_before": {
+    "known_labels": 0,
+    "known_visuals": 0,
+    "known_concepts": 0,
+    "known_controls": 0,
+    "known_entities": 0,
+    "transition_count": 0,
+    "negative_examples": 0,
+    "review_queue": 0,
+    "learning_sessions": 0,
+    "interaction_edges": 0,
+    "action_values": 0,
+    "workflow_count": 0,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 0,
+    "scene_deltas": 2,
+    "action_outcomes": 2
+  },
+  "memory_after": {
+    "known_labels": 10,
+    "known_visuals": 0,
+    "known_concepts": 6,
+    "known_controls": 10,
+    "known_entities": 1,
+    "transition_count": 0,
+    "negative_examples": 0,
+    "review_queue": 4,
+    "learning_sessions": 0,
+    "interaction_edges": 0,
+    "action_values": 0,
+    "workflow_count": 0,
+    "trusted_workflows": 0,
+    "trusted_apps": 2,
+    "blocked_apps": 0,
+    "blocked_concepts": 0,
+    "recent_runs": 0,
+    "scene_deltas": 2,
+    "action_outcomes": 2
+  }
+}

@@ -1,0 +1,1574 @@
+{
+  "run_id": "run_1777373110",
+  "task": {
+    "prompt": "Open explorer and ctrl click awake.py",
+    "goal": "Open explorer and ctrl click awake.py",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_a6012d8328",
+    "created_at": 1777373110.9902155
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and ctrl click awake.py",
+      "goal": "Open explorer and ctrl click awake.py",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_a6012d8328",
+      "created_at": 1777373110.9902155
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Set Explorer stable details view",
+        "action_type": "press_key",
+        "target": {
+          "kind": "keyboard",
+          "value": "ctrl+shift+6",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "press_key",
+          "semantic_target": "ctrl+shift+6",
+          "description": "Set Explorer stable details view",
+          "preferred_mode": "browser_dom",
+          "fallback_modes": [
+            "native",
+            "legacy"
+          ],
+          "risk_tags": [
+            "shortcut",
+            "view_normalization"
+          ]
+        },
+        "parameters": {
+          "keys": [
+            "ctrl",
+            "shift",
+            "6"
+          ],
+          "hotkey": true,
+          "expected_app": "explorer",
+          "shortcut_id": "explorer_stable_view",
+          "expected_change": "Explorer should use the stable details view.",
+          "settle_wait": 0.2
+        },
+        "confidence": 0.82,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "Explorer should use the stable details view.",
+        "fallback_hint": "Refocus Explorer and retry Ctrl+Shift+6.",
+        "control_modes": [
+          "browser_dom",
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "title": "Ctrl click awake.py",
+        "action_type": "modified_click_node",
+        "target": {
+          "kind": "label",
+          "value": "awake.py",
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "label_contains": "awake.py",
+            "affordance": "open",
+            "min_score": 0.45
+          }
+        },
+        "intent": {
+          "verb": "modified_click_node",
+          "semantic_target": "awake.py",
+          "description": "Ctrl click awake.py",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "modifiers": [
+            "ctrl"
+          ],
+          "click_count": 1,
+          "settle_wait": 0.4,
+          "filters": {
+            "app_id": "explorer",
+            "region": "main_page",
+            "label_contains": "awake.py",
+            "affordance": "open",
+            "min_score": 0.45
+          }
+        },
+        "confidence": 0.82,
+        "risk_level": "medium",
+        "requires_approval": false,
+        "success_criteria": "Explorer should apply ctrl+click selection to awake.py.",
+        "fallback_hint": "Reparse Explorer and retry ctrl+click only on the intended item.",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler_v2",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "Explorer should use the stable details view.",
+      "Explorer should apply ctrl+click selection to awake.py."
+    ],
+    "generated_at": 1777373110.9934843
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1777373110.9934843,
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1777373110.9934843,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1777373110.9934843,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "step_index": 1,
+        "step_total": 4,
+        "goal": "Open explorer and ctrl click awake.py",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373110.9969907,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "High-risk action requires approval.",
+      "timestamp": 1777373110.9969907,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "high"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1777373110.9969907,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "step_index": 2,
+        "step_total": 4,
+        "goal": "Open explorer and ctrl click awake.py",
+        "target": "explorer",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373110.9990993,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777373111.000399,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Set Explorer stable details view",
+      "timestamp": 1777373111.000399,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "step_index": 3,
+        "step_total": 4,
+        "goal": "Open explorer and ctrl click awake.py",
+        "target": "ctrl+shift+6",
+        "risk_level": "low",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1777373111.0123997,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Verified keys: ['ctrl', 'shift', '6']"
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1777373111.0123997,
+      "metadata": {
+        "step_id": "step_4",
+        "risk_level": "medium"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Ctrl click awake.py",
+      "timestamp": 1777373111.0123997,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "modified_click_node",
+        "step_index": 4,
+        "step_total": 4,
+        "goal": "Open explorer and ctrl click awake.py",
+        "target": "awake.py",
+        "risk_level": "medium",
+        "requires_approval": false
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1777373111.0501444,
+      "metadata": {
+        "step_id": "step_4",
+        "action_type": "modified_click_node",
+        "control_mode": "hybrid",
+        "ok": false,
+        "notes": "Click did not produce a verified scene or focus signal."
+      }
+    },
+    {
+      "phase": "recover",
+      "message": "Recovered by sending Escape and reparsing.",
+      "timestamp": 1777373111.1143353,
+      "metadata": {
+        "step_id": "step_4"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1777373110.9934843
+    },
+    {
+      "step_id": "step_2",
+      "approved": true,
+      "timestamp": 1777373110.9969907
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 0,
+      "known_visuals": 0,
+      "known_concepts": 0,
+      "known_controls": 0,
+      "known_entities": 0,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "review_queue": 0,
+      "learning_sessions": 0,
+      "interaction_edges": 0,
+      "action_values": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 0,
+      "action_outcomes": 0
+    }
+  },
+  "outputs": {
+    "voice_events": [
+      {
+        "timestamp": 1777373110.9934843,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "runtime",
+        "line": "I am starting the task.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {}
+      },
+      {
+        "timestamp": 1777373110.9934843,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "route_window",
+        "line": "I am switching to Explorer.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window",
+          "app_id": "explorer",
+          "target": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777373110.9948635,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373110.9969907,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "route_window"
+        }
+      },
+      {
+        "timestamp": 1777373110.9969907,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "confirm_focus",
+        "line": "I am switching to Explorer.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus",
+          "app_id": "explorer",
+          "target": "explorer"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373110.9969907,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "focus",
+        "line": "I am switching to Explorer.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "app_id": "explorer"
+        }
+      },
+      {
+        "timestamp": 1777373110.9990993,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "confirm_focus"
+        }
+      },
+      {
+        "timestamp": 1777373111.000399,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key",
+          "app_id": "",
+          "target": "ctrl+shift+6"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373111.000399,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "press_key",
+        "line": "I am sending the keyboard action now.",
+        "status": "throttled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        }
+      },
+      {
+        "timestamp": 1777373111.0123997,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "step_result",
+        "line": "That step completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "press_key"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373111.0134013,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "modified_click_node",
+        "line": "",
+        "status": "disabled",
+        "sensitive_redacted": false,
+        "metadata": {
+          "action_type": "modified_click_node",
+          "app_id": "",
+          "target": "awake.py"
+        }
+      },
+      {
+        "timestamp": 1777373111.0165246,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "target_found",
+        "line": "I found the Row: awake.py.",
+        "status": "dropped",
+        "sensitive_redacted": false,
+        "metadata": {
+          "target": "Row: awake.py",
+          "action_type": "modified_click_node"
+        }
+      },
+      {
+        "timestamp": 1777373111.0165246,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "click",
+        "line": "I am clicking it.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373111.0501444,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "recovery",
+        "line": "The step did not verify. I am trying recovery.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {
+          "step_id": "step_4",
+          "failure_reason": "NO_STATE_CHANGE"
+        },
+        "cache_hit": false
+      },
+      {
+        "timestamp": 1777373111.1143353,
+        "mode": "tts",
+        "provider": "localai",
+        "model": "voice-en-us-ryan-high",
+        "voice": "voice-en-us-ryan-high",
+        "event_type": "done",
+        "line": "Task completed successfully.",
+        "status": "spoken",
+        "sensitive_redacted": false,
+        "metadata": {},
+        "cache_hit": false
+      }
+    ],
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": true,
+        "cdp_available": true,
+        "tab_count": 1,
+        "tab_titles": [
+          "Google"
+        ],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "task_state_timeline": [
+      {
+        "phase": "initialized",
+        "user_goal": "Open explorer and ctrl click awake.py",
+        "current_subgoal": "Scene is sparse or unreadable.",
+        "completed_steps": [],
+        "pending_steps": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should be visible and focused.",
+        "timeline_entry_at": 1777373110.9934843
+      },
+      {
+        "phase": "after_step_1",
+        "user_goal": "Open explorer and ctrl click awake.py",
+        "current_subgoal": "Window routed.",
+        "completed_steps": [
+          "step_1"
+        ],
+        "pending_steps": [
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "explorer should remain focused.",
+        "timeline_entry_at": 1777373110.9969907
+      },
+      {
+        "phase": "after_step_2",
+        "user_goal": "Open explorer and ctrl click awake.py",
+        "current_subgoal": "Focus confirmed for explorer.",
+        "completed_steps": [
+          "step_1",
+          "step_2"
+        ],
+        "pending_steps": [
+          "step_3",
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer should use the stable details view.",
+        "timeline_entry_at": 1777373110.9990993
+      },
+      {
+        "phase": "after_step_3",
+        "user_goal": "Open explorer and ctrl click awake.py",
+        "current_subgoal": "Verified keys: ['ctrl', 'shift', '6']",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [
+          "step_4"
+        ],
+        "failed_steps": [],
+        "active_constraints": [],
+        "expected_next_state": "Explorer should apply ctrl+click selection to awake.py.",
+        "timeline_entry_at": 1777373111.0123997
+      },
+      {
+        "phase": "after_step_4",
+        "user_goal": "Open explorer and ctrl click awake.py",
+        "current_subgoal": "Click did not produce a verified scene or focus signal.",
+        "completed_steps": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "pending_steps": [],
+        "failed_steps": [
+          "step_4"
+        ],
+        "active_constraints": [],
+        "expected_next_state": "",
+        "timeline_entry_at": 1777373111.0501444
+      }
+    ],
+    "state_snapshots": [
+      {
+        "step_id": "step_1",
+        "phase": "before",
+        "state_id": "0e947a72e8c63da9",
+        "timestamp": 1777373110.9934843,
+        "active_app": "",
+        "active_window": {
+          "title": ""
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "|desktop|",
+        "state_signature": "a63aeec92b5151b4",
+        "last_action": "before:route_window",
+        "last_verified_change": "",
+        "confidence": 0.25
+      },
+      {
+        "step_id": "step_1",
+        "phase": "after",
+        "state_id": "8e8b38ae0f4221a2",
+        "timestamp": 1777373110.9948635,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "after:route_window",
+        "last_verified_change": "Window routed.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "before",
+        "state_id": "a10c83b7ed316319",
+        "timestamp": 1777373110.9969907,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "before:confirm_focus",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_2",
+        "phase": "after",
+        "state_id": "32672a06d3538a40",
+        "timestamp": 1777373110.998099,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "after:confirm_focus",
+        "last_verified_change": "Focus confirmed for explorer.",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "before",
+        "state_id": "e83307b92ff94e7c",
+        "timestamp": 1777373111.000399,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "44136fa355b3678a",
+        "ui_tree_hash": "44136fa355b3678a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "before:press_key",
+        "last_verified_change": "",
+        "confidence": 0.5
+      },
+      {
+        "step_id": "step_3",
+        "phase": "after",
+        "state_id": "c34736fe1408036e",
+        "timestamp": 1777373111.0083942,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "17df53a57f806336",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "after:press_key",
+        "last_verified_change": "Verified keys: ['ctrl', 'shift', '6']",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_4",
+        "phase": "before",
+        "state_id": "aa03b1d0cecd5faf",
+        "timestamp": 1777373111.0155253,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "715fada39f9fe803",
+        "ui_tree_hash": "17df53a57f806336",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "before:modified_click_node",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_4",
+        "phase": "after",
+        "state_id": "b50c128a1f94341f",
+        "timestamp": 1777373111.046121,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "c0b0692a91a3862a",
+        "ui_tree_hash": "8184b8b165547f13",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "after:modified_click_node",
+        "last_verified_change": "",
+        "confidence": 0.75
+      },
+      {
+        "step_id": "step_4",
+        "phase": "retry_1_before",
+        "state_id": "062b1c1e24d81bfb",
+        "timestamp": 1777373111.10934,
+        "active_app": "explorer",
+        "active_window": {
+          "title": "File Explorer"
+        },
+        "focused_element": "",
+        "screen_hash": "6a50c998ee9fe74c",
+        "ui_tree_hash": "67decff4f2ebeb8a",
+        "dom_hash": "7cae59c4aafa8771",
+        "uia_hash": "explorer|desktop|",
+        "state_signature": "846dbd697599b533",
+        "last_action": "before:retry:modified_click_node",
+        "last_verified_change": "",
+        "confidence": 0.75
+      }
+    ],
+    "state_diffs": [
+      {
+        "step_id": "step_1",
+        "active_window_changed": true,
+        "active_app_changed": true,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "uia_changed": true,
+        "state_signature_changed": true,
+        "changed": true,
+        "before_state_id": "0e947a72e8c63da9",
+        "after_state_id": "8e8b38ae0f4221a2",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_2",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": false,
+        "ui_tree_changed": false,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "changed": false,
+        "before_state_id": "a10c83b7ed316319",
+        "after_state_id": "32672a06d3538a40",
+        "confidence_delta": 0.0
+      },
+      {
+        "step_id": "step_3",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "changed": true,
+        "before_state_id": "e83307b92ff94e7c",
+        "after_state_id": "c34736fe1408036e",
+        "confidence_delta": 0.25
+      },
+      {
+        "step_id": "step_4",
+        "active_window_changed": false,
+        "active_app_changed": false,
+        "focused_element_changed": false,
+        "screen_changed": true,
+        "ui_tree_changed": true,
+        "dom_changed": false,
+        "uia_changed": false,
+        "state_signature_changed": false,
+        "changed": true,
+        "before_state_id": "aa03b1d0cecd5faf",
+        "after_state_id": "b50c128a1f94341f",
+        "confidence_delta": 0.0
+      }
+    ],
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373110.9948635
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373110.998099
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "Explorer should use the stable details view.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373111.0093987
+      },
+      {
+        "step_id": "step_4",
+        "expected_change": "Explorer should apply ctrl+click selection to awake.py.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373111.046121
+      }
+    ],
+    "perception_quality": [
+      {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.5,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_3",
+        "action_type": "press_key",
+        "candidate_count": 0,
+        "top_candidate_score": 0.0,
+        "runner_up_score": 0.0,
+        "score_gap": 0.0,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "modified_click_node",
+        "candidate_count": 3,
+        "top_candidate_score": 1.08,
+        "runner_up_score": 0.8295,
+        "score_gap": 0.2505,
+        "focus_confidence": 0.75,
+        "focus_confirmed": true,
+        "duplicate_disambiguation_used": false,
+        "target_ambiguity": false,
+        "recovery_depth_per_step": 0
+      }
+    ],
+    "parse_health": [
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": false,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.01,
+        "state_cache_hit": false,
+        "state_cache_miss": true,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_signature": "5f8f6b7b6a23df93"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": false,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.01,
+        "state_cache_hit": false,
+        "state_cache_miss": true,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_signature": "5f8f6b7b6a23df93"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": false,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.01,
+        "state_cache_hit": false,
+        "state_cache_miss": true,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_signature": "5f8f6b7b6a23df93"
+      },
+      {
+        "parse_mode": "windows_uia",
+        "cache_hit": true,
+        "worker_used": false,
+        "parse_elapsed_seconds": 0.0,
+        "state_cache_hit": true,
+        "state_cache_miss": false,
+        "state_cache_reason": "empty",
+        "state_probe_elapsed_seconds": 0.0,
+        "state_signature": "5f8f6b7b6a23df93",
+        "state_cache_age_seconds": 0.053415,
+        "state_cache_parse_mode": "windows_uia"
+      }
+    ],
+    "action_contracts": [
+      {
+        "step_id": "step_3",
+        "action_type": "hotkey",
+        "intent": "Set Explorer stable details view",
+        "target": "ctrl+shift+6",
+        "evidence": [
+          "active_window:File Explorer",
+          "expected_change:Explorer should use the stable details view."
+        ],
+        "before_checks": {
+          "keys_present": true,
+          "active_window_known": true,
+          "no_destructive_ambiguity": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": true,
+          "dom_changed": false,
+          "scene_changed": true,
+          "no_destructive_ambiguity": true,
+          "screenshot_before": "",
+          "screenshot_after": "step_3_after.png"
+        },
+        "evidence_score": 0.5,
+        "evidence_grade": "weak",
+        "failure_reason": "",
+        "recovery_strategy": [],
+        "target_identity": {},
+        "target_ranking": {},
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "verified",
+        "notes": []
+      },
+      {
+        "step_id": "step_4",
+        "action_type": "click_node",
+        "intent": "Ctrl click awake.py",
+        "target": "Row: awake.py",
+        "evidence": [
+          "label:Row: awake.py",
+          "role:list_row",
+          "entity:python_file",
+          "region:main_page",
+          "affordances:click,inspect,open,select",
+          "center:620,146",
+          "ocr:Row: awake.py",
+          "app:explorer",
+          "screenshot:step_3_after.png",
+          "modifier:ctrl"
+        ],
+        "before_checks": {
+          "target_exists": true,
+          "target_visible": true,
+          "target_clickable": true,
+          "safe_click_count": true
+        },
+        "during_checks": {
+          "executor_accepted": true
+        },
+        "verification": {
+          "verified": false,
+          "scene_changed": false,
+          "app_maintained": true,
+          "focus_candidate": false,
+          "identity_drifted": false,
+          "before_label_count": 9,
+          "after_label_count": 9,
+          "screenshot_before": "step_3_after.png",
+          "screenshot_after": "step_4_after.png"
+        },
+        "evidence_score": 1.0,
+        "evidence_grade": "strong",
+        "failure_reason": "NO_STATE_CHANGE",
+        "recovery_strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "target_identity": {
+          "target_id": "target_8387b5907f2c8153",
+          "role": "list_row",
+          "name": "Row: awake.py",
+          "bounds": {
+            "x": 260,
+            "y": 120,
+            "width": 720,
+            "height": 52
+          },
+          "parent_window": "explorer",
+          "source": "OCR",
+          "stable_signature": "8387b5907f2c8153",
+          "confidence": 0.85
+        },
+        "target_ranking": {
+          "selected_node_id": "row_awake",
+          "selected_label": "Row: awake.py",
+          "candidate_count": 3,
+          "top_candidate_score": 1.08,
+          "runner_up_score": 0.8295,
+          "score_gap": 0.2505,
+          "duplicate_disambiguation_used": false,
+          "ambiguous": false,
+          "ambiguity_reason": ""
+        },
+        "identity_drifted": false,
+        "identity_ambiguous": false,
+        "status": "failed",
+        "notes": [
+          "Click did not produce a verified scene or focus signal."
+        ]
+      }
+    ],
+    "target_rankings": [
+      {
+        "step_id": "step_4",
+        "action_type": "modified_click_node",
+        "selected_node_id": "row_awake",
+        "selected_label": "Row: awake.py",
+        "candidate_count": 3,
+        "top_candidate_score": 1.08,
+        "runner_up_score": 0.8295,
+        "score_gap": 0.2505,
+        "duplicate_disambiguation_used": false,
+        "ambiguous": false,
+        "ambiguity_reason": "",
+        "candidates": [
+          {
+            "node_id": "row_awake",
+            "label": "Row: awake.py",
+            "semantic_role": "list_row",
+            "entity_type": "python_file",
+            "region": "main_page",
+            "app_id": "explorer",
+            "score": 1.08,
+            "reasons": [
+              "label",
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 620,
+              "y": 146
+            }
+          },
+          {
+            "node_id": "awake_label",
+            "label": "awake.py",
+            "semantic_role": "",
+            "entity_type": "",
+            "region": "main_page",
+            "app_id": "explorer",
+            "score": 0.8295,
+            "reasons": [
+              "label",
+              "region",
+              "app_id"
+            ],
+            "center": {
+              "x": 380,
+              "y": 140
+            }
+          },
+          {
+            "node_id": "row_video",
+            "label": "Row: demo.mp4",
+            "semantic_role": "list_row",
+            "entity_type": "video",
+            "region": "main_page",
+            "app_id": "explorer",
+            "score": 0.6589,
+            "reasons": [
+              "region",
+              "app_id",
+              "affordance"
+            ],
+            "center": {
+              "x": 620,
+              "y": 226
+            }
+          }
+        ]
+      }
+    ],
+    "failure_recovery": [
+      {
+        "step_id": "step_4",
+        "action_type": "modified_click_node",
+        "failure_reason": "NO_STATE_CHANGE",
+        "strategy": [
+          "reparse_scene",
+          "retry_with_ocr",
+          "retry_with_vision",
+          "ask_user_or_stop"
+        ],
+        "stop_required": false,
+        "note": "No verified state change. Reparse before selecting a fallback action.",
+        "contract_target": "Row: awake.py",
+        "evidence_score": 1.0,
+        "evidence_grade": "strong"
+      }
+    ],
+    "task_replans": [
+      {
+        "step_id": "step_4",
+        "reason": "NO_STATE_CHANGE",
+        "needs_replan": true,
+        "pending_step_ids": [
+          "step_4"
+        ],
+        "completed_step_ids": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "failed_step_ids": [
+          "step_4"
+        ]
+      }
+    ]
+  },
+  "mission": {
+    "mission_id": "mission_task_a6012d8328",
+    "goal": "Open explorer and ctrl click awake.py",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_4",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Set Explorer stable details view",
+        "expected_scene": "Explorer should use the stable details view.",
+        "completion_rule": "Explorer should use the stable details view.",
+        "recovery_rule": "Refocus Explorer and retry Ctrl+Shift+6.",
+        "status": "completed",
+        "notes": [
+          "Verified keys: ['ctrl', 'shift', '6']"
+        ]
+      },
+      {
+        "checkpoint_id": "step_4",
+        "title": "Ctrl click awake.py",
+        "expected_scene": "Explorer should apply ctrl+click selection to awake.py.",
+        "completion_rule": "Explorer should apply ctrl+click selection to awake.py.",
+        "recovery_rule": "Reparse Explorer and retry ctrl+click only on the intended item.",
+        "status": "recovered",
+        "notes": [
+          "Recovered by sending Escape and reparsing."
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1777373110.9934843
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373110.9948635
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "No post-action scene.",
+      "actual_change": "Scene summary changed.",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373110.998099
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "Explorer should use the stable details view.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "demo.mp4",
+        "desktop",
+        "downloads",
+        "main page",
+        "row: awake.py",
+        "row: demo.mp4",
+        "search"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1777373111.0093987
+    },
+    {
+      "step_id": "step_4",
+      "expected_change": "Explorer should apply ctrl+click selection to awake.py.",
+      "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1777373111.046121
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373110.9948635
+      },
+      "timestamp": 1777373110.995992
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "No post-action scene.",
+        "actual_change": "Scene summary changed.",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373110.998099
+      },
+      "timestamp": 1777373110.9990993
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "press_key",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Verified keys: ['ctrl', 'shift', '6']",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "Explorer should use the stable details view.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "added: awake.py, demo.mp4, desktop, downloads, main page",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "demo.mp4",
+          "desktop",
+          "downloads",
+          "main page",
+          "row: awake.py",
+          "row: demo.mp4",
+          "search"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1777373111.0093987
+      },
+      "timestamp": 1777373111.0104022
+    },
+    {
+      "step_id": "step_4",
+      "action_type": "modified_click_node",
+      "ok": false,
+      "control_mode": "hybrid",
+      "target_label": "Row: awake.py",
+      "target_node_id": "row_awake",
+      "focus_confirmed": true,
+      "notes": "Click did not produce a verified scene or focus signal.",
+      "scene_delta": {
+        "step_id": "step_4",
+        "expected_change": "Explorer should apply ctrl+click selection to awake.py.",
+        "before_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "after_summary": "File Explorer scene with 8 nodes; highlights: Main Page, Row: awake.py, awake.py, Row: demo.mp4, demo.mp4, Desktop",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1777373111.046121
+      },
+      "timestamp": 1777373111.0481324
+    }
+  ],
+  "started_at": 1777373110.9934843,
+  "finished_at": 1777373111.1143353
+}

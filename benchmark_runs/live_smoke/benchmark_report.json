@@ -1,0 +1,364 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777138499.5256772,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": true,
+  "repeat_count": 1,
+  "mission_count": 6,
+  "attempt_count": 6,
+  "output_dir": "benchmark_runs\\live_smoke",
+  "metrics": {
+    "success_rate": 1.0,
+    "wrong_click_count": 0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {
+      "replan": 29
+    },
+    "avg_steps_per_task": 14.3333,
+    "avg_latency_per_step": 9.780291,
+    "failure_reason_distribution": {
+      "TARGET_NOT_FOUND": 5,
+      "NO_STATE_CHANGE": 5,
+      "FOCUS_NOT_CONFIRMED": 12,
+      "TIMEOUT": 2
+    }
+  },
+  "category_metrics": {
+    "browser_search": {
+      "success_rate": 1.0,
+      "wrong_click_count": 0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "replan": 6
+      },
+      "avg_steps_per_task": 23.0,
+      "avg_latency_per_step": 8.724705,
+      "failure_reason_distribution": {
+        "FOCUS_NOT_CONFIRMED": 5,
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 1
+      }
+    },
+    "file_explorer": {
+      "success_rate": 1.0,
+      "wrong_click_count": 0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "replan": 23
+      },
+      "avg_steps_per_task": 12.6,
+      "avg_latency_per_step": 10.165664,
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 4,
+        "NO_STATE_CHANGE": 4,
+        "FOCUS_NOT_CONFIRMED": 7,
+        "TIMEOUT": 2
+      }
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ]
+    },
+    {
+      "mission_id": "explorer_open_downloads",
+      "category": "file_explorer",
+      "prompt": "Open explorer and open downloads",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Downloads is selected or shown in Explorer.",
+      "tags": [
+        "navigation",
+        "target_resolution"
+      ]
+    },
+    {
+      "mission_id": "explorer_open_desktop",
+      "category": "file_explorer",
+      "prompt": "Open explorer and open desktop",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Desktop location is shown in Explorer.",
+      "tags": [
+        "navigation"
+      ]
+    },
+    {
+      "mission_id": "explorer_search_python",
+      "category": "file_explorer",
+      "prompt": "Open explorer and search files for python",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer search field contains python or search results appear.",
+      "tags": [
+        "search",
+        "typing"
+      ]
+    },
+    {
+      "mission_id": "explorer_identify_videos",
+      "category": "file_explorer",
+      "prompt": "Identify which files are videos on desktop",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Visible Explorer rows are classified and checkpointed.",
+      "tags": [
+        "classification",
+        "checkpoint"
+      ]
+    },
+    {
+      "mission_id": "chrome_search_youtube",
+      "category": "browser_search",
+      "prompt": "Open chrome and search youtube for lo-fi coding mix",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Start Chrome with remote debugging on port 9222 for DOM metrics.",
+      "success_signal": "Chrome shows a relevant YouTube/search results page.",
+      "tags": [
+        "dom",
+        "search",
+        "typing"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_parse_current",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and parse screen",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer UI is parsed and a trace is saved.",
+      "tags": [
+        "observe",
+        "baseline"
+      ],
+      "events": 15,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 4,
+      "latency_seconds": 50.227211,
+      "latency_per_step": 12.556803,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 3
+      },
+      "failure_reason_distribution": {},
+      "trace_path": "debug_steps\\traces\\run_1777137657.json",
+      "contract_count": 0,
+      "state_snapshot_count": 8,
+      "state_diff_count": 4
+    },
+    {
+      "mission_id": "explorer_open_downloads",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and open downloads",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Downloads is selected or shown in Explorer.",
+      "tags": [
+        "navigation",
+        "target_resolution"
+      ],
+      "events": 27,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 7,
+      "latency_seconds": 61.772669,
+      "latency_per_step": 8.824667,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 2,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 3
+      },
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777137707.json",
+      "contract_count": 1,
+      "state_snapshot_count": 17,
+      "state_diff_count": 7
+    },
+    {
+      "mission_id": "explorer_open_desktop",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and open desktop",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Desktop location is shown in Explorer.",
+      "tags": [
+        "navigation"
+      ],
+      "events": 27,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 7,
+      "latency_seconds": 60.083688,
+      "latency_per_step": 8.583384,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 2,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 3
+      },
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777137769.json",
+      "contract_count": 1,
+      "state_snapshot_count": 17,
+      "state_diff_count": 7
+    },
+    {
+      "mission_id": "explorer_search_python",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Open explorer and search files for python",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Explorer search field contains python or search results appear.",
+      "tags": [
+        "search",
+        "typing"
+      ],
+      "events": 137,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 32,
+      "latency_seconds": 345.329683,
+      "latency_per_step": 10.791553,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 5,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 9
+      },
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 1,
+        "FOCUS_NOT_CONFIRMED": 7,
+        "TIMEOUT": 2,
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777137830.json",
+      "contract_count": 13,
+      "state_snapshot_count": 80,
+      "state_diff_count": 35
+    },
+    {
+      "mission_id": "explorer_identify_videos",
+      "category": "file_explorer",
+      "iteration": 1,
+      "prompt": "Identify which files are videos on desktop",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "Visible Explorer rows are classified and checkpointed.",
+      "tags": [
+        "classification",
+        "checkpoint"
+      ],
+      "events": 51,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 13,
+      "latency_seconds": 123.023605,
+      "latency_per_step": 9.463354,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 2,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 5
+      },
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777138175.json",
+      "contract_count": 1,
+      "state_snapshot_count": 32,
+      "state_diff_count": 13
+    },
+    {
+      "mission_id": "chrome_search_youtube",
+      "category": "browser_search",
+      "iteration": 1,
+      "prompt": "Open chrome and search youtube for lo-fi coding mix",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Start Chrome with remote debugging on port 9222 for DOM metrics.",
+      "success_signal": "Chrome shows a relevant YouTube/search results page.",
+      "tags": [
+        "dom",
+        "search",
+        "typing"
+      ],
+      "events": 97,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "step_count": 23,
+      "latency_seconds": 200.668208,
+      "latency_per_step": 8.724705,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 4,
+      "recovery_success_count": 0,
+      "repair_vs_replan_count": {
+        "replan": 6
+      },
+      "failure_reason_distribution": {
+        "FOCUS_NOT_CONFIRMED": 5,
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777138298.json",
+      "contract_count": 8,
+      "state_snapshot_count": 60,
+      "state_diff_count": 25
+    }
+  ],
+  "failed_artifacts": []
+}

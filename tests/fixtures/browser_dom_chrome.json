@@ -1,0 +1,51 @@
+{
+  "title": "Google Chrome",
+  "url": "https://www.google.com/",
+  "items": [
+    {
+      "tag": "textarea",
+      "id": "omnibox",
+      "role": "combobox",
+      "aria_label": "Search",
+      "placeholder": "Search Google or type a URL",
+      "selectors": [
+        "#omnibox",
+        "textarea[name='q']",
+        "textarea[aria-label='Search']"
+      ]
+    },
+    {
+      "tag": "input",
+      "type": "search",
+      "name": "search_query",
+      "placeholder": "Search YouTube",
+      "selectors": [
+        "input[name='search_query']"
+      ]
+    },
+    {
+      "tag": "button",
+      "aria_label": "Google Search",
+      "text": "Google Search",
+      "selectors": [
+        "button[aria-label='Google Search']"
+      ]
+    },
+    {
+      "tag": "a",
+      "text": "Lo-fi Coding Mix - YouTube",
+      "href": "https://www.youtube.com/watch?v=abc",
+      "selectors": [
+        "a[href='https://www.youtube.com/watch?v=abc']"
+      ]
+    },
+    {
+      "tag": "button",
+      "aria_label": "Close",
+      "text": "Close",
+      "selectors": [
+        "button[aria-label='Close']"
+      ]
+    }
+  ]
+}

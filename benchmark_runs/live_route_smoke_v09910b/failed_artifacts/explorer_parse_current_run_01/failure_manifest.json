@@ -1,0 +1,135 @@
+{
+  "mission": {
+    "mission_id": "explorer_parse_current",
+    "category": "file_explorer",
+    "prompt": "Open explorer and parse screen",
+    "expected_apps": [
+      "explorer"
+    ],
+    "setup": "",
+    "success_signal": "Explorer UI is parsed and a trace is saved.",
+    "tags": [
+      "observe",
+      "baseline"
+    ]
+  },
+  "iteration": 1,
+  "error": "",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      },
+      "timestamp": 1777197592.5691428
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      },
+      "timestamp": 1777197592.5691428
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777197592.5698528
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      },
+      "timestamp": 1777197647.1053114
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      },
+      "timestamp": 1777197647.1071575
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      },
+      "timestamp": 1777197647.1071575
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      },
+      "timestamp": 1777197649.4969397
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      },
+      "timestamp": 1777197649.4969397
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse Explorer for folder summary",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui"
+      },
+      "timestamp": 1777197649.4969397
+    },
+    {
+      "phase": "observation",
+      "message": "UI parsed successfully.",
+      "metadata": {
+        "output_filename": "explorer_summary.png"
+      },
+      "timestamp": 1777197653.930662
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 70 nodes; highlights: Left Menu, bottom_menu item, bottom_menu item, Main Page, tile, tile"
+      },
+      "timestamp": 1777197655.243142
+    },
+    {
+      "phase": "done",
+      "message": "Run completed with status: failed",
+      "metadata": {
+        "trace_path": "debug_steps\\traces\\run_1777197592.json"
+      },
+      "timestamp": 1777197655.3878243
+    }
+  ]
+}

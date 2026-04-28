@@ -1,0 +1,661 @@
+{
+  "run_id": "run_1776977532",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_14d5d870a0",
+    "created_at": 1776977532.5015576
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_14d5d870a0",
+      "created_at": 1776977532.5015576
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Route to explorer",
+        "action_type": "route_window",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "route_window",
+          "semantic_target": "explorer",
+          "description": "Route to explorer",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "legacy"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "app_id": "explorer",
+          "window_title": "File Explorer"
+        },
+        "confidence": 0.8,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Confirm explorer focus",
+        "action_type": "confirm_focus",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "confirm_focus",
+          "semantic_target": "explorer",
+          "description": "Confirm explorer focus",
+          "preferred_mode": "native",
+          "fallback_modes": [],
+          "risk_tags": []
+        },
+        "parameters": {
+          "expected": "explorer"
+        },
+        "confidence": 0.8,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should remain focused.",
+        "fallback_hint": "",
+        "control_modes": [
+          "native"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "title": "Parse the current UI",
+        "action_type": "parse_ui",
+        "target": {
+          "kind": "ui_surface",
+          "value": "current_window",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "parse_ui",
+          "semantic_target": "current_window",
+          "description": "Parse the current UI",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "output_filename": "panel_parse.png"
+        },
+        "confidence": 0.8,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "An observation graph should be created.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "reasoner_compiler",
+    "summary": "Scene is sparse or unreadable.",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "explorer should remain focused.",
+      "An observation graph should be created."
+    ],
+    "generated_at": 1776977532.5015576
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1776977532.5015576,
+      "metadata": {
+        "source": "reasoner_compiler",
+        "step_count": 3
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "timestamp": 1776977532.5015576,
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "timestamp": 1776977532.5015576,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776977532.508735,
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Window routed."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776977532.508735,
+      "metadata": {
+        "step_id": "step_2",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Confirm explorer focus",
+      "timestamp": 1776977532.508735,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "timestamp": 1776977532.5133026,
+      "metadata": {
+        "step_id": "step_2",
+        "action_type": "confirm_focus",
+        "control_mode": "native",
+        "ok": true,
+        "notes": "Focus confirmed for explorer."
+      }
+    },
+    {
+      "phase": "policy",
+      "message": "Step is allowed.",
+      "timestamp": 1776977532.5133026,
+      "metadata": {
+        "step_id": "step_3",
+        "risk_level": "low"
+      }
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Parse the current UI",
+      "timestamp": 1776977532.5133026,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui"
+      }
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using hybrid.",
+      "timestamp": 1776977532.5221188,
+      "metadata": {
+        "step_id": "step_3",
+        "action_type": "parse_ui",
+        "control_mode": "hybrid",
+        "ok": true,
+        "notes": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "step_id": "step_1",
+      "approved": true,
+      "timestamp": 1776977532.5015576
+    }
+  ],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 0,
+      "known_visuals": 0,
+      "known_concepts": 0,
+      "known_controls": 4,
+      "known_entities": 1,
+      "transition_count": 0,
+      "negative_examples": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 2,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 0,
+      "scene_deltas": 2,
+      "action_outcomes": 2
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {
+          "title": ""
+        },
+        "active_app_guess": "",
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "available": false,
+        "cdp_available": false,
+        "tab_count": 0,
+        "tab_titles": [],
+        "adapter_mode": "browser_dom_metadata"
+      }
+    },
+    "scene_deltas": [
+      {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "actual_change": "added: awake.py, main page, python file, row: awake.py",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "main page",
+          "python file",
+          "row: awake.py"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1776977532.5046058
+      },
+      {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776977532.508735
+      },
+      {
+        "step_id": "step_3",
+        "expected_change": "An observation graph should be created.",
+        "before_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776977532.5183794
+      }
+    ],
+    "last_observation": {
+      "nodes": [
+        {
+          "node_id": "main_page",
+          "label": "Main Page",
+          "learned_label": "",
+          "learned_concepts": [],
+          "node_type": "container",
+          "semantic_role": "main_page",
+          "entity_type": "",
+          "app_id": "explorer",
+          "region": "main_page",
+          "state_tags": [
+            "main_page"
+          ],
+          "affordances": [],
+          "stability": 0.6000000000000001,
+          "source_frame_id": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 800,
+            "height": 600
+          },
+          "center": {
+            "x": 400,
+            "y": 300
+          },
+          "visual_id": "",
+          "children": [
+            {
+              "node_id": "row_awake",
+              "label": "Row: awake.py",
+              "learned_label": "",
+              "learned_concepts": [],
+              "node_type": "container",
+              "semantic_role": "list_row",
+              "entity_type": "python_file",
+              "app_id": "explorer",
+              "region": "main_page",
+              "state_tags": [
+                "content_item",
+                "list_row",
+                "main_page",
+                "table_surface"
+              ],
+              "affordances": [
+                "click",
+                "inspect",
+                "open",
+                "select"
+              ],
+              "stability": 0.8,
+              "source_frame_id": "",
+              "box": {
+                "x": 100,
+                "y": 120,
+                "width": 420,
+                "height": 48
+              },
+              "center": {
+                "x": 310,
+                "y": 144
+              },
+              "visual_id": "",
+              "children": [
+                {
+                  "node_id": "label_awake",
+                  "label": "awake.py",
+                  "learned_label": "",
+                  "learned_concepts": [],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.4,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 120,
+                    "y": 126,
+                    "width": 140,
+                    "height": 32
+                  },
+                  "center": {
+                    "x": 190,
+                    "y": 142
+                  },
+                  "visual_id": "",
+                  "children": []
+                },
+                {
+                  "node_id": "type_awake",
+                  "label": "Python File",
+                  "learned_label": "",
+                  "learned_concepts": [],
+                  "node_type": "button",
+                  "semantic_role": "",
+                  "entity_type": "",
+                  "app_id": "explorer",
+                  "region": "main_page",
+                  "state_tags": [
+                    "main_page"
+                  ],
+                  "affordances": [],
+                  "stability": 0.4,
+                  "source_frame_id": "",
+                  "box": {
+                    "x": 360,
+                    "y": 126,
+                    "width": 140,
+                    "height": 32
+                  },
+                  "center": {
+                    "x": 430,
+                    "y": 142
+                  },
+                  "visual_id": "",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source": "vision",
+      "metadata": {
+        "output_filename": "panel_parse.png",
+        "environment": {
+          "windows": {
+            "active_window": {
+              "title": "File Explorer"
+            },
+            "active_app_guess": "explorer",
+            "open_windows": [],
+            "adapter_mode": "native_window_metadata"
+          },
+          "browser": {
+            "available": false,
+            "cdp_available": false,
+            "tab_count": 0,
+            "tab_titles": [],
+            "adapter_mode": "browser_dom_metadata"
+          }
+        },
+        "app_id": "explorer",
+        "app_name": "File Explorer",
+        "scene": {
+          "app_id": "explorer",
+          "app_name": "File Explorer",
+          "active_window_title": "File Explorer",
+          "node_count": 4,
+          "salient_labels": [
+            "Main Page",
+            "Row: awake.py",
+            "awake.py",
+            "Python File"
+          ],
+          "ambiguous": false,
+          "summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File"
+        },
+        "scene_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File"
+      }
+    }
+  },
+  "mission": {
+    "mission_id": "mission_task_14d5d870a0",
+    "goal": "Open explorer and parse screen",
+    "subgoal": "Scene is sparse or unreadable.",
+    "app_id": "explorer",
+    "status": "success",
+    "current_checkpoint_id": "step_3",
+    "checkpoints": [
+      {
+        "checkpoint_id": "step_1",
+        "title": "Route to explorer",
+        "expected_scene": "explorer should be visible and focused.",
+        "completion_rule": "explorer should be visible and focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Window routed."
+        ]
+      },
+      {
+        "checkpoint_id": "step_2",
+        "title": "Confirm explorer focus",
+        "expected_scene": "explorer should remain focused.",
+        "completion_rule": "explorer should remain focused.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "Focus confirmed for explorer."
+        ]
+      },
+      {
+        "checkpoint_id": "step_3",
+        "title": "Parse the current UI",
+        "expected_scene": "An observation graph should be created.",
+        "completion_rule": "An observation graph should be created.",
+        "recovery_rule": "Refocus, reparse, and retry once.",
+        "status": "completed",
+        "notes": [
+          "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File"
+        ]
+      }
+    ],
+    "notes": [],
+    "created_at": 1776977532.5015576
+  },
+  "scene_deltas": [
+    {
+      "step_id": "step_1",
+      "expected_change": "explorer should be visible and focused.",
+      "before_summary": "No prior scene.",
+      "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+      "actual_change": "added: awake.py, main page, python file, row: awake.py",
+      "changed": true,
+      "maintained_app_id": true,
+      "added_labels": [
+        "awake.py",
+        "main page",
+        "python file",
+        "row: awake.py"
+      ],
+      "removed_labels": [],
+      "recovery_hint": "",
+      "timestamp": 1776977532.5046058
+    },
+    {
+      "step_id": "step_2",
+      "expected_change": "explorer should remain focused.",
+      "before_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+      "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776977532.508735
+    },
+    {
+      "step_id": "step_3",
+      "expected_change": "An observation graph should be created.",
+      "before_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+      "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+      "actual_change": "No obvious scene change.",
+      "changed": false,
+      "maintained_app_id": true,
+      "added_labels": [],
+      "removed_labels": [],
+      "recovery_hint": "Reparse and refocus the current window before retrying.",
+      "timestamp": 1776977532.5183794
+    }
+  ],
+  "action_outcomes": [
+    {
+      "step_id": "step_1",
+      "action_type": "route_window",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Window routed.",
+      "scene_delta": {
+        "step_id": "step_1",
+        "expected_change": "explorer should be visible and focused.",
+        "before_summary": "No prior scene.",
+        "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "actual_change": "added: awake.py, main page, python file, row: awake.py",
+        "changed": true,
+        "maintained_app_id": true,
+        "added_labels": [
+          "awake.py",
+          "main page",
+          "python file",
+          "row: awake.py"
+        ],
+        "removed_labels": [],
+        "recovery_hint": "",
+        "timestamp": 1776977532.5046058
+      },
+      "timestamp": 1776977532.5066042
+    },
+    {
+      "step_id": "step_2",
+      "action_type": "confirm_focus",
+      "ok": true,
+      "control_mode": "native",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "Focus confirmed for explorer.",
+      "scene_delta": {
+        "step_id": "step_2",
+        "expected_change": "explorer should remain focused.",
+        "before_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776977532.508735
+      },
+      "timestamp": 1776977532.5097313
+    },
+    {
+      "step_id": "step_3",
+      "action_type": "parse_ui",
+      "ok": true,
+      "control_mode": "hybrid",
+      "target_label": "",
+      "target_node_id": "",
+      "focus_confirmed": true,
+      "notes": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+      "scene_delta": {
+        "step_id": "step_3",
+        "expected_change": "An observation graph should be created.",
+        "before_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "after_summary": "File Explorer scene with 4 nodes; highlights: Main Page, Row: awake.py, awake.py, Python File",
+        "actual_change": "No obvious scene change.",
+        "changed": false,
+        "maintained_app_id": true,
+        "added_labels": [],
+        "removed_labels": [],
+        "recovery_hint": "Reparse and refocus the current window before retrying.",
+        "timestamp": 1776977532.5183794
+      },
+      "timestamp": 1776977532.5198703
+    }
+  ],
+  "started_at": 1776977532.5015576,
+  "finished_at": 1776977532.5221188
+}

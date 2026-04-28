@@ -1,0 +1,225 @@
+{
+  "mission": {
+    "mission_id": "explorer_parse_current",
+    "category": "file_explorer",
+    "prompt": "Open explorer and parse screen",
+    "expected_apps": [
+      "explorer"
+    ],
+    "setup": "",
+    "success_signal": "Explorer UI is parsed and a trace is saved.",
+    "tags": [
+      "observe",
+      "baseline"
+    ]
+  },
+  "iteration": 1,
+  "error": "",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "metadata": {
+        "source": "reasoner_compiler_v2",
+        "step_count": 4
+      },
+      "timestamp": 1777196449.7075343
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1",
+        "risk_level": "low"
+      },
+      "timestamp": 1777196449.7075343
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Route to explorer",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777196449.7075343
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      },
+      "timestamp": 1777196495.5071535
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_1",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777196499.1841536
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_1"
+      },
+      "timestamp": 1777196499.1841536
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "risk_level": "low"
+      },
+      "timestamp": 1777196517.033554
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777196517.033554
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      },
+      "timestamp": 1777196537.1909788
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_1_repair_route",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777196540.8357742
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_1_repair_route"
+      },
+      "timestamp": 1777196540.8357742
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "risk_level": "low"
+      },
+      "timestamp": 1777196558.6626492
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777196558.6626492
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      },
+      "timestamp": 1777196578.5761065
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777196582.2414556
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route"
+      },
+      "timestamp": 1777196582.2414556
+    },
+    {
+      "phase": "policy",
+      "message": "Risk-gated step.",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "risk_level": "low"
+      },
+      "timestamp": 1777196600.147128
+    },
+    {
+      "phase": "step",
+      "message": "Executing: Retry routing to explorer",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "action_type": "route_window"
+      },
+      "timestamp": 1777196600.147128
+    },
+    {
+      "phase": "step_result",
+      "message": "Completed using native.",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "action_type": "route_window",
+        "control_mode": "native",
+        "ok": false,
+        "notes": "Could not route the requested window."
+      },
+      "timestamp": 1777196620.1444683
+    },
+    {
+      "phase": "recover",
+      "message": "Recovery plan: reparse_scene, retry_with_ocr, retry_with_vision, ask_user_or_stop",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route",
+        "failure_reason": "NO_STATE_CHANGE"
+      },
+      "timestamp": 1777196623.7414258
+    },
+    {
+      "phase": "recover",
+      "message": "Attempting to refocus explorer.",
+      "metadata": {
+        "step_id": "step_1_repair_route_repair_route_repair_route"
+      },
+      "timestamp": 1777196623.7414258
+    },
+    {
+      "phase": "done",
+      "message": "Run completed with status: failed",
+      "metadata": {
+        "trace_path": "debug_steps\\traces\\run_1777196449.json"
+      },
+      "timestamp": 1777196641.6578915
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "run_id": "run_1776975315",
+  "task": {
+    "prompt": "Open explorer and parse screen",
+    "goal": "Open explorer and parse screen",
+    "constraints": [],
+    "trust_mode": "plan_and_risk_gates",
+    "task_id": "task_faa253f023",
+    "created_at": 1776975315.646469
+  },
+  "plan": {
+    "task": {
+      "prompt": "Open explorer and parse screen",
+      "goal": "Open explorer and parse screen",
+      "constraints": [],
+      "trust_mode": "plan_and_risk_gates",
+      "task_id": "task_faa253f023",
+      "created_at": 1776975315.646469
+    },
+    "steps": [
+      {
+        "step_id": "step_1",
+        "title": "Open explorer",
+        "action_type": "legacy_command",
+        "target": {
+          "kind": "application",
+          "value": "explorer",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "open",
+          "semantic_target": "explorer",
+          "description": "Open the explorer application.",
+          "preferred_mode": "native",
+          "fallback_modes": [
+            "vision_fallback",
+            "legacy"
+          ],
+          "risk_tags": [
+            "application_launch"
+          ]
+        },
+        "parameters": {
+          "command_text": "Open explorer"
+        },
+        "confidence": 0.85,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "explorer should be visible and focused.",
+        "fallback_hint": "Use Windows search if the icon is not visible.",
+        "control_modes": [
+          "native",
+          "vision_fallback",
+          "legacy"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "title": "Parse the current UI",
+        "action_type": "parse_ui",
+        "target": {
+          "kind": "ui_surface",
+          "value": "current_window",
+          "filters": {}
+        },
+        "intent": {
+          "verb": "observe",
+          "semantic_target": "current_window",
+          "description": "Capture and structure the current UI.",
+          "preferred_mode": "hybrid",
+          "fallback_modes": [
+            "vision_fallback"
+          ],
+          "risk_tags": []
+        },
+        "parameters": {
+          "output_filename": "panel_parse.png"
+        },
+        "confidence": 0.95,
+        "risk_level": "low",
+        "requires_approval": false,
+        "success_criteria": "An observation graph should be created.",
+        "fallback_hint": "",
+        "control_modes": [
+          "hybrid",
+          "vision_fallback"
+        ]
+      }
+    ],
+    "source": "heuristic_prompt_compiler",
+    "summary": "Plan for: Open explorer and parse screen",
+    "required_apps": [
+      "explorer"
+    ],
+    "success_conditions": [
+      "explorer should be visible and focused.",
+      "An observation graph should be created."
+    ],
+    "generated_at": 1776975315.646469
+  },
+  "status": "success",
+  "events": [
+    {
+      "phase": "plan",
+      "message": "Execution plan created.",
+      "timestamp": 1776975316.1531003,
+      "metadata": {
+        "source": "heuristic_prompt_compiler",
+        "step_count": 2
+      }
+    }
+  ],
+  "approvals": [],
+  "memory_hits": {
+    "memory_summary": {
+      "known_labels": 0,
+      "known_visuals": 0,
+      "known_concepts": 0,
+      "known_controls": 0,
+      "known_entities": 0,
+      "transition_count": 0,
+      "workflow_count": 0,
+      "trusted_workflows": 0,
+      "trusted_apps": 0,
+      "blocked_apps": 0,
+      "blocked_concepts": 0,
+      "recent_runs": 1
+    }
+  },
+  "outputs": {
+    "environment": {
+      "windows": {
+        "active_window": {},
+        "open_windows": [],
+        "adapter_mode": "native_window_metadata"
+      },
+      "browser": {
+        "adapter_mode": "browser_dom_metadata",
+        "available": false,
+        "tab_count": 0,
+        "tab_titles": []
+      }
+    },
+    "dry_run": true
+  },
+  "started_at": 1776975315.646469,
+  "finished_at": 1776975316.1531003
+}

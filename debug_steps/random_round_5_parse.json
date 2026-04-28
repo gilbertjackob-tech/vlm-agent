@@ -1,0 +1,767 @@
+{
+    "timestamp": 1776971069.7938626,
+    "context_window": [
+        -11,
+        -11,
+        1942,
+        1030
+    ],
+    "element_count": 22,
+    "ui_graph": [
+        {
+            "id": "top_menu",
+            "label": "Top Menu",
+            "box": {
+                "x": 0,
+                "y": 0,
+                "width": 1920,
+                "height": 220
+            },
+            "type": "container",
+            "center": {
+                "x": 960,
+                "y": 110
+            },
+            "semantic_role": "top_menu",
+            "region": "top_menu",
+            "children": [
+                {
+                    "id": "top_menu_item_0",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 240,
+                        "y": 0,
+                        "width": 80,
+                        "height": 86
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 280,
+                        "y": 42
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 9,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 250,
+                                "y": 6,
+                                "width": 60,
+                                "height": 72
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 280,
+                                "y": 42
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_1",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 350,
+                        "y": 0,
+                        "width": 84,
+                        "height": 92
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 392,
+                        "y": 44
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 4,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 360,
+                                "y": 4,
+                                "width": 64,
+                                "height": 80
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 392,
+                                "y": 44
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_2",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 10,
+                        "y": 6,
+                        "width": 90,
+                        "height": 80
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 55,
+                        "y": 46
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 8,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 20,
+                                "y": 14,
+                                "width": 70,
+                                "height": 64
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 55,
+                                "y": 46
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_3",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 120,
+                        "y": 6,
+                        "width": 94,
+                        "height": 82
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 167,
+                        "y": 47
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 7,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 130,
+                                "y": 14,
+                                "width": 74,
+                                "height": 66
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 167,
+                                "y": 47
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_4",
+                    "label": "Blender 5.0",
+                    "box": {
+                        "x": 112,
+                        "y": 76,
+                        "width": 116,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 170,
+                        "y": 96
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 13,
+                            "label": "Blender 5.0",
+                            "box": {
+                                "x": 122,
+                                "y": 84,
+                                "width": 96,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 170,
+                                "y": 96
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_5",
+                    "label": "Recycle Bin",
+                    "box": {
+                        "x": 224,
+                        "y": 76,
+                        "width": 114,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 281,
+                        "y": 97
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 12,
+                            "label": "Recycle Bin",
+                            "box": {
+                                "x": 234,
+                                "y": 84,
+                                "width": 94,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 281,
+                                "y": 97
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_6",
+                    "label": "py_awake.bat",
+                    "box": {
+                        "x": 326,
+                        "y": 78,
+                        "width": 132,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 392,
+                        "y": 99
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 10,
+                            "label": "py_awake.bat",
+                            "box": {
+                                "x": 336,
+                                "y": 86,
+                                "width": 112,
+                                "height": 26
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 392,
+                                "y": 99
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_7",
+                    "label": "two_opamp",
+                    "box": {
+                        "x": 0,
+                        "y": 80,
+                        "width": 118,
+                        "height": 40
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 57,
+                        "y": 100
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 11,
+                            "label": "two_opamp",
+                            "box": {
+                                "x": 6,
+                                "y": 88,
+                                "width": 102,
+                                "height": 24
+                            },
+                            "type": "unknown",
+                            "center": {
+                                "x": 57,
+                                "y": 100
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_8",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 126,
+                        "y": 150,
+                        "width": 84,
+                        "height": 70
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 168,
+                        "y": 197
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 5,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 136,
+                                "y": 158,
+                                "width": 64,
+                                "height": 78
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 168,
+                                "y": 197
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_9",
+                    "label": "..",
+                    "box": {
+                        "x": 344,
+                        "y": 150,
+                        "width": 98,
+                        "height": 70
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 393,
+                        "y": 197
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 2,
+                            "label": "..",
+                            "box": {
+                                "x": 354,
+                                "y": 158,
+                                "width": 78,
+                                "height": 78
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 393,
+                                "y": 197
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_10",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 232,
+                        "y": 156,
+                        "width": 94,
+                        "height": 64
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 279,
+                        "y": 199
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 3,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 242,
+                                "y": 164,
+                                "width": 74,
+                                "height": 70
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 279,
+                                "y": 199
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "top_menu_item_11",
+                    "label": "[ICON]",
+                    "box": {
+                        "x": 8,
+                        "y": 160,
+                        "width": 94,
+                        "height": 60
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 55,
+                        "y": 201
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "top_menu",
+                    "children": [
+                        {
+                            "id": 6,
+                            "label": "[ICON]",
+                            "box": {
+                                "x": 18,
+                                "y": 168,
+                                "width": 74,
+                                "height": 66
+                            },
+                            "type": "icon",
+                            "center": {
+                                "x": 55,
+                                "y": 201
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "left_menu",
+            "label": "Left Menu",
+            "box": {
+                "x": 0,
+                "y": 220,
+                "width": 360,
+                "height": 786
+            },
+            "type": "container",
+            "center": {
+                "x": 180,
+                "y": 613
+            },
+            "semantic_role": "left_menu",
+            "region": "left_menu",
+            "children": [
+                {
+                    "id": "left_menu_item_0",
+                    "label": "This PC",
+                    "box": {
+                        "x": 232,
+                        "y": 232,
+                        "width": 96,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 280,
+                        "y": 250
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 18,
+                            "label": "This PC",
+                            "box": {
+                                "x": 242,
+                                "y": 238,
+                                "width": 76,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 280,
+                                "y": 250
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_1",
+                    "label": "patterns",
+                    "box": {
+                        "x": 10,
+                        "y": 234,
+                        "width": 94,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 57,
+                        "y": 253
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 17,
+                            "label": "patterns",
+                            "box": {
+                                "x": 20,
+                                "y": 240,
+                                "width": 74,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 57,
+                                "y": 253
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_2",
+                    "label": "awake.py",
+                    "box": {
+                        "x": 116,
+                        "y": 234,
+                        "width": 104,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 168,
+                        "y": 253
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 14,
+                            "label": "awake.py",
+                            "box": {
+                                "x": 126,
+                                "y": 240,
+                                "width": 84,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 168,
+                                "y": 253
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_3",
+                    "label": "Shortcut...",
+                    "box": {
+                        "x": 224,
+                        "y": 258,
+                        "width": 110,
+                        "height": 36
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 279,
+                        "y": 276
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 15,
+                            "label": "Shortcut...",
+                            "box": {
+                                "x": 234,
+                                "y": 264,
+                                "width": 90,
+                                "height": 24
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 279,
+                                "y": 276
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "left_menu_item_4",
+                    "label": "Project",
+                    "box": {
+                        "x": 128,
+                        "y": 388,
+                        "width": 80,
+                        "height": 38
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 168,
+                        "y": 407
+                    },
+                    "semantic_role": "menu_item",
+                    "region": "left_menu",
+                    "children": [
+                        {
+                            "id": 19,
+                            "label": "Project",
+                            "box": {
+                                "x": 138,
+                                "y": 394,
+                                "width": 60,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 168,
+                                "y": 407
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "main_page",
+            "label": "Main Page",
+            "box": {
+                "x": 360,
+                "y": 220,
+                "width": 1560,
+                "height": 786
+            },
+            "type": "container",
+            "center": {
+                "x": 1140,
+                "y": 613
+            },
+            "semantic_role": "main_page",
+            "region": "main_page",
+            "children": [
+                {
+                    "id": "main_page_tile_0",
+                    "label": "Docker",
+                    "box": {
+                        "x": 360,
+                        "y": 230,
+                        "width": 74,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 390,
+                        "y": 251
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "children": [
+                        {
+                            "id": 20,
+                            "label": "Docker",
+                            "box": {
+                                "x": 358,
+                                "y": 240,
+                                "width": 64,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 390,
+                                "y": 251
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "main_page_tile_1",
+                    "label": "Desktop",
+                    "box": {
+                        "x": 360,
+                        "y": 254,
+                        "width": 82,
+                        "height": 46
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 392,
+                        "y": 277
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "children": [
+                        {
+                            "id": 16,
+                            "label": "Desktop",
+                            "box": {
+                                "x": 354,
+                                "y": 264,
+                                "width": 76,
+                                "height": 26
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 392,
+                                "y": 277
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "main_page_tile_2",
+                    "label": "Zoom",
+                    "box": {
+                        "x": 360,
+                        "y": 384,
+                        "width": 72,
+                        "height": 42
+                    },
+                    "type": "container",
+                    "center": {
+                        "x": 392,
+                        "y": 405
+                    },
+                    "semantic_role": "clickable_container",
+                    "region": "main_page",
+                    "children": [
+                        {
+                            "id": 21,
+                            "label": "Zoom",
+                            "box": {
+                                "x": 364,
+                                "y": 394,
+                                "width": 56,
+                                "height": 22
+                            },
+                            "type": "button",
+                            "center": {
+                                "x": 392,
+                                "y": 405
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bottom_menu",
+            "label": "Bottom Menu",
+            "box": {
+                "x": 0,
+                "y": 1006,
+                "width": 1920,
+                "height": 6
+            },
+            "type": "container",
+            "center": {
+                "x": 960,
+                "y": 1009
+            },
+            "semantic_role": "bottom_menu",
+            "region": "bottom_menu",
+            "children": []
+        }
+    ]
+}

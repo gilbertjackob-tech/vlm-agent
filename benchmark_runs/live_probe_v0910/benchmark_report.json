@@ -1,0 +1,337 @@
+{
+  "benchmark_version": "v0.9.9",
+  "generated_at": 1777203806.6692007,
+  "hard_rule": "No claim of \"general PC assistant\" without benchmark evidence.",
+  "live_actions": true,
+  "repeat_count": 1,
+  "mission_count": 3,
+  "attempt_count": 3,
+  "expected_attempt_count": 3,
+  "complete": true,
+  "interrupted": false,
+  "output_dir": "benchmark_runs\\live_probe_v0910",
+  "metrics": {
+    "success_rate": 1.0,
+    "stable_success_rate": 0.0,
+    "unstable_success_count": 3,
+    "wrong_click_count": 0,
+    "recovery_count": 2,
+    "recovery_rate_per_successful_task": 0.6667,
+    "recovery_depth_per_step": 0.08,
+    "focus_failure_count": 0,
+    "target_ambiguity_count": 0,
+    "target_switch_after_recovery_count": 0,
+    "duplicate_disambiguation_count": 0,
+    "avg_score_gap": 0.0,
+    "recovery_success_rate": 0.0,
+    "repair_vs_replan_count": {
+      "replan": 1
+    },
+    "avg_steps_per_task": 8.3333,
+    "avg_latency_per_step": 8.467516,
+    "avg_ocr_time_per_task": 3.683491,
+    "avg_parse_time_per_task": 22.334809,
+    "avg_parse_time_per_parse": 2.680177,
+    "ocr_timeout_count": 5,
+    "ocr_call_count": 0,
+    "ocr_cache_hit_count": 0,
+    "parse_cache_hit_count": 11,
+    "dom_parse_count": 0,
+    "parse_worker_count": 14,
+    "parse_worker_elapsed_seconds": 52.328553,
+    "parse_worker_queue_wait_seconds": 0.008567,
+    "structured_skip_count": 0,
+    "screen_hash_elapsed_seconds": 1.847964,
+    "failure_reason_distribution": {
+      "TARGET_NOT_FOUND": 1,
+      "NO_STATE_CHANGE": 2,
+      "FOCUS_NOT_CONFIRMED": 1
+    }
+  },
+  "category_metrics": {
+    "duplicate_label_disambiguation": {
+      "success_rate": 1.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 2,
+      "wrong_click_count": 0,
+      "recovery_count": 2,
+      "recovery_rate_per_successful_task": 1.0,
+      "recovery_depth_per_step": 0.125,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {
+        "replan": 1
+      },
+      "avg_steps_per_task": 8.0,
+      "avg_latency_per_step": 9.12145,
+      "avg_ocr_time_per_task": 3.197143,
+      "avg_parse_time_per_task": 25.471887,
+      "avg_parse_time_per_parse": 2.996693,
+      "ocr_timeout_count": 3,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 8,
+      "dom_parse_count": 0,
+      "parse_worker_count": 9,
+      "parse_worker_elapsed_seconds": 40.936855,
+      "parse_worker_queue_wait_seconds": 0.005744,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 1.277913,
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 2
+      }
+    },
+    "focus_verification": {
+      "success_rate": 1.0,
+      "stable_success_rate": 0.0,
+      "unstable_success_count": 1,
+      "wrong_click_count": 0,
+      "recovery_count": 0,
+      "recovery_rate_per_successful_task": 0.0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "recovery_success_rate": 0.0,
+      "repair_vs_replan_count": {},
+      "avg_steps_per_task": 9.0,
+      "avg_latency_per_step": 7.304969,
+      "avg_ocr_time_per_task": 4.656186,
+      "avg_parse_time_per_task": 16.060652,
+      "avg_parse_time_per_parse": 2.007582,
+      "ocr_timeout_count": 2,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 3,
+      "dom_parse_count": 0,
+      "parse_worker_count": 5,
+      "parse_worker_elapsed_seconds": 11.391698,
+      "parse_worker_queue_wait_seconds": 0.002823,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.570051,
+      "failure_reason_distribution": {
+        "FOCUS_NOT_CONFIRMED": 1
+      }
+    }
+  },
+  "missions": [
+    {
+      "mission_id": "explorer_duplicate_downloads",
+      "category": "duplicate_label_disambiguation",
+      "prompt": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "The sidebar Downloads target is used and Explorer navigates correctly.",
+      "tags": [
+        "duplicate_label",
+        "region_disambiguation"
+      ]
+    },
+    {
+      "mission_id": "chrome_duplicate_search_field",
+      "category": "duplicate_label_disambiguation",
+      "prompt": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Start Chrome with remote debugging on port 9222; page may contain another search field.",
+      "success_signal": "The omnibox receives the query.",
+      "tags": [
+        "duplicate_label",
+        "dom",
+        "region_disambiguation"
+      ]
+    },
+    {
+      "mission_id": "focus_shift_typing_case",
+      "category": "focus_verification",
+      "prompt": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Chrome should be available; page may contain another text field.",
+      "success_signal": "Typed text is verified in the focused Chrome address/search field.",
+      "tags": [
+        "focus",
+        "typing",
+        "verification"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mission_id": "explorer_duplicate_downloads",
+      "category": "duplicate_label_disambiguation",
+      "iteration": 1,
+      "prompt": "Open explorer and choose Downloads from the left navigation, not any duplicate label in the main page",
+      "expected_apps": [
+        "explorer"
+      ],
+      "setup": "",
+      "success_signal": "The sidebar Downloads target is used and Explorer navigates correctly.",
+      "tags": [
+        "duplicate_label",
+        "region_disambiguation"
+      ],
+      "events": 27,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "stable_success": false,
+      "step_count": 7,
+      "latency_seconds": 81.241895,
+      "latency_per_step": 11.605985,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 2,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.285714,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {
+        "replan": 1
+      },
+      "failure_reason_distribution": {
+        "TARGET_NOT_FOUND": 1,
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777203589.json",
+      "contract_count": 1,
+      "state_snapshot_count": 17,
+      "state_diff_count": 7,
+      "parse_count": 9,
+      "ocr_elapsed_seconds": 2.038617,
+      "parse_elapsed_seconds": 35.204982,
+      "ocr_timeout_count": 1,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 6,
+      "dom_parse_count": 0,
+      "parse_worker_count": 3,
+      "parse_worker_elapsed_seconds": 29.850719,
+      "parse_worker_queue_wait_seconds": 0.0,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.729266
+    },
+    {
+      "mission_id": "chrome_duplicate_search_field",
+      "category": "duplicate_label_disambiguation",
+      "iteration": 1,
+      "prompt": "In chrome, focus the address bar search field, not a page search field, then type benchmark query",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Start Chrome with remote debugging on port 9222; page may contain another search field.",
+      "success_signal": "The omnibox receives the query.",
+      "tags": [
+        "duplicate_label",
+        "dom",
+        "region_disambiguation"
+      ],
+      "events": 34,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "stable_success": false,
+      "step_count": 9,
+      "latency_seconds": 64.7013,
+      "latency_per_step": 7.189033,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {},
+      "failure_reason_distribution": {
+        "NO_STATE_CHANGE": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777203673.json",
+      "contract_count": 4,
+      "state_snapshot_count": 19,
+      "state_diff_count": 9,
+      "parse_count": 8,
+      "ocr_elapsed_seconds": 4.355669,
+      "parse_elapsed_seconds": 15.738792,
+      "ocr_timeout_count": 2,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 2,
+      "dom_parse_count": 0,
+      "parse_worker_count": 6,
+      "parse_worker_elapsed_seconds": 11.086136,
+      "parse_worker_queue_wait_seconds": 0.005744,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.548647
+    },
+    {
+      "mission_id": "focus_shift_typing_case",
+      "category": "focus_verification",
+      "iteration": 1,
+      "prompt": "In chrome, focus the address bar search field, then type focus shift benchmark and verify the text",
+      "expected_apps": [
+        "chrome"
+      ],
+      "setup": "Chrome should be available; page may contain another text field.",
+      "success_signal": "Typed text is verified in the focused Chrome address/search field.",
+      "tags": [
+        "focus",
+        "typing",
+        "verification"
+      ],
+      "events": 34,
+      "error": "",
+      "status": "success",
+      "success": true,
+      "stable_success": false,
+      "step_count": 9,
+      "latency_seconds": 65.744717,
+      "latency_per_step": 7.304969,
+      "wrong_click_count": 0,
+      "recovery_attempt_count": 0,
+      "recovery_success_count": 0,
+      "recovery_depth_per_step": 0.0,
+      "focus_failure_count": 0,
+      "target_ambiguity_count": 0,
+      "target_switch_after_recovery_count": 0,
+      "duplicate_disambiguation_count": 0,
+      "avg_score_gap": 0.0,
+      "repair_vs_replan_count": {},
+      "failure_reason_distribution": {
+        "FOCUS_NOT_CONFIRMED": 1
+      },
+      "trace_path": "debug_steps\\traces\\run_1777203740.json",
+      "contract_count": 4,
+      "state_snapshot_count": 19,
+      "state_diff_count": 9,
+      "parse_count": 8,
+      "ocr_elapsed_seconds": 4.656186,
+      "parse_elapsed_seconds": 16.060652,
+      "ocr_timeout_count": 2,
+      "ocr_call_count": 0,
+      "ocr_cache_hit_count": 0,
+      "parse_cache_hit_count": 3,
+      "dom_parse_count": 0,
+      "parse_worker_count": 5,
+      "parse_worker_elapsed_seconds": 11.391698,
+      "parse_worker_queue_wait_seconds": 0.002823,
+      "structured_skip_count": 0,
+      "screen_hash_elapsed_seconds": 0.570051
+    }
+  ],
+  "failed_artifacts": []
+}

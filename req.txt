@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+transformers
+opencv-python
+Pillow
+mss
+numpy
+pyautogui
+pygetwindow
+websocket-client
+
+# --- OCR Engines ---
+paddlepaddle==2.6.2
+paddleocr==2.8.1
